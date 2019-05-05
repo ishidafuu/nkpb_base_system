@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\isdf\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\isdf\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_kcyyhs.1938032201.00" t="ExcludeRecursive" />
+    <e p="D:\dev\kcyyhs" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AnimationImporter" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AnimationAssetPostProcessor.cs" t="Include" />
+            <e p="AnimationImporter.cs" t="Include" />
+            <e p="AnimationImporterWindow.cs" t="Include" />
+            <e p="AnimationImportJob.cs" t="Include" />
+            <e p="Aseprite" t="Include">
+              <e p="AsepriteImporter.cs" t="Include" />
+            </e>
+            <e p="Config" t="Include">
+              <e p="AnimationImporterSharedConfig.cs" t="Include" />
+              <e p="AnimationImporterSharedConfigEditor.cs" t="Include" />
+              <e p="AnimationTargetObjectType.cs" t="Include" />
+              <e p="AssetTargetLocation.cs" t="Include" />
+              <e p="AssetTargetLocationType.cs" t="Include" />
+              <e p="ImportAnimatorController.cs" t="Include" />
+              <e p="PreviousImportSettings.cs" t="Include" />
+              <e p="SpriteNaming.cs" t="Include" />
+            </e>
+            <e p="IAnimationImporterPlugin.cs" t="Include" />
+            <e p="ImportedData" t="Include">
+              <e p="ImportedAnimation.cs" t="Include" />
+              <e p="ImportedAnimationFrame.cs" t="Include" />
+              <e p="ImportedAnimationSheet.cs" t="Include" />
+            </e>
+            <e p="OutputData" t="Include">
+              <e p="YhAnimeData.cs" t="Include" />
+              <e p="YhAnimeFrame.cs" t="Include" />
+            </e>
+            <e p="PyxelEdit" t="Include">
+              <e p="Ionic.Zip.dll-readme.txt" t="Include" />
+              <e p="PyxelEditData.cs" t="Include" />
+              <e p="PyxelEditImporter.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="AnimationClipUtility.cs" t="Include" />
+              <e p="AssetDatabaseUtility.cs" t="Include" />
+              <e p="JSONObject.cs" t="Include" />
+              <e p="ScriptableObjectUtility.cs" t="Include" />
+            </e>
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="codeandweb.com" t="Include">
+          <e p="Editor" t="Include">
+            <e p="SettingsTexturePackerImporter.txt" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="ConsolePro" t="Include">
+          <e p="ConsoleProDebug.cs" t="Include" />
+          <e p="Remote" t="Include">
+            <e p="ConsoleProRemoteServer.cs" t="Include" />
+            <e p="LiteNetLib" t="Include">
+              <e p="FastBitConverter.cs" t="Include" />
+              <e p="INetEventListener.cs" t="Include" />
+              <e p="NatPunchModule.cs" t="Include" />
+              <e p="NetConstants.cs" t="Include" />
+              <e p="NetDataReader.cs" t="Include" />
+              <e p="NetDataWriter.cs" t="Include" />
+              <e p="NetDebug.cs" t="Include" />
+              <e p="NetEndPoint.cs" t="Include" />
+              <e p="NetManager.cs" t="Include" />
+              <e p="NetPacket.cs" t="Include" />
+              <e p="NetPacketPool.cs" t="Include" />
+              <e p="NetPeer.cs" t="Include" />
+              <e p="NetPeerCollection.cs" t="Include" />
+              <e p="NetSerializer.cs" t="Include" />
+              <e p="NetSocket.cs" t="Include" />
+              <e p="NetThread.cs" t="Include" />
+              <e p="NetUtils.cs" t="Include" />
+              <e p="NtpSyncModule.cs" t="Include" />
+              <e p="ReliableChannel.cs" t="Include" />
+              <e p="SequencedChannel.cs" t="Include" />
+              <e p="SimpleChannel.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="EasyTouchBundle" t="Include">
+          <e p="EasyTouch" t="Include">
+            <e p="_Documentation" t="Include">
+              <e p="How to migrate from EasyTouch 4.X.txt" t="Include" />
+            </e>
+            <e p="Examples" t="Include">
+              <e p="4.X" t="Include">
+                <e p="AdvancedExamples" t="Include">
+                  <e p="AutoSelect" t="Include">
+                    <e p="MultiLayerTouch.cs" t="Include" />
+                    <e p="MultiLayerUI.cs" t="Include" />
+                  </e>
+                  <e p="MultiCamera" t="Include">
+                    <e p="MultiCameraTouch.cs" t="Include" />
+                    <e p="MultiCameraUI.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="GameExemple" t="Include">
+                  <e p="RTSExample" t="Include">
+                    <e p="CubeSelect.cs" t="Include" />
+                    <e p="RTSCamera.cs" t="Include" />
+                  </e>
+                  <e p="RunBall" t="Include">
+                    <e p="Ball.cs" t="Include" />
+                    <e p="BallRunPlayer.cs" t="Include" />
+                    <e p="ThirdPersonCamera.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="LoadExamples.cs" t="Include" />
+                <e p="SimpleExamples" t="Include">
+                  <e p="MultiFinger" t="Include">
+                    <e p="FingerTouch.cs" t="Include" />
+                    <e p="MutliFingersScreenTouch.cs" t="Include" />
+                  </e>
+                  <e p="OneFinger" t="Include">
+                    <e p="DoubleTapMe.cs" t="Include" />
+                    <e p="DragMe.cs" t="Include" />
+                    <e p="LongTapMe.cs" t="Include" />
+                    <e p="Swipe.cs" t="Include" />
+                    <e p="TapMe.cs" t="Include" />
+                    <e p="TouchMe.cs" t="Include" />
+                  </e>
+                  <e p="TwoFingers" t="Include">
+                    <e p="PinchMe.cs" t="Include" />
+                    <e p="TooglePickMethodUI.cs" t="Include" />
+                    <e p="TwistMe.cs" t="Include" />
+                    <e p="TwoDoubleTapMe.cs" t="Include" />
+                    <e p="TwoDragMe.cs" t="Include" />
+                    <e p="TwoLongTapMe.cs" t="Include" />
+                    <e p="TwoSwipe.cs" t="Include" />
+                    <e p="TwoTapMe.cs" t="Include" />
+                    <e p="TwoTouchMe.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="UnityUI" t="Include">
+                  <e p="UICompatibility" t="Include">
+                    <e p="ETWindow.cs" t="Include" />
+                    <e p="GlobalEasyTouchEvent.cs" t="Include" />
+                    <e p="UICompatibility.cs" t="Include" />
+                    <e p="UIWindow.cs" t="Include" />
+                  </e>
+                  <e p="UITwistPinch" t="Include">
+                    <e p="UIDrag.cs" t="Include" />
+                    <e p="UIPinch.cs" t="Include" />
+                    <e p="UITwist.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="5.X new features" t="Include">
+                <e p="Script" t="Include">
+                  <e p="RTS_NewSyntaxe.cs" t="Include" />
+                  <e p="SimpleActionExample.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="How to migrate from EasyTouch 4.X.txt" t="Include" />
+            <e p="Plugins" t="Include">
+              <e p="Components" t="Include">
+                <e p="EasyTouchTrigger.cs" t="Include" />
+                <e p="QuickBase.cs" t="Include" />
+                <e p="QuickDrag.cs" t="Include" />
+                <e p="QuickEnterOverExist.cs" t="Include" />
+                <e p="QuickLongTap.cs" t="Include" />
+                <e p="QuickPinch.cs" t="Include" />
+                <e p="QuickSwipe.cs" t="Include" />
+                <e p="QuickTap.cs" t="Include" />
+                <e p="QuickTouch.cs" t="Include" />
+                <e p="QuickTwist.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="EasytouchHierachyCallBack.cs" t="Include" />
+                <e p="EasyTouchInspector.cs" t="Include" />
+                <e p="EasyTouchMenu.cs" t="Include" />
+                <e p="EasyTouchTriggerInspector.cs" t="Include" />
+                <e p="EasyTouchWelcomeScreen.cs" t="Include" />
+                <e p="HTGuiTools.cs" t="Include" />
+                <e p="QuickDragInspector.cs" t="Include" />
+                <e p="QuickEnterExitInspector.cs" t="Include" />
+                <e p="QuickLongTapInspector.cs" t="Include" />
+                <e p="QuickPinchInspector.cs" t="Include" />
+                <e p="QuickSwipeInspector.cs" t="Include" />
+                <e p="QuickTapInspector.cs" t="Include" />
+                <e p="QuickTouchInspector.cs" t="Include" />
+                <e p="QuickTwistInspector.cs" t="Include" />
+              </e>
+              <e p="Engine" t="Include">
+                <e p="BaseFinger.cs" t="Include" />
+                <e p="EasyTouch.cs" t="Include" />
+                <e p="EasyTouchInput.cs" t="Include" />
+                <e p="ECamera.cs" t="Include" />
+                <e p="Finger.cs" t="Include" />
+                <e p="Gesture.cs" t="Include" />
+                <e p="TwoFingerGesture.cs" t="Include" />
+              </e>
+            </e>
+            <e p="RealseNotes.txt" t="Include" />
+          </e>
+        </e>
+        <e p="GameAssets" t="Include">
+          <e p="Compute Shaders" t="Include">
+            <e p="TransformSystem_Position.compute" t="Include" />
+          </e>
+          <e p="Preload.cs" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Define" t="Include">
+              <e p="EnumDefine.cs" t="Include" />
+            </e>
+            <e p="ECS" t="Include">
+              <e p="Cache.cs" t="Include" />
+              <e p="ComponentSystem" t="Include">
+                <e p="_monooki" t="Include">
+                  <e p="ConvertDrawPosJobSystem.cs" t="Include" />
+                  <e p="CountMotionJobSystem.cs" t="Include" />
+                  <e p="InputMotionJobSystem.cs" t="Include" />
+                  <e p="InputMoveSystem.cs" t="Include" />
+                  <e p="InputMukiJobSystem.cs" t="Include" />
+                  <e p="LookJobSystem.cs" t="Include" />
+                  <e p="MovePosJobSystem.cs" t="Include" />
+                  <e p="ShiftCountMotionJobSystem.cs" t="Include" />
+                </e>
+                <e p="Count" t="Include">
+                  <e p="ToukiMeterCountJobSystem.cs" t="Include" />
+                </e>
+                <e p="Render" t="Include">
+                  <e p="BGDrawSystem.cs" t="Include" />
+                  <e p="CharaDrawSystem.cs" t="Include" />
+                  <e p="ToukiMeterDebubSystem.cs" t="Include" />
+                </e>
+                <e p="Scan" t="Include">
+                  <e p="PadScanSystem.cs" t="Include" />
+                </e>
+                <e p="Update" t="Include">
+                  <e p="ToukiMeterInputJobSystem.cs" t="Include" />
+                </e>
+              </e>
+              <e p="EntityArchetype" t="Include">
+                <e p="EntityArchetype.cs" t="Include" />
+              </e>
+              <e p="EntityFactorys" t="Include">
+                <e p="CharaEntityFactory.cs" t="Include" />
+              </e>
+              <e p="IComponentData" t="Include">
+                <e p="Chara" t="Include">
+                  <e p="CharaDash.cs" t="Include" />
+                  <e p="CharaId.cs" t="Include" />
+                  <e p="CharaLook.cs" t="Include" />
+                  <e p="CharaMotion.cs" t="Include" />
+                  <e p="CharaMove.cs" t="Include" />
+                  <e p="CharaMuki.cs" t="Include" />
+                  <e p="CharaTag.cs" t="Include" />
+                  <e p="PadInput.cs" t="Include" />
+                </e>
+                <e p="Velocity.cs" t="Include" />
+              </e>
+              <e p="ISharedComponentData" t="Include">
+                <e p="Animation" t="Include">
+                  <e p="AniBasePos.cs" t="Include" />
+                  <e p="AniDepth.cs" t="Include" />
+                  <e p="AniFrame.cs" t="Include" />
+                  <e p="AniScript.cs" t="Include" />
+                  <e p="AniScriptSheet.cs" t="Include" />
+                </e>
+                <e p="MeshInstanceRendererIndex.cs" t="Include" />
+                <e p="MeshMatList.cs" t="Include" />
+              </e>
+              <e p="Managers" t="Include">
+                <e p="Manager_Main.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="AriSprite.shader" t="Include" />
+                <e p="BgFrameSprite.shader" t="Include" />
+                <e p="FoodSprite.shader" t="Include" />
+                <e p="GeoSprite.shader" t="Include" />
+                <e p="Instanced Sprite.shader" t="Include" />
+              </e>
+              <e p="Shared.cs" t="Include" />
+              <e p="UpdateOrderType" t="Include">
+                <e p="UpdateOrderType.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Editor" t="Include">
+              <e p="InputManagerGenerator.cs" t="Include" />
+              <e p="InputManagerSetter.cs" t="Include" />
+            </e>
+            <e p="ScriptableObject" t="Include">
+              <e p="AniBasePosObject.cs" t="Include" />
+              <e p="AniScriptSheetObject.cs" t="Include" />
+              <e p="Settings" t="Include">
+                <e p="CommonSettings.cs" t="Include" />
+                <e p="DebugSettings.cs" t="Include" />
+                <e p="MoveSettings.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Singleton" t="Include">
+              <e p="AniScriptManager.cs" t="Include" />
+              <e p="Define.cs" t="Include" />
+              <e p="FPSManager.cs" t="Include" />
+              <e p="GridDraw.cs" t="Include" />
+              <e p="SceneCameraController.cs" t="Include" />
+              <e p="SingletonMonoBehaviour.cs" t="Include" />
+              <e p="SingletonMonoBehaviourDontDestroy.cs" t="Include" />
+              <e p="SingletonMonoBehaviourFast.cs" t="Include" />
+              <e p="TileMapManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Standard_ComputeBuffer.shader" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="TimeFlowShiki" t="Include">
+          <e p="Editor" t="Include">
+            <e p="GUI" t="Include">
+              <e p="Command" t="Include">
+                <e p="ListExtensions.cs" t="Include" />
+                <e p="MotionCommand.cs" t="Include" />
+                <e p="MotionCommandManager.cs" t="Include" />
+              </e>
+              <e p="InspectorObject" t="Include">
+                <e p="ScoreComponentInspector.cs" t="Include" />
+                <e p="SubWindowInspector.cs" t="Include" />
+                <e p="TimelineTrackInspector.cs" t="Include" />
+              </e>
+              <e p="MainWindow" t="Include">
+                <e p="ARIMotionMainWindow.cs" t="Include" />
+              </e>
+              <e p="OnTrackEvent.cs" t="Include" />
+              <e p="ScoreComponent.cs" t="Include" />
+              <e p="ScoreWindow" t="Include">
+                <e p="ARIMotionScoreWindow.cs" t="Include" />
+                <e p="ARIMotionScoreWindowDraw.cs" t="Include" />
+              </e>
+              <e p="Setting" t="Include">
+                <e p="TimelineKitSettings.cs" t="Include" />
+                <e p="WindowSettings.cs" t="Include" />
+              </e>
+              <e p="SubWindow" t="Include">
+                <e p="ARIMotionSubWindow.cs" t="Include" />
+                <e p="ARIMotionSubWindowDraw.cs" t="Include" />
+                <e p="ARIMotionSubWindowEvent.cs" t="Include" />
+              </e>
+              <e p="TackPoint" t="Include">
+                <e p="TackPoint.cs" t="Include" />
+                <e p="TackPointInspector.cs" t="Include" />
+              </e>
+              <e p="TimelineTrack.cs" t="Include" />
+            </e>
+            <e p="Libs" t="Include">
+              <e p="MiniJSONForTimeFlowShiki.cs" t="Include" />
+            </e>
+            <e p="Motion" t="Include">
+              <e p="BasePosition.cs" t="Include" />
+              <e p="MotionColor.cs" t="Include" />
+              <e p="MotionColorState.cs" t="Include" />
+              <e p="MotionDefine.cs" t="Include" />
+              <e p="MotionEffect.cs" t="Include" />
+              <e p="MotionEffectState.cs" t="Include" />
+              <e p="MotionMove.cs" t="Include" />
+              <e p="MotionMoveState.cs" t="Include" />
+              <e p="MotionPassive.cs" t="Include" />
+              <e p="MotionPassiveState.cs" t="Include" />
+              <e p="MotionPos.cs" t="Include" />
+              <e p="MotionPosState.cs" t="Include" />
+              <e p="MotionScore.cs" t="Include" />
+              <e p="MotionScores.cs" t="Include" />
+              <e p="MotionTransform.cs" t="Include" />
+              <e p="MotionTransformState.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Yurowm" t="Include">
+          <e p="DebugPanel" t="Include">
+            <e p="DebugPanel.cs" t="Include" />
+            <e p="DebugPanelField.cs" t="Include" />
+            <e p="DebugPanelViewport.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="DebugPanelWindow.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="kcyyhs.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

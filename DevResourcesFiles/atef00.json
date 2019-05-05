@@ -1,0 +1,49 @@
+{ "frames": [
+   {
+    "filename": "atef00 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 256, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 96 },
+    "sourceSize": { "w": 256, "h": 96 },
+    "duration": 100
+   },
+   {
+    "filename": "atef00 1.aseprite",
+    "frame": { "x": 256, "y": 0, "w": 256, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 96 },
+    "sourceSize": { "w": 256, "h": 96 },
+    "duration": 100
+   },
+   {
+    "filename": "atef00 2.aseprite",
+    "frame": { "x": 0, "y": 96, "w": 256, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 96 },
+    "sourceSize": { "w": 256, "h": 96 },
+    "duration": 100
+   },
+   {
+    "filename": "atef00 3.aseprite",
+    "frame": { "x": 256, "y": 96, "w": 256, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 96 },
+    "sourceSize": { "w": 256, "h": 96 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.10-beta4-x64",
+  "image": "atef00.png",
+  "format": "I8",
+  "size": { "w": 512, "h": 256 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}
