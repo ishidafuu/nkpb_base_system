@@ -63,10 +63,10 @@ namespace NKPB
         {
             UpdateSerializedObject();
 
-            if (Animation == null
-                || SelectedAnimation >= Animation.Length
-                || Animation[SelectedAnimation].framedata == null
-                || SelectedFrame >= Animation[SelectedAnimation].framedata.Length)
+            if (Animations == null
+                || SelectedAnimation >= Animations.Length
+                || Animations[SelectedAnimation].framedata == null
+                || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)
             {
                 return;
             }
@@ -150,7 +150,7 @@ namespace NKPB
         /// <param name="isRepaint"></param>
         private void DrawTimeLineTack(Vector2 position, float width, Vector2 mouse, EventType eventType, int eventButton, bool isRepaint)
         {
-            var animation = Animation[SelectedAnimation];
+            var animation = Animations[SelectedAnimation];
             var frames = animation.framedata;
             var length = frames.Length;
 
@@ -230,10 +230,10 @@ namespace NKPB
                         }
                         else if (eventType == EventType.MouseDown && eventContains && eventButton == 1)
                         {
-                            var list = new List<HitboxFrameEventData>(Animation[SelectedAnimation].framedata[i].events);
+                            var list = new List<HitboxFrameEventData>(Animations[SelectedAnimation].framedata[i].events);
 
                             list.RemoveAt(j);
-                            Animation[SelectedAnimation].framedata[i].events = list.ToArray();
+                            Animations[SelectedAnimation].framedata[i].events = list.ToArray();
                             //If we accidentally opened a menu while deleting this event lets close it.
                             if (m_isEditorMenuOpen)
                             {
@@ -297,15 +297,15 @@ namespace NKPB
         {
             UpdateSerializedObject();
 
-            if (Animation == null
-                || SelectedAnimation >= Animation.Length
-                || Animation[SelectedAnimation].framedata == null
-                || SelectedFrame >= Animation[SelectedAnimation].framedata.Length)
+            if (Animations == null
+                || SelectedAnimation >= Animations.Length
+                || Animations[SelectedAnimation].framedata == null
+                || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)
             {
                 return;
             }
 
-            var framedata = Animation[SelectedAnimation].framedata[SelectedFrame];
+            var framedata = Animations[SelectedAnimation].framedata[SelectedFrame];
             var eventType = Event.current.type;
             var eventButton = Event.current.button;
 
@@ -358,14 +358,14 @@ namespace NKPB
                         {
                             var index = i;
                             m_GizmoDragHandle[currGizmo * 2 + 0].action = (Vector2 v) =>
-                                Animation[SelectedAnimation].framedata[SelectedFrame].events[index].intParam = IntConverter.EncodeVector2ToInt(v / scale);
+                                Animations[SelectedAnimation].framedata[SelectedFrame].events[index].intParam = IntConverter.EncodeVector2ToInt(v / scale);
                             m_MouseOverHandle = m_GizmoDragHandle[currGizmo * 2 + 0];
                         }
                         if (m_GizmoDragHandle[currGizmo * 2 + 1].Draw(position + dest, mouse, MouseCursor.Pan))
                         {
                             var index = i;
                             m_GizmoDragHandle[currGizmo * 2 + 1].action = (Vector2 v) =>
-                                Animation[SelectedAnimation].framedata[SelectedFrame].events[index].floatParam = IntConverter.EncodeVector2ToInt(v / scale);
+                                Animations[SelectedAnimation].framedata[SelectedFrame].events[index].floatParam = IntConverter.EncodeVector2ToInt(v / scale);
                             m_MouseOverHandle = m_GizmoDragHandle[currGizmo * 2 + 1];
                         }
 
@@ -464,9 +464,9 @@ namespace NKPB
         {
             UpdateSerializedObject();
 
-            if (Animation == null || SelectedAnimation >= Animation.Length
-                || Animation[SelectedAnimation].framedata == null || SelectedFrame >= Animation[SelectedAnimation].framedata.Length)return;
-            var framedata = Animation[SelectedAnimation].framedata[SelectedFrame];
+            if (Animations == null || SelectedAnimation >= Animations.Length
+                || Animations[SelectedAnimation].framedata == null || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)return;
+            var framedata = Animations[SelectedAnimation].framedata[SelectedFrame];
             var colliderArray = framedata.collider;
             var eventType = Event.current.type;
             var eventButton = Event.current.button;

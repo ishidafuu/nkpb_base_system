@@ -78,9 +78,9 @@ namespace NKPB
         void CreateEditMenu(Vector2 mouse)
         {
             int i;
-            bool showPrev = SelectedFrame > 0 && Animation[SelectedAnimation].framedata[SelectedFrame - 1].collider.Length > 0,
-                showNext = SelectedFrame + 1 < Animation[SelectedAnimation].framedata.Length
-                && Animation[SelectedAnimation].framedata[SelectedFrame + 1].collider.Length > 0;
+            bool showPrev = SelectedFrame > 0 && Animations[SelectedAnimation].framedata[SelectedFrame - 1].collider.Length > 0,
+                showNext = SelectedFrame + 1 < Animations[SelectedAnimation].framedata.Length
+                && Animations[SelectedAnimation].framedata[SelectedFrame + 1].collider.Length > 0;
 
             ResetMenu();
 
@@ -110,24 +110,24 @@ namespace NKPB
         void OnClickTypeLabel(int index)
         {
             var type = (HitboxType)index;
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider[SelectedCollider].type = type;
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider[SelectedCollider].type = type;
             CloseMenu();
         }
 
         void OnClickEventLabel(int fId, int eId)
         {
             var e = (FrameEvent)eId;
-            var list = new List<HitboxFrameEventData>(Animation[SelectedAnimation].framedata[fId].events);
+            var list = new List<HitboxFrameEventData>(Animations[SelectedAnimation].framedata[fId].events);
 
             list.Add(new HitboxFrameEventData { id = e });
-            Animation[SelectedAnimation].framedata[fId].events = list.ToArray();
+            Animations[SelectedAnimation].framedata[fId].events = list.ToArray();
 
             CloseMenu();
         }
 
         void OnClickCreate(int index)
         {
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
 
             list.Add(new HitboxColliderData
             {
@@ -137,7 +137,7 @@ namespace NKPB
                         new Vector2Int(16, 16))
             });
 
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
             SelectedCollider = list.Count - 1;
             CloseMenu();
         }
@@ -164,7 +164,7 @@ namespace NKPB
 
         void OnClickCopy(int index)
         {
-            m_ColliderClipboard = Animation[SelectedAnimation].framedata[SelectedFrame].collider[SelectedCollider];
+            m_ColliderClipboard = Animations[SelectedAnimation].framedata[SelectedFrame].collider[SelectedCollider];
             CloseMenu();
         }
 
@@ -172,12 +172,12 @@ namespace NKPB
         {
 #if UNITY_2017_4_OR_NEWER
             if (m_FrameClipboard == new Vector2Int(-1, -1)) { CloseMenu(); return; }
-            var other = new List<HitboxColliderData>(Animation[m_FrameClipboard.x].framedata[m_FrameClipboard.y].collider);
+            var other = new List<HitboxColliderData>(Animations[m_FrameClipboard.x].framedata[m_FrameClipboard.y].collider);
 #else
             if (m_FrameClipboard == new Vector2(-1, -1)) { CloseMenu(); return; }
             var other = new List<HitboxColliderData>(Animation[(int)m_FrameClipboard.x].framedata[(int)m_FrameClipboard.y].collider);
 #endif
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
             var keep = new List<HitboxColliderData>(other.Count);
 
             foreach (var colliderA in other)
@@ -198,35 +198,35 @@ namespace NKPB
             }
 
             list.AddRange(keep);
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
             CloseMenu();
         }
 
         void OnClickPaste(int index)
         {
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
 
             list.Add(m_ColliderClipboard);
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
 
             CloseMenu();
         }
 
         void OnClickDelete(int index)
         {
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
 
             list.RemoveAt(SelectedCollider);
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
             CloseMenu();
         }
 
         void OnClickAllDelete(int index)
         {
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
 
             list.Clear();
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
             CloseMenu();
         }
 
@@ -265,8 +265,8 @@ namespace NKPB
 
         void CopyCollidersFromFrame(int delta)
         {
-            var list = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame].collider);
-            var other = new List<HitboxColliderData>(Animation[SelectedAnimation].framedata[SelectedFrame + delta].collider);
+            var list = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame].collider);
+            var other = new List<HitboxColliderData>(Animations[SelectedAnimation].framedata[SelectedFrame + delta].collider);
             var keep = new List<HitboxColliderData>(other.Count);
 
             foreach (var colliderA in other)
@@ -287,7 +287,7 @@ namespace NKPB
             }
 
             list.AddRange(keep);
-            Animation[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
+            Animations[SelectedAnimation].framedata[SelectedFrame].collider = list.ToArray();
             CloseMenu();
         }
         #endregion

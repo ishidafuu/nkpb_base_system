@@ -36,7 +36,7 @@ namespace NKPB
         int SelectedAnimation { get { return m_SelectedAnimation.intValue; } set { m_SelectedAnimation.intValue = value; } }
         int SelectedFrame { get { return m_SelectedFrame.intValue; } set { m_SelectedFrame.intValue = value; } }
         int SelectedCollider { get { return m_targetManager.m_CurrentCollider; } set { m_targetManager.m_CurrentCollider = value; } }
-        HitboxAnimation[] Animation { get { return m_targetManager.m_Animations; } }
+        HitboxAnimation[] Animations { get { return m_targetManager.m_Animations; } }
 
         public void OnEnable()
         {
@@ -118,12 +118,12 @@ namespace NKPB
             EditorGUILayout.EndVertical();
 
             var maxHitboxes = 1;
-            if (Animation != null)
-                for (int i = 0; i < Animation.Length; i++)
-                    if (Animation[i].framedata != null)
-                        for (int j = 0; j < Animation[i].framedata.Length; j++)
-                            if (Animation[i].framedata[j].collider != null)
-                                maxHitboxes = Mathf.Max(maxHitboxes, Animation[i].framedata[j].collider.Length);
+            if (this.Animations != null)
+                for (int i = 0; i < this.Animations.Length; i++)
+                    if (this.Animations[i].framedata != null)
+                        for (int j = 0; j < this.Animations[i].framedata.Length; j++)
+                            if (this.Animations[i].framedata[j].collider != null)
+                                maxHitboxes = Mathf.Max(maxHitboxes, this.Animations[i].framedata[j].collider.Length);
 
             m_targetObject.FindProperty(nameof(m_targetManager.m_MaxHitboxes)).intValue = maxHitboxes;
             ApplySerializedProperties();
@@ -219,20 +219,23 @@ namespace NKPB
         //     }
         // }
 
+        /// <summary>
+        /// アタッチされたアニメーターからアニメーション情報を追加取得
+        /// </summary>
+        /// <param name="Animations"></param>
         private void GUIAddFromAttachedAnimatorButton(SerializedProperty Animations)
         {
             SetEditorColors(Color.yellow, Color.white);
 
             if (GUILayout.Button("Add All Animations From Attached Animator"))
             {
-                var animator = m_targetManager.GetComponent<Animator>();
-                var allclips = animator.runtimeAnimatorController.animationClips;
-                var allclipslist = new List<AnimationClip>(allclips);
+                Animator animator = m_targetManager.GetComponent<Animator>();
+                AnimationClip[] allclips = animator.runtimeAnimatorController.animationClips;
+                List<AnimationClip> allclipslist = new List<AnimationClip>(allclips);
 
                 for (int i = 0; i < Animations.arraySize; i++)
                 {
                     var currentclip = (AnimationClip)Animations.GetArrayElementAtIndex(i).FindPropertyRelative("clip").objectReferenceValue;
-
                     allclipslist.Remove(currentclip);
                 }
 
@@ -243,8 +246,8 @@ namespace NKPB
                     m_targetObject.ApplyModifiedProperties();
 
                     SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
-                    var clip = HitboxData.FindPropertyRelative("clip");
-                    var framedata = HitboxData.FindPropertyRelative("framedata");
+                    SerializedProperty clip = HitboxData.FindPropertyRelative("clip");
+                    SerializedProperty framedata = HitboxData.FindPropertyRelative("framedata");
 
                     clip.objectReferenceValue = allclipslist[i];
                     for (int k = 0, j = m_targetManager.GetNumFrames(Animations.arraySize - 1); k < j; k++)
@@ -258,47 +261,47 @@ namespace NKPB
             }
         }
 
-        private void GUIAddNewAnimationButton(HitboxManager m_Target, SerializedProperty Animations)
-        {
-            if (GUILayout.Button("Add New Animation"))
-            {
-                string path = EditorUtility.OpenFilePanel("Select Animation Clip", "", "anim");
+        // private void GUIAddNewAnimationButton(HitboxManager m_Target, SerializedProperty Animations)
+        // {
+        //     if (GUILayout.Button("Add New Animation"))
+        //     {
+        //         string path = EditorUtility.OpenFilePanel("Select Animation Clip", "", "anim");
 
-                if (!string.IsNullOrEmpty(path))
-                {
-                    int indexOf = path.IndexOf("Assets/");
-                    path = path.Substring(indexOf >= 0 ? indexOf : 0);
-                    var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
+        //         if (!string.IsNullOrEmpty(path))
+        //         {
+        //             int indexOf = path.IndexOf("Assets/");
+        //             path = path.Substring(indexOf >= 0 ? indexOf : 0);
+        //             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
 
-                    if (loadedClip == null)
-                    {
-                        Debug.LogError("HITBOXMANAGER ERROR: Unable to load animation clip at path \"" + path + "\"\n\r Is this this animation located inside your project's assets folder?");
-                    }
-                    else
-                    {
-                        Animations.InsertArrayElementAtIndex(Mathf.Max(0, Animations.arraySize - 1));
+        //             if (loadedClip == null)
+        //             {
+        //                 Debug.LogError("HITBOXMANAGER ERROR: Unable to load animation clip at path \"" + path + "\"\n\r Is this this animation located inside your project's assets folder?");
+        //             }
+        //             else
+        //             {
+        //                 Animations.InsertArrayElementAtIndex(Mathf.Max(0, Animations.arraySize - 1));
 
-                        m_targetObject.ApplyModifiedProperties();
+        //                 m_targetObject.ApplyModifiedProperties();
 
-                        SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
-                        var clip = HitboxData.FindPropertyRelative("clip");
-                        var framedata = HitboxData.FindPropertyRelative("framedata");
+        //                 SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
+        //                 var clip = HitboxData.FindPropertyRelative("clip");
+        //                 var framedata = HitboxData.FindPropertyRelative("framedata");
 
-                        clip.objectReferenceValue = loadedClip;
-                        for (int i = 0, j = m_Target.GetNumFrames(Animations.arraySize - 1); i < j; i++)
-                        {
-                            framedata.InsertArrayElementAtIndex(0);
-                            framedata.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
-                            framedata.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
-                        }
+        //                 clip.objectReferenceValue = loadedClip;
+        //                 for (int i = 0, j = m_Target.GetNumFrames(Animations.arraySize - 1); i < j; i++)
+        //                 {
+        //                     framedata.InsertArrayElementAtIndex(0);
+        //                     framedata.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
+        //                     framedata.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
+        //                 }
 
-                        SelectedAnimation = Animations.arraySize - 1;
-                        SelectedFrame = 0;
-                        m_targetObject.ApplyModifiedProperties();
-                    }
-                }
-            }
-        }
+        //                 SelectedAnimation = Animations.arraySize - 1;
+        //                 SelectedFrame = 0;
+        //                 m_targetObject.ApplyModifiedProperties();
+        //             }
+        //         }
+        //     }
+        // }
 
         private void RefreshAnimationOptionLabels()
         {
