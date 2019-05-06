@@ -12,10 +12,10 @@ namespace NKPB
 {
 
     [Serializable]
-    public struct Matrix2x2
+    public struct CharacterMotionData
     {
-        public Vector2 x;
-        public Vector2 y;
+        public string imageName;
+        public HitboxAnimationFrame[] framedata;
     }
 
     [Serializable]
@@ -30,9 +30,7 @@ namespace NKPB
     {
         public HitboxColliderData[] collider;
         public HitboxFrameEventData[] events;
-        public Vector2Int capsuleOffset;
         public float time;
-        public bool smoothedOffset;
     }
 
     [Serializable]
