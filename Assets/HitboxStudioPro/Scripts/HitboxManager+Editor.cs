@@ -8,7 +8,7 @@ using UnityEditor;
 #endif
 using System.Runtime.InteropServices;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
 #pragma warning disable 0414
     public partial class HitboxManager

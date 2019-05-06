@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
 
     public partial class CharacterEditorWindow

@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     public static class CharacterEditorSettings
     {

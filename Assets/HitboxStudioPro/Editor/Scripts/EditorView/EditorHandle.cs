@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     public class EditorHandle
     {

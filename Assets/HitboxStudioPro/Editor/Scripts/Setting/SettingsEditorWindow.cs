@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     public class SettingsEditorWindow : EditorWindow
     {

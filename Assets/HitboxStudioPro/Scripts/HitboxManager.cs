@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
 #pragma warning disable 0414
     [DisallowMultipleComponent]

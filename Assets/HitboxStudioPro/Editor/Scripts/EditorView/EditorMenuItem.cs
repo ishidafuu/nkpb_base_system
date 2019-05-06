@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using BlackGardenStudios;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     public class EditorMenuItem
     {

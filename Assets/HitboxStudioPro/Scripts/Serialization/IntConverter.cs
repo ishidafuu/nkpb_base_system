@@ -8,7 +8,7 @@ using UnityEditor;
 #endif
 using System.Runtime.InteropServices;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     public static class IntConverter
     {

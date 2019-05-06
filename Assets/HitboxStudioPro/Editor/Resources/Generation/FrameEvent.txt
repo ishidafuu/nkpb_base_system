@@ -1,6 +1,6 @@
 using System;
 
-namespace BlackGardenStudios.HitboxStudioPro
+namespace NKPB
 {
     [Serializable]
     public enum FrameEvent
