@@ -20,11 +20,9 @@ namespace NKPB
             GUIZoom();
             GUIResetViewButton();
             EditorGUILayout.EndHorizontal();
+            GUICreateObjectButton();
             EditorGUILayout.EndVertical();
-
-            // EditorGUILayout.BeginVertical(EditorStyles.helpBox);
             GUITimeLine();
-            // EditorGUILayout.EndVertical();
         }
 
         void GUIHitboxAndGizmosToggle()
@@ -33,7 +31,7 @@ namespace NKPB
             m_showGizmos = GUILayout.Toggle(m_showGizmos && !m_showColliders, "Edit Gizmos");
         }
 
-        static void GUISettingButton()
+        void GUISettingButton()
         {
             if (GUILayout.Button("Settings", GUILayout.Width(100f)))
                 SettingsEditorWindow.Init();
@@ -42,7 +40,7 @@ namespace NKPB
         void GUITimeLine()
         {
             if (m_Inspector != null)
-                m_Inspector.DrawEditorTimeline(new Vector2(60, 80f),
+                m_Inspector.DrawEditorTimeline(new Vector2(60, 90f),
                     position.width - m_toolbarWidth - 80,
                     Event.current.mousePosition);
         }
@@ -79,6 +77,7 @@ namespace NKPB
         {
             if (m_SpriteRenderer == null)
                 return;
+
             RenderSprite(m_SpriteRenderer);
         }
 
@@ -173,6 +172,58 @@ namespace NKPB
                 }
             }
 
+        }
+
+        void GUICreateObjectButton()
+        {
+            if (GUILayout.Button("Create Scriptable Object", GUILayout.MaxWidth(180)))
+            {
+                CreateObjectPack();
+            }
+        }
+
+        void CreateObjectPack()
+        {
+            CharacterMotionMaster obj = CreateInstance(typeof(CharacterMotionMaster))as CharacterMotionMaster;
+
+            foreach (var item in m_hitboxManager.m_Animations)
+            {
+                obj.motionDatas.Add(CreateMotionDataObject(item));
+            }
+
+            AssetDatabase.CreateAsset(obj, CharacterEditorSettings.CharacterMotionMasterOutputPath);
+            Debug.Log("CreateObject:" + CharacterEditorSettings.CharacterMotionMasterOutputPath);
+        }
+
+        CharacterMotionData CreateMotionDataObject(HitboxAnimation hitbox)
+        {
+            CharacterMotionData res = new CharacterMotionData();
+
+            res.motionName = hitbox.clip.name;
+            res.framedatas = hitbox.framedata
+                .Select(x => new CharacterMotionFrame()
+                {
+                    collider = x.collider,
+                        events = x.events,
+                }).ToArray();
+
+            var curves = AnimationUtility.GetObjectReferenceCurveBindings(hitbox.clip);
+            foreach (var item in curves)
+            {
+                if (item.propertyName != "m_Sprite")
+                    continue;
+
+                string[] imageNames = AnimationUtility.GetObjectReferenceCurve(hitbox.clip, item)
+                    .Select(x => x.value.ToString().Replace(" (UnityEngine.Sprite)", ""))
+                    .ToArray();
+
+                for (int i = 0; i < res.framedatas.Length; i++)
+                {
+                    res.framedatas[i].imageName = imageNames[i];
+                }
+            }
+
+            return res;
         }
 
         // //If we don't have a palette assigned don't even bother with this function

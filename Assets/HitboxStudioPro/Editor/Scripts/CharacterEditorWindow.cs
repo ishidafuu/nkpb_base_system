@@ -11,7 +11,6 @@ namespace NKPB
         float m_toolbarWidth = 300f;
         float m_previewZoom = 2f;
         Vector2 m_previewPan = Vector2.zero;
-        // int m_previewPaletteIndex = -1;
         Vector2 m_editorScroll;
         bool m_showColliders = true;
         bool m_showGizmos = false;
@@ -20,24 +19,15 @@ namespace NKPB
         bool m_showAttackData;
         bool m_showFrameData;
         bool m_showEvents;
-
-        // bool m_showCharacterEditor;
-        // bool m_showPaletteEditor;
         Texture2D m_backgroundImage;
         Texture2D m_editorBackgroundImage;
-
         Texture2D m_BufferTexture;
-
         readonly float MINZOOM = 1f;
         readonly float MAXZOOM = 8f;
-
         HitBoxManagerInspector m_Inspector = null;
-
         HitboxManager m_hitboxManager = null;
-
         Event m_currentEvent;
         // ICharacter m_character;
-
         SpriteRenderer m_SpriteRenderer;
 
         [MenuItem("Window/Character Editor", priority = 1000)]

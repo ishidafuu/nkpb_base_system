@@ -12,4 +12,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0fde853106de4438dbff96b4025d09, type: 3}
   m_Name: CharacterMotionMaster
   m_EditorClassIdentifier: 
-  motionDatas: []
+  motionDatas:
+  - motionName: nkpb_idle
+    framedatas:
+    - imageName: nm2body_01_01
+      collider:
+      - rect:
+          x: -9
+          y: 7
+          width: 16
+          height: 16
+        type: 0
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+  - motionName: nkpb_jump
+    framedatas:
+    - imageName: nm2body_01_06
+      collider: []
+      events: []
+    - imageName: nm2body_01_07
+      collider: []
+      events:
+      - id: 4
+        intParam: 10
+        floatParam: 0
+        stringParam: 
+    - imageName: nm2body_01_08
+      collider: []
+      events: []
+    - imageName: nm2body_01_08
+      collider: []
+      events: []
+  - motionName: nkpb_dash
+    framedatas:
+    - imageName: nm2body_01_10
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+    - imageName: nm2body_01_04
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+  - motionName: nkpb_walk
+    framedatas:
+    - imageName: nm2body_01_02
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+    - imageName: nm2body_01_03
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+    - imageName: nm2body_01_01
+      collider: []
+      events: []
+  - motionName: nkpb_punch
+    framedatas:
+    - imageName: nm2body_02_13
+      collider:
+      - rect:
+          x: 0
+          y: 0
+          width: 16
+          height: 16
+        type: 0
+      events: []
+    - imageName: nm2body_03_03
+      collider:
+      - rect:
+          x: 0
+          y: 0
+          width: 16
+          height: 16
+        type: 0
+      events: []
+    - imageName: nm2body_03_04
+      collider: []
+      events: []
+    - imageName: nm2body_03_04
+      collider:
+      - rect:
+          x: 6
+          y: 14
+          width: 16
+          height: 11
+        type: 5
+      - rect:
+          x: -8
+          y: 8
+          width: 16
+          height: 16
+        type: 3
+      events: []

@@ -31,7 +31,7 @@ AnimationClip:
     - time: 0.3
       value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
-    - time: 0.38333333
+    - time: 0.3833333
       value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
     attribute: m_Sprite
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.39999998
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -111,7 +111,7 @@ AnimationClip:
     floatParameter: 3
     intParameter: 3
     messageOptions: 0
-  - time: 0.38333333
+  - time: 0.3833333
     functionName: UpdateHitbox
     data: AAAAAAAAcEIAAAAA
     objectReferenceParameter: {fileID: 0}

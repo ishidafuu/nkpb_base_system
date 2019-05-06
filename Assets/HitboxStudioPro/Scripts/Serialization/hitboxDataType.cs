@@ -14,8 +14,16 @@ namespace NKPB
     [Serializable]
     public struct CharacterMotionData
     {
+        public string motionName;
+        public CharacterMotionFrame[] framedatas;
+    }
+
+    [Serializable]
+    public struct CharacterMotionFrame
+    {
         public string imageName;
-        public HitboxAnimationFrame[] framedata;
+        public HitboxColliderData[] collider;
+        public HitboxFrameEventData[] events;
     }
 
     [Serializable]
@@ -28,6 +36,7 @@ namespace NKPB
     [Serializable]
     public struct HitboxAnimationFrame
     {
+        public string imageName;
         public HitboxColliderData[] collider;
         public HitboxFrameEventData[] events;
         public float time;
