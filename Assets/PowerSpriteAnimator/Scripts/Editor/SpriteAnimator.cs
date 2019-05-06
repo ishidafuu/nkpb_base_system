@@ -176,8 +176,8 @@ namespace PowerTools
         [SerializeField] bool m_autoPlay = true;
 
         // Default frame length + num samples, etc
-        [SerializeField] float m_defaultFrameLength = 0.1f;
-        [SerializeField] int m_defaultFrameSamples = 6;
+        [SerializeField] int m_defaultFrameSamples = 4;
+        [SerializeField] float m_defaultFrameLength = 1 / (60 / 4);
         [SerializeField] bool m_ignorePivot = false;
         [SerializeField] bool m_showAdvancedOptions = false;
 
