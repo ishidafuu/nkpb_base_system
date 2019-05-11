@@ -1,0 +1,916 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331459145dcb6bc4ea837654a7f4945c, type: 3}
+  m_Name: MapPath_000
+  m_EditorClassIdentifier: 
+  nodes:
+  - nodeNo: 0
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 0
+      mapEnd: 32
+    walkableNodeNum: 3
+    jumpableNodeNum: 0
+  - nodeNo: 1
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 1
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 2
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 2
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 3
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 3
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 4
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 4
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 5
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 5
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 6
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 6
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 7
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 7
+      mapEnd: 64
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 8
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 0
+      stZ: 8
+      mapEnd: 64
+    walkableNodeNum: 3
+    jumpableNodeNum: 7
+  - nodeNo: 9
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 0
+      stZ: 9
+      mapEnd: 128
+    walkableNodeNum: 1
+    jumpableNodeNum: 9
+  - nodeNo: 10
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 11
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 12
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 13
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 14
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 15
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 16
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 17
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 18
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 1
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 19
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 1
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 11
+  - nodeNo: 20
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 21
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 22
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 23
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 24
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 25
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 26
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 27
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 28
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 2
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 29
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 2
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 14
+  - nodeNo: 30
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 31
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 32
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 33
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 34
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 35
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 36
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 37
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 38
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 3
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 39
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 3
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 15
+  - nodeNo: 40
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 41
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 42
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 43
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 44
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 45
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 46
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 47
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 48
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 4
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 49
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 4
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 15
+  - nodeNo: 50
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 51
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 52
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 53
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 54
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 55
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 56
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 57
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 58
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 5
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 59
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 5
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 15
+  - nodeNo: 60
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 61
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 62
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 63
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 64
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 65
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 66
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 67
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 68
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 6
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 69
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 6
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 15
+  - nodeNo: 70
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 71
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 72
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 73
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 74
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 75
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 76
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 77
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 78
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 7
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 79
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 7
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 14
+  - nodeNo: 80
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 81
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 82
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 83
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 84
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 85
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 86
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 87
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 88
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 8
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 89
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 8
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 2
+    jumpableNodeNum: 11
+  - nodeNo: 90
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 0
+      mapEnd: 8
+    walkableNodeNum: 3
+    jumpableNodeNum: 0
+  - nodeNo: 91
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 1
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 92
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 2
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 93
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 3
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 94
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 4
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 95
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 5
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 96
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 6
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 97
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 7
+      mapEnd: 4
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 98
+    plate:
+      tipType: 1
+      stY: 0
+      stX: 9
+      stZ: 8
+      mapEnd: 4
+    walkableNodeNum: 3
+    jumpableNodeNum: 7
+  - nodeNo: 99
+    plate:
+      tipType: 1
+      stY: 9
+      stX: 9
+      stZ: 9
+      mapEnd: 2
+    walkableNodeNum: 1
+    jumpableNodeNum: 9
+  mapId: 0
