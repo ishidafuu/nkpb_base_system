@@ -11,7 +11,43 @@ using UnityEngine;
 public partial class MapEditor : EditorWindow
 {
     //入力系///////////////////////////////
-    /// 
+
+    void Input()
+    {
+        //保存
+        SaveMap();
+
+        //カメラ位置移動
+        MoveCamera();
+        //ローテーション
+        Rotation();
+        //奥行き移動
+        ChangeSelectedDepth();
+        //ペン奥行き
+        CangePenDepth();
+
+        //範囲選択
+        SelectTips();
+        //スポイト
+        Spuit();
+        //チップを置く
+        PutTip();
+    }
+
+    //保存
+    void SaveMap()
+    {
+        Event e = Event.current;
+        if (m_isSaveOk
+            && e.type == EventType.KeyDown
+            && e.keyCode == KeyCode.S
+            && e.control)
+        {
+            m_parent.SaveMap();
+            m_isSaveOk = false;
+        }
+    }
+
     //カメラ視点移動
     void MoveCamera()
     {
@@ -274,36 +310,46 @@ public partial class MapEditor : EditorWindow
                 }
                 else
                 {
-                    enShapeType shape = m_parent.GetSelectedShape();
-
-                    for (int zz = 0; zz < GetMapD(); zz++)
-                    {
-                        Vector3Int pos = GetPosVector3(resvec.x, resvec.y, zz);
-                        if (zz == m_selectedDepth)
-                        {
-                            m_parent.SetMapShape(shape, pos);
-                        }
-                        else if (zz < m_selectedDepth)
-                        {
-                            // 置いたブロックより手前はすべて空に
-                            m_parent.SetMapShape(enShapeType.Empty, pos);
-                        }
-                        else
-                        {
-                            // 空ブロック以外は奥をすべて置き換える
-                            // 箱ブロックであれば置き換えない
-                            if (shape != enShapeType.Empty
-                                && m_parent.GetMapShape(pos) != enShapeType.Box)
-                            {
-                                m_parent.SetMapShape(shape, pos);
-                            }
-                        }
-
-                    }
+                    PutSingle(resvec);
                 }
 
                 //入力があったときは再描画入れる
                 SetRepaint();
+            }
+        }
+    }
+
+    private void PutSingle(Vector2Int resvec)
+    {
+        enShapeType shape = m_parent.GetSelectedShape();
+
+        for (int zz = 0; zz < GetMapD(); zz++)
+        {
+            Vector3Int pos = GetPosVector3(resvec.x, resvec.y, zz);
+            if (zz == m_selectedDepth)
+            {
+                m_parent.SetMapShape(shape, pos);
+            }
+            else if (zz < m_selectedDepth)
+            {
+                // 置いたブロックより手前はすべて空に
+                m_parent.SetMapShape(enShapeType.Empty, pos);
+            }
+            else
+            {
+                // 空ブロック以外は奥をすべて置き換える
+                // 箱ブロックであれば置き換えない
+                if (shape != enShapeType.Empty
+                    && m_parent.GetMapShape(pos) != enShapeType.Box)
+                {
+                    enShapeType drawShape = shape;
+                    if (shape == enShapeType.SlashWall || shape == enShapeType.BSlashWall)
+                    {
+                        drawShape = enShapeType.Box;
+                    }
+
+                    m_parent.SetMapShape(drawShape, pos);
+                }
             }
         }
     }

@@ -455,7 +455,7 @@ public class MapEditorMain : EditorWindow
     }
 
     // ファイルで出力
-    void SaveMap()
+    public void SaveMap()
     {
         var savetips = m_mapTips.GetClone();
         AssetDatabase.CreateAsset(savetips, GetFilePath());

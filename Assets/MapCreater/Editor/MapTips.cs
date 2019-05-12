@@ -144,7 +144,7 @@ public class MapTips : ScriptableObject
                 {
                     Vector3Int tagpos = new Vector3Int(pos.x + x, pos.y + y, pos.z + z);
                     // Assert.IsTrue(this.IsSafePos(tagpos));
-                    Debug.Log(tagpos + " shape" + GetShape(tagpos));
+                    // Debug.Log(tagpos + " shape" + GetShape(tagpos));
                     res.SetShape(GetShape(tagpos), x, y, z);
                     // res.SetEvent(GetEvent(tagpos), tagpos);
                 }

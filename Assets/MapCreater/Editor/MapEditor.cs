@@ -38,6 +38,7 @@ public partial class MapEditor : EditorWindow
 
     bool m_isSeleting;
     MapTips m_copyTips;
+    bool m_isSaveOk;
 
     // サブウィンドウを開く
     public static MapEditor WillAppear(MapEditorMain _parent)
@@ -66,6 +67,7 @@ public partial class MapEditor : EditorWindow
         // RecordObjectの引数はScriptableObjectのみ有効
         // その中の変数もPublicもしくは[SerializeField]がついたメンバのみ有効
         Undo.RecordObject(m_parent.m_mapTips, "maptips");
+        m_isSaveOk = true;
     }
 
     void OnGUI()
@@ -104,43 +106,20 @@ public partial class MapEditor : EditorWindow
 
             if (EditorGUI.EndChangeCheck())
             {
-                //// Undoで戻る先を保存する.
-                //Recording();
                 m_camPos = cp;
-                // そのあと、変更を適用
                 m_selectedDepth = sd;
                 m_camRotate = ro;
                 m_penDepth = pd;
             }
 
-            //GUILayout.EndHorizontal();
-
             //入力系
-
-            //カメラ位置移動
-            MoveCamera();
-            //ローテーション
-            Rotation();
-            //奥行き移動
-            ChangeSelectedDepth();
-            //ペン奥行き
-            CangePenDepth();
-
-            //範囲選択
-            SelectTips();
-            //スポイト
-            Spuit();
-            //チップを置く
-            PutTip();
+            Input();
 
             //描画系
 
             //画像の描画
             DrawMapTip();
-            //DrawPutTip();
 
-            // 出力ボタン
-            //DrawOutputButton();
             if (m_isRepaint)Repaint();
 
         }

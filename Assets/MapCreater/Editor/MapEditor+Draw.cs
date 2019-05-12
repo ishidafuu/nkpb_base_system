@@ -46,13 +46,18 @@ public partial class MapEditor
             int zz = (GetMapD() - z - 1); //奥から
 
             int zpos = ((zz - m_selectedDepth) * GRID_SIZE_Z); //奥行きのオフセット
-            bool blockDraw = true;
-            //奥プレート描画
-            if ((zz == (GetMapD() - 1)))DrawPlateFR(zpos + GRID_SIZE_Z);
-            //選択面グリッド描画
-            if (zz == m_selectedDepth + m_penDepth)DrawGridLine2();
+            bool isBlockDraw = true;
 
-            if ((zz >= m_selectedDepth) && (zz <= m_selectedDepth + m_penDepth))
+            //奥プレート描画
+            if (zz == (GetMapD() - 1))
+                DrawPlateFR(zpos + GRID_SIZE_Z);
+
+            //選択面グリッド描画
+            if (zz == m_selectedDepth + m_penDepth)
+                DrawGridLine2();
+
+            if ((zz >= m_selectedDepth)
+                && (zz <= m_selectedDepth + m_penDepth))
             {
                 GUI.color = new Color(1f, 1f, 1f, 1f);
             }
@@ -69,7 +74,7 @@ public partial class MapEditor
                 GUI.color = new Color(col, col, col, 1f);
             }
 
-            if (blockDraw)
+            if (isBlockDraw)
             {
                 for (int y = 0; y < GetMapH(); y++)
                 {
@@ -134,37 +139,40 @@ public partial class MapEditor
 
                             Texture sp = m_parent.GetTipsSprite(GetPosVector3(xx, y, zz), m_camRotate, true);
 
-                            bool tipDraw = true;
+                            bool isTipDraw = true;
+                            bool isSelectedDepth = (zz == (m_selectedDepth));
 
                             if (m_cursorPos != null)
                             {
                                 //カーソルより手前側は表示しない
-                                tipDraw = (isPutTip)
-                                    ? (xx < m_cursorPos.x) || (zz >= (m_selectedDepth))
-                                    : (zz >= (m_selectedDepth));
+                                // tipDraw = (isPutTip)
+                                //     ? (xx < m_cursorPos.x) || (zz >= (m_selectedDepth))
+                                //     : (zz >= (m_selectedDepth));
+                                isTipDraw = (zz >= (m_selectedDepth));
                             }
-                            //else
-                            //{
-                            //	tipDraw = (zz >= (selectedDepth_));
-                            //}
 
-                            //カーソルより手前側は表示しない
-                            float alp = (!tipDraw)
-                                ? 0.1f
-                                : 1f;
+                            float alp = (isTipDraw)
+                                ? 1f
+                                : 0.05f;
 
-                            GUI.color = new Color(1f, 1f, 1f, alp);
+                            float col = (isSelectedDepth)
+                                ? 1f
+                                : 0.8f;
 
-                            //float alp = (!tipDraw) GUI.color = new Color(1f, 1f, 1f, 0.1f);
+                            GUI.color = new Color(col, col, col, alp);
+
                             //選択範囲
                             if (m_isSeleting)
                             {
                                 bool betweenX = ((m_copyLT.x <= xx) && (m_copyRB.x >= xx));
                                 bool betweenY = ((m_copyLT.y <= revyy) && (m_copyRB.y >= revyy));
                                 bool betweenZ = ((m_copyLT.z <= zz) && (m_copyRB.z >= zz));
-                                if ((m_copyLT.x == xx) && betweenY && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fLeft);
-                                if ((m_copyLT.y == revyy) && betweenX && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fBottom);
-                                if ((m_copyRB.z == zz) && betweenX && betweenY)DrawTipPlate(pos + m_camPos, enFace.fRear);
+                                if ((m_copyLT.x == xx) && betweenY && betweenZ)
+                                    DrawTipPlate(pos + m_camPos, enFace.fLeft);
+                                if ((m_copyLT.y == revyy) && betweenX && betweenZ)
+                                    DrawTipPlate(pos + m_camPos, enFace.fBottom);
+                                if ((m_copyRB.z == zz) && betweenX && betweenY)
+                                    DrawTipPlate(pos + m_camPos, enFace.fRear);
 
                                 if (sp != null)
                                 {
@@ -196,12 +204,11 @@ public partial class MapEditor
                 }
             }
 
-            //手前プレート描画
-            if ((zz == 0))DrawPlateFR(zpos);
-
-            //左端プレート
             if (zz == 0)
             {
+                //手前プレート描画
+                DrawPlateFR(zpos);
+                //左端プレート
                 Vector2 pos = new Vector2((GetMapW() * GRID_SIZE) + zpos, (GetMapH() * GRID_SIZE) - zpos);
                 DrawPlateLR(pos + m_camPos, false);
             }
