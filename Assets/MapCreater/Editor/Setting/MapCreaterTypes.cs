@@ -31,3 +31,17 @@ public enum enMapEnd
     Left = 0x040,
     BackLeft = 0x080,
 }
+
+public enum enShapeType
+{
+    Empty,
+    Box,
+    LUpSlope,
+    RUpSlope,
+    LUpSlope2H,
+    LUpSlope2L,
+    RUpSlope2L,
+    RUpSlope2H,
+    SlashWall,
+    BSlashWall,
+}

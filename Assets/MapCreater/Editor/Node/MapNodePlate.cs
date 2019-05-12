@@ -4,19 +4,6 @@ using UnityEngine;
 [System.Serializable]
 public class MapNodePlate
 {
-    enum enTipType
-    {
-        Emp,
-        Box,
-        LUpSlope,
-        RUpSlope,
-        LUpSlope2H,
-        LUpSlope2L,
-        RUpSlope2L,
-        RUpSlope2H,
-        SlashWall,
-        BSlashWall,
-    }
 
     enum enAngle
     {
@@ -31,7 +18,7 @@ public class MapNodePlate
         BackLeft,
     }
 
-    public int tipType;
+    public enShapeType shapeType;
 
     public int stY;
     public int stX;
@@ -39,9 +26,9 @@ public class MapNodePlate
     public enMapEnd mapEnd;
     //public int sameW;
     //public int sameD;
-    public MapNodePlate(int tipType, int stY, int stX, int stZ, int mapW, int mapD) //, int sameW, int sameD)
+    public MapNodePlate(enShapeType shapeType, int stY, int stX, int stZ, int mapW, int mapD) //, int sameW, int sameD)
     {
-        this.tipType = tipType;
+        this.shapeType = shapeType;
         this.stY = stY;
         this.stX = stX;
         this.stZ = stZ;
@@ -80,7 +67,7 @@ public class MapNodePlate
 
     override public string ToString()
     {
-        return "tipType:" + tipType + " "
+        return "tipType:" + shapeType + " "
             + "X:" + stX + " "
             + "Y:" + stY + " "
             + "Z:" + stZ + " "
@@ -184,8 +171,8 @@ public class MapNodePlate
     {
         enAngle angle = GetAngle(target);
         enAngle tagAngle = RevAngle(angle);
-        float myY = this.stY + GetAngleHeight((enTipType)this.tipType, angle);
-        float tagY = target.stY + GetAngleHeight((enTipType)target.tipType, tagAngle);
+        float myY = this.stY + GetAngleHeight((enShapeType)this.shapeType, angle);
+        float tagY = target.stY + GetAngleHeight((enShapeType)target.shapeType, tagAngle);
 
         //Debug.Log("myY"+ myY + "tagY" + tagY);
 
@@ -193,15 +180,15 @@ public class MapNodePlate
     }
 
     //チップの向きごとの高さ
-    static float GetAngleHeight(enTipType tipType, enAngle angle)
+    static float GetAngleHeight(enShapeType tipType, enAngle angle)
     {
         float res = 0f;
         switch (tipType)
         {
-            case enTipType.Box:
+            case enShapeType.Box:
                 res = 1f;
                 break;
-            case enTipType.LUpSlope:
+            case enShapeType.LUpSlope:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -220,7 +207,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.RUpSlope:
+            case enShapeType.RUpSlope:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -239,7 +226,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.LUpSlope2H:
+            case enShapeType.LUpSlope2H:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -258,7 +245,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.LUpSlope2L:
+            case enShapeType.LUpSlope2L:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -277,7 +264,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.RUpSlope2L:
+            case enShapeType.RUpSlope2L:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -296,7 +283,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.RUpSlope2H:
+            case enShapeType.RUpSlope2H:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -315,7 +302,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.SlashWall:
+            case enShapeType.SlashWall:
                 switch (angle)
                 {
                     case enAngle.Back:
@@ -332,7 +319,7 @@ public class MapNodePlate
                         break;
                 }
                 break;
-            case enTipType.BSlashWall:
+            case enShapeType.BSlashWall:
                 switch (angle)
                 {
                     case enAngle.Back:

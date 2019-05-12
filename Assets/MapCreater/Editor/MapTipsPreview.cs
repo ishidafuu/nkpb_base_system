@@ -34,7 +34,7 @@ public class MyPreview : ObjectPreview
         SetDefaultCameraPos();
     }
 
-    private void SetDefaultCameraPos()
+    void SetDefaultCameraPos()
     {
         camPos_ = new Vector2(CAMPOS_DEFAULT, (GetMapH() * GRIDSIZE) + (GetMapD() * GRIDSIZE_Z) + CAMPOS_DEFAULT);
     }
@@ -46,15 +46,6 @@ public class MyPreview : ObjectPreview
         // GUIの見た目を変える。
         GUIStyle guiStyle = new GUIStyle();
         GUIStyleState styleState = new GUIStyleState();
-
-        //// GUI背景色のバックアップ
-        //Color backColor = GUI.backgroundColor;
-
-        //// GUI背景の色を設定
-        //GUI.backgroundColor = new Color(0.0f, 0.0f, 0.0f, 0.5f);
-
-        //// 背景用テクスチャを設定
-        //styleState.background = Texture2D.whiteTexture;
 
         // テキストの色を設定
         styleState.textColor = Color.white;
@@ -74,7 +65,7 @@ public class MyPreview : ObjectPreview
     }
 
     //カメラ視点移動
-    private void MoveCamera(Rect r)
+    void MoveCamera(Rect r)
     {
 
         Event e = Event.current;
@@ -107,7 +98,7 @@ public class MyPreview : ObjectPreview
 
     }
 
-    static private void LoadMapTipSprite()
+    static void LoadMapTipSprite()
     {
         if (mapTipSprites_ != null)
             return;
@@ -121,32 +112,36 @@ public class MyPreview : ObjectPreview
     }
 
     //マップの幅
-    private int GetMapW()
+    int GetMapW()
     {
         return mapTips3_.mapSizeX;
     }
+
     //マップ奥行き
-    private int GetMapD()
+    int GetMapD()
     {
         return mapTips3_.mapSizeZ;
     }
+
     //マップの幅
-    private int GetMapH()
+    int GetMapH()
     {
         return mapTips3_.mapSizeY;
     }
+
     public Sprite GetTipsSprite(Vector3Int pos, bool isEmpNull = false)
     {
         if (mapTips3_ == null)
             return null;
+        enShapeType shape = mapTips3_.GetShape(pos);
 
-        if (isEmpNull && (mapTips3_[pos, false] == 0))
+        if (isEmpNull && shape == 0)
             return null;
-        Debug.Log(pos);
-        return mapTipSprites_[mapTips3_[pos, false]];
+
+        return mapTipSprites_[(int)shape];
     }
 
-    private void DrawMapTip(Rect r)
+    void DrawMapTip(Rect r)
     {
 
         // 選択した画像を描画する
@@ -172,11 +167,10 @@ public class MyPreview : ObjectPreview
                     if (sp != null)
                     {
                         Debug.Log(drawRect);
-                        GUI.DrawTextureWithTexCoords(drawRect, sp.texture, MapCreater.GetSpriteNormalRect(sp)); //描画
+                        GUI.DrawTextureWithTexCoords(drawRect, sp.texture, MapEditorMain.GetSpriteNormalRect(sp)); //描画
                     }
                 }
             }
         }
     }
-
 }

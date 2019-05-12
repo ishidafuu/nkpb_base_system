@@ -1,84 +1,126 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-[System.Serializable]
+[Serializable]
 public class MapTips : ScriptableObject
 {
+    [SerializeField]
     public int mapSizeX;
+    [SerializeField]
     public int mapSizeY;
+    [SerializeField]
     public int mapSizeZ;
-    public int[] shapes;
-    public int[] palettes;
+    [SerializeField]
+    public enShapeType[] shapes;
+    [SerializeField]
+    public int[] events;
 
     public void Init(int sizeX, int sizeY, int sizeZ)
     {
         mapSizeX = sizeX;
         mapSizeY = sizeY;
         mapSizeZ = sizeZ;
-        shapes = new int[mapSizeX * mapSizeY * mapSizeZ];
-        palettes = new int[mapSizeX * mapSizeY * mapSizeZ];
+        shapes = new enShapeType[mapSizeX * mapSizeY * mapSizeZ];
+        events = new int[mapSizeX * mapSizeY * mapSizeZ];
     }
 
-    public int this[int x, int y, int z, bool isPal]
+    enShapeType this[int x, int y, int z]
     {
         set
         {
-            int yy = (y * mapSizeX);
-            int zz = (z * mapSizeX * mapSizeY);
-            if (isPal)
-            {
-                palettes[x + yy + zz] = value;
-            }
-            else
-            {
-                shapes[x + yy + zz] = value;
-            }
+            shapes[ConvertXYZToIndex(x, y, z)] = value;
         }
         get
         {
-            int yy = (y * mapSizeX);
-            int zz = (z * mapSizeX * mapSizeY);
-            if (isPal)
-            {
-                return palettes[x + yy + zz];
-            }
-            else
-            {
-                return shapes[x + yy + zz];
-            }
-
+            return shapes[ConvertXYZToIndex(x, y, z)];
         }
     }
 
-    public int this[Vector3Int vec, bool isPal]
+    enShapeType this[Vector3Int vec]
     {
         set
         {
-            this[vec.x, vec.y, vec.z, isPal] = value;
+            this[vec.x, vec.y, vec.z] = value;
         }
         get
         {
-            return this[vec.x, vec.y, vec.z, isPal];
+            return this[vec.x, vec.y, vec.z];
         }
     }
 
-    public int GetShape(Vector3Int pos)
+    int ConvertXYZToIndex(int x, int y, int z)
+    {
+        int yy = (y * mapSizeX);
+        int zz = (z * mapSizeX * mapSizeY);
+        return x + yy + zz;
+    }
+
+    int ConvertVector3IntToIndex(Vector3Int pos)
+    {
+        int yy = (pos.y * mapSizeX);
+        int zz = (pos.z * mapSizeX * mapSizeY);
+        return pos.x + yy + zz;
+    }
+
+    public enShapeType GetShape(Vector3Int pos)
     {
         //範囲外の時は0
-        int res = 0;
+        enShapeType res = enShapeType.Empty;
         if (IsSafePos(pos))
-            res = this[pos.x, pos.y, pos.z, false];
+            res = this[pos.x, pos.y, pos.z];
         return res;
     }
 
-    public int GetPalette(Vector3Int pos)
+    public enShapeType GetShape(int x, int y, int z)
+    {
+        return GetShape(new Vector3Int(x, y, z));
+    }
+
+    public int GetEvent(Vector3Int pos)
     {
         //範囲外の時は0
         int res = 0;
-        if (IsSafePos(pos))res = this[pos.x, pos.y, pos.z, true];
+
+        if (IsSafePos(pos))
+        {
+            res = events[ConvertVector3IntToIndex(pos)];
+        }
+
         return res;
+    }
+
+    public int GetEvent(int x, int y, int z)
+    {
+        return GetEvent(new Vector3Int(x, y, z));
+    }
+
+    public void SetShape(enShapeType value, Vector3Int pos)
+    {
+        if (IsSafePos(pos))
+        {
+            shapes[ConvertVector3IntToIndex(pos)] = value;
+        }
+    }
+
+    public void SetShape(enShapeType value, int x, int y, int z)
+    {
+        SetShape(value, new Vector3Int(x, y, z));
+    }
+
+    public void SetEvent(int value, Vector3Int pos)
+    {
+        if (IsSafePos(pos))
+        {
+            events[ConvertVector3IntToIndex(pos)] = value;
+        }
+    }
+
+    public void SetEvent(int value, int x, int y, int z)
+    {
+        SetEvent(value, new Vector3Int(x, y, z));
     }
 
     public bool IsSafePos(Vector3Int pos)
@@ -104,9 +146,9 @@ public class MapTips : ScriptableObject
                     tagpos.x += x;
                     tagpos.y += y;
                     tagpos.z += z;
-                    Assert.IsTrue(this.IsSafePos(tagpos)); //はみでチェック
-                    res[x, y, z, true] = this[tagpos, true];
-                    res[x, y, z, false] = this[tagpos, false];
+                    Assert.IsTrue(this.IsSafePos(tagpos));
+                    res.SetShape(GetShape(tagpos), tagpos);
+                    res.SetEvent(GetEvent(tagpos), tagpos);
                 }
             }
         }
@@ -126,14 +168,11 @@ public class MapTips : ScriptableObject
             {
                 for (int z = 0; z < tips.mapSizeZ; ++z)
                 {
-                    Vector3Int tagpos = new Vector3Int(pos.x, pos.y, pos.z);
-                    tagpos.x += x;
-                    tagpos.y += y;
-                    tagpos.z += z;
+                    Vector3Int tagpos = new Vector3Int(pos.x + x, pos.y + y, pos.z + z);
                     if (this.IsSafePos(tagpos)) //はみでチェック
                     {
-                        this[tagpos, true] = tips[x, y, z, true];
-                        this[tagpos, false] = tips[x, y, z, false];
+                        SetShape(tips.GetShape(tagpos), tagpos);
+                        SetEvent(tips.GetEvent(tagpos), tagpos);
                     }
                 }
             }

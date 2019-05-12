@@ -10,7 +10,7 @@ public class MapObjMaker : Editor
     bool[] m_isXZ;
 
     //オブジェクト作成
-    public void CreateObject(MapTips mapTips3, int mapId, MapPalette palette)
+    public void CreateObject(MapTips mapTips3, int mapId)
     {
         m_isXZ = new bool[mapTips3.mapSizeX * mapTips3.mapSizeZ];
 
@@ -26,7 +26,7 @@ public class MapObjMaker : Editor
     }
 
     //床
-    private List<TileFloor> SearchFloor(MapTips mapTips3)
+    List<TileFloor> SearchFloor(MapTips mapTips3)
     {
         List<TileFloor> floorList = new List<TileFloor>();
         for (int x = 0; x < mapTips3.mapSizeX; ++x)
@@ -43,19 +43,19 @@ public class MapObjMaker : Editor
         }
         return floorList;
     }
-    private TileFloor GetFloor(bool isSquare, int stX, int stZ, MapTips mapTips3)
+    TileFloor GetFloor(bool isSquare, int stX, int stZ, MapTips mapTips3)
     {
         //真上からブロックにぶつかるまで探す
         int baseY = -1;
-        int baseShape = 0;
+        enShapeType baseShape = 0;
         int basePal = 0;
         bool isFind = false;
         for (int y = 0; y < mapTips3.mapSizeY; ++y)
         {
             int revY = (mapTips3.mapSizeY - y - 1);
             Vector3Int pos = new Vector3Int(stX, revY, stZ);
-            int shape = mapTips3.GetShape(pos);
-            int pal = mapTips3.GetPalette(pos);
+            enShapeType shape = mapTips3.GetShape(pos);
+            int pal = mapTips3.GetEvent(pos);
             if (shape == 0)continue; //空チップ
 
             if (isSquare)
@@ -85,13 +85,13 @@ public class MapObjMaker : Editor
         }
 
     }
-    bool IsTriFloor(int tipNo)
+    bool IsTriFloor(enShapeType shape)
     {
         bool res = false;
-        switch (tipNo)
+        switch (shape)
         {
-            case 8:
-            case 9:
+            case enShapeType.SlashWall:
+            case enShapeType.BSlashWall:
                 res = true;
                 break;
         }
@@ -99,7 +99,7 @@ public class MapObjMaker : Editor
     }
 
     //壁
-    private List<TileWall> SearchWall(MapTips mapTips3)
+    List<TileWall> SearchWall(MapTips mapTips3)
     {
         List<TileWall> wallList = new List<TileWall>();
         for (int x = 0; x < mapTips3.mapSizeX; ++x)
@@ -116,18 +116,18 @@ public class MapObjMaker : Editor
         }
         return wallList;
     }
-    private TileWall GetWall(bool isSquare, int stX, int stY, MapTips mapTips3)
+    TileWall GetWall(bool isSquare, int stX, int stY, MapTips mapTips3)
     {
         //手前からブロックにぶつかるまで探す
         int baseZ = -1;
-        int baseShape = 0;
+        enShapeType baseShape = enShapeType.Empty;
         int basePal = 0;
         bool isFind = false;
         for (int z = 0; z < mapTips3.mapSizeZ; ++z)
         {
             Vector3Int pos = new Vector3Int(stX, stY, z);
-            int shape = mapTips3.GetShape(pos);
-            int pal = mapTips3.GetPalette(pos);
+            enShapeType shape = mapTips3.GetShape(pos);
+            int pal = mapTips3.GetEvent(pos);
             if (shape == 0)continue; //空チップ
 
             if (isSquare)
@@ -156,17 +156,17 @@ public class MapObjMaker : Editor
             return null;
         }
     }
-    bool IsTriWall(int tipNo)
+    bool IsTriWall(enShapeType tipNo)
     {
         bool res = false;
         switch (tipNo)
         {
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
+            case enShapeType.LUpSlope:
+            case enShapeType.RUpSlope:
+            case enShapeType.LUpSlope2H:
+            case enShapeType.LUpSlope2L:
+            case enShapeType.RUpSlope2L:
+            case enShapeType.RUpSlope2H:
                 res = true;
                 break;
         }
@@ -174,7 +174,7 @@ public class MapObjMaker : Editor
     }
 
     //パス
-    private List<MapNodePlate> SearchMapNode(MapTips mapTips3)
+    List<MapNodePlate> SearchMapNode(MapTips mapTips3)
     {
         List<MapNodePlate> pathList = new List<MapNodePlate>();
         for (int x = 0; x < mapTips3.mapSizeX; ++x)
@@ -188,7 +188,7 @@ public class MapObjMaker : Editor
 
         return pathList;
     }
-    private List<MapNodePlate> GetMapPath(int stX, int stZ, MapTips mapTips3)
+    List<MapNodePlate> GetMapPath(int stX, int stZ, MapTips mapTips3)
     {
         List<MapNodePlate> res = new List<MapNodePlate>();
         //基準点ブロック
@@ -199,7 +199,7 @@ public class MapObjMaker : Editor
         {
             int revY = (mapTips3.mapSizeY - y - 1);
             Vector3Int pos = new Vector3Int(stX, revY, stZ);
-            int shape = mapTips3.GetShape(pos);
+            enShapeType shape = mapTips3.GetShape(pos);
             if (shape == 0)continue; //空チップ
 
             baseY = revY;
@@ -215,8 +215,9 @@ public class MapObjMaker : Editor
             {
                 int revY = (mapTips3.mapSizeY - y - 1);
                 Vector3Int pos = new Vector3Int(stX, revY, stZ);
-                int shape = mapTips3.GetShape(pos);
-                if (shape != 1)continue; //
+                enShapeType shape = mapTips3.GetShape(pos);
+                if (shape != enShapeType.Box)
+                    continue;
 
                 res.Add(new MapNodePlate(shape, revY, stX, stZ, mapTips3.mapSizeX, mapTips3.mapSizeZ));
                 break;
@@ -227,7 +228,7 @@ public class MapObjMaker : Editor
     }
 
     //パス
-    //private List<MapPathPlate> SearchMapPath(MapTips mapTips3)
+    // List<MapPathPlate> SearchMapPath(MapTips mapTips3)
     //{
     //	List<MapPathPlate> pathList = new List<MapPathPlate>();
     //	for (int x = 0; x < mapTips3.mapSizeX; ++x)
@@ -245,7 +246,7 @@ public class MapObjMaker : Editor
 
     //	return pathList;
     //}
-    //private MapPathPlate GetMapPath(int stX, int stZ, MapTips mapTips3)
+    // MapPathPlate GetMapPath(int stX, int stZ, MapTips mapTips3)
     //{
 
     //	//基準点ブロック
@@ -339,7 +340,7 @@ public class MapObjMaker : Editor
     //}
 
     ////コライダー
-    //private List<MapCollider> SearchMapCollider(MapTips mapTips3, int mapSizeX, int mapSizeZ, int mapSizeY)
+    // List<MapCollider> SearchMapCollider(MapTips mapTips3, int mapSizeX, int mapSizeZ, int mapSizeY)
     //{
     //	List<MapCollider> colliderList = new List<MapCollider>();
     //	for (int x = 0; x < mapSizeX; ++x)
@@ -372,7 +373,7 @@ public class MapObjMaker : Editor
 
     //	return colliderList;
     //}
-    //private MapCollider GetBoxCollider(int stX, int stZ, MapTips mapTips3, int mapSizeX, int mapSizeY, int mapSizeZ)
+    // MapCollider GetBoxCollider(int stX, int stZ, MapTips mapTips3, int mapSizeX, int mapSizeY, int mapSizeZ)
     //{
 
     //	//基準点ブロック
@@ -467,7 +468,7 @@ public class MapObjMaker : Editor
     //}
 
     ////三角柱コライダー
-    //private MapCollider GetPrismCollider(int stX, int stZ, MapTips mapTips3, int mapSizeY)
+    // MapCollider GetPrismCollider(int stX, int stZ, MapTips mapTips3, int mapSizeY)
     //{
     //	//真上からブロックにぶつかるまで探す
     //	int baseY = -1;
@@ -501,7 +502,7 @@ public class MapObjMaker : Editor
     //}
 
     ////坂コライダー
-    //private MapCollider GetSlopeCollider(int stX, int stY, MapTips mapTips3, int mapSizeZ)
+    // MapCollider GetSlopeCollider(int stX, int stY, MapTips mapTips3, int mapSizeZ)
     //{
     //	//手前からブロックにぶつかるまで探す
     //	int baseZ = -1;
