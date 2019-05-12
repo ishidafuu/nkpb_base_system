@@ -138,14 +138,23 @@ public class MapEditorMain : EditorWindow
         return GetSprite(m_selectedShape, rotate);
     }
 
-    void SetMapShapeGen(enShapeType value, int x, int y, int z)
+    public void SetMapShape(enShapeType value, int x, int y, int z)
     {
         m_mapTips.SetShape(value, x, y, z);
     }
-    public void SetMapShape(Vector3Int pos)
+    public void SetMapShape(enShapeType value, Vector3Int pos)
     {
-        m_mapTips.SetShape(m_selectedShape, pos);
+        m_mapTips.SetShape(value, pos);
     }
+
+    public enShapeType GetMapShape(Vector3Int pos)
+    {
+        return m_mapTips.GetShape(pos);
+    }
+    // public void SetMapShape(Vector3Int pos)
+    // {
+    //     m_mapTips.SetShape(m_selectedShape, pos);
+    // }
 
     public MapTips GetCopyMapTip(Vector3Int pos, Vector3Int size)
     {
@@ -202,7 +211,7 @@ public class MapEditorMain : EditorWindow
                     //mapTips2[x, y, z] = 0;
 
                     if ((y == 0) || (z == m_mapSizeZ - 1))
-                        SetMapShapeGen(enShapeType.Box, x, y, z);
+                        SetMapShape(enShapeType.Box, x, y, z);
                 }
             }
         }

@@ -142,13 +142,11 @@ public class MapTips : ScriptableObject
             {
                 for (int z = 0; z < size.z; ++z)
                 {
-                    Vector3Int tagpos = new Vector3Int(pos.x, pos.y, pos.z);
-                    tagpos.x += x;
-                    tagpos.y += y;
-                    tagpos.z += z;
-                    Assert.IsTrue(this.IsSafePos(tagpos));
-                    res.SetShape(GetShape(tagpos), tagpos);
-                    res.SetEvent(GetEvent(tagpos), tagpos);
+                    Vector3Int tagpos = new Vector3Int(pos.x + x, pos.y + y, pos.z + z);
+                    // Assert.IsTrue(this.IsSafePos(tagpos));
+                    Debug.Log(tagpos + " shape" + GetShape(tagpos));
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                    // res.SetEvent(GetEvent(tagpos), tagpos);
                 }
             }
         }
@@ -171,8 +169,7 @@ public class MapTips : ScriptableObject
                     Vector3Int tagpos = new Vector3Int(pos.x + x, pos.y + y, pos.z + z);
                     if (this.IsSafePos(tagpos)) //はみでチェック
                     {
-                        SetShape(tips.GetShape(tagpos), tagpos);
-                        SetEvent(tips.GetEvent(tagpos), tagpos);
+                        SetShape(tips.GetShape(x, y, z), tagpos);
                     }
                 }
             }

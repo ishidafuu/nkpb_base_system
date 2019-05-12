@@ -39,6 +39,7 @@ public enum enShapeType
     LUpSlope,
     RUpSlope,
     LUpSlope2H,
+
     LUpSlope2L,
     RUpSlope2L,
     RUpSlope2H,

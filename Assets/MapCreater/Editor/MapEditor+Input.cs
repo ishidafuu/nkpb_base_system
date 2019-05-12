@@ -274,14 +274,30 @@ public partial class MapEditor : EditorWindow
                 }
                 else
                 {
-                    //ペンの深さ分
-                    for (int zz = 0; zz < m_penDepth + 1; zz++)
+                    enShapeType shape = m_parent.GetSelectedShape();
+
+                    for (int zz = 0; zz < GetMapD(); zz++)
                     {
-
-                        if ((m_selectedDepth + zz) >= GetMapD())
-                            break;
-
-                        m_parent.SetMapShape(GetPosVector3(resvec.x, resvec.y, m_selectedDepth + zz));
+                        Vector3Int pos = GetPosVector3(resvec.x, resvec.y, zz);
+                        if (zz == m_selectedDepth)
+                        {
+                            m_parent.SetMapShape(shape, pos);
+                        }
+                        else if (zz < m_selectedDepth)
+                        {
+                            // 置いたブロックより手前はすべて空に
+                            m_parent.SetMapShape(enShapeType.Empty, pos);
+                        }
+                        else
+                        {
+                            // 空ブロック以外は奥をすべて置き換える
+                            // 箱ブロックであれば置き換えない
+                            if (shape != enShapeType.Empty
+                                && m_parent.GetMapShape(pos) != enShapeType.Box)
+                            {
+                                m_parent.SetMapShape(shape, pos);
+                            }
+                        }
 
                     }
                 }
