@@ -26,7 +26,7 @@ public partial class MapEditor : EditorWindow
     Vector2Int m_cursorPos;
 
     int m_selectedDepth = 0;
-    enRotate m_camRotate = enRotate.r0;
+    enRotate m_camRotate = enRotate.Front;
     int m_penDepth = 0;
 
     Vector3Int m_copySt;
@@ -140,7 +140,7 @@ public partial class MapEditor : EditorWindow
     //前後面
     private bool IsFrontView()
     {
-        return ((m_camRotate == enRotate.r0) || (m_camRotate == enRotate.r180));
+        return (m_camRotate == enRotate.Front);
     }
 
     //マップの幅（回転反映）
@@ -185,19 +185,19 @@ public partial class MapEditor : EditorWindow
         Vector3Int res = new Vector3Int(0, y, 0);
         switch (m_camRotate)
         {
-            case enRotate.r0:
+            case enRotate.Front:
                 res.x = x;
                 res.z = z;
                 break;
-            case enRotate.r90:
+            case enRotate.Right:
                 res.x = GetMapD() - z - 1;
                 res.z = x;
                 break;
-            case enRotate.r180:
-                res.x = GetMapW() - x - 1;
-                res.z = GetMapD() - z - 1;
-                break;
-            case enRotate.r270:
+                // case enRotate.r180:
+                //     res.x = GetMapW() - x - 1;
+                //     res.z = GetMapD() - z - 1;
+                //     break;
+            case enRotate.Left:
                 res.x = z;
                 res.z = GetMapW() - x - 1;
                 break;

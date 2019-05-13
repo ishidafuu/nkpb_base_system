@@ -114,6 +114,7 @@ public class MapEditorMain : EditorWindow
     //スプライトの取得
     public Texture GetSprite(enShapeType spriteNo, enRotate rotate)
     {
+        // Debug.Log(rotate);
         return m_mapShapeTex[(int)spriteNo + ((m_mapShapeTex.Count / 4) * (int)rotate)];
     }
 
@@ -332,7 +333,7 @@ public class MapEditorMain : EditorWindow
         lastRect.width = TIPSIZE;
         lastRect.height = TIPSIZE;
         //GUI.DrawTextureWithTexCoords(lastRect, GetSelectedSprite().texture, GetSpriteNormalRect(GetSelectedSprite()));
-        GUI.DrawTextureWithTexCoords(lastRect, GetSelectedSprite(enRotate.r0), new Rect(0, 0, 1, 1));
+        GUI.DrawTextureWithTexCoords(lastRect, GetSelectedSprite(enRotate.Front), new Rect(0, 0, 1, 1));
         EditorGUILayout.EndVertical();
 
     }

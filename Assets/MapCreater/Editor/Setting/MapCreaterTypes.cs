@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum enRotate
 {
-    r0,
-    r90,
-    r180,
-    r270,
+    Front = 0,
+    Right = 1,
+    // r180,
+    Left = 3,
 }
 
 public enum enFace

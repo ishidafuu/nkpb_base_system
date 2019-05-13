@@ -101,27 +101,37 @@ public partial class MapEditor : EditorWindow
         if (e.type == EventType.ScrollWheel)
         {
 
-            if (Event.current.delta.y > 0)
+            if (Event.current.delta.y < 0)
             {
-                if (m_camRotate == enRotate.r270)
+                switch (m_camRotate)
                 {
-                    m_camRotate = enRotate.r0;
-                }
-                else
-                {
-                    m_camRotate++;
+                    case enRotate.Front:
+                        m_camRotate = enRotate.Right;
+                        break;
+                    case enRotate.Right:
+                        // m_camRotate = enRotate.Left;
+                        break;
+                    case enRotate.Left:
+
+                        m_camRotate = enRotate.Front;
+                        break;
                 }
             }
 
             else
             {
-                if (m_camRotate == enRotate.r0)
+                switch (m_camRotate)
                 {
-                    m_camRotate = enRotate.r270;
-                }
-                else
-                {
-                    m_camRotate--;
+                    case enRotate.Front:
+                        m_camRotate = enRotate.Left;
+                        break;
+                    case enRotate.Right:
+                        m_camRotate = enRotate.Front;
+                        break;
+                    case enRotate.Left:
+                        // 一周しないように
+                        // m_camRotate = enRotate.Right;
+                        break;
                 }
             }
             SetRepaint();
@@ -322,15 +332,37 @@ public partial class MapEditor : EditorWindow
     private void PutSingle(Vector2Int resvec)
     {
         enShapeType shape = m_parent.GetSelectedShape();
-
-        for (int zz = 0; zz < GetMapD(); zz++)
+        int maxDepth = (m_camRotate == enRotate.Front)
+            ? GetMapD()
+            : GetMapW();
+        int selectedDepth = (m_camRotate == enRotate.Front)
+            ? m_selectedDepth
+            : resvec.x;
+        for (int index = 0; index < maxDepth; index++)
         {
-            Vector3Int pos = GetPosVector3(resvec.x, resvec.y, zz);
-            if (zz == m_selectedDepth)
+            Vector3Int pos = Vector3Int.zero;
+            bool isFill = false;
+            switch (m_camRotate)
+            {
+                case enRotate.Front:
+                    pos = GetPosVector3(resvec.x, resvec.y, index);
+                    isFill = (index < selectedDepth);
+                    break;
+                case enRotate.Right:
+                    pos = GetPosVector3(index, resvec.y, m_selectedDepth);
+                    isFill = (index < selectedDepth);
+                    break;
+                case enRotate.Left:
+                    pos = GetPosVector3(index, resvec.y, m_selectedDepth);
+                    isFill = (index > selectedDepth);
+                    break;
+            }
+
+            if (index == selectedDepth)
             {
                 m_parent.SetMapShape(shape, pos);
             }
-            else if (zz < m_selectedDepth)
+            else if (isFill)
             {
                 // 置いたブロックより手前はすべて空に
                 m_parent.SetMapShape(enShapeType.Empty, pos);
