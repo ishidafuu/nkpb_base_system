@@ -162,6 +162,36 @@ public class MapEditorMain : EditorWindow
         return m_mapTips.GetCopy(pos, size);
     }
 
+    public void ShrinkX(int lineX, int length)
+    {
+        m_mapTips.ShrinkX(lineX, length);
+    }
+
+    public void ExpandX(int lineX, int length)
+    {
+        m_mapTips.ExpandX(lineX, length);
+    }
+
+    public void ShrinkY(int lineY, int length)
+    {
+        m_mapTips.ShrinkY(lineY, length);
+    }
+
+    public void ExpandY(int lineY, int length)
+    {
+        m_mapTips.ExpandY(lineY, length);
+    }
+
+    public void ShrinkZ(int lineZ, int length)
+    {
+        m_mapTips.ShrinkZ(lineZ, length);
+    }
+
+    public void ExpandZ(int lineZ, int length)
+    {
+        m_mapTips.ExpandZ(lineZ, length);
+    }
+
     public void SetPasteMapTip(Vector3Int pos, MapTips tips)
     {
         m_mapTips.SetPaste(pos, tips);

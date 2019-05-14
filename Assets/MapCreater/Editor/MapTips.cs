@@ -175,4 +175,190 @@ public class MapTips : ScriptableObject
             }
         }
     }
+
+    public void ExpandX(int lineX, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (x < lineX)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else if (x < lineX + length)
+                    {
+                        tagpos = new Vector3Int(lineX, y, z);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x - length, y, z);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
+
+    public void ShrinkX(int lineX, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (x < lineX)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x + length, y, z);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
+
+    public void ExpandY(int lineY, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (y < lineY)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else if (y < lineY + length)
+                    {
+                        tagpos = new Vector3Int(x, lineY, z);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x, y - length, z);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
+
+    public void ShrinkY(int lineY, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (y < lineY)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x, y + length, z);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
+
+    public void ExpandZ(int lineZ, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (z < lineZ)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else if (z < lineZ + length)
+                    {
+                        tagpos = new Vector3Int(x, y, lineZ);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x, y, z - length);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
+
+    public void ShrinkZ(int lineZ, int length)
+    {
+        MapTips res = CreateInstance<MapTips>();
+        res.Init(mapSizeX, mapSizeY, mapSizeZ);
+
+        for (int x = 0; x < mapSizeX; ++x)
+        {
+            for (int y = 0; y < mapSizeY; ++y)
+            {
+                for (int z = 0; z < mapSizeZ; ++z)
+                {
+                    Vector3Int tagpos;
+                    if (z < lineZ)
+                    {
+                        tagpos = new Vector3Int(x, y, z);
+                    }
+                    else
+                    {
+                        tagpos = new Vector3Int(x, y, z + length);
+                    }
+
+                    res.SetShape(GetShape(tagpos), x, y, z);
+                }
+            }
+        }
+
+        this.shapes = res.shapes;
+    }
 }

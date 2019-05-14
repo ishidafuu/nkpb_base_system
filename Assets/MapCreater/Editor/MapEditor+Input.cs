@@ -24,10 +24,10 @@ public partial class MapEditor : EditorWindow
         //奥行き移動
         ChangeSelectedDepth();
         //ペン奥行き
-        CangePenDepth();
+        // CangePenDepth();
 
-        //範囲選択
-        SelectTips();
+        //伸び縮み
+        ExtendTips();
         //スポイト
         Spuit();
         //チップを置く
@@ -69,26 +69,26 @@ public partial class MapEditor : EditorWindow
         }
     }
 
-    //ペン深さ
-    void CangePenDepth()
-    {
-        Event e = Event.current;
+    // //ペン深さ
+    // void CangePenDepth()
+    // {
+    //     Event e = Event.current;
 
-        if (!e.shift && !m_isSeleting)return; //シフト
+    //     if (!e.shift && !m_isSeleting)return; //シフト
 
-        if (e.type == EventType.ScrollWheel)
-        {
-            if (Event.current.delta.y > 0)
-            {
-                if (m_penDepth > 0)m_penDepth--;
-            }
-            else
-            {
-                if (m_penDepth < GetMapD())m_penDepth++;
-            }
-            SetRepaint();
-        }
-    }
+    //     if (e.type == EventType.ScrollWheel)
+    //     {
+    //         if (Event.current.delta.y > 0)
+    //         {
+    //             if (m_penDepth > 0)m_penDepth--;
+    //         }
+    //         else
+    //         {
+    //             if (m_penDepth < GetMapD())m_penDepth++;
+    //         }
+    //         SetRepaint();
+    //     }
+    // }
 
     //ローテーション変更
     void Rotation()
@@ -163,8 +163,101 @@ public partial class MapEditor : EditorWindow
         }
     }
 
+    // //範囲選択
+    // void SelectTips()
+    // {
+    //     // クリックされた位置を探して、その場所に画像データを入れる
+    //     Event e = Event.current;
+
+    //     if ((e.button != 1)
+    //         && !(m_isSeleting && (e.type == EventType.ScrollWheel)))
+    //         return; //右クリック
+
+    //     if ((e.type == EventType.MouseDown) //マウス押した
+    //         || (e.type == EventType.MouseUp) //マウス離した
+    //         || (e.type == EventType.MouseDrag) //ドラッグ
+    //         || (e.type == EventType.ScrollWheel)) //ホイール
+    //     {
+
+    //         Vector2Int resvec;
+    //         if (GetMouseGridPos(out resvec))
+    //         {
+    //             if (e.type == EventType.MouseDown)
+    //             {
+    //                 m_isSeleting = true;
+    //                 m_copyTips = null;
+    //                 m_copySt = new Vector3Int(resvec.x, resvec.y, 0);
+    //                 m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+    //             }
+    //             else if (e.type == EventType.MouseDrag)
+    //             {
+    //                 m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+    //             }
+    //             else if (e.type == EventType.ScrollWheel)
+    //             {
+    //                 m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+    //             }
+    //             else if (e.type == EventType.MouseUp)
+    //             {
+    //                 m_isSeleting = false;
+    //                 m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+    //             }
+
+    //             m_copyLT = new Vector3Int(0, 0, m_selectedDepth);
+    //             m_copyRB = new Vector3Int(0, 0, m_selectedDepth + m_penDepth);
+
+    //             //選択範囲の左上点と右下点
+    //             if (m_copySt.x < m_copyEd.x)
+    //             {
+    //                 m_copyLT.x = m_copySt.x;
+    //                 m_copyRB.x = m_copyEd.x;
+    //             }
+    //             else
+    //             {
+    //                 m_copyLT.x = m_copyEd.x;
+    //                 m_copyRB.x = m_copySt.x;
+    //             }
+
+    //             if (m_copySt.y < m_copyEd.y)
+    //             {
+    //                 m_copyLT.y = m_copySt.y;
+    //                 m_copyRB.y = m_copyEd.y;
+    //             }
+    //             else
+    //             {
+    //                 m_copyLT.y = m_copyEd.y;
+    //                 m_copyRB.y = m_copySt.y;
+    //             }
+
+    //             if (m_copyRB.z >= GetMapD())m_copyRB.z = GetMapD() - 1;
+
+    //             if (e.type == EventType.MouseUp)
+    //             {
+    //                 if (((m_copyRB.x - m_copyLT.x) >= 1) || ((m_copyRB.y - m_copyLT.y) >= 1))
+    //                 {
+    //                     Vector3Int size = GetPosVector3(m_copyRB) - GetPosVector3(m_copyLT);
+    //                     size.x += 1;
+    //                     size.y += 1;
+    //                     size.z += 1;
+    //                     Vector3Int st = new Vector3Int(m_copyLT.x, m_copyLT.y, m_copyLT.z);
+    //                     m_copyTips = m_parent.GetCopyMapTip(GetPosVector3(st), size);
+    //                 }
+    //             }
+    //         }
+    //         else
+    //         {
+    //             //範囲外
+    //             m_isSeleting = false;
+    //             m_copyTips = null;
+    //         }
+
+    //         //入力があったときは再描画入れる
+    //         SetRepaint();
+    //     }
+    // }
+
     //範囲選択
-    void SelectTips()
+    void ExtendTips()
     {
         // クリックされた位置を探して、その場所に画像データを入れる
         Event e = Event.current;
@@ -187,21 +280,35 @@ public partial class MapEditor : EditorWindow
                     m_isSeleting = true;
                     m_copyTips = null;
                     m_copySt = new Vector3Int(resvec.x, resvec.y, 0);
-                    m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+                    m_expandVec = enExpand.None;
                 }
                 else if (e.type == EventType.MouseDrag)
                 {
-                    m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
+                    if (m_expandVec == enExpand.None)
+                    {
+                        if (m_copySt.x != resvec.x
+                            || m_copySt.y != resvec.y)
+                        {
+                            if (Mathf.Abs(m_copySt.x - resvec.x) < Mathf.Abs(m_copySt.y - resvec.y))
+                            {
+                                m_expandVec = enExpand.Vertical;
+                                Debug.Log(m_expandVec);
+                            }
+                            else
+                            {
+                                m_expandVec = enExpand.Horizontal;
+                            }
+                        }
+
+                    }
                 }
-                else if (e.type == EventType.ScrollWheel)
-                {
-                    m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
-                }
+                else if (e.type == EventType.ScrollWheel) {}
                 else if (e.type == EventType.MouseUp)
                 {
                     m_isSeleting = false;
-                    m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
                 }
+
+                m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
 
                 m_copyLT = new Vector3Int(0, 0, m_selectedDepth);
                 m_copyRB = new Vector3Int(0, 0, m_selectedDepth + m_penDepth);
@@ -233,16 +340,44 @@ public partial class MapEditor : EditorWindow
 
                 if (e.type == EventType.MouseUp)
                 {
-                    if (((m_copyRB.x - m_copyLT.x) >= 1) || ((m_copyRB.y - m_copyLT.y) >= 1))
+                    if (m_expandVec == enExpand.Horizontal)
                     {
-                        Vector3Int size = GetPosVector3(m_copyRB) - GetPosVector3(m_copyLT);
-                        size.x += 1;
-                        size.y += 1;
-                        size.z += 1;
-                        Vector3Int st = new Vector3Int(m_copyLT.x, m_copyLT.y, m_copyLT.z);
-                        m_copyTips = m_parent.GetCopyMapTip(GetPosVector3(st), size);
+                        if (m_camRotate == enRotate.Front)
+                        {
+                            if (m_copyEd.x < m_copySt.x)
+                            {
+                                m_parent.ShrinkX(m_copyEd.x, m_copySt.x - m_copyEd.x);
+                            }
+                            else if (m_copyEd.x > m_copySt.x)
+                            {
+                                m_parent.ExpandX(m_copySt.x, m_copyEd.x - m_copySt.x);
+                            }
+                        }
+                        else
+                        {
+                            if (m_copyEd.x < m_copySt.x)
+                            {
+                                m_parent.ShrinkZ(m_copyEd.x, m_copySt.x - m_copyEd.x);
+                            }
+                            else if (m_copyEd.x > m_copySt.x)
+                            {
+                                m_parent.ExpandZ(m_copySt.x, m_copyEd.x - m_copySt.x);
+                            }
+                        }
+                    }
+                    else if (m_expandVec == enExpand.Vertical)
+                    {
+                        if (m_copyEd.y < m_copySt.y)
+                        {
+                            m_parent.ShrinkY(m_copyEd.y, m_copySt.y - m_copyEd.y);
+                        }
+                        else if (m_copyEd.y > m_copySt.y)
+                        {
+                            m_parent.ExpandY(m_copySt.y, m_copyEd.y - m_copySt.y);
+                        }
                     }
                 }
+
             }
             else
             {

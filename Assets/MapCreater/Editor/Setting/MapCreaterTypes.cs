@@ -10,6 +10,13 @@ public enum enRotate
     Left = 3,
 }
 
+public enum enExpand
+{
+    None = 0,
+    Vertical = 1,
+    Horizontal = 2,
+}
+
 public enum enFace
 {
     fLeft,
