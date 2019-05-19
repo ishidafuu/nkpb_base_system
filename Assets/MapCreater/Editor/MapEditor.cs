@@ -38,7 +38,7 @@ public partial class MapEditor : EditorWindow
 
     bool m_isSeleting;
     enExpand m_expandVec;
-    MapTips m_copyTips;
+    // MapTips m_copyTips;
     bool m_isSaveOk;
 
     // サブウィンドウを開く

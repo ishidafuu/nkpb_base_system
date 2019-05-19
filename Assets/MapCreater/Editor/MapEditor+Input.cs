@@ -278,7 +278,7 @@ public partial class MapEditor : EditorWindow
                 if (e.type == EventType.MouseDown)
                 {
                     m_isSeleting = true;
-                    m_copyTips = null;
+                    // m_copyTips = null;
                     m_copySt = new Vector3Int(resvec.x, resvec.y, 0);
                     m_expandVec = enExpand.None;
                 }
@@ -346,7 +346,7 @@ public partial class MapEditor : EditorWindow
             {
                 //範囲外
                 m_isSeleting = false;
-                m_copyTips = null;
+                // m_copyTips = null;
             }
 
             //入力があったときは再描画入れる
@@ -408,8 +408,11 @@ public partial class MapEditor : EditorWindow
                 else if (m_copyEd.y > m_copySt.y)
                 {
                     m_parent.ExpandY(m_copySt.y, length);
+
                 }
             }
+
+            m_expandVec = enExpand.None;
         }
     }
 

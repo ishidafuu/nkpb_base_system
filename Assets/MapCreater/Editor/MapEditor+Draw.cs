@@ -76,132 +76,7 @@ public partial class MapEditor
 
             if (isBlockDraw)
             {
-                for (int y = 0; y < GetMapH(); y++)
-                {
-                    int yy = (GetMapH() - y - 1); //奥から
-
-                    for (int xx = 0; xx < GetMapW(); xx++)
-                    {
-                        int revyy = (GetMapH() - yy - 1);
-                        Vector2 pos = new Vector2((xx * GRID_SIZE) + zpos, (yy * GRID_SIZE) - zpos);
-                        Vector2 size = new Vector2(TIP_SIZE, TIP_SIZE);
-                        Rect drawRect = new Rect((pos + m_camPos) * m_mag, size * m_mag);
-
-                        //左端プレート
-                        if ((xx == 0) && (y == 0) && (z == 0))
-                        {
-                            DrawPlateLR(pos + m_camPos, true);
-                        }
-
-                        //ペン先描画判定
-                        bool isPutTip2 = false;
-                        Texture copysprite = null;
-
-                        if (m_cursorPos != null)
-                        {
-                            if (m_copyTips != null)
-                            {
-                                Vector3Int copypos = new Vector3Int((xx - (int)m_cursorPos.x), (revyy - (int)m_cursorPos.y), (zz - m_selectedDepth));
-                                if (m_copyTips.IsSafePos(copypos))
-                                {
-                                    copysprite = m_parent.GetSprite(m_copyTips.GetShape(copypos), m_camRotate);
-                                }
-                            }
-                            else
-                            {
-                                if (isPutTip
-                                    && (zz >= m_selectedDepth)
-                                    && (zz <= (m_penDepth + m_selectedDepth)))
-                                {
-                                    Vector2Int pos2 = new Vector2Int(xx, revyy);
-                                    isPutTip2 = (pos2 == m_cursorPos); // (pos2.Equal(m_cursorPos));
-                                }
-                            }
-                        }
-
-                        //選択範囲描画
-                        if (copysprite != null)
-                        {
-                            Color tempcolor = GUI.color;
-                            GUI.color = new Color(1f, 0.5f, 1f, 1f);
-                            GUI.DrawTextureWithTexCoords(drawRect, copysprite, new Rect(0, 0, 1, 1)); //描画
-                            GUI.color = tempcolor;
-                        }
-                        else if (isPutTip2)
-                        {
-                            Color tempcolor = GUI.color;
-                            GUI.color = new Color(0f, 1f, 1f, 1f);
-                            GUI.DrawTextureWithTexCoords(drawRect, putSprite, new Rect(0, 0, 1, 1)); //描画
-                            GUI.color = tempcolor;
-                        }
-                        else
-                        {
-
-                            Texture sp = m_parent.GetTipsSprite(GetPosVector3(xx, y, zz), m_camRotate, true);
-
-                            bool isTipDraw = true;
-                            bool isSelectedDepth = (zz == (m_selectedDepth));
-
-                            if (m_cursorPos != null)
-                            {
-                                //カーソルより手前側は表示しない
-                                // tipDraw = (isPutTip)
-                                //     ? (xx < m_cursorPos.x) || (zz >= (m_selectedDepth))
-                                //     : (zz >= (m_selectedDepth));
-                                isTipDraw = (zz >= (m_selectedDepth));
-                            }
-
-                            float alp = (isTipDraw)
-                                ? 1f
-                                : 0.05f;
-
-                            float col = (isSelectedDepth)
-                                ? 1f
-                                : 0.8f;
-
-                            GUI.color = new Color(col, col, col, alp);
-
-                            //選択範囲
-                            if (m_isSeleting)
-                            {
-                                bool betweenX = ((m_copyLT.x <= xx) && (m_copyRB.x >= xx));
-                                bool betweenY = ((m_copyLT.y <= revyy) && (m_copyRB.y >= revyy));
-                                bool betweenZ = ((m_copyLT.z <= zz) && (m_copyRB.z >= zz));
-                                if ((m_copyLT.x == xx) && betweenY && betweenZ)
-                                    DrawTipPlate(pos + m_camPos, enFace.fLeft);
-                                if ((m_copyLT.y == revyy) && betweenX && betweenZ)
-                                    DrawTipPlate(pos + m_camPos, enFace.fBottom);
-                                if ((m_copyRB.z == zz) && betweenX && betweenY)
-                                    DrawTipPlate(pos + m_camPos, enFace.fRear);
-
-                                if (sp != null)
-                                {
-                                    if (betweenX && betweenY && betweenZ)
-                                    {
-                                        Color tmpCol = GUI.color;
-                                        GUI.color = new Color(1f, 0f, 1f, 1f);
-                                        GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
-                                        GUI.color = tmpCol;
-                                    }
-                                    else
-                                    {
-                                        GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
-                                    }
-                                }
-                                if ((m_copyRB.x == xx) && betweenY && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fRight);
-                                if ((m_copyRB.y == revyy) && betweenX && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fTop);
-                            }
-                            else
-                            {
-                                if (sp != null)
-                                {
-                                    GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
-                                }
-                            }
-
-                        }
-                    }
-                }
+                DrawBlock(isPutTip, putSprite, z, zz, zpos);
             }
 
             if (zz == 0)
@@ -216,6 +91,168 @@ public partial class MapEditor
 
         //色元に戻す
         GUI.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    private void DrawBlock(bool isPutTip, Texture putSprite, int z, int zz, int zpos)
+    {
+        for (int y = 0; y < GetMapH(); y++)
+        {
+            int yy = (GetMapH() - y - 1); //奥から
+
+            for (int xx = 0; xx < GetMapW(); xx++)
+            {
+                int revyy = (GetMapH() - yy - 1);
+                Vector2 pos = new Vector2((xx * GRID_SIZE) + zpos, (yy * GRID_SIZE) - zpos);
+                Vector2 size = new Vector2(TIP_SIZE, TIP_SIZE);
+                Rect drawRect = new Rect((pos + m_camPos) * m_mag, size * m_mag);
+
+                //左端プレート
+                if ((xx == 0) && (y == 0) && (z == 0))
+                {
+                    DrawPlateLR(pos + m_camPos, true);
+                }
+
+                //ペン先描画判定
+                bool isPutTip2 = false;
+                // Texture copysprite = null;
+
+                if (m_cursorPos != null)
+                {
+                    // if (m_copyTips != null)
+                    // {
+                    //     Vector3Int copypos = new Vector3Int((xx - (int)m_cursorPos.x), (revyy - (int)m_cursorPos.y), (zz - m_selectedDepth));
+                    //     if (m_copyTips.IsSafePos(copypos))
+                    //     {
+                    //         copysprite = m_parent.GetSprite(m_copyTips.GetShape(copypos), m_camRotate);
+                    //     }
+                    // }
+                    // else
+
+                    if (isPutTip
+                        && (zz >= m_selectedDepth)
+                        && (zz <= (m_penDepth + m_selectedDepth)))
+                    {
+                        Vector2Int pos2 = new Vector2Int(xx, revyy);
+                        isPutTip2 = (pos2 == m_cursorPos); // (pos2.Equal(m_cursorPos));
+                    }
+
+                }
+
+                //選択範囲描画
+                // if (copysprite != null)
+                // {
+                //     Color tempcolor = GUI.color;
+                //     GUI.color = new Color(1f, 0.5f, 1f, 1f);
+                //     GUI.DrawTextureWithTexCoords(drawRect, copysprite, new Rect(0, 0, 1, 1)); //描画
+                //     GUI.color = tempcolor;
+
+                // }
+                // else 
+                if (isPutTip2)
+                {
+                    Color tempcolor = GUI.color;
+                    GUI.color = new Color(0f, 1f, 1f, 1f);
+                    GUI.DrawTextureWithTexCoords(drawRect, putSprite, new Rect(0, 0, 1, 1)); //描画
+                    GUI.color = tempcolor;
+                }
+                else
+                {
+
+                    Texture sp = m_parent.GetTipsSprite(GetPosVector3(xx, y, zz), m_camRotate, true);
+
+                    bool isTipDraw = true;
+                    bool isSelectedDepth = (zz == (m_selectedDepth));
+
+                    if (m_cursorPos != null)
+                    {
+                        isTipDraw = (zz >= (m_selectedDepth));
+                    }
+
+                    float alp = (isTipDraw)
+                        ? 1f
+                        : 0.05f;
+
+                    if (m_expandVec != enExpand.None)
+                    {
+                        float red = 0.5f;
+                        float green = 0.5f;
+                        float blue = 0.5f;
+                        if (m_expandVec == enExpand.Horizontal)
+                        {
+                            if ((xx >= m_copySt.x && xx <= m_copyEd.x)
+                                || (xx >= m_copyEd.x && xx <= m_copySt.x))
+                            {
+                                blue = Mathf.Max((1f - Mathf.Abs(m_copySt.x - xx) * 0.1f), 0);
+                                red = Mathf.Max((1f - Mathf.Abs(m_copyEd.x - xx) * 0.1f), 0);
+                                green = (xx == m_copySt.x)
+                                    ? 1f
+                                    : 0.8f;
+                            }
+                        }
+                        else
+                        {
+                            if ((y >= m_copySt.y && y <= m_copyEd.y)
+                                || (y >= m_copyEd.y && y <= m_copySt.y))
+                            {
+                                red = Mathf.Max((1f - Mathf.Abs(m_copyEd.y - y) * 0.1f), 0);
+                                green = Mathf.Max((1f - Mathf.Abs(m_copySt.y - y) * 0.1f), 0);
+                                blue = (xx == m_copySt.x)
+                                    ? 1f
+                                    : 0.8f;
+                            }
+                        }
+
+                        GUI.color = new Color(red, green, blue, alp);
+                    }
+                    else
+                    {
+                        float col = (isSelectedDepth)
+                            ? 1f
+                            : 0.8f;
+                        GUI.color = new Color(col, col, col, alp);
+                    }
+
+                    //選択範囲
+                    if (m_isSeleting)
+                    {
+                        bool betweenX = ((m_copyLT.x <= xx) && (m_copyRB.x >= xx));
+                        bool betweenY = ((m_copyLT.y <= revyy) && (m_copyRB.y >= revyy));
+                        bool betweenZ = ((m_copyLT.z <= zz) && (m_copyRB.z >= zz));
+                        if ((m_copyLT.x == xx) && betweenY && betweenZ)
+                            DrawTipPlate(pos + m_camPos, enFace.fLeft);
+                        if ((m_copyLT.y == revyy) && betweenX && betweenZ)
+                            DrawTipPlate(pos + m_camPos, enFace.fBottom);
+                        if ((m_copyRB.z == zz) && betweenX && betweenY)
+                            DrawTipPlate(pos + m_camPos, enFace.fRear);
+
+                        if (sp != null)
+                        {
+                            if (betweenX && betweenY && betweenZ)
+                            {
+                                Color tmpCol = GUI.color;
+                                GUI.color = new Color(1f, 0f, 1f, 1f);
+                                GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
+                                GUI.color = tmpCol;
+                            }
+                            else
+                            {
+                                GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
+                            }
+                        }
+                        if ((m_copyRB.x == xx) && betweenY && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fRight);
+                        if ((m_copyRB.y == revyy) && betweenX && betweenZ)DrawTipPlate(pos + m_camPos, enFace.fTop);
+                    }
+                    else
+                    {
+                        if (sp != null)
+                        {
+                            GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
+                        }
+                    }
+
+                }
+            }
+        }
     }
 
     // グリッド線を描画
