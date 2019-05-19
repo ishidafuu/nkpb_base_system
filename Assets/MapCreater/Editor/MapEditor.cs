@@ -133,7 +133,11 @@ public partial class MapEditor : EditorWindow
             //画像の描画
             DrawMapTip();
 
-            if (m_isRepaint)Repaint();
+            if (m_isRepaint)
+            {
+                Repaint();
+                m_parent.RepaintFrontView();
+            }
 
         }
         catch (System.Exception exeption)

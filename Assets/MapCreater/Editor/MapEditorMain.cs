@@ -29,6 +29,7 @@ public class MapEditorMain : EditorWindow
     Texture2D m_dummy2;
     Texture2D m_dummy3;
     MapEditor m_subWindow; // サブウィンドウ
+    MapFrontView m_frontWindow; // フロントウィンドウ
     MapObjMaker m_objMaker;
 
     [UnityEditor.MenuItem("Window/MapEditorMain")]
@@ -414,6 +415,7 @@ public class MapEditorMain : EditorWindow
         }
         EditorGUILayout.EndVertical();
     }
+
     // マップウィンドウを開くボタンを生成
     void GUIDrawButtonOpenMapEditor()
     {
@@ -426,6 +428,7 @@ public class MapEditorMain : EditorWindow
                 CreateNewMap();
             }
             OpenMapEditor();
+            OpenFrontView();
         }
         EditorGUILayout.EndVertical();
     }
@@ -443,6 +446,20 @@ public class MapEditorMain : EditorWindow
             m_subWindow.Focus();
         }
         m_subWindow.Init();
+
+        AssetDatabase.Refresh();
+    }
+
+    void OpenFrontView()
+    {
+        if (m_frontWindow != null)m_frontWindow.Close();
+
+        if (m_frontWindow == null)
+        {
+            m_frontWindow = MapFrontView.WillAppear(this);
+        }
+
+        m_frontWindow.Init();
 
         AssetDatabase.Refresh();
     }
@@ -541,6 +558,10 @@ public class MapEditorMain : EditorWindow
         // 完了ポップアップ
         EditorUtility.DisplayDialog("CreateObject", "マップオブジェクトを生成しました。", "ok");
 
+    }
+    public void RepaintFrontView()
+    {
+        m_frontWindow.Repaint();
     }
 
 }

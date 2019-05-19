@@ -95,6 +95,7 @@ public partial class MapEditor
 
     private void DrawBlock(bool isPutTip, Texture putSprite, int z, int zz, int zpos)
     {
+        Vector2 size = new Vector2(TIP_SIZE, TIP_SIZE);
         for (int y = 0; y < GetMapH(); y++)
         {
             int yy = (GetMapH() - y - 1); //奥から
@@ -103,7 +104,6 @@ public partial class MapEditor
             {
                 int revyy = (GetMapH() - yy - 1);
                 Vector2 pos = new Vector2((xx * GRID_SIZE) + zpos, (yy * GRID_SIZE) - zpos);
-                Vector2 size = new Vector2(TIP_SIZE, TIP_SIZE);
                 Rect drawRect = new Rect((pos + m_camPos) * m_mag, size * m_mag);
 
                 //左端プレート
