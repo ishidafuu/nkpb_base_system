@@ -336,47 +336,10 @@ public partial class MapEditor : EditorWindow
                     m_copyRB.y = m_copySt.y;
                 }
 
-                if (m_copyRB.z >= GetMapD())m_copyRB.z = GetMapD() - 1;
+                if (m_copyRB.z >= GetMapD())
+                    m_copyRB.z = GetMapD() - 1;
 
-                if (e.type == EventType.MouseUp)
-                {
-                    if (m_expandVec == enExpand.Horizontal)
-                    {
-                        if (m_camRotate == enRotate.Front)
-                        {
-                            if (m_copyEd.x < m_copySt.x)
-                            {
-                                m_parent.ShrinkX(m_copyEd.x, m_copySt.x - m_copyEd.x);
-                            }
-                            else if (m_copyEd.x > m_copySt.x)
-                            {
-                                m_parent.ExpandX(m_copySt.x, m_copyEd.x - m_copySt.x);
-                            }
-                        }
-                        else
-                        {
-                            if (m_copyEd.x < m_copySt.x)
-                            {
-                                m_parent.ShrinkZ(m_copyEd.x, m_copySt.x - m_copyEd.x);
-                            }
-                            else if (m_copyEd.x > m_copySt.x)
-                            {
-                                m_parent.ExpandZ(m_copySt.x, m_copyEd.x - m_copySt.x);
-                            }
-                        }
-                    }
-                    else if (m_expandVec == enExpand.Vertical)
-                    {
-                        if (m_copyEd.y < m_copySt.y)
-                        {
-                            m_parent.ShrinkY(m_copyEd.y, m_copySt.y - m_copyEd.y);
-                        }
-                        else if (m_copyEd.y > m_copySt.y)
-                        {
-                            m_parent.ExpandY(m_copySt.y, m_copyEd.y - m_copySt.y);
-                        }
-                    }
-                }
+                Extend(e);
 
             }
             else
@@ -388,6 +351,65 @@ public partial class MapEditor : EditorWindow
 
             //入力があったときは再描画入れる
             SetRepaint();
+        }
+    }
+
+    private void Extend(Event e)
+    {
+        if (e.type == EventType.MouseUp)
+        {
+            // 横方向
+            if (m_expandVec == enExpand.Horizontal)
+            {
+                int length = Mathf.Abs(m_copySt.x - m_copyEd.x);
+                switch (m_camRotate)
+                {
+                    case enRotate.Front:
+                        if (m_copyEd.x < m_copySt.x)
+                        {
+                            m_parent.ShrinkX(m_copyEd.x, length);
+                        }
+                        else if (m_copyEd.x > m_copySt.x)
+                        {
+                            m_parent.ExpandX(m_copySt.x, length);
+                        }
+                        break;
+                    case enRotate.Left:
+                        if (m_copyEd.x < m_copySt.x)
+                        {
+                            m_parent.ExpandZ(m_copySt.x, length);
+                        }
+                        else if (m_copyEd.x > m_copySt.x)
+                        {
+                            m_parent.ShrinkZ(m_copyEd.x, length);
+                        }
+                        break;
+                    case enRotate.Right:
+                        if (m_copyEd.x < m_copySt.x)
+                        {
+                            m_parent.ShrinkZ(m_copyEd.x, length);
+                        }
+                        else if (m_copyEd.x > m_copySt.x)
+                        {
+                            m_parent.ExpandZ(m_copySt.x, length);
+                        }
+                        break;
+                }
+
+            }
+            else if (m_expandVec == enExpand.Vertical)
+            {
+                // 縦方向
+                int length = Mathf.Abs(m_copySt.y - m_copyEd.y);
+                if (m_copyEd.y < m_copySt.y)
+                {
+                    m_parent.ShrinkY(m_copyEd.y, length);
+                }
+                else if (m_copyEd.y > m_copySt.y)
+                {
+                    m_parent.ExpandY(m_copySt.y, length);
+                }
+            }
         }
     }
 
@@ -448,15 +470,7 @@ public partial class MapEditor : EditorWindow
                 // Undoで戻る先を保存する.
                 Recording();
 
-                //範囲貼り付け
-                if (m_copyTips != null)
-                {
-                    m_parent.SetPasteMapTip(GetPosVector3(resvec.x, resvec.y, m_selectedDepth), m_copyTips);
-                }
-                else
-                {
-                    PutSingle(resvec);
-                }
+                PutSingle(resvec);
 
                 //入力があったときは再描画入れる
                 SetRepaint();
