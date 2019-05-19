@@ -164,31 +164,39 @@ public class MapEditorMain : EditorWindow
 
     public void ShrinkX(int lineX, int length)
     {
+        m_subWindow.Recording();
         m_mapTips.ShrinkX(lineX, length);
     }
 
     public void ExpandX(int lineX, int length)
     {
+        m_subWindow.Recording();
         m_mapTips.ExpandX(lineX, length);
     }
 
     public void ShrinkY(int lineY, int length)
     {
+        m_subWindow.Recording();
         m_mapTips.ShrinkY(lineY, length);
     }
 
     public void ExpandY(int lineY, int length)
     {
+        m_subWindow.Recording();
         m_mapTips.ExpandY(lineY, length);
     }
 
     public void ShrinkZ(int lineZ, int length)
     {
+        m_subWindow.Recording();
+        Debug.Log("ShrinkZ lineZ" + lineZ + " length" + length);
         m_mapTips.ShrinkZ(lineZ, length);
     }
 
     public void ExpandZ(int lineZ, int length)
     {
+        m_subWindow.Recording();
+        Debug.Log("ExpandZ lineZ" + lineZ + " length" + length);
         m_mapTips.ExpandZ(lineZ, length);
     }
 

@@ -62,7 +62,7 @@ public partial class MapEditor : EditorWindow
         m_parent = _parent;
     }
 
-    private void Recording()
+    public void Recording()
     {
         // Undoで戻る先を保存する.
         // RecordObjectの引数はScriptableObjectのみ有効
