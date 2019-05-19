@@ -48,8 +48,15 @@ public partial class MapEditor : EditorWindow
         window.Show();
         window.minSize = new Vector2(WINDOW_W, WINDOW_H);
         window.SetParent(_parent);
+        window.ResetUndoPerformed();
         window.Init();
         return window;
+    }
+
+    private void ResetUndoPerformed()
+    {
+        Undo.undoRedoPerformed -= MyUndoCallback;
+        Undo.undoRedoPerformed += MyUndoCallback;
     }
 
     public void SetRepaint()
@@ -69,6 +76,11 @@ public partial class MapEditor : EditorWindow
         // その中の変数もPublicもしくは[SerializeField]がついたメンバのみ有効
         Undo.RecordObject(m_parent.m_mapTips, "maptips");
         m_isSaveOk = true;
+    }
+
+    void MyUndoCallback()
+    {
+        SetRepaint();
     }
 
     void OnGUI()
