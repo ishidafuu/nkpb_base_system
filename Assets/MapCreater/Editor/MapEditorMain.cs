@@ -25,6 +25,7 @@ public class MapEditorMain : EditorWindow
 
     List<Texture> m_mapShapeTex;
     List<Sprite> m_mapPaletteSprite;
+    Sprite m_mapSprite;
     Texture2D m_dummy;
     Texture2D m_dummy2;
     Texture2D m_dummy3;
@@ -138,6 +139,11 @@ public class MapEditorMain : EditorWindow
     public Texture GetSelectedSprite(enRotate rotate)
     {
         return GetSprite(m_selectedShape, rotate);
+    }
+
+    public Sprite GetMapBmpSprite()
+    {
+        return m_mapSprite;
     }
 
     public void SetMapShape(enShapeType value, int x, int y, int z)
@@ -531,7 +537,7 @@ public class MapEditorMain : EditorWindow
             m_mapSizeY = m_mapTips.mapSizeY;
             m_mapSizeZ = m_mapTips.mapSizeZ;
             m_isLoadMapTip = true;
-            Debug.Log("LoadMap " + GetFilePath());
+            m_mapSprite = Resources.Load<Sprite>("map" + m_mapId.ToString("d3"));
         }
         else
         {

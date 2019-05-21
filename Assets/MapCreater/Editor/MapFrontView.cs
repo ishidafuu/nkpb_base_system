@@ -15,13 +15,11 @@ public class MapFrontView : EditorWindow
     readonly int TIP_W = 8;
     readonly int TIP_H = 16;
     readonly int TIP_H_Harf = 8;
+    readonly int DRAW_OFFSET = 16;
 
     MapEditorMain m_parent;
-    List<Texture> m_mapShapeTex;
-    List<Sprite> m_mapPaletteSprite;
-    Texture2D m_dummy;
-    Texture2D m_dummy2;
-    Texture2D m_dummy3;
+    List<Texture> m_mapShapeTexList;
+    List<Sprite> m_mapPaletteSprites;
     bool m_isLoadSprite = false;
 
     // サブウィンドウを開く
@@ -35,7 +33,7 @@ public class MapFrontView : EditorWindow
         return window;
     }
 
-    private void SetParent(MapEditorMain _parent)
+    void SetParent(MapEditorMain _parent)
     {
         m_parent = _parent;
     }
@@ -53,7 +51,7 @@ public class MapFrontView : EditorWindow
                 LoadMapTipSprite();
 
             DrawMapTip();
-
+            DrawMap();
         }
         catch (System.Exception exeption)
         {
@@ -71,11 +69,11 @@ public class MapFrontView : EditorWindow
     //ロード
     void LoadMapTipSprite()
     {
-        m_mapShapeTex = new List<Texture>();
-        m_mapShapeTex = NonResources.LoadAll<Texture>("Assets/MapCreater/Editor/MapTipFront");
+        m_mapShapeTexList = new List<Texture>();
+        m_mapShapeTexList = NonResources.LoadAll<Texture>("Assets/MapCreater/Editor/MapTipFront");
 
-        m_mapPaletteSprite = new List<Sprite>();
-        m_mapPaletteSprite.AddRange(Resources.LoadAll<Sprite>("MapTile"));
+        m_mapPaletteSprites = new List<Sprite>();
+        m_mapPaletteSprites.AddRange(Resources.LoadAll<Sprite>("MapTile"));
 
         AssetDatabase.Refresh();
 
@@ -83,21 +81,27 @@ public class MapFrontView : EditorWindow
     }
 
     //マップ奥行き（回転反映）
-    private int GetMapD()
+    int GetMapD()
     {
         return m_parent.m_mapSizeZ;
 
     }
     //マップの幅（回転反映）
-    private int GetMapH()
+    int GetMapH()
     {
         return m_parent.m_mapSizeY;
     }
 
-    private int GetMapW()
+    int GetMapW()
     {
         return m_parent.m_mapSizeX;
     }
+
+    Sprite GetMapBmpSprite()
+    {
+        return m_parent.GetMapBmpSprite();
+    }
+
     void DrawMapTip()
     {
         Vector2 size = new Vector2(TIP_W, TIP_H);
@@ -114,12 +118,21 @@ public class MapFrontView : EditorWindow
                     if (shape == enShapeType.Empty)
                         continue;
 
-                    Texture sp = m_mapShapeTex[(int)shape];
-                    Vector2 pos = new Vector2((x * TIP_W) + TIP_W, (GetMapH() - y + z) * TIP_H_Harf);
+                    Texture sp = m_mapShapeTexList[(int)shape];
+                    Vector2 pos = new Vector2((x * TIP_W) + DRAW_OFFSET, (GetMapH() - 1 - y + z) * TIP_H_Harf + DRAW_OFFSET);
                     Rect drawRect = new Rect(pos, size);
                     GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
                 }
             }
         }
+    }
+
+    void DrawMap()
+    {
+        Rect drawRect = GetMapBmpSprite().rect;
+        drawRect.x += DRAW_OFFSET;
+        drawRect.y += DRAW_OFFSET * 2;
+
+        GUI.DrawTexture(drawRect, GetMapBmpSprite().texture, ScaleMode.StretchToFill, true, 1, new Color(1, 1, 1, 0.5f), 0, 0); //描画
     }
 }
