@@ -440,35 +440,49 @@ public partial class MapEditor : EditorWindow
             {
                 // 手前
                 // 置いたブロックより手前はすべて空に
+                drawShape = enShapeType.Empty;
                 m_parent.SetMapShape(enShapeType.Empty, pos);
                 isChanged = true;
-            }
-            else
-            {
-                // 奥
-                // 奥をすべて描画チップに置き換える（箱チップであれば置き換えない
-                // 描画チップが空チップの場合は置き換えない
-                if (shape != enShapeType.Empty
-                    && m_parent.GetMapShape(pos) != enShapeType.Box)
-                {
-                    if (shape == enShapeType.SlashWall || shape == enShapeType.BSlashWall)
-                    {
-                        drawShape = enShapeType.Box;
-                    }
-
-                    m_parent.SetMapShape(drawShape, pos);
-                    isChanged = true;
-                }
             }
 
             if (isChanged)
             {
+                AutoFixDepthTip(pos, drawShape);
                 AutoFixSideTip(pos, drawShape, true);
                 AutoFixSideTip(pos, drawShape, false);
                 AutoFixBottomTip(pos, drawShape);
                 AutoFixTopTip(pos);
             }
 
+        }
+    }
+
+    // 奥のチップ修正
+    private void AutoFixDepthTip(Vector3Int pos, enShapeType drawShape)
+    {
+        if (drawShape == enShapeType.Empty)
+            return;
+
+        for (int z = 0; z < GetMapD(); z++)
+        {
+            int targetZ = pos.z + z + 1;
+            if (targetZ >= GetMapD())
+                break;
+
+            Vector3Int depthPos = new Vector3Int(pos.x, pos.y, targetZ);
+
+            // 奥をすべて描画チップに置き換える（箱チップであれば置き換えない
+            // 描画チップが空チップの場合は置き換えない
+            if (m_parent.GetMapShape(depthPos) != enShapeType.Box)
+            {
+                if (drawShape == enShapeType.SlashWall
+                    || drawShape == enShapeType.BSlashWall)
+                {
+                    drawShape = enShapeType.Box;
+                }
+
+                m_parent.SetMapShape(drawShape, depthPos);
+            }
         }
     }
 
@@ -485,26 +499,16 @@ public partial class MapEditor : EditorWindow
         }
     }
 
-    private void AutoFixBottomTip(Vector3Int pos, enShapeType drawShape)
+    // 下のチップ修正
+    private void AutoFixBottomTip(Vector3Int pos, enShapeType shape)
     {
         if (pos.y > 0)
         {
             Vector3Int bottomPos = new Vector3Int(pos.x, pos.y - 1, pos.z);
-            // public enum enShapeType
-            // {
-            //     Empty,
-            //     Box,
-            //     LUpSlope,
-            //     RUpSlope,
-            //     LUpSlope2H,
-            //     LUpSlope2L,
-            //     RUpSlope2L,
-            //     RUpSlope2H,
-            //     SlashWall,
-            //     BSlashWall,
-            // }
+            enShapeType drawShape = shape;
+            bool isChanged = false;
             // 下のブロック置き換え
-            switch (drawShape)
+            switch (shape)
             {
                 case enShapeType.Box:
                 case enShapeType.LUpSlope:
@@ -515,27 +519,33 @@ public partial class MapEditor : EditorWindow
                 case enShapeType.RUpSlope2H:
                     if (m_parent.GetMapShape(bottomPos) != enShapeType.Box)
                     {
-                        m_parent.SetMapShape(enShapeType.Box, bottomPos);
-                        // 再帰的に書き換え
-                        AutoFixBottomTip(bottomPos, enShapeType.Box);
+                        drawShape = enShapeType.Box;
+                        isChanged = true;
                     }
                     break;
                 case enShapeType.SlashWall:
                 case enShapeType.BSlashWall:
                     if (m_parent.GetMapShape(bottomPos) != enShapeType.Box)
                     {
-                        m_parent.SetMapShape(drawShape, bottomPos);
-                        // 再帰的に書き換え
-                        AutoFixBottomTip(bottomPos, drawShape);
-                        AutoFixSideTip(pos, drawShape, true);
-                        AutoFixSideTip(pos, drawShape, false);
+                        isChanged = true;
                     }
                     break;
+            }
+
+            if (isChanged)
+            {
+                m_parent.SetMapShape(drawShape, bottomPos);
+                // 再帰的に書き換え
+                AutoFixDepthTip(bottomPos, drawShape);
+                AutoFixBottomTip(bottomPos, drawShape);
+                AutoFixSideTip(bottomPos, drawShape, true);
+                AutoFixSideTip(bottomPos, drawShape, false);
             }
 
         }
     }
 
+    // 横チップの修正
     private void AutoFixSideTip(Vector3Int pos, enShapeType drawShape, bool isRight)
     {
         int posX = (isRight)
@@ -601,11 +611,13 @@ public partial class MapEditor : EditorWindow
             }
         }
 
-        // 書き換えがあった場合は上下の書き換えも行う
+        // 書き換えがあった場合は再帰的に書き換え
         if (isChanged)
         {
+            AutoFixDepthTip(sidePos, changedShape);
+            AutoFixSideTip(sidePos, changedShape, isRight);
             AutoFixTopTip(sidePos);
-            AutoFixBottomTip(sidePos, drawShape);
+            AutoFixBottomTip(sidePos, changedShape);
         }
 
     }
