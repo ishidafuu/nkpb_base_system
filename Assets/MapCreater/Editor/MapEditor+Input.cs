@@ -107,13 +107,15 @@ public partial class MapEditor : EditorWindow
                 {
                     case enRotate.Front:
                         m_camRotate = enRotate.Right;
+                        m_camPos = Vector2.zero;
                         break;
                     case enRotate.Right:
+                        // 一周しないように
                         // m_camRotate = enRotate.Left;
                         break;
                     case enRotate.Left:
-
                         m_camRotate = enRotate.Front;
+                        m_camPos = Vector2.zero;
                         break;
                 }
             }
@@ -124,9 +126,11 @@ public partial class MapEditor : EditorWindow
                 {
                     case enRotate.Front:
                         m_camRotate = enRotate.Left;
+                        m_camPos = Vector2.zero;
                         break;
                     case enRotate.Right:
                         m_camRotate = enRotate.Front;
+                        m_camPos = Vector2.zero;
                         break;
                     case enRotate.Left:
                         // 一周しないように
