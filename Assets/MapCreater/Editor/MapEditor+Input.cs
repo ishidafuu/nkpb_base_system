@@ -410,40 +410,44 @@ public partial class MapEditor : EditorWindow
         for (int index = 0; index < maxDepth; index++)
         {
             Vector3Int pos = Vector3Int.zero;
-            bool isFill = false;
+            bool isFrontFill = false;
             switch (m_camRotate)
             {
                 case enRotate.Front:
                     pos = GetPosVector3(resvec.x, resvec.y, index);
-                    isFill = (index < selectedDepth);
+                    isFrontFill = (index < selectedDepth);
                     break;
                 case enRotate.Right:
                     pos = GetPosVector3(index, resvec.y, m_selectedDepth);
-                    isFill = (index < selectedDepth);
+                    isFrontFill = (index < selectedDepth);
                     break;
                 case enRotate.Left:
                     pos = GetPosVector3(index, resvec.y, m_selectedDepth);
-                    isFill = (index > selectedDepth);
+                    isFrontFill = (index > selectedDepth);
                     break;
             }
 
+            enShapeType drawShape = shape;
+
+            // 指定深さにはそのまま描画
             if (index == selectedDepth)
             {
-                m_parent.SetMapShape(shape, pos);
+                m_parent.SetMapShape(drawShape, pos);
             }
-            else if (isFill)
+            else if (isFrontFill)
             {
+                // 手前
                 // 置いたブロックより手前はすべて空に
                 m_parent.SetMapShape(enShapeType.Empty, pos);
             }
             else
             {
-                // 空ブロック以外は奥をすべて置き換える
-                // 箱ブロックであれば置き換えない
+                // 奥
+                // 奥をすべて描画チップに置き換える（箱チップであれば置き換えない
+                // 描画チップが空チップの場合は置き換えない
                 if (shape != enShapeType.Empty
                     && m_parent.GetMapShape(pos) != enShapeType.Box)
                 {
-                    enShapeType drawShape = shape;
                     if (shape == enShapeType.SlashWall || shape == enShapeType.BSlashWall)
                     {
                         drawShape = enShapeType.Box;
@@ -452,8 +456,74 @@ public partial class MapEditor : EditorWindow
                     m_parent.SetMapShape(drawShape, pos);
                 }
             }
+
+            AutoFixBottomTip(pos, drawShape);
+            AutoFixTopTip(pos);
         }
     }
+
+    // 上のチップは必ず空
+    private void AutoFixTopTip(Vector3Int pos)
+    {
+        for (int y = 0; y < GetMapH(); y++)
+        {
+            int targetY = pos.y + y + 1;
+            if (targetY >= GetMapH())
+                break;
+            Vector3Int topPos = new Vector3Int(pos.x, targetY, pos.z);
+            m_parent.SetMapShape(enShapeType.Empty, topPos);
+        }
+    }
+
+    private void AutoFixBottomTip(Vector3Int pos, enShapeType drawShape)
+    {
+        if (pos.y > 0)
+        {
+            Vector3Int bottomPos = new Vector3Int(pos.x, pos.y - 1, pos.z);
+            // public enum enShapeType
+            // {
+            //     Empty,
+            //     Box,
+            //     LUpSlope,
+            //     RUpSlope,
+            //     LUpSlope2H,
+            //     LUpSlope2L,
+            //     RUpSlope2L,
+            //     RUpSlope2H,
+            //     SlashWall,
+            //     BSlashWall,
+            // }
+            // 下のブロック置き換え
+            switch (drawShape)
+            {
+                case enShapeType.Box:
+                case enShapeType.LUpSlope:
+                case enShapeType.RUpSlope:
+                case enShapeType.LUpSlope2H:
+                case enShapeType.LUpSlope2L:
+                case enShapeType.RUpSlope2L:
+                case enShapeType.RUpSlope2H:
+                    if (m_parent.GetMapShape(bottomPos) != enShapeType.Box)
+                    {
+                        m_parent.SetMapShape(enShapeType.Box, bottomPos);
+                        // 再帰的に書き換え
+                        AutoFixBottomTip(bottomPos, enShapeType.Box);
+                    }
+                    break;
+                case enShapeType.SlashWall:
+                case enShapeType.BSlashWall:
+                    if (m_parent.GetMapShape(bottomPos) != enShapeType.Box)
+                    {
+                        m_parent.SetMapShape(drawShape, bottomPos);
+                        // 再帰的に書き換え
+                        AutoFixBottomTip(bottomPos, drawShape);
+                    }
+                    break;
+            }
+
+        }
+    }
+
     // //範囲選択
     // void SelectTips()
     // {
