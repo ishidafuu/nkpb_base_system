@@ -562,6 +562,13 @@ public partial class MapEditor : EditorWindow
         {
             switch (drawShape)
             {
+                case enShapeType.Empty:
+                    if (!EnableEmptySide(m_parent.GetMapShape(sidePos), isRight))
+                    {
+                        changedShape = enShapeType.Empty;
+                        isChanged = ChangeShape(sidePos, changedShape);
+                    }
+                    break;
                 case enShapeType.LUpSlope:
                 case enShapeType.LUpSlope2L:
                 case enShapeType.SlashWall:
@@ -588,6 +595,13 @@ public partial class MapEditor : EditorWindow
         {
             switch (drawShape)
             {
+                case enShapeType.Empty:
+                    if (!EnableEmptySide(m_parent.GetMapShape(sidePos), isRight))
+                    {
+                        changedShape = enShapeType.Empty;
+                        isChanged = ChangeShape(sidePos, changedShape);
+                    }
+                    break;
                 case enShapeType.RUpSlope:
                 case enShapeType.BSlashWall:
                 case enShapeType.RUpSlope2L:
@@ -622,14 +636,48 @@ public partial class MapEditor : EditorWindow
 
     }
 
-    private bool ChangeShape(Vector3Int sidePos, enShapeType mastShape)
+    private bool ChangeShape(Vector3Int sidePos, enShapeType mustShape)
     {
         bool res = false;
-        if (m_parent.GetMapShape(sidePos) != mastShape)
+        if (m_parent.GetMapShape(sidePos) != mustShape)
         {
-            m_parent.SetMapShape(mastShape, sidePos);
+            m_parent.SetMapShape(mustShape, sidePos);
             res = true;
         }
+        return res;
+    }
+
+    // 空白の横でも問題ない形かどうか
+    private bool EnableEmptySide(enShapeType shape, bool isRight)
+    {
+        bool res = false;
+        if (isRight)
+        {
+            switch (shape)
+            {
+                case enShapeType.Empty:
+                case enShapeType.Box:
+                case enShapeType.RUpSlope:
+                case enShapeType.BSlashWall:
+                case enShapeType.RUpSlope2L:
+                    res = true;
+                    break;
+            }
+        }
+        else
+        {
+            switch (shape)
+            {
+                case enShapeType.Empty:
+                case enShapeType.Box:
+                case enShapeType.LUpSlope:
+                case enShapeType.SlashWall:
+                case enShapeType.LUpSlope2L:
+                    res = true;
+                    break;
+            }
+        }
+
         return res;
     }
 
