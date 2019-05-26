@@ -114,23 +114,12 @@ public partial class MapEditor
 
                 //ペン先描画判定
                 bool isPutTip2 = false;
-                // Texture copysprite = null;
 
                 if (m_cursorPos != null)
                 {
-                    // if (m_copyTips != null)
-                    // {
-                    //     Vector3Int copypos = new Vector3Int((xx - (int)m_cursorPos.x), (revyy - (int)m_cursorPos.y), (zz - m_selectedDepth));
-                    //     if (m_copyTips.IsSafePos(copypos))
-                    //     {
-                    //         copysprite = m_parent.GetSprite(m_copyTips.GetShape(copypos), m_camRotate);
-                    //     }
-                    // }
-                    // else
-
                     if (isPutTip
-                        && (zz >= m_selectedDepth)
-                        && (zz <= (m_penDepth + m_selectedDepth)))
+                        && (zz == (m_penDepth + m_selectedDepth))
+                    )
                     {
                         Vector2Int pos2 = new Vector2Int(xx, revyy);
                         isPutTip2 = (pos2 == m_cursorPos); // (pos2.Equal(m_cursorPos));

@@ -191,7 +191,7 @@ public partial class MapEditor : EditorWindow
     }
     private Vector3Int GetPosVector3(int x, int y)
     {
-        return GetPosVector3(x, y, m_selectedDepth);
+        return GetPosVector3(x, y, m_selectedDepth + m_penDepth);
     }
     private Vector3Int GetPosVector3(Vector3Int vec)
     {

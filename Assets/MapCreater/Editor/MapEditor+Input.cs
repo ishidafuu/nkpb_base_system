@@ -23,8 +23,8 @@ public partial class MapEditor : EditorWindow
         Rotation();
         //奥行き移動
         ChangeSelectedDepth();
-        //ペン奥行き
-        // CangePenDepth();
+        // ペン奥行き
+        CangePenDepth();
 
         //伸び縮み
         ExtendTips();
@@ -65,30 +65,32 @@ public partial class MapEditor : EditorWindow
             m_camPos += (dist / m_mag);
             m_mouseStPos = e.mousePosition;
             SetRepaint();
-
         }
     }
 
-    // //ペン深さ
-    // void CangePenDepth()
-    // {
-    //     Event e = Event.current;
+    //ペン深さ
+    void CangePenDepth()
+    {
+        Event e = Event.current;
 
-    //     if (!e.shift && !m_isSeleting)return; //シフト
+        if (!e.shift && !m_isSeleting)
+            return; //シフト
 
-    //     if (e.type == EventType.ScrollWheel)
-    //     {
-    //         if (Event.current.delta.y > 0)
-    //         {
-    //             if (m_penDepth > 0)m_penDepth--;
-    //         }
-    //         else
-    //         {
-    //             if (m_penDepth < GetMapD())m_penDepth++;
-    //         }
-    //         SetRepaint();
-    //     }
-    // }
+        if (e.type == EventType.ScrollWheel)
+        {
+            if (Event.current.delta.y > 0)
+            {
+                if (m_penDepth > 0)
+                    m_penDepth--;
+            }
+            else
+            {
+                if (m_penDepth < GetMapD())
+                    m_penDepth++;
+            }
+            SetRepaint();
+        }
+    }
 
     //ローテーション変更
     void Rotation()
@@ -159,10 +161,12 @@ public partial class MapEditor : EditorWindow
             else
                 m_selectedDepth++;
 
-            if (m_selectedDepth >= GetMapD())m_selectedDepth = (GetMapD() - 1);
-            if (m_selectedDepth < 0)m_selectedDepth = 0;
+            if (m_selectedDepth >= GetMapD())
+                m_selectedDepth = (GetMapD() - 1);
 
-            //parent.asdf = parent.selectedZ;
+            if (m_selectedDepth < 0)
+                m_selectedDepth = 0;
+
             SetRepaint();
         }
     }
@@ -491,9 +495,11 @@ public partial class MapEditor : EditorWindow
         int maxDepth = (m_camRotate == enRotate.Front)
             ? GetMapD()
             : GetMapW();
+
         int selectedDepth = (m_camRotate == enRotate.Front)
-            ? m_selectedDepth
-            : resvec.x;
+            ? m_selectedDepth + m_penDepth
+            : resvec.x + m_penDepth;
+
         for (int index = 0; index < maxDepth; index++)
         {
             Vector3Int pos = Vector3Int.zero;
