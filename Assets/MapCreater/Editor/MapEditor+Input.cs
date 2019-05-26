@@ -85,7 +85,7 @@ public partial class MapEditor : EditorWindow
             }
             else
             {
-                if (m_penDepth < GetMapD())
+                if (m_penDepth < GetMapD() - 1)
                     m_penDepth++;
             }
             SetRepaint();
