@@ -428,17 +428,20 @@ public partial class MapEditor : EditorWindow
             }
 
             enShapeType drawShape = shape;
+            bool isChanged = false;
 
             // 指定深さにはそのまま描画
             if (index == selectedDepth)
             {
                 m_parent.SetMapShape(drawShape, pos);
+                isChanged = true;
             }
             else if (isFrontFill)
             {
                 // 手前
                 // 置いたブロックより手前はすべて空に
                 m_parent.SetMapShape(enShapeType.Empty, pos);
+                isChanged = true;
             }
             else
             {
@@ -454,11 +457,18 @@ public partial class MapEditor : EditorWindow
                     }
 
                     m_parent.SetMapShape(drawShape, pos);
+                    isChanged = true;
                 }
             }
 
-            AutoFixBottomTip(pos, drawShape);
-            AutoFixTopTip(pos);
+            if (isChanged)
+            {
+                AutoFixSideTip(pos, drawShape, true);
+                AutoFixSideTip(pos, drawShape, false);
+                AutoFixBottomTip(pos, drawShape);
+                AutoFixTopTip(pos);
+            }
+
         }
     }
 
@@ -517,11 +527,98 @@ public partial class MapEditor : EditorWindow
                         m_parent.SetMapShape(drawShape, bottomPos);
                         // 再帰的に書き換え
                         AutoFixBottomTip(bottomPos, drawShape);
+                        AutoFixSideTip(pos, drawShape, true);
+                        AutoFixSideTip(pos, drawShape, false);
                     }
                     break;
             }
 
         }
+    }
+
+    private void AutoFixSideTip(Vector3Int pos, enShapeType drawShape, bool isRight)
+    {
+        int posX = (isRight)
+            ? pos.x + 1
+            : pos.x - 1;
+
+        if (posX >= GetMapW() || posX < 0)
+            return;
+
+        Vector3Int sidePos = new Vector3Int(posX, pos.y, pos.z);
+        bool isChanged = false;
+        enShapeType changedShape = enShapeType.Empty;
+        if (isRight)
+        {
+            switch (drawShape)
+            {
+                case enShapeType.LUpSlope:
+                case enShapeType.LUpSlope2L:
+                case enShapeType.SlashWall:
+                    changedShape = enShapeType.Empty;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.RUpSlope:
+                case enShapeType.RUpSlope2H:
+                case enShapeType.BSlashWall:
+                    changedShape = enShapeType.Box;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.LUpSlope2H:
+                    changedShape = enShapeType.LUpSlope2L;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.RUpSlope2L:
+                    changedShape = enShapeType.RUpSlope2H;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+            }
+        }
+        else
+        {
+            switch (drawShape)
+            {
+                case enShapeType.RUpSlope:
+                case enShapeType.BSlashWall:
+                case enShapeType.RUpSlope2L:
+                    changedShape = enShapeType.Empty;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.LUpSlope:
+                case enShapeType.SlashWall:
+                case enShapeType.LUpSlope2H:
+                    changedShape = enShapeType.Box;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.LUpSlope2L:
+                    changedShape = enShapeType.LUpSlope2H;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+                case enShapeType.RUpSlope2H:
+                    changedShape = enShapeType.RUpSlope2L;
+                    isChanged = ChangeShape(sidePos, changedShape);
+                    break;
+            }
+        }
+
+        // 書き換えがあった場合は上下の書き換えも行う
+        if (isChanged)
+        {
+            AutoFixTopTip(sidePos);
+            AutoFixBottomTip(sidePos, drawShape);
+        }
+
+    }
+
+    private bool ChangeShape(Vector3Int sidePos, enShapeType mastShape)
+    {
+        bool res = false;
+        if (m_parent.GetMapShape(sidePos) != mastShape)
+        {
+            m_parent.SetMapShape(mastShape, sidePos);
+            res = true;
+        }
+        return res;
     }
 
     // //範囲選択
