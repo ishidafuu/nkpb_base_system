@@ -111,16 +111,25 @@ public class MapFrontView : EditorWindow
         Vector2 size = new Vector2(TIP_W, TIP_H);
 
         float baseCol = 0.8f;
+        int grid = 4;
         for (int z = 0; z < GetMapD(); z++)
         {
             //奥から
             int zz = (GetMapD() - z - 1);
+            float colGreen = (zz % grid == 0)
+                ? 1
+                : baseCol;
+
             for (int y = 0; y < GetMapH(); y++)
             {
-                float col = baseCol + (((float)y / GetMapH()) * (1f - baseCol));
+                float colBlue = baseCol + (((float)y / GetMapH()) * (1f - baseCol));
 
                 for (int x = 0; x < GetMapW(); x++)
                 {
+                    float colRed = (x % grid == 0)
+                        ? 1
+                        : baseCol;
+
                     enShapeType shape = m_parent.m_mapTips.GetShape(new Vector3Int(x, y, zz));
                     if (shape == enShapeType.Empty)
                         continue;
@@ -129,7 +138,7 @@ public class MapFrontView : EditorWindow
                     Vector2 pos = new Vector2((x * TIP_W) + DRAW_OFFSET, (GetMapH() - 1 - y + z) * TIP_H_Harf + DRAW_OFFSET);
                     Rect drawRect = new Rect(pos, size);
                     // GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
-                    GUI.DrawTexture(drawRect, sp, ScaleMode.StretchToFill, true, 1, new Color(col, col, col, 1), 0, 0); //描画
+                    GUI.DrawTexture(drawRect, sp, ScaleMode.StretchToFill, true, 1, new Color(colRed, colGreen, colBlue, 1), 0, 0); //描画
                 }
             }
         }
