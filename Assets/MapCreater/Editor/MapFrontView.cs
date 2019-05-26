@@ -21,6 +21,7 @@ public class MapFrontView : EditorWindow
     List<Texture> m_mapShapeTexList;
     List<Sprite> m_mapPaletteSprites;
     bool m_isLoadSprite = false;
+    bool m_isDrawMap = true;
 
     // サブウィンドウを開く
     public static MapFrontView WillAppear(MapEditorMain _parent)
@@ -50,7 +51,10 @@ public class MapFrontView : EditorWindow
             if (!m_isLoadSprite)
                 LoadMapTipSprite();
 
+            m_isDrawMap = GUI.Toggle(new Rect(10, 0, 100, 30), m_isDrawMap, "MapDraw");
+
             DrawMapTip();
+
             DrawMap();
         }
         catch (System.Exception exeption)
@@ -106,12 +110,15 @@ public class MapFrontView : EditorWindow
     {
         Vector2 size = new Vector2(TIP_W, TIP_H);
 
+        float baseCol = 0.8f;
         for (int z = 0; z < GetMapD(); z++)
         {
             //奥から
             int zz = (GetMapD() - z - 1);
             for (int y = 0; y < GetMapH(); y++)
             {
+                float col = baseCol + (((float)y / GetMapH()) * (1f - baseCol));
+
                 for (int x = 0; x < GetMapW(); x++)
                 {
                     enShapeType shape = m_parent.m_mapTips.GetShape(new Vector3Int(x, y, zz));
@@ -121,7 +128,8 @@ public class MapFrontView : EditorWindow
                     Texture sp = m_mapShapeTexList[(int)shape];
                     Vector2 pos = new Vector2((x * TIP_W) + DRAW_OFFSET, (GetMapH() - 1 - y + z) * TIP_H_Harf + DRAW_OFFSET);
                     Rect drawRect = new Rect(pos, size);
-                    GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
+                    // GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
+                    GUI.DrawTexture(drawRect, sp, ScaleMode.StretchToFill, true, 1, new Color(col, col, col, 1), 0, 0); //描画
                 }
             }
         }
@@ -129,6 +137,9 @@ public class MapFrontView : EditorWindow
 
     void DrawMap()
     {
+        if (!m_isDrawMap)
+            return;
+
         Rect drawRect = GetMapBmpSprite().rect;
         drawRect.x += DRAW_OFFSET;
         drawRect.y += DRAW_OFFSET * 2;
