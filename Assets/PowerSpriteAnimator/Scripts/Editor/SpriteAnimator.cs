@@ -215,7 +215,7 @@ namespace PowerTools
         #endregion
         #region Funcs : Init
 
-        [MenuItem("Window/PowerSprite Animator")]
+        [MenuItem("NKPBEditor/PowerSprite Animator")]
         static void ShowWindow()
         {
             //Show existing window instance. If one doesn't exist, make one.

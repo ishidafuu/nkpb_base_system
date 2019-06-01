@@ -30,7 +30,7 @@ namespace NKPB
         // ICharacter m_character;
         SpriteRenderer m_SpriteRenderer;
 
-        [MenuItem("Window/Character Editor", priority = 1000)]
+        [MenuItem("NKPBEditor/Character Editor", priority = 1000)]
         static void Init()
         {
             // Get existing open window or if none, make a new one:

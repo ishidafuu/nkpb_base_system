@@ -33,7 +33,7 @@ public class MapEditorMain : EditorWindow
     MapFrontView m_frontWindow; // フロントウィンドウ
     MapObjMaker m_objMaker;
 
-    [UnityEditor.MenuItem("Window/MapEditorMain")]
+    [UnityEditor.MenuItem("NKPBEditor/MapEditorMain")]
     static void ShowMainWindow()
     {
         EditorWindow.GetWindow(typeof(MapEditorMain));
