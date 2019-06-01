@@ -20,6 +20,6 @@ public partial class MapEditor : EditorWindow
     public static readonly string MapTipFrontImagePath = BasePath + "/Image/MapTipFront";
 
     public static readonly string MapTileName = "MapTile";
-    public static readonly string MapImageName = "map";
+    public static readonly string MapImageName = "Sprites/Map/map";
 
 }
