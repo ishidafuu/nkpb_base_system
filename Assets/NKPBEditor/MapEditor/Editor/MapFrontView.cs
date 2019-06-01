@@ -57,15 +57,15 @@ public class MapFrontView : EditorWindow
 
             DrawMap();
         }
-        catch (System.Exception exeption)
+        catch (System.Exception exception)
         {
-            if (exeption is ExitGUIException)
+            if (exception is ExitGUIException)
             {
-                throw exeption;
+                throw exception;
             }
             else
             {
-                Debug.LogError(exeption.ToString());
+                Debug.LogError(exception.ToString());
             }
         }
     }
