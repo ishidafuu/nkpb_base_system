@@ -9,6 +9,11 @@ namespace NKPB
 {
     public class SettingsEditorWindow : EditorWindow
     {
+        readonly static string HitboxTypeTemplate = "Generation/HitboxType";
+        readonly static string FrameEventTemplate = "Generation/FrameEvent";
+        readonly static string HitboxTypeOutputPath = Application.dataPath + "/BlackGardenStudios/HitboxStudioPro/Scripts/Data/HitboxType.cs";
+        readonly static string FrameEventOutputPath = Application.dataPath + "/BlackGardenStudios/HitboxStudioPro/Scripts/Data/FrameEvent.cs";
+
         TextAsset m_TypeTemplate;
         TextAsset m_EventTemplate;
 
@@ -60,8 +65,8 @@ namespace NKPB
             m_ToolbarPlusIcon = EditorGUIUtility.IconContent("Toolbar Plus");
             m_ToolbarMinusIcon = EditorGUIUtility.IconContent("Toolbar Minus");
 
-            m_TypeTemplate = Resources.Load<TextAsset>(CharacterEditorSettings.HitboxTypeTemplate);
-            m_EventTemplate = Resources.Load<TextAsset>(CharacterEditorSettings.FrameEventTemplate);
+            m_TypeTemplate = Resources.Load<TextAsset>(HitboxTypeTemplate);
+            m_EventTemplate = Resources.Load<TextAsset>(FrameEventTemplate);
 
             RefreshTypes();
             RefreshEvents();
@@ -144,7 +149,7 @@ namespace NKPB
             template = template.Replace("[ENTRIES]", entries);
             template = template.Replace("[COLOR_SWITCH]", colors);
 
-            File.WriteAllText(CharacterEditorSettings.HitboxTypeOutputPath, template);
+            File.WriteAllText(HitboxTypeOutputPath, template);
 
             AssetDatabase.Refresh();
         }
@@ -162,7 +167,7 @@ namespace NKPB
                 entries += entry;
             }
 
-            File.WriteAllText(CharacterEditorSettings.FrameEventOutputPath, template.Replace("[ENTRIES]", entries));
+            File.WriteAllText(FrameEventOutputPath, template.Replace("[ENTRIES]", entries));
 
             AssetDatabase.Refresh();
         }

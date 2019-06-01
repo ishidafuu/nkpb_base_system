@@ -196,8 +196,8 @@ namespace NKPB
                 obj.motionDatas.Add(CreateMotionDataObject(item));
             }
 
-            AssetDatabase.CreateAsset(obj, CharacterEditorSettings.CharacterMotionMasterOutputPath);
-            Debug.Log("CreateObject:" + CharacterEditorSettings.CharacterMotionMasterOutputPath);
+            AssetDatabase.CreateAsset(obj, CharacterMotionMasterOutputPath);
+            Debug.Log("CreateObject:" + CharacterMotionMasterOutputPath);
         }
 
         CharacterMotionData CreateMotionDataObject(HitboxAnimation hitbox)
