@@ -7,6 +7,6 @@ namespace NKPB
 {
     public partial class CharacterEditorWindow
     {
-        readonly static string CharacterMotionMasterOutputPath = "Assets/AnimationEditor/CharacterMotionMaster.asset";
+        readonly static string CharacterMotionMasterOutputPath = "Assets/GameAssets/ScriptableObjects/CharacterMotionMaster.asset";
     }
 }
