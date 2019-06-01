@@ -5,9 +5,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-/// <summary>
-/// Map creater sub window.
-/// </summary>
 public partial class MapEditor : EditorWindow
 {
     readonly int GRID_SIZE = 16;
@@ -34,7 +31,7 @@ public partial class MapEditor : EditorWindow
     Vector3Int m_copyRB;
     bool m_isRepaint;
 
-    bool m_isSeleting;
+    bool m_isSelecting;
     enExpand m_expandVec;
     // MapTips m_copyTips;
     bool m_isSaveOk;

@@ -17,27 +17,19 @@ public partial class MapEditor
         bool isPutTip = false;
         Texture putSprite = m_parent.GetSelectedSprite(m_camRotate);
 
-        if ((putSprite != null) && !m_isSeleting)
+        if ((putSprite != null) && !m_isSelecting)
         {
-            Vector2Int resvec;
-            if (GetMouseGridPos(out resvec))
+            Vector2Int resultVec;
+            if (GetMouseGridPos(out resultVec))
             {
                 //ペン表示
                 isPutTip = true;
-                if (m_cursorPos != resvec)
+                if (m_cursorPos != resultVec)
                 {
-                    m_cursorPos = resvec;
+                    m_cursorPos = resultVec;
                     SetRepaint();
                 }
             }
-            //else
-            //{
-            //	if (m_cursorPos != null)
-            //	{
-            //		m_cursorPos = null;
-            //		SetRepaint();
-            //	}
-            //}
         }
 
         // 選択した画像を描画する
@@ -127,16 +119,6 @@ public partial class MapEditor
 
                 }
 
-                //選択範囲描画
-                // if (copysprite != null)
-                // {
-                //     Color tempcolor = GUI.color;
-                //     GUI.color = new Color(1f, 0.5f, 1f, 1f);
-                //     GUI.DrawTextureWithTexCoords(drawRect, copysprite, new Rect(0, 0, 1, 1)); //描画
-                //     GUI.color = tempcolor;
-
-                // }
-                // else 
                 if (isPutTip2)
                 {
                     Color tempcolor = GUI.color;
@@ -202,7 +184,7 @@ public partial class MapEditor
                     }
 
                     //選択範囲
-                    if (m_isSeleting)
+                    if (m_isSelecting)
                     {
                         bool betweenX = ((m_copyLT.x <= xx) && (m_copyRB.x >= xx));
                         bool betweenY = ((m_copyLT.y <= revyy) && (m_copyRB.y >= revyy));
@@ -247,7 +229,7 @@ public partial class MapEditor
     // グリッド線を描画
     void DrawGridLine2()
     {
-        if (m_isSeleting)return;
+        if (m_isSelecting)return;
 
         if (m_cursorPos == null)return;
 

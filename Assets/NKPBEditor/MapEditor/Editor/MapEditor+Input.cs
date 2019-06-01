@@ -73,7 +73,7 @@ public partial class MapEditor : EditorWindow
     {
         Event e = Event.current;
 
-        if (!e.shift && !m_isSeleting)
+        if (!e.shift && !m_isSelecting)
             return; //シフト
 
         if (e.type == EventType.ScrollWheel)
@@ -97,7 +97,7 @@ public partial class MapEditor : EditorWindow
     {
         Event e = Event.current;
 
-        if (m_isSeleting)return;
+        if (m_isSelecting)return;
         if (!e.control)return;
 
         if (e.type == EventType.ScrollWheel)
@@ -149,7 +149,7 @@ public partial class MapEditor : EditorWindow
     {
         Event e = Event.current;
 
-        if (m_isSeleting)return;
+        if (m_isSelecting)return;
         if (e.control)return;
         if (e.shift)return;
 
@@ -178,7 +178,7 @@ public partial class MapEditor : EditorWindow
         Event e = Event.current;
 
         if ((e.button != 1)
-            && !(m_isSeleting && (e.type == EventType.ScrollWheel)))
+            && !(m_isSelecting && (e.type == EventType.ScrollWheel)))
             return; //右クリック
 
         if ((e.type == EventType.MouseDown) //マウス押した
@@ -192,7 +192,7 @@ public partial class MapEditor : EditorWindow
             {
                 if (e.type == EventType.MouseDown)
                 {
-                    m_isSeleting = true;
+                    m_isSelecting = true;
                     // m_copyTips = null;
                     m_copySt = new Vector3Int(resvec.x, resvec.y, 0);
                     m_expandVec = enExpand.None;
@@ -220,7 +220,7 @@ public partial class MapEditor : EditorWindow
                 else if (e.type == EventType.ScrollWheel) {}
                 else if (e.type == EventType.MouseUp)
                 {
-                    m_isSeleting = false;
+                    m_isSelecting = false;
                 }
 
                 m_copyEd = new Vector3Int(resvec.x, resvec.y, 0);
@@ -260,7 +260,7 @@ public partial class MapEditor : EditorWindow
             else
             {
                 //範囲外
-                m_isSeleting = false;
+                m_isSelecting = false;
                 // m_copyTips = null;
             }
 
