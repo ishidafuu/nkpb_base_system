@@ -178,6 +178,11 @@ namespace NKPB
         {
             if (GUILayout.Button("Create Scriptable Object", GUILayout.MaxWidth(180)))
             {
+                if (m_hitboxManager == null)
+                {
+                    Debug.LogWarning("m_hitboxManager == null");
+                    return;
+                }
                 CreateObjectPack();
             }
         }
