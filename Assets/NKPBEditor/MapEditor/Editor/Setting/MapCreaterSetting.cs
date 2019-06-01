@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class MapCreaterSetting
+public static class MapEditorSetting
 {
     // マップウィンドウのサイズ
 

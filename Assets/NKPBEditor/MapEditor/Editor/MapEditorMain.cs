@@ -231,10 +231,10 @@ public class MapEditorMain : EditorWindow
         m_dummy3 = new Texture2D((int)(TIPSIZE * 1.5f), (int)(TIPSIZE * 1.5f));
 
         m_mapShapeTex = new List<Texture>();
-        m_mapShapeTex = NonResources.LoadAll<Texture>("Assets/MapCreater/Editor/MapTipPalette");
+        m_mapShapeTex = NonResources.LoadAll<Texture>(MapEditor.MapTipPaletteImagePath);
 
         m_mapPaletteSprite = new List<Sprite>();
-        m_mapPaletteSprite.AddRange(Resources.LoadAll<Sprite>("MapTile"));
+        m_mapPaletteSprite.AddRange(Resources.LoadAll<Sprite>(MapEditor.MapTileName));
 
         AssetDatabase.Refresh();
 
