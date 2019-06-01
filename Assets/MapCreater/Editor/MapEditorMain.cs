@@ -513,7 +513,7 @@ public class MapEditorMain : EditorWindow
     //入出力系///////////////////////////////
     string GetFilePath()
     {
-        return "Assets/Resources/MapTips_" + m_mapId.ToString("d3") + ".asset";
+        return MapEditor.MapTipsPath + m_mapId.ToString("d3") + ".asset";
     }
 
     // ファイルで出力
@@ -546,11 +546,6 @@ public class MapEditorMain : EditorWindow
 
         AssetDatabase.Refresh();
 
-    }
-
-    string GetPaletteFilePath()
-    {
-        return "Assets/Resources/MapPalette_" + m_palId.ToString("d3") + ".asset";
     }
 
     //オブジェクト作成

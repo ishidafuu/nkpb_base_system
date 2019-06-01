@@ -10,8 +10,6 @@ using UnityEngine;
 /// </summary>
 public partial class MapEditor : EditorWindow
 {
-    static readonly float WINDOW_W = 750.0f;
-    static readonly float WINDOW_H = 750.0f;
     readonly int GRID_SIZE = 16;
     readonly int GRID_SIZE_Z = 8;
     readonly int TIP_SIZE = 24;
