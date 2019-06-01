@@ -537,7 +537,8 @@ public class MapEditorMain : EditorWindow
             m_mapSizeY = m_mapTips.mapSizeY;
             m_mapSizeZ = m_mapTips.mapSizeZ;
             m_isLoadMapTip = true;
-            m_mapSprite = Resources.Load<Sprite>("map" + m_mapId.ToString("d3"));
+
+            m_mapSprite = Resources.Load<Sprite>(MapEditor.MapImageName + m_mapId.ToString("d3"));
         }
         else
         {
