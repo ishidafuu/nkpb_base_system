@@ -77,7 +77,7 @@ public class MapFrontView : EditorWindow
         m_mapShapeTexList = NonResources.LoadAll<Texture>(MapEditor.MapTipFrontImagePath);
 
         m_mapPaletteSprites = new List<Sprite>();
-        m_mapPaletteSprites.AddRange(Resources.LoadAll<Sprite>(MapEditor.PaletteSpriteName));
+        m_mapPaletteSprites.AddRange(Resources.LoadAll<Sprite>(MapEditor.MapTileName));
 
         AssetDatabase.Refresh();
 
