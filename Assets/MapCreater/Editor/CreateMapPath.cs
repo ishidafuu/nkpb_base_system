@@ -67,7 +67,7 @@ public class CreateMapPath : Editor
         AssetDatabase.CreateAsset(pathNodes, filepath);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-
+        Debug.Log($"CreateAsset:{filepath}");
     }
 
 }
