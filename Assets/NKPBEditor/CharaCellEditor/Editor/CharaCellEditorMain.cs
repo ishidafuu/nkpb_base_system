@@ -32,6 +32,13 @@ namespace NKPB
         {
             EditorWindow.GetWindow<CharaCellEditorMain>();
         }
+
+        public void Recording()
+        {
+            // Undoで戻る先を保存する.
+            Undo.RecordObject(charCells_, "charCellsUpdate");
+        }
+
         public Sprite GetSelectedSprite()
         {
             return GetSprite(selectedSprite_);

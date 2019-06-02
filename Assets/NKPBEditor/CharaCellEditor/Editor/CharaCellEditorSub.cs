@@ -65,7 +65,7 @@ namespace NKPB
         private void Recording()
         {
             // Undoで戻る先を保存する.
-            Undo.RecordObject(parent_, "characell");
+            parent_.Recording();
         }
 
         void OnGUI()
