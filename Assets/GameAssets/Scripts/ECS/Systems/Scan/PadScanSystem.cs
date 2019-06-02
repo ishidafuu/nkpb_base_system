@@ -40,15 +40,15 @@ namespace NKPB
                 ComponentType.Create<PadScan>());
 
             var playerNum = Define.Instance.Common.PlayerNum;
-            var tpmPlayerNames = new List<string>();
+            var tmpPlayerNames = new List<string>();
             for (int i = 0; i < playerNum; i++)
             {
-                tpmPlayerNames.Add($"P{i}");
+                tmpPlayerNames.Add($"P{i}");
             }
 
-            InitButtonTypeName(tpmPlayerNames);
-            InitHolizontalName(tpmPlayerNames);
-            InitVerticalName(tpmPlayerNames);
+            InitButtonTypeName(tmpPlayerNames);
+            InitHorizontalName(tmpPlayerNames);
+            InitVerticalName(tmpPlayerNames);
         }
 
         private void InitButtonTypeName(List<string> tpmPlayerNames)
@@ -73,7 +73,7 @@ namespace NKPB
             }
         }
 
-        private void InitHolizontalName(List<string> tpmPlayerNames)
+        private void InitHorizontalName(List<string> tpmPlayerNames)
         {
             var tmpHorizontalNames = new List<string>();
             foreach (var item in tpmPlayerNames)
