@@ -10,6 +10,7 @@ using UnityEngine;
 /// </summary>
 public partial class MapEditor : EditorWindow
 {
+
     static readonly float WINDOW_W = 750.0f;
     static readonly float WINDOW_H = 750.0f;
 
