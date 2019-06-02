@@ -6,7 +6,7 @@ using UnityEngine;
 namespace NKPB
 {
 
-    public partial class CharacterEditorWindow
+    public partial class CharaMotionEditorMain
     {
         void GUIEditView()
         {

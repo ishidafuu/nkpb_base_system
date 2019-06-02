@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    public partial class CharacterEditorWindow
+    public partial class CharaMotionEditorMain
     {
         readonly static string CharacterMotionMasterOutputPath = "Assets/GameAssets/ScriptableObjects/CharacterMotionMaster.asset";
     }

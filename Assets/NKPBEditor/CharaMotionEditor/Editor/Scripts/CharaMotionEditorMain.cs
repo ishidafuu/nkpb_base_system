@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    public partial class CharacterEditorWindow : EditorWindow
+    public partial class CharaMotionEditorMain : EditorWindow
     {
         GameObject m_target;
         float m_toolbarWidth = 300f;
@@ -30,12 +30,12 @@ namespace NKPB
         // ICharacter m_character;
         SpriteRenderer m_SpriteRenderer;
 
-        [MenuItem("NKPBEditor/Character Editor", priority = 1000)]
+        [MenuItem("NKPBEditor/CharaMotion Editor", priority = 1000)]
         static void Init()
         {
             // Get existing open window or if none, make a new one:
-            CharacterEditorWindow window = (CharacterEditorWindow)EditorWindow.GetWindow(typeof(CharacterEditorWindow));
-            window.titleContent = new GUIContent("Character Editor");
+            CharaMotionEditorMain window = (CharaMotionEditorMain)EditorWindow.GetWindow(typeof(CharaMotionEditorMain));
+            window.titleContent = new GUIContent("CharaMotion Editor");
             window.Show();
         }
 
