@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public partial class MapEditor : EditorWindow
+public partial class MapEditorSub : EditorWindow
 {
     readonly int GRID_SIZE = 16;
     readonly int GRID_SIZE_Z = 8;
@@ -37,11 +37,11 @@ public partial class MapEditor : EditorWindow
     bool m_isSaveOk;
 
     // サブウィンドウを開く
-    public static MapEditor WillAppear(MapEditorMain _parent)
+    public static MapEditorSub WillAppear(MapEditorMain _parent)
     {
-        MapEditor window = (MapEditor)EditorWindow.GetWindow(typeof(MapEditor), false);
+        MapEditorSub window = (MapEditorSub)EditorWindow.GetWindow(typeof(MapEditorSub), false);
         window.Show();
-        window.minSize = new Vector2(WINDOW_W, WINDOW_H);
+        window.minSize = new Vector2(MapEditorMain.WINDOW_W, MapEditorMain.WINDOW_H);
         window.SetParent(_parent);
         window.ResetUndoPerformed();
         window.Init();

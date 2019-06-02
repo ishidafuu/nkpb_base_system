@@ -8,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Map creater sub window.
 /// </summary>
-public partial class MapEditor
+public partial class MapEditorSub
 {
     //描画系///////////////////////////////
     void DrawMapTip()

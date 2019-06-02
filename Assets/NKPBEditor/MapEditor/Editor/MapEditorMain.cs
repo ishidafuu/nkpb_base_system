@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 [Serializable]
-public class MapEditorMain : EditorWindow
+public partial class MapEditorMain : EditorWindow
 {
     const int TIPSIZE = 48;
     // マップエディタのマスの数
@@ -29,7 +29,7 @@ public class MapEditorMain : EditorWindow
     Texture2D m_dummy;
     Texture2D m_dummy2;
     Texture2D m_dummy3;
-    MapEditor m_subWindow; // サブウィンドウ
+    MapEditorSub m_subWindow; // サブウィンドウ
     MapFrontView m_frontWindow; // フロントウィンドウ
     MapObjMaker m_objMaker;
 
@@ -231,10 +231,10 @@ public class MapEditorMain : EditorWindow
         m_dummy3 = new Texture2D((int)(TIPSIZE * 1.5f), (int)(TIPSIZE * 1.5f));
 
         m_mapShapeTex = new List<Texture>();
-        m_mapShapeTex = NonResources.LoadAll<Texture>(MapEditor.MapTipPaletteImagePath);
+        m_mapShapeTex = NonResources.LoadAll<Texture>(MapEditorMain.MapTipPaletteImagePath);
 
         m_mapPaletteSprite = new List<Sprite>();
-        m_mapPaletteSprite.AddRange(Resources.LoadAll<Sprite>(MapEditor.MapTileName));
+        m_mapPaletteSprite.AddRange(Resources.LoadAll<Sprite>(MapEditorMain.MapTileName));
 
         AssetDatabase.Refresh();
 
@@ -445,7 +445,7 @@ public class MapEditorMain : EditorWindow
 
         if (m_subWindow == null)
         {
-            m_subWindow = MapEditor.WillAppear(this);
+            m_subWindow = MapEditorSub.WillAppear(this);
         }
         else
         {
@@ -513,7 +513,7 @@ public class MapEditorMain : EditorWindow
     //入出力系///////////////////////////////
     string GetFilePath()
     {
-        return MapEditor.MapTipsPath + m_mapId.ToString("d3") + ".asset";
+        return MapEditorMain.MapTipsPath + m_mapId.ToString("d3") + ".asset";
     }
 
     // ファイルで出力
@@ -538,7 +538,7 @@ public class MapEditorMain : EditorWindow
             m_mapSizeZ = m_mapTips.mapSizeZ;
             m_isLoadMapTip = true;
 
-            m_mapSprite = Resources.Load<Sprite>(MapEditor.MapImageName + m_mapId.ToString("d3"));
+            m_mapSprite = Resources.Load<Sprite>(MapEditorMain.MapImageName + m_mapId.ToString("d3"));
         }
         else
         {

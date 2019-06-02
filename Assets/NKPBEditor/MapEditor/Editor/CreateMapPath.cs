@@ -62,7 +62,7 @@ public class CreateMapPath : Editor
         MapPathNodes pathNodes = CreateInstance<MapPathNodes>();
         pathNodes.mapId = mapId;
         pathNodes.nodes = nodeList.ToArray();
-        string filepath = $"{MapEditor.MapPathPath}{mapId.ToString("d3")}.asset";
+        string filepath = $"{MapEditorMain.MapPathPath}{mapId.ToString("d3")}.asset";
         AssetDatabase.CreateAsset(pathNodes, filepath);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();

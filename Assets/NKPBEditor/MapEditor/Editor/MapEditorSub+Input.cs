@@ -8,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Map creater sub window.
 /// </summary>
-public partial class MapEditor : EditorWindow
+public partial class MapEditorSub : EditorWindow
 {
     //入力系///////////////////////////////
 
