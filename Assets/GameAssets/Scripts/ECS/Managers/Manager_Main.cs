@@ -78,45 +78,32 @@ namespace NKPB
         /// <param name="world"></param>
         void InitializeSystem(World world)
         {
-            // Systemは World.Active.GetOrCreateManager<EntityManager>() で明示的に作成できます。
-            // World.Active.CreateManager<EntityManager>() もありますが、 
-            // 既にEntityが存在すると問題になるので、 個人的には「 明示的な作成」 のような
-            // 生成タイミングがフワっとしてるものにはオススメしません。（ Worldの初期化時に作るんだ!!!等ならCreateManagerでも）
-            // world.CreateManager(typeof(MoveSystem));
-            // world.CreateManager(typeof(EndFrameBarrier));
-            // world.CreateManager(typeof(DanceSystem));
-            // world.CreateManager(typeof(EndFrameTransformSystem));
-            // world.CreateManager<MeshInstanceRendererSystem>().ActiveCamera = GetComponent<Camera>();
-
-            // Player
-            // Chara
-
             // 入力システム
             world.CreateManager(typeof(PadScanSystem));
-            world.CreateManager(typeof(ToukiMeterInputJobSystem));
-            world.CreateManager(typeof(ToukiMeterCountJobSystem));
-            world.CreateManager(typeof(ToukiMeterDebubSystem));
-            world.CreateManager(typeof(BGDrawSystem));
+            // world.CreateManager(typeof(ToukiMeterInputJobSystem));
+            // world.CreateManager(typeof(ToukiMeterCountJobSystem));
+            // world.CreateManager(typeof(ToukiMeterDebubSystem));
+            // world.CreateManager(typeof(BGDrawSystem));
 
-            // // モーションの時間進行システム
-            // world.CreateManager(typeof(CountMotionJobSystem));
-            // // 時間経過によるモーション変更システム
-            // world.CreateManager(typeof(ShiftCountMotionJobSystem));
-            // // 入力による状態変化システム
-            // world.CreateManager(typeof(InputMotionJobSystem));
-            // // 入力による向き変化システム
-            // world.CreateManager(typeof(InputMukiSystem));
-            // // 入力による座標変化システム
-            // world.CreateManager(typeof(InputMoveSystem));
-            // // 座標移動システム
-            // world.CreateManager(typeof(MovePosJobSystem));
-            // // 描画向き変換
-            // world.CreateManager(typeof(LookJobSystem));
-            // // 描画座標変換システム
-            // world.CreateManager(typeof(ConvertDrawPosJobSystem));
-            // // Renderer
-            // // 各パーツの描画位置決定および描画
-            // world.CreateManager(typeof(CharaDrawSystem));
+            // モーションの時間進行システム
+            world.CreateManager(typeof(CountMotionJobSystem));
+            // 時間経過によるモーション変更システム
+            world.CreateManager(typeof(ShiftCountMotionJobSystem));
+            // 入力による状態変化システム
+            world.CreateManager(typeof(InputMotionJobSystem));
+            // 入力による向き変化システム
+            world.CreateManager(typeof(InputMukiSystem));
+            // 入力による座標変化システム
+            world.CreateManager(typeof(InputMoveSystem));
+            // 座標移動システム
+            world.CreateManager(typeof(MovePosJobSystem));
+            // 描画向き変換
+            world.CreateManager(typeof(LookJobSystem));
+            // 描画座標変換システム
+            world.CreateManager(typeof(ConvertDrawPosJobSystem));
+            // Renderer
+            // 各パーツの描画位置決定および描画
+            world.CreateManager(typeof(BGDrawSystem));
 
         }
 
@@ -180,7 +167,7 @@ namespace NKPB
                     ? m_playerEntityList[i]
                     : Entity.Null;
 
-                var entity = CharaEntityFactory.CreateEntity(i, manager, ref Shared.charaMeshMat, ref Shared.aniScriptSheet, ref Shared.aniBasePos);
+                var entity = CharaEntityFactory.CreateEntity(i, manager, ref Shared.charaMeshMat);
             }
         }
 
