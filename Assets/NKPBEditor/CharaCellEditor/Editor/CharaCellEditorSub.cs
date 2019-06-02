@@ -34,17 +34,17 @@ namespace NKPB
 
         // グリッドの四角
         // 親ウィンドウの参照を持つ
-        CharaCellEditorMain parent_;
+        CharaCellEditorMain m_parent;
 
-        Vector2 camPos_ = new Vector2(32, 64);
-        Vector2 mouseStPos_;
-        Vector2Int stFacePos_;
+        Vector2 m_camPos = new Vector2(32, 64);
+        Vector2 m_mouseStPos;
+        Vector2Int m_stFacePos;
 
-        Vector2 mouseRStPos_;
-        int stFaceAngle_;
-        int stFaceZ_;
+        Vector2 m_mouseRStPos;
+        int m_stFaceAngle;
+        int m_stFaceZ;
 
-        bool isRepaint_;
+        bool m_isRepaint;
 
         // サブウィンドウを開く
         public static CharaCellEditorSub WillAppear(CharaCellEditorMain _parent)
@@ -59,69 +59,69 @@ namespace NKPB
 
         private void SetParent(CharaCellEditorMain _parent)
         {
-            parent_ = _parent;
+            m_parent = _parent;
         }
 
         private void Recording()
         {
             // Undoで戻る先を保存する.
-            parent_.Recording();
+            m_parent.Recording();
         }
 
         void OnGUI()
         {
             mag = 8;
 
-            if (parent_ == null)
+            if (m_parent == null)
             {
                 Close();
                 return;
             }
-            isRepaint_ = false;
+            m_isRepaint = false;
 
             //入力フォーム
             EditorGUI.BeginChangeCheck();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            int faceNo = EditorGUILayout.IntSlider("faceNo", parent_.GetSelectedCharCell().faceNo, 0, parent_.GetKaoNoMax());
+            int faceNo = EditorGUILayout.IntSlider("faceNo", m_parent.GetSelectedCharCell().faceNo, 0, m_parent.GetKaoNoMax());
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            int faceAngle = EditorGUILayout.IntSlider("faceAngle", parent_.GetSelectedCharCell().faceAngle, 0, parent_.GetAngleMax());
+            int faceAngle = EditorGUILayout.IntSlider("faceAngle", m_parent.GetSelectedCharCell().faceAngle, 0, m_parent.GetAngleMax());
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            int faceX = EditorGUILayout.IntSlider("faceX", parent_.GetSelectedCharCell().faceX, -MAXPOS, MAXPOS);
+            int faceX = EditorGUILayout.IntSlider("faceX", m_parent.GetSelectedCharCell().faceX, -MAXPOS, MAXPOS);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            int faceY = EditorGUILayout.IntSlider("faceY", parent_.GetSelectedCharCell().faceY, -MAXPOS, MAXPOS);
+            int faceY = EditorGUILayout.IntSlider("faceY", m_parent.GetSelectedCharCell().faceY, -MAXPOS, MAXPOS);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            int faceZ = EditorGUILayout.IntSlider("faceZ", parent_.GetSelectedCharCell().faceZ, 0, 1);
+            int faceZ = EditorGUILayout.IntSlider("faceZ", m_parent.GetSelectedCharCell().faceZ, 0, 1);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            Vector2 cp = EditorGUILayout.Vector2Field("campos", camPos_);
+            Vector2 cp = EditorGUILayout.Vector2Field("campos", m_camPos);
             GUILayout.EndHorizontal();
 
             if (EditorGUI.EndChangeCheck())
             {
                 // Undoで戻る先を保存する.
                 Recording();
-                parent_.SetFaceNo(faceNo);
-                parent_.SetFaceAngle(faceAngle);
+                m_parent.SetFaceNo(faceNo);
+                m_parent.SetFaceAngle(faceAngle);
 
-                parent_.SetFaceX(faceX);
-                parent_.SetFaceY(faceY);
-                parent_.SetFaceZ(faceZ);
+                m_parent.SetFaceX(faceX);
+                m_parent.SetFaceY(faceY);
+                m_parent.SetFaceZ(faceZ);
             }
 
             //GUILayout.EndHorizontal();
@@ -146,7 +146,7 @@ namespace NKPB
             //描画系
             DrawChar();
 
-            if (isRepaint_)
+            if (m_isRepaint)
                 Repaint();
         }
 
@@ -154,7 +154,7 @@ namespace NKPB
         public void init()
         {
             wantsMouseMove = true; // マウス情報を取得.
-            isRepaint_ = true;
+            m_isRepaint = true;
         }
 
         //入力系///////////////////////////////
@@ -167,7 +167,7 @@ namespace NKPB
                 if (e.keyCode == KeyCode.Escape)
                 {
                     Undo.PerformUndo();
-                    isRepaint_ = true;
+                    m_isRepaint = true;
                 }
             }
         }
@@ -178,14 +178,14 @@ namespace NKPB
             if (e.button != 2)return;
             if (e.type == EventType.MouseDown)
             {
-                mouseStPos_ = e.mousePosition;
+                m_mouseStPos = e.mousePosition;
             }
             else if (e.type == EventType.MouseDrag) ///e.button 0:左ボタン、1:右ボタン、2:中ボタン
             {
-                Vector2 dist = (e.mousePosition - mouseStPos_);
-                camPos_ += (dist / mag);
-                mouseStPos_ = e.mousePosition;
-                isRepaint_ = true;
+                Vector2 dist = (e.mousePosition - m_mouseStPos);
+                m_camPos += (dist / mag);
+                m_mouseStPos = e.mousePosition;
+                m_isRepaint = true;
 
             }
         }
@@ -199,8 +199,8 @@ namespace NKPB
 
             if (e.type == EventType.MouseDown) //クリック
             {
-                mouseStPos_ = Event.current.mousePosition;
-                stFacePos_ = new Vector2Int(parent_.GetSelectedCharCell().faceX, parent_.GetSelectedCharCell().faceY);
+                m_mouseStPos = Event.current.mousePosition;
+                m_stFacePos = new Vector2Int(m_parent.GetSelectedCharCell().faceX, m_parent.GetSelectedCharCell().faceY);
             }
 
             if (e.type == EventType.MouseDrag) //ドラッグ
@@ -210,15 +210,15 @@ namespace NKPB
                 // Undoで戻る先を保存する.
                 Recording();
 
-                int faceX = (int)(mousePos.x - mouseStPos_.x) / mag;
-                int faceY = (int)(mousePos.y - mouseStPos_.y) / mag;
+                int faceX = (int)(mousePos.x - m_mouseStPos.x) / mag;
+                int faceY = (int)(mousePos.y - m_mouseStPos.y) / mag;
 
-                parent_.SetFaceX(stFacePos_.x + faceX);
-                parent_.SetFaceY(stFacePos_.y + faceY);
+                m_parent.SetFaceX(m_stFacePos.x + faceX);
+                m_parent.SetFaceY(m_stFacePos.y + faceY);
                 //parent_.SetFaceZ(faceZ);
 
                 //入力があったときは再描画入れる
-                isRepaint_ = true;
+                m_isRepaint = true;
 
             }
         }
@@ -234,9 +234,9 @@ namespace NKPB
             {
                 // Undoで戻る先を保存する.
                 Recording();
-                parent_.IncFaceNo(Event.current.delta.y > 0);
+                m_parent.IncFaceNo(Event.current.delta.y > 0);
                 //入力があったときは再描画入れる
-                isRepaint_ = true;
+                m_isRepaint = true;
 
             }
         }
@@ -250,8 +250,8 @@ namespace NKPB
 
             if (e.type == EventType.MouseDown) //クリック
             {
-                mouseRStPos_ = Event.current.mousePosition;
-                stFaceAngle_ = parent_.GetSelectedCharCell().faceAngle;
+                m_mouseRStPos = Event.current.mousePosition;
+                m_stFaceAngle = m_parent.GetSelectedCharCell().faceAngle;
                 //stFaceZ_ = parent_.GetSelectedCharCell().faceZ;
             }
 
@@ -262,14 +262,14 @@ namespace NKPB
                 // Undoで戻る先を保存する.
                 Recording();
 
-                int faceAngle = (int)(mousePos.x - mouseStPos_.x) / mag / 4;
+                int faceAngle = (int)(mousePos.x - m_mouseStPos.x) / mag / 4;
                 //int faceZ = (int)(mousePos.y - mouseStPos_.y) / mag / 4;
 
-                parent_.SetFaceAngle(stFaceAngle_ + faceAngle);
+                m_parent.SetFaceAngle(m_stFaceAngle + faceAngle);
                 //parent_.SetFaceZ(stFaceAngle_ + faceZ);
 
                 //入力があったときは再描画入れる
-                isRepaint_ = true;
+                m_isRepaint = true;
 
             }
         }
@@ -285,21 +285,21 @@ namespace NKPB
             // grid
             Handles.color = new Color(1f, 1f, 1f, 0.5f);
             //float penpos = (penDepth_ * GRIDSIZE_Z);
-            float fx = camPos_.x + GRIDSIZE_Z;
-            float fy = camPos_.y;
+            float fx = m_camPos.x + GRIDSIZE_Z;
+            float fy = m_camPos.y;
 
             //縦線
             {
                 Vector2 st = new Vector2(0, -32);
                 Vector2 ed = new Vector2(0, 32);
-                Handles.DrawLine((camPos_ + st) * mag, (camPos_ + ed) * mag);
+                Handles.DrawLine((m_camPos + st) * mag, (m_camPos + ed) * mag);
             }
 
             //横線
             {
                 Vector2 st = new Vector2(-32, 0);
                 Vector2 ed = new Vector2(32, 0);
-                Handles.DrawLine((camPos_ + st) * mag, (camPos_ + ed) * mag);
+                Handles.DrawLine((m_camPos + st) * mag, (m_camPos + ed) * mag);
             }
         }
 
@@ -328,12 +328,12 @@ namespace NKPB
 
             //顔
             {
-                Sprite kao = parent_.GetSelectedKaoSprite();
+                Sprite kao = m_parent.GetSelectedKaoSprite();
 
                 Vector2 kaopos = new Vector2(-kao.pivot.x + cell.faceX, cell.faceY + BASEY);
                 kaopos += kaoRev;
                 Vector2 size = new Vector2(kao.rect.width, kao.rect.height);
-                Rect drawRect = new Rect((camPos_ + kaopos) * mag, size * mag);
+                Rect drawRect = new Rect((m_camPos + kaopos) * mag, size * mag);
                 Vector2 rotatePivot = new Vector2(drawRect.center.x, drawRect.center.y - drawRect.height / 2);
                 GUIUtility.RotateAroundPivot(angle, rotatePivot);
                 // RotateAroundPivot等は行列の掛け算なので、一旦初期値に戻す
@@ -345,10 +345,10 @@ namespace NKPB
 
             //ずら
             {
-                Sprite zura = parent_.GetSelectedZuraSprite();
+                Sprite zura = m_parent.GetSelectedZuraSprite();
                 Vector2 zurapos = new Vector2(-zura.pivot.x + cell.faceX, cell.faceY + BASEY);
                 Vector2 size = new Vector2(zura.rect.width, zura.rect.height);
-                Rect drawRect = new Rect((camPos_ + zurapos) * mag, size * mag);
+                Rect drawRect = new Rect((m_camPos + zurapos) * mag, size * mag);
 
                 Vector2 rotatePivot = new Vector2(drawRect.center.x, drawRect.center.y - drawRect.height / 2);
                 GUIUtility.RotateAroundPivot(angle, rotatePivot);
@@ -365,9 +365,9 @@ namespace NKPB
         private void DrawChar()
         {
 
-            Sprite sp = parent_.GetSelectedSprite();
+            Sprite sp = m_parent.GetSelectedSprite();
             Vector2 pos = new Vector2(-sp.pivot.x, +sp.pivot.y - sp.rect.height);
-            CharaCell cell = parent_.GetSelectedCharCell();
+            CharaCell cell = m_parent.GetSelectedCharCell();
 
             //顔奥表示
             if (cell.faceZ == 1)DrawFace(pos, cell);
@@ -375,7 +375,7 @@ namespace NKPB
                 //DebugPanel.Log("sp.rect", sp.rect);
                 //Vector2 pos = new Vector2((1 * GRIDSIZE) + 0, (1 * GRIDSIZE) - 0);
                 Vector2 size = new Vector2(sp.rect.width, sp.rect.height);
-                Rect drawRect = new Rect((pos + camPos_) * mag, size * mag);
+                Rect drawRect = new Rect((pos + m_camPos) * mag, size * mag);
                 //DebugPanel.Log("drawRect", drawRect);
                 //DebugPanel.Log("sp.pivot.", sp.pivot);
                 if (sp != null)

@@ -11,21 +11,21 @@ namespace NKPB
     {
 
         [SerializeField]
-        CharaCellObject charCells_;
-        Dictionary<string, CharaCell> charCellDict_;
+        CharaCellObject m_charCells;
+        Dictionary<string, CharaCell> m_charCellDict;
 
-        int selectedSprite_ = 0;
-        bool isLoadSprite_ = false;
+        int m_selectedSprite = 0;
+        bool m_isLoadSprite = false;
 
-        bool isLoadData_ = false;
+        bool m_isLoadData = false;
 
-        Sprite[] bodySprites_;
-        Sprite[] kaoSprites_;
-        Sprite[] zuraSprites_;
-        Texture2D dummy_;
-        CharaCellEditorSub subWindow_; // サブウィンドウ
+        Sprite[] m_bodySprites;
+        Sprite[] m_kaoSprites;
+        Sprite[] m_zuraSprites;
+        Texture2D m_dummy;
+        CharaCellEditorSub m_subWindow; // サブウィンドウ
 
-        private Vector2 scrollPosition = Vector2.zero;
+        private Vector2 m_scrollPosition = Vector2.zero;
 
         [UnityEditor.MenuItem(MenuItemName)]
         static void ShowMainWindow()
@@ -36,34 +36,34 @@ namespace NKPB
         public void Recording()
         {
             // Undoで戻る先を保存する.
-            Undo.RecordObject(charCells_, "charCellsUpdate");
+            Undo.RecordObject(m_charCells, "charCellsUpdate");
         }
 
         public Sprite GetSelectedSprite()
         {
-            return GetSprite(selectedSprite_);
+            return GetSprite(m_selectedSprite);
         }
 
         public Sprite GetSprite(int spriteNo)
         {
-            return bodySprites_[spriteNo];
+            return m_bodySprites[spriteNo];
         }
 
         public CharaCell GetSelectedCharCell()
         {
-            return charCells_[selectedSprite_];
+            return m_charCells[m_selectedSprite];
         }
 
         public Sprite GetSelectedKaoSprite()
         {
             //charCells_[selectedSprite_].faceNo = 0;
-            return kaoSprites_[GetSelectedCharCell().faceNo];
+            return m_kaoSprites[GetSelectedCharCell().faceNo];
         }
 
         public Sprite GetSelectedZuraSprite()
         {
             //charCells_[selectedSprite_].faceNo = 0;
-            return zuraSprites_[ZURA_OF_KAO[GetSelectedCharCell().faceNo]];
+            return m_zuraSprites[ZURA_OF_KAO[GetSelectedCharCell().faceNo]];
         }
 
         public void SetFaceNo(int faceNo)
@@ -71,17 +71,17 @@ namespace NKPB
             if (faceNo < 0)return;
             if (faceNo > KAO_MAX)return;
 
-            charCells_[selectedSprite_].faceNo = faceNo;
+            m_charCells[m_selectedSprite].faceNo = faceNo;
         }
         public void IncFaceNo(bool isDec)
         {
             if (isDec)
             {
-                if (charCells_[selectedSprite_].faceNo > 0)charCells_[selectedSprite_].faceNo--;
+                if (m_charCells[m_selectedSprite].faceNo > 0)m_charCells[m_selectedSprite].faceNo--;
             }
             else
             {
-                if (charCells_[selectedSprite_].faceNo < KAO_MAX)charCells_[selectedSprite_].faceNo++;
+                if (m_charCells[m_selectedSprite].faceNo < KAO_MAX)m_charCells[m_selectedSprite].faceNo++;
             }
 
         }
@@ -91,24 +91,24 @@ namespace NKPB
             {
                 faceAngle = (faceAngle % (ANGLE_MAX + 1)) + (ANGLE_MAX + 1);
             }
-            charCells_[selectedSprite_].faceAngle = (faceAngle % (ANGLE_MAX + 1));
+            m_charCells[m_selectedSprite].faceAngle = (faceAngle % (ANGLE_MAX + 1));
         }
 
         public void SetFaceX(int faceX)
         {
-            charCells_[selectedSprite_].faceX = faceX;
+            m_charCells[m_selectedSprite].faceX = faceX;
         }
 
         public void SetFaceY(int faceY)
         {
-            charCells_[selectedSprite_].faceY = faceY;
+            m_charCells[m_selectedSprite].faceY = faceY;
         }
 
         public void SetFaceZ(int faceZ)
         {
             if (faceZ < 0)return;
             if (faceZ > 1)return;
-            charCells_[selectedSprite_].faceZ = faceZ;
+            m_charCells[m_selectedSprite].faceZ = faceZ;
         }
 
         public int GetKaoNoMax()
@@ -122,17 +122,17 @@ namespace NKPB
 
         void OnEnable()
         {
-            isLoadSprite_ = false;
+            m_isLoadSprite = false;
         }
 
         void OnGUI()
         {
             try
             {
-                if (!isLoadSprite_)
+                if (!m_isLoadSprite)
                     LoadSprite();
 
-                if (!isLoadData_)
+                if (!m_isLoadData)
                     LoadFile();
 
                 EditorGUI.BeginChangeCheck();
@@ -164,41 +164,41 @@ namespace NKPB
 
         void LoadSprite()
         {
-            dummy_ = new Texture2D(TIPSIZE, TIPSIZE);
+            m_dummy = new Texture2D(TIPSIZE, TIPSIZE);
             {
                 // 読み込み(Resources.LoadAllを使うのがミソ)
                 Object[] list = Resources.LoadAll(BodyFilePath, typeof(Sprite));
                 // listがnullまたは空ならエラーで返す
-                bodySprites_ = new Sprite[list.Length];
+                m_bodySprites = new Sprite[list.Length];
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)bodySprites_[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i)m_bodySprites[i] = list[i] as Sprite;
             }
 
             {
                 // 読み込み(Resources.LoadAllを使うのがミソ)
                 Object[] list = Resources.LoadAll(KaoFileName, typeof(Sprite));
                 // listがnullまたは空ならエラーで返す
-                kaoSprites_ = new Sprite[list.Length];
-                Debug.Log(kaoSprites_.Length);
+                m_kaoSprites = new Sprite[list.Length];
+                Debug.Log(m_kaoSprites.Length);
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)kaoSprites_[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i)m_kaoSprites[i] = list[i] as Sprite;
             }
 
             {
                 // 読み込み(Resources.LoadAllを使うのがミソ)
                 Object[] list = Resources.LoadAll(ZuraFileName, typeof(Sprite));
                 // listがnullまたは空ならエラーで返す
-                zuraSprites_ = new Sprite[list.Length];
-                Debug.Log(zuraSprites_.Length);
+                m_zuraSprites = new Sprite[list.Length];
+                Debug.Log(m_zuraSprites.Length);
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)zuraSprites_[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i)m_zuraSprites[i] = list[i] as Sprite;
             }
 
             LoadFile();
 
             AssetDatabase.Refresh();
 
-            isLoadSprite_ = true;
+            m_isLoadSprite = true;
         }
 
         public static Rect GetSpriteNormalRect(Sprite sp)
@@ -223,7 +223,7 @@ namespace NKPB
         // 画像一覧をボタン選択出来る形にして出力
         void DrawImageParts()
         {
-            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition, GUI.skin.box);
+            m_scrollPosition = EditorGUILayout.BeginScrollView(m_scrollPosition, GUI.skin.box);
 
             //if(imgDirectory != null)
             {
@@ -236,35 +236,35 @@ namespace NKPB
                 EditorGUILayout.BeginVertical();
                 int index = 0;
                 bool isEnd = false;
-                foreach (var sp in bodySprites_)
+                foreach (var sp in m_bodySprites)
                 {
                     string spname = CharaCell.ReplaceHyphen(sp.name);
                     GUIContent contents = new GUIContent();
-                    if (!charCellDict_.ContainsKey(spname))
+                    if (!m_charCellDict.ContainsKey(spname))
                     {
                         Debug.Log($"NotFound {spname}");
-                        isLoadSprite_ = false;
+                        m_isLoadSprite = false;
                         return;
                     }
 
                     contents.text = spname
-                        + "\n No:" + charCellDict_[spname].faceNo.ToString()
-                        + " X:" + charCellDict_[spname].faceX.ToString()
-                        + " Y:" + charCellDict_[spname].faceY.ToString();
+                        + "\n No:" + m_charCellDict[spname].faceNo.ToString()
+                        + " X:" + m_charCellDict[spname].faceX.ToString()
+                        + " Y:" + m_charCellDict[spname].faceY.ToString();
 
-                    if ((charCellDict_[spname].faceNo == 0) && (charCellDict_[spname].faceX == 0) && (charCellDict_[spname].faceY == 0))
+                    if ((m_charCellDict[spname].faceNo == 0) && (m_charCellDict[spname].faceX == 0) && (m_charCellDict[spname].faceY == 0))
                     {
                         contents.text += " *AllZero*";
                     }
 
                     //GUILayout.FlexibleSpace();
-                    if (selectedSprite_ == index)GUI.color = new Color(1f, 0.5f, 1f, 1f);
+                    if (m_selectedSprite == index)GUI.color = new Color(1f, 0.5f, 1f, 1f);
                     if (GUILayout.Button(contents, GUILayout.MaxWidth(TIPSIZE * 5), GUILayout.Height(TIPSIZE), GUILayout.ExpandWidth(false), GUILayout.ExpandHeight(false)))
                     {
-                        selectedSprite_ = index;
+                        m_selectedSprite = index;
                         RefreshEditorWindow();
                     }
-                    if (selectedSprite_ == index)GUI.color = new Color(1f, 1f, 1f, 1f);
+                    if (m_selectedSprite == index)GUI.color = new Color(1f, 1f, 1f, 1f);
 
                     Rect lastRect = GUILayoutUtility.GetLastRect();
 
@@ -287,8 +287,8 @@ namespace NKPB
         {
             EditorGUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
-            if (dummy_ == null)dummy_ = new Texture2D(TIPSIZE, TIPSIZE);
-            GUILayout.Box(dummy_);
+            if (m_dummy == null)m_dummy = new Texture2D(TIPSIZE, TIPSIZE);
+            GUILayout.Box(m_dummy);
             Rect lastRect = GUILayoutUtility.GetLastRect();
             lastRect.x += (lastRect.width - TIPSIZE) / 2;
             lastRect.y += (lastRect.height - TIPSIZE) / 2;
@@ -330,30 +330,30 @@ namespace NKPB
 
         void OpenEditorWindow()
         {
-            if (subWindow_ != null)subWindow_.Close();
+            if (m_subWindow != null)m_subWindow.Close();
 
-            if (subWindow_ == null)
+            if (m_subWindow == null)
             {
-                subWindow_ = CharaCellEditorSub.WillAppear(this);
+                m_subWindow = CharaCellEditorSub.WillAppear(this);
             }
             else
             {
-                subWindow_.Focus();
+                m_subWindow.Focus();
             }
-            subWindow_.init();
+            m_subWindow.init();
         }
 
         void RefreshEditorWindow()
         {
-            if (subWindow_ == null)
+            if (m_subWindow == null)
             {
-                subWindow_ = CharaCellEditorSub.WillAppear(this);
+                m_subWindow = CharaCellEditorSub.WillAppear(this);
             }
             else
             {
-                subWindow_.Focus();
+                m_subWindow.Focus();
             }
-            subWindow_.init();
+            m_subWindow.init();
         }
 
         void DrawButtonSaveLoad()
@@ -376,7 +376,7 @@ namespace NKPB
         // ファイルで出力
         public void SaveFile()
         {
-            var savetips = charCells_.GetClone();
+            var savetips = m_charCells.GetClone();
             AssetDatabase.CreateAsset(savetips, ScriptableObjectFilePath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -387,11 +387,11 @@ namespace NKPB
         void LoadFile()
         {
             Debug.Log("LoadFile");
-            isLoadData_ = true;
+            m_isLoadData = true;
             var loadtips = AssetDatabase.LoadAssetAtPath<CharaCellObject>(ScriptableObjectFilePath);
             if (loadtips != null)
             {
-                charCells_ = loadtips.GetClone();
+                m_charCells = loadtips.GetClone();
 
                 UpdateCharaCellDict();
             }
@@ -406,10 +406,10 @@ namespace NKPB
 
         private void UpdateCharaCellDict()
         {
-            charCellDict_ = new Dictionary<string, CharaCell>();
-            for (int i = 0; i < charCells_.param.Count; ++i)
+            m_charCellDict = new Dictionary<string, CharaCell>();
+            for (int i = 0; i < m_charCells.param.Count; ++i)
             {
-                charCellDict_[charCells_[i].ID] = charCells_[i];
+                m_charCellDict[m_charCells[i].ID] = m_charCells[i];
             }
         }
 
@@ -423,10 +423,10 @@ namespace NKPB
                 var newCharCells = new CharaCellObject();
 
                 // 現在のスプライトにあるものを抽出、ない場合は新たに作成
-                for (int i = 0; i < bodySprites_.Length; ++i)
+                for (int i = 0; i < m_bodySprites.Length; ++i)
                 {
-                    string id = CharaCell.ReplaceHyphen(bodySprites_[i].name);
-                    CharaCell item = charCells_.param.FirstOrDefault(x => x.ID == id);
+                    string id = CharaCell.ReplaceHyphen(m_bodySprites[i].name);
+                    CharaCell item = m_charCells.param.FirstOrDefault(x => x.ID == id);
                     if (item == null)
                     {
                         item = new CharaCell();
@@ -436,7 +436,7 @@ namespace NKPB
                     newCharCells.param.Add(item);
                 }
 
-                charCells_ = newCharCells;
+                m_charCells = newCharCells;
 
                 UpdateCharaCellDict();
 
