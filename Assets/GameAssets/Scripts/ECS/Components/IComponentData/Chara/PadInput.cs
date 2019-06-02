@@ -10,15 +10,15 @@ namespace NKPB
         // 十字のバッファ
         Vector2 axis;
         // 十字
-        public Button crossUp;
-        public Button crossDown;
-        public Button crossLeft;
-        public Button crossRight;
+        public Button crossUp { get; private set; }
+        public Button crossDown { get; private set; }
+        public Button crossLeft { get; private set; }
+        public Button crossRight { get; private set; }
         // ボタン
-        public Button buttonA;
-        public Button buttonB;
-        public Button buttonX;
-        public Button buttonY;
+        public Button buttonA { get; private set; }
+        public Button buttonB { get; private set; }
+        public Button buttonX { get; private set; }
+        public Button buttonY { get; private set; }
         public void SetCross(Vector2 _axis, float _time)
         {
             // 直前キーから変更無ければ処理しない
@@ -97,15 +97,15 @@ namespace NKPB
         // 連打受付時間
         const float DOUBLE_TIME = 0.4f;
         // 押した瞬間
-        public boolean isPush;
+        public boolean isPush { get; private set; }
         // 押してる
-        public boolean isPress;
+        public boolean isPress { get; private set; }
         // 離した瞬間
-        public boolean isPop;
+        public boolean isPop { get; private set; }
         // 連打
-        public boolean isDouble;
+        public boolean isDouble { get; private set; }
         // ダッシュ用直前押した瞬間時間
-        public float lastPushTime;
+        public float lastPushTime { get; private set; }
 
         public void SetButtonData(bool _isPush, bool _isPress, bool _isPop, float _time)
         {
