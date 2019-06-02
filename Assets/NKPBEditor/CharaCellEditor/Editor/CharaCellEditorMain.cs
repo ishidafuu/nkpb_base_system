@@ -11,11 +11,13 @@ namespace NKPB
     {
 
         [SerializeField]
-        CharaCell[] charCells_;
+        CharaCellObject charCells_;
         Dictionary<string, CharaCell> charCellDict_;
 
         int selectedSprite_ = 0;
         bool isLoadSprite_ = false;
+
+        bool isLoadData_ = false;
 
         Sprite[] bodySprites_;
         Sprite[] kaoSprites_;
@@ -120,7 +122,11 @@ namespace NKPB
         {
             try
             {
-                if (!isLoadSprite_)LoadSprite();
+                if (!isLoadSprite_)
+                    LoadSprite();
+
+                if (!isLoadData_)
+                    LoadFile();
 
                 EditorGUI.BeginChangeCheck();
 
@@ -132,7 +138,7 @@ namespace NKPB
                 DrawButtonSaveLoad();
 
                 //オブジェクト作成
-                DrawButtonCreateObject();
+                // DrawButtonCreateObject();
 
                 //アイコン＋名前
                 DrawImageParts();
@@ -162,15 +168,6 @@ namespace NKPB
                 bodySprites_ = new Sprite[list.Length];
                 // listを回してDictionaryに格納
                 for (int i = 0; i < list.Length; ++i)bodySprites_[i] = list[i] as Sprite;
-            }
-
-            charCells_ = new CharaCell[bodySprites_.Length];
-            charCellDict_ = new Dictionary<string, CharaCell>();
-            for (int i = 0; i < charCells_.Length; ++i)
-            {
-                charCells_[i] = new CharaCell();
-                charCells_[i].ID = CharaCell.ReplaceHyphen(bodySprites_[i].name);
-                charCellDict_[charCells_[i].ID] = charCells_[i];
             }
 
             {
@@ -360,82 +357,116 @@ namespace NKPB
             EditorGUILayout.EndHorizontal();
         }
 
-        void DrawButtonCreateObject()
-        {
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.FlexibleSpace();
-            //保存
-            if (GUILayout.Button("CreateScriptableObject"))CreateObject();
-            EditorGUILayout.EndHorizontal();
-        }
+        // void DrawButtonCreateObject()
+        // {
+        //     EditorGUILayout.BeginHorizontal();
+        //     GUILayout.FlexibleSpace();
+        //     //保存
+        //     if (GUILayout.Button("CreateScriptableObject"))CreateObject();
+        //     EditorGUILayout.EndHorizontal();
+        // }
 
         //入出力系///////////////////////////////
-        /// 
+
         // ファイルで出力
-        void SaveFile()
+        public void SaveFile()
         {
-            FileInfo fi = new FileInfo(CSVFilePath);
-            StreamWriter sw = fi.CreateText();
+            var savetips = charCells_.GetClone();
+            AssetDatabase.CreateAsset(savetips, ScriptableObjectFilePath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            Debug.Log("SaveMap " + ScriptableObjectFilePath);
 
-            sw.WriteLine(CharaCell.OutputCSVLineHeader());
-            sw.WriteLine(CharaCell.OutputCSVLineType());
-
-            foreach (var item in charCells_)
-            {
-                sw.WriteLine(item.OutputCSVLine());
-            }
-            sw.Close();
         }
         void LoadFile()
         {
-
-            try
+            Debug.Log("LoadFile");
+            isLoadData_ = true;
+            var loadtips = AssetDatabase.LoadAssetAtPath<CharaCellObject>(ScriptableObjectFilePath);
+            if (loadtips != null)
             {
-                // csvファイルを開く
-                using(var sr = new StreamReader(CSVFilePath))
+                charCells_ = loadtips.GetClone();
+
+                charCellDict_ = new Dictionary<string, CharaCell>();
+                for (int i = 0; i < charCells_.param.Count; ++i)
                 {
-                    // ストリームの末尾まで繰り返す
-                    while (!sr.EndOfStream)
-                    {
-                        // ファイルから一行読み込む
-                        var line = sr.ReadLine();
-                        //Debug.Log(line);
-
-                        // 読み込んだ一行をカンマ毎に分けて配列に格納する
-                        var values = line.Split(',');
-
-                        if (values[0] == "ID")continue;
-                        if (values[0] == "TYPE")continue;
-
-                        values[0] = CharaCell.ReplaceHyphen(values[0]);
-                        //同じ名前のセルがある
-                        if (charCellDict_.ContainsKey(values[0]))
-                        {
-                            charCellDict_[values[0]].InputCSVLine(values);
-                        }
-                    }
+                    charCellDict_[charCells_[i].ID] = charCells_[i];
                 }
             }
-            catch (System.Exception e)
+            else
             {
-                // ファイルを開くのに失敗したとき
-                Debug.Log(e.Message);
+                EditorUtility.DisplayDialog("LoadFile", "読み込めませんでした。\n" + ScriptableObjectFilePath, "ok");
             }
 
-        }
-
-        // ファイルで出力
-        void CreateObject()
-        {
-            CharaCellObject obj = new CharaCellObject();
-            obj.param = charCells_.ToList();
-
-            AssetDatabase.CreateAsset(obj, ScriptableObjectFilePath);
-            AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            // 完了ポップアップ
-            EditorUtility.DisplayDialog("CreateObject", "CharaCellObjectを保存しました。", "ok");
+
         }
+
+        // // ファイルで出力
+        // void SaveFile()
+        // {
+        //     FileInfo fi = new FileInfo(ScriptableObjectFilePath);
+        //     StreamWriter sw = fi.CreateText();
+
+        //     sw.WriteLine(CharaCell.OutputCSVLineHeader());
+        //     sw.WriteLine(CharaCell.OutputCSVLineType());
+
+        //     foreach (var item in charCells_)
+        //     {
+        //         sw.WriteLine(item.OutputCSVLine());
+        //     }
+        //     sw.Close();
+        // }
+        // void LoadFile()
+        // {
+
+        //     try
+        //     {
+        //         // csvファイルを開く
+        //         using(var sr = new StreamReader(CSVFilePath))
+        //         {
+        //             // ストリームの末尾まで繰り返す
+        //             while (!sr.EndOfStream)
+        //             {
+        //                 // ファイルから一行読み込む
+        //                 var line = sr.ReadLine();
+        //                 //Debug.Log(line);
+
+        //                 // 読み込んだ一行をカンマ毎に分けて配列に格納する
+        //                 var values = line.Split(',');
+
+        //                 if (values[0] == "ID")continue;
+        //                 if (values[0] == "TYPE")continue;
+
+        //                 values[0] = CharaCell.ReplaceHyphen(values[0]);
+        //                 //同じ名前のセルがある
+        //                 if (charCellDict_.ContainsKey(values[0]))
+        //                 {
+        //                     charCellDict_[values[0]].InputCSVLine(values);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     catch (System.Exception e)
+        //     {
+        //         // ファイルを開くのに失敗したとき
+        //         Debug.Log(e.Message);
+        //     }
+
+        // }
+
+        // // ファイルで出力
+        // void CreateObject()
+        // {
+        //     CharaCellObject obj = new CharaCellObject();
+        //     obj.param = charCells_.ToList();
+
+        //     AssetDatabase.CreateAsset(obj, ScriptableObjectFilePath);
+        //     AssetDatabase.SaveAssets();
+        //     AssetDatabase.Refresh();
+        //     // 完了ポップアップ
+        //     EditorUtility.DisplayDialog("CreateObject", "CharaCellObjectを保存しました。", "ok");
+        // }
 
     }
 }

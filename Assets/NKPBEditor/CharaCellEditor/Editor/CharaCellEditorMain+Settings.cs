@@ -15,14 +15,10 @@ namespace NKPB
         const int ANGLE_MAX = 3;
         const float DOT_PER_UNIT = 16f;
         readonly int[] ZURA_OF_KAO = new int[] { 0, 1, 2, 5, 5, 4, 3, 1, 1, 0 }; //顔ずら対応表
-        const string ROOT_PATH = "Assets/NKPBEditor/CharaCellEditor/Resources/";
         const string BodyFilePath = "TPSprites/body";
         const string KaoFileName = "kao";
         const string ZuraFileName = "zura";
-
-        const string CSVFilePath = ROOT_PATH + "CharaCell.csv";
-        const string ScriptableObjectFilePath = ROOT_PATH + "CharaCell.asset";
-        public static readonly string MapTipsPath = "Assets/GameAssets/ScriptableObjects/CharCell.asset";
+        const string ScriptableObjectFilePath = "Assets/GameAssets/ScriptableObjects/CharaCell.asset";
 
     }
 }
