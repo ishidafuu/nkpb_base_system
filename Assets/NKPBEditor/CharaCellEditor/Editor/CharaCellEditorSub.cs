@@ -371,9 +371,7 @@ namespace NKPB
 
             //顔奥表示
             if (cell.faceZ == 1)DrawFace(pos, cell);
-
             {
-
                 //DebugPanel.Log("sp.rect", sp.rect);
                 //Vector2 pos = new Vector2((1 * GRIDSIZE) + 0, (1 * GRIDSIZE) - 0);
                 Vector2 size = new Vector2(sp.rect.width, sp.rect.height);

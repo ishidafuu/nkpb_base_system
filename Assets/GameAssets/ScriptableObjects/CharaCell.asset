@@ -13,11 +13,1667 @@ MonoBehaviour:
   m_Name: CharaCell
   m_EditorClassIdentifier: 
   param:
-  - ID: action_LdHkKc_000
-    faceNo: 2
-    faceX: -1
+  - ID: nm2body_01_01
+    faceNo: 0
+    faceX: 0
+    faceY: -1
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_01_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_02_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_03_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_04_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_05_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_06_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_07_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_15
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_08_16
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_01
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_02
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_03
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_04
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_05
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_06
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_07
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_08
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_09
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_10
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_11
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_12
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_13
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_14
+    faceNo: 0
+    faceX: 0
+    faceY: 0
+    faceZ: 0
+    faceAngle: 0
+    ballX: 0
+    ballY: 0
+    ballZ: 0
+    partsNo: 0
+    partsX: 0
+    partsY: 0
+  - ID: nm2body_09_15
+    faceNo: 0
+    faceX: 0
     faceY: 0
-    faceZ: 1
+    faceZ: 0
     faceAngle: 0
     ballX: 0
     ballY: 0
@@ -25,7 +1681,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkKc_001
+  - ID: nm2body_09_16
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -37,7 +1693,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkKc_002
+  - ID: nm2body_10_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -49,7 +1705,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkKc_003
+  - ID: nm2body_10_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -61,7 +1717,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkPc_000
+  - ID: nm2body_10_03
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -73,7 +1729,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkPc_001
+  - ID: nm2body_10_04
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -85,7 +1741,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdHkPc_002
+  - ID: nm2body_10_05
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -97,7 +1753,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdJbPc_000
+  - ID: nm2body_10_06
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -109,7 +1765,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdJbPc_001
+  - ID: nm2body_10_07
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -121,7 +1777,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdJbPc_002
+  - ID: nm2body_10_08
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -133,7 +1789,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdLoSdKc_000
+  - ID: nm2body_10_09
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -145,7 +1801,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdLoSdKc_001
+  - ID: nm2body_10_10
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -157,7 +1813,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdLoSdKc_002
+  - ID: nm2body_10_11
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -169,7 +1825,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_LdLoSdKc_003
+  - ID: nm2body_10_12
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -181,7 +1837,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrCrPc_000
+  - ID: nm2body_10_13
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -193,7 +1849,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrCrPc_001
+  - ID: nm2body_10_14
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -205,7 +1861,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrCrPc_002
+  - ID: nm2body_10_15
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -217,7 +1873,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkKc_000
+  - ID: nm2body_10_16
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -229,7 +1885,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkKc_001
+  - ID: nm2body_11_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -241,7 +1897,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkKc_002
+  - ID: nm2body_11_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -253,7 +1909,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkKc_003
+  - ID: nm2body_11_03
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -265,7 +1921,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkPc_000
+  - ID: nm2body_11_04
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -277,7 +1933,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkPc_001
+  - ID: nm2body_11_05
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -289,7 +1945,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrHkPc_002
+  - ID: nm2body_12_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -301,7 +1957,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrObKc_000
+  - ID: nm2body_12_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -313,7 +1969,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrObKc_001
+  - ID: nm2body_12_03
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -325,7 +1981,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrObKc_002
+  - ID: nm2body_12_04
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -337,7 +1993,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: action_RrObKc_003
+  - ID: nm2body_12_05
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -349,7 +2005,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: damage_f_000
+  - ID: nm2body_12_06
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -361,7 +2017,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: damage_r_000
+  - ID: nm2body_12_07
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -373,7 +2029,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: damage_r_001
+  - ID: nm2body_12_08
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -385,7 +2041,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_f_000
+  - ID: nm2body_12_09
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -397,7 +2053,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_f_001
+  - ID: nm2body_12_10
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -409,7 +2065,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_f_002
+  - ID: nm2body_12_11
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -421,7 +2077,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_f_003
+  - ID: nm2body_12_12
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -433,7 +2089,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_r_000
+  - ID: nm2body_12_13
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -445,7 +2101,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_r_001
+  - ID: nm2body_12_14
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -457,7 +2113,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_r_002
+  - ID: nm2body_12_15
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -469,7 +2125,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: down_r_003
+  - ID: nm2body_12_16
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -481,7 +2137,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: fly_f_000
+  - ID: nm2body_13_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -493,7 +2149,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: fly_r_000
+  - ID: nm2body_13_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -505,7 +2161,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_b_000
+  - ID: nm2body_13_03
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -517,7 +2173,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_b_001
+  - ID: nm2body_13_04
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -529,7 +2185,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_f_000
+  - ID: nm2body_13_05
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -541,7 +2197,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_f_001
+  - ID: nm2body_13_06
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -553,7 +2209,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_s_000
+  - ID: nm2body_13_07
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -565,7 +2221,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: idle_s_001
+  - ID: nm2body_13_08
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -577,7 +2233,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: ikigire_000
+  - ID: nm2body_13_09
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -589,7 +2245,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: ikigire_001
+  - ID: nm2body_13_10
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -601,7 +2257,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: ikigire_002
+  - ID: nm2body_13_11
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -613,7 +2269,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: jump_000
+  - ID: nm2body_13_12
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -625,7 +2281,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: jump_001
+  - ID: nm2body_13_13
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -637,7 +2293,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: jump_002
+  - ID: nm2body_13_14
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -649,7 +2305,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: jump_003
+  - ID: nm2body_13_15
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -661,7 +2317,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: kagami_000
+  - ID: nm2body_13_16
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -673,7 +2329,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: roll_000
+  - ID: nm2body_14_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -685,7 +2341,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: roll_001
+  - ID: nm2body_14_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -697,7 +2353,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: roll_002
+  - ID: nm2body_14_03
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -709,7 +2365,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: roll_003
+  - ID: nm2body_14_04
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -721,7 +2377,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: run_000
+  - ID: nm2body_14_05
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -733,7 +2389,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: run_001
+  - ID: nm2body_14_06
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -745,7 +2401,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: step_def_000
+  - ID: nm2body_14_07
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -757,7 +2413,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: step_def_001
+  - ID: nm2body_14_08
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -769,7 +2425,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: step_def_002
+  - ID: nm2body_14_09
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -781,7 +2437,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: step_def_003
+  - ID: nm2body_14_10
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -793,7 +2449,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_b_000
+  - ID: nm2body_14_11
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -805,7 +2461,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_b_001
+  - ID: nm2body_14_12
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -817,7 +2473,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_b_002
+  - ID: nm2body_14_13
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -829,7 +2485,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_f_000
+  - ID: nm2body_14_14
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -841,7 +2497,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_f_001
+  - ID: nm2body_14_15
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -853,7 +2509,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_f_002
+  - ID: nm2body_14_16
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -865,7 +2521,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_s_000
+  - ID: nm2body_15_01
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -877,7 +2533,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_s_001
+  - ID: nm2body_15_02
     faceNo: 0
     faceX: 0
     faceY: 0
@@ -889,7 +2545,7 @@ MonoBehaviour:
     partsNo: 0
     partsX: 0
     partsY: 0
-  - ID: walk_s_002
+  - ID: nm2body_15_03
     faceNo: 0
     faceX: 0
     faceY: 0

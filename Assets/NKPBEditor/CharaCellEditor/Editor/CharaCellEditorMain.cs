@@ -235,6 +235,7 @@ namespace NKPB
                     GUIContent contents = new GUIContent();
                     if (!charCellDict_.ContainsKey(spname))
                     {
+                        Debug.Log($"NotFound {spname}");
                         isLoadSprite_ = false;
                         return;
                     }
@@ -299,6 +300,13 @@ namespace NKPB
             {
                 LoadSprite();
             }
+
+            //読み込み
+            if (GUILayout.Button("RefreshFromSpriteFile"))
+            {
+                RefreshFromSpriteFile();
+            }
+
             EditorGUILayout.EndVertical();
         }
         // エディタウィンドウを開くボタンを生成
@@ -346,10 +354,12 @@ namespace NKPB
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
             //保存
-            if (GUILayout.Button("SaveFile"))SaveFile();
+            if (GUILayout.Button("SaveFile"))
+                SaveFile();
 
             //読み込み
-            if (GUILayout.Button("LoadFile"))LoadFile();
+            if (GUILayout.Button("LoadFile"))
+                LoadFile();
 
             EditorGUILayout.EndHorizontal();
         }
@@ -366,6 +376,7 @@ namespace NKPB
             Debug.Log("SaveMap " + ScriptableObjectFilePath);
 
         }
+
         void LoadFile()
         {
             Debug.Log("LoadFile");
@@ -375,11 +386,7 @@ namespace NKPB
             {
                 charCells_ = loadtips.GetClone();
 
-                charCellDict_ = new Dictionary<string, CharaCell>();
-                for (int i = 0; i < charCells_.param.Count; ++i)
-                {
-                    charCellDict_[charCells_[i].ID] = charCells_[i];
-                }
+                UpdateCharaCellDict();
             }
             else
             {
@@ -389,5 +396,47 @@ namespace NKPB
             AssetDatabase.Refresh();
 
         }
+
+        private void UpdateCharaCellDict()
+        {
+            charCellDict_ = new Dictionary<string, CharaCell>();
+            for (int i = 0; i < charCells_.param.Count; ++i)
+            {
+                charCellDict_[charCells_[i].ID] = charCells_[i];
+            }
+        }
+
+        void RefreshFromSpriteFile()
+        {
+            if (EditorUtility.DisplayDialogComplex("RefreshFromSpriteFile",
+                    "スプライトからCharaCellデータを再生しますか？",
+                    "OK", "キャンセル", "") == 0)
+            {
+                Debug.Log("RefreshFromSpriteFile");
+                var newCharCells = new CharaCellObject();
+
+                // 現在のスプライトにあるものを抽出、ない場合は新たに作成
+                for (int i = 0; i < bodySprites_.Length; ++i)
+                {
+                    string id = CharaCell.ReplaceHyphen(bodySprites_[i].name);
+                    CharaCell item = charCells_.param.FirstOrDefault(x => x.ID == id);
+                    if (item == null)
+                    {
+                        item = new CharaCell();
+                        item.ID = id;
+                    }
+
+                    newCharCells.param.Add(item);
+                }
+
+                charCells_ = newCharCells;
+
+                UpdateCharaCellDict();
+
+                AssetDatabase.Refresh();
+            }
+
+        }
+
     }
 }

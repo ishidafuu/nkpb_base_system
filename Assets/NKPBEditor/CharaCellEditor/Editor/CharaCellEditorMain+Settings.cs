@@ -15,7 +15,8 @@ namespace NKPB
         const int ANGLE_MAX = 3;
         const float DOT_PER_UNIT = 16f;
         readonly int[] ZURA_OF_KAO = new int[] { 0, 1, 2, 5, 5, 4, 3, 1, 1, 0 }; //顔ずら対応表
-        const string BodyFilePath = "TPSprites/body";
+        const string BodyFilePath = "Sprites/nm2body";
+        //Assets/GameAssets/Resources/Sprites/nm2body.png
         const string KaoFileName = "kao";
         const string ZuraFileName = "zura";
         const string ScriptableObjectFilePath = "Assets/GameAssets/ScriptableObjects/CharaCell.asset";
