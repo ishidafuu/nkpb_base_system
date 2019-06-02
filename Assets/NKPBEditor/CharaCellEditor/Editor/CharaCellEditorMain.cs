@@ -137,9 +137,6 @@ namespace NKPB
                 //セーブロード
                 DrawButtonSaveLoad();
 
-                //オブジェクト作成
-                // DrawButtonCreateObject();
-
                 //アイコン＋名前
                 DrawImageParts();
                 //選択中
@@ -356,15 +353,6 @@ namespace NKPB
 
             EditorGUILayout.EndHorizontal();
         }
-
-        // void DrawButtonCreateObject()
-        // {
-        //     EditorGUILayout.BeginHorizontal();
-        //     GUILayout.FlexibleSpace();
-        //     //保存
-        //     if (GUILayout.Button("CreateScriptableObject"))CreateObject();
-        //     EditorGUILayout.EndHorizontal();
-        // }
 
         //入出力系///////////////////////////////
 
