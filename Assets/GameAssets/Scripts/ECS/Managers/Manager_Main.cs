@@ -103,7 +103,7 @@ namespace NKPB
             world.CreateManager(typeof(ConvertDrawPosJobSystem));
             // Renderer
             // 各パーツの描画位置決定および描画
-            world.CreateManager(typeof(BGDrawSystem));
+            world.CreateManager(typeof(CharaDrawSystem));
 
         }
 
