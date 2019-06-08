@@ -17,6 +17,7 @@ namespace NKPB
             typeof(CharaDash), // ダッシュ
             typeof(CharaLook), // 向き
             typeof(CharaMotion), // モーション
+            typeof(CharaFlag), // フラグ
             // typeof(PadScan), // 入力（ここでは付けずCharaEntityFactoryで必要なキャラのみつける）
         };
     }

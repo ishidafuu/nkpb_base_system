@@ -85,17 +85,4 @@ namespace NKPB
         RightDown,
         Down,
     }
-
-    // モーションフラグ
-    [Flags]
-    public enum EnumFlagMotion
-    {
-        None = 0x0000,
-        // 空中
-        Air = 0x001,
-        // ダッシュ
-        Dash = 0x002,
-        // ダメージ
-        Damage = 0x003,
-        };
 }

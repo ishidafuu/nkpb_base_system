@@ -23,98 +23,78 @@ namespace NKPB
             group = GetComponentGroup(
                 ComponentType.Create<CharaMove>(),
                 ComponentType.ReadOnly<CharaDash>(),
-                ComponentType.ReadOnly<CharaMotion>(),
+                ComponentType.ReadOnly<CharaFlag>(),
                 ComponentType.ReadOnly<PadScan>());
         }
-        ComponentDataArray<CharaMove> charaMoves;
-        ComponentDataArray<CharaDash> charaDashs;
-        ComponentDataArray<CharaMotion> charaMotions;
+
+        ComponentDataArray<CharaMove> m_charaMoves;
+        ComponentDataArray<CharaDash> m_charaDashs;
+        ComponentDataArray<CharaFlag> m_charaFlags;
         ComponentDataArray<PadScan> padScans;
 
         protected override void OnUpdate()
         {
-            charaMoves = group.GetComponentDataArray<CharaMove>();
-            charaDashs = group.GetComponentDataArray<CharaDash>();
-            charaMotions = group.GetComponentDataArray<CharaMotion>();
+            m_charaMoves = group.GetComponentDataArray<CharaMove>();
+            m_charaDashs = group.GetComponentDataArray<CharaDash>();
+            m_charaFlags = group.GetComponentDataArray<CharaFlag>();
             padScans = group.GetComponentDataArray<PadScan>();
 
-            for (int i = 0; i < charaMotions.Length; i++)
+            for (int i = 0; i < m_charaFlags.Length; i++)
             {
-                //モーションごとの入力
-                switch (charaMotions[i].motionType)
+                var charaFlag = m_charaFlags[i];
+
+                if (charaFlag.moveFlag.IsFlag(FlagMove.Walk))
                 {
-                    case EnumMotion.Idle:
-                        Friction(i);
-                        break;
-                    case EnumMotion.Walk:
-                        Walk(i);
-                        break;
-                    case EnumMotion.Dash:
-                        break;
-                    case EnumMotion.Slip:
-                        Friction(i);
-                        break;
-                    case EnumMotion.Jump:
-                        break;
-                    case EnumMotion.Fall:
-                        break;
-                    case EnumMotion.Land:
-                        Stop(i);
-                        break;
-                    case EnumMotion.Damage:
-                        break;
-                    case EnumMotion.Fly:
-                        break;
-                    case EnumMotion.Down:
-                        Friction(i);
-                        break;
-                    case EnumMotion.Dead:
-                        Stop(i);
-                        break;
-                    case EnumMotion.Action:
-                        break;
-                    default:
-                        Debug.Assert(false);
-                        break;
+                    Walk(i);
+                }
+
+                if (charaFlag.moveFlag.IsFlag(FlagMove.Friction))
+                {
+                    Friction(i);
+                }
+
+                if (charaFlag.moveFlag.IsFlag(FlagMove.Stop))
+                {
+                    Stop(i);
+                }
+
+                if (charaFlag.moveFlag.IsFlag(FlagMove.Dash))
+                {
+                    Dash(i);
                 }
             }
         }
 
-        /// <summary>
-        /// 摩擦
-        /// </summary>
-        /// <param name="i"></param>
         void Friction(int i)
         {
-            var charaMove = charaMoves[i];
+            var charaMove = m_charaMoves[i];
             charaMove.Friction(Define.Instance.Move.BrakeDelta);
-            charaMoves[i] = charaMove;
+            m_charaMoves[i] = charaMove;
         }
 
-        /// <summary>
-        /// 停止
-        /// </summary>
-        /// <param name="i"></param>
         void Stop(int i)
         {
-            var charaMove = charaMoves[i];
+            var charaMove = m_charaMoves[i];
             charaMove.Stop();
-            charaMoves[i] = charaMove;
+            m_charaMoves[i] = charaMove;
         }
 
         void Walk(int i)
         {
             Debug.Log("Walk");
-            var charaMove = charaMoves[i];
+            var charaMove = m_charaMoves[i];
             charaMove.SetDelta(Define.Instance.Move.WalkSpeed, InputToMoveMuki(i));
-            charaMoves[i] = charaMove;
+            m_charaMoves[i] = charaMove;
         }
 
-        /// <summary>
-        /// 入力向き
-        /// </summary>
-        /// <param name="i"></param>
-        /// <returns></returns>
+        void Dash(int i)
+        {
+            Debug.Log("Dash");
+            var charaMove = m_charaMoves[i];
+            charaMove.SetDelta(Define.Instance.Move.WalkSpeed, InputToMoveMukiDash(i));
+            m_charaMoves[i] = charaMove;
+        }
+
         public EnumMoveMuki InputToMoveMuki(int i)
         {
             var res = EnumMoveMuki.None;
@@ -164,16 +144,10 @@ namespace NKPB
             return res;
         }
 
-        /// <summary>
-        /// ダッシュの入力向き
-        /// </summary>
-        /// <param name="i"></param>
-        /// <param name="charaDash"></param>
-        /// <returns></returns>
-        public EnumMoveMuki InputToMoveMukiDash(int i, CharaDash charaDash)
+        public EnumMoveMuki InputToMoveMukiDash(int i)
         {
             var res = EnumMoveMuki.None;
-
+            var charaDash = m_charaDashs[i];
             if (charaDash.dashMuki == EnumMuki.Left)
             {
                 if (padScans[i].crossLeft.isPress)

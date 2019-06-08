@@ -22,7 +22,7 @@ namespace NKPB
         {
             m_group = GetComponentGroup(
                 ComponentType.Create<CharaMuki>(),
-                ComponentType.ReadOnly<CharaMotion>(),
+                ComponentType.ReadOnly<CharaFlag>(),
                 ComponentType.ReadOnly<PadScan>());
         }
 
@@ -30,8 +30,8 @@ namespace NKPB
         {
             var job = new InputJob()
             {
-                m_charaMotions = m_group.GetComponentDataArray<CharaMotion>(),
                 m_charaMukis = m_group.GetComponentDataArray<CharaMuki>(),
+                m_charaFlags = m_group.GetComponentDataArray<CharaFlag>(),
                 m_PadScans = m_group.GetComponentDataArray<PadScan>(),
             };
 
@@ -45,47 +45,18 @@ namespace NKPB
         {
             public ComponentDataArray<CharaMuki> m_charaMukis;
             [ReadOnly]
-            public ComponentDataArray<CharaMotion> m_charaMotions;
+            public ComponentDataArray<CharaFlag> m_charaFlags;
             [ReadOnly]
             public ComponentDataArray<PadScan> m_PadScans;
             public void Execute()
             {
 
-                for (int i = 0; i < m_charaMotions.Length; i++)
+                for (int i = 0; i < m_charaFlags.Length; i++)
                 {
                     //モーションごとの入力
-                    switch (m_charaMotions[i].motionType)
+                    if (m_charaFlags[i].mukiFlag)
                     {
-                        case EnumMotion.Idle:
-                            break;
-                        case EnumMotion.Walk:
-                            CheckCrossX(i);
-                            break;
-                        case EnumMotion.Dash:
-                            break;
-                        case EnumMotion.Slip:
-                            break;
-                        case EnumMotion.Jump:
-                            CheckCrossX(i);
-                            break;
-                        case EnumMotion.Fall:
-                            CheckCrossX(i);
-                            break;
-                        case EnumMotion.Land:
-                            break;
-                        case EnumMotion.Damage:
-                            break;
-                        case EnumMotion.Fly:
-                            break;
-                        case EnumMotion.Down:
-                            break;
-                        case EnumMotion.Dead:
-                            break;
-                        case EnumMotion.Action:
-                            break;
-                        default:
-                            Debug.Assert(false);
-                            break;
+                        CheckCrossX(i);
                     }
                 }
             }
