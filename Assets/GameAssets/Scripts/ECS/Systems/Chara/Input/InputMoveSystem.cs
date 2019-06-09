@@ -39,6 +39,9 @@ namespace NKPB
                 m_charaDashs = m_group.GetComponentDataArray<CharaDash>(),
                 m_charaFlags = m_group.GetComponentDataArray<CharaFlag>(),
                 m_padScans = m_group.GetComponentDataArray<PadScan>(),
+                m_brakeDelta = Define.Instance.Move.BrakeDelta,
+                m_walkSpeed = Define.Instance.Move.WalkSpeed,
+                m_dashSpeed = Define.Instance.Move.DashSpeed,
             };
 
             inputDeps = job.Schedule(inputDeps);
@@ -56,6 +59,12 @@ namespace NKPB
             public ComponentDataArray<CharaFlag> m_charaFlags;
             [ReadOnly]
             public ComponentDataArray<PadScan> m_padScans;
+            [ReadOnly]
+            public int m_brakeDelta;
+            [ReadOnly]
+            public int m_walkSpeed;
+            [ReadOnly]
+            public int m_dashSpeed;
 
             public void Execute()
             {
@@ -89,7 +98,7 @@ namespace NKPB
             void Friction(int i)
             {
                 CharaMove charaMove = m_charaMoves[i];
-                UpdateFriction(ref charaMove, Define.Instance.Move.BrakeDelta);
+                UpdateFriction(ref charaMove, m_brakeDelta);
                 m_charaMoves[i] = charaMove;
             }
 
@@ -133,7 +142,7 @@ namespace NKPB
             {
                 // Debug.Log("Walk");
                 CharaMove charaMove = m_charaMoves[i];
-                SetDelta(ref charaMove, Define.Instance.Move.WalkSpeed, InputToMoveMuki(i));
+                SetDelta(ref charaMove, m_walkSpeed, InputToMoveMuki(i));
                 m_charaMoves[i] = charaMove;
             }
 
@@ -244,7 +253,7 @@ namespace NKPB
             {
                 // Debug.Log("Dash");
                 CharaMove charaMove = m_charaMoves[i];
-                SetDelta(ref charaMove, Define.Instance.Move.WalkSpeed, InputToMoveMukiDash(i));
+                SetDelta(ref charaMove, m_dashSpeed, InputToMoveMukiDash(i));
                 m_charaMoves[i] = charaMove;
             }
 
