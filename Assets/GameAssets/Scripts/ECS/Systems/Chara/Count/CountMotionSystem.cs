@@ -14,7 +14,7 @@ namespace NKPB
     /// <summary>
     /// モーションの時間進行システム
     /// </summary>
-    public class CountMotionJobSystem : JobComponentSystem
+    public class CountMotionSystem : JobComponentSystem
     {
         ComponentGroup m_group;
 

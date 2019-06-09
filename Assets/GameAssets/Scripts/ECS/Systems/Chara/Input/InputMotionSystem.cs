@@ -14,7 +14,7 @@ namespace NKPB
     /// <summary>
     /// 入力による状態変化システム
     /// </summary>
-    public class InputMotionJobSystem : JobComponentSystem
+    public class InputMotionSystem : JobComponentSystem
     {
         ComponentGroup m_group;
 

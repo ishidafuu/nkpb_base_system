@@ -9,7 +9,7 @@ namespace NKPB
 {
 
     //座標移動
-    public class MovePosJobSystem : JobComponentSystem
+    public class MovePosSystem : JobComponentSystem
     {
         ComponentGroup m_group;
 

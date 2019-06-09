@@ -86,21 +86,21 @@ namespace NKPB
             // world.CreateManager(typeof(BGDrawSystem));
 
             // モーションの時間進行システム
-            world.CreateManager(typeof(CountMotionJobSystem));
+            world.CreateManager(typeof(CountMotionSystem));
             // 時間経過によるモーション変更システム
-            world.CreateManager(typeof(ShiftCountMotionJobSystem));
+            world.CreateManager(typeof(ShiftCountMotionSystem));
             // 入力による状態変化システム
-            world.CreateManager(typeof(InputMotionJobSystem));
+            world.CreateManager(typeof(InputMotionSystem));
             // 入力による向き変化システム
             world.CreateManager(typeof(InputMukiSystem));
             // 入力による座標変化システム
             world.CreateManager(typeof(InputMoveSystem));
             // 座標移動システム
-            world.CreateManager(typeof(MovePosJobSystem));
+            world.CreateManager(typeof(MovePosSystem));
             // 描画向き変換
-            world.CreateManager(typeof(LookJobSystem));
+            world.CreateManager(typeof(LookSystem));
             // 描画座標変換システム
-            world.CreateManager(typeof(ConvertDrawPosJobSystem));
+            world.CreateManager(typeof(ConvertDrawPosSystem));
             // Renderer
             // 各パーツの描画位置決定および描画
             world.CreateManager(typeof(CharaDrawSystem));

@@ -12,16 +12,15 @@ using UnityEngine;
 namespace NKPB
 {
 
-    //ゲーム座標を描画座標に変換
-    public class ConvertDrawPosJobSystem : JobComponentSystem
+    public class LookSystem : JobComponentSystem
     {
         ComponentGroup m_group;
 
         protected override void OnCreateManager()
         {
             m_group = GetComponentGroup(
-                ComponentType.ReadOnly<CharaMove>(),
-                ComponentType.Create<Position>()
+                ComponentType.Create<CharaLook>(),
+                ComponentType.ReadOnly<CharaMuki>()
             );
         }
 
@@ -29,8 +28,8 @@ namespace NKPB
         {
             var job = new ConvertJob()
             {
-                m_charaMoves = m_group.GetComponentDataArray<CharaMove>(),
-                m_positions = m_group.GetComponentDataArray<Position>(),
+                m_charaLooks = m_group.GetComponentDataArray<CharaLook>(),
+                m_charaMukis = m_group.GetComponentDataArray<CharaMuki>(),
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
@@ -40,18 +39,18 @@ namespace NKPB
         [BurstCompileAttribute]
         struct ConvertJob : IJob
         {
-            public ComponentDataArray<Position> m_positions;
+            public ComponentDataArray<CharaLook> m_charaLooks;
             [ReadOnly]
-            public ComponentDataArray<CharaMove> m_charaMoves;
+            public ComponentDataArray<CharaMuki> m_charaMukis;
             public void Execute()
             {
-                for (int i = 0; i < m_positions.Length; i++)
+                for (int i = 0; i < m_charaLooks.Length; i++)
                 {
-                    var position = m_positions[i];
-                    position.Value.x = m_charaMoves[i].position.x * 0.01f;
-                    position.Value.y = (m_charaMoves[i].position.y + m_charaMoves[i].position.z) * 0.01f;
-                    position.Value.z = -100f + position.Value.y * 0.01f;
-                    m_positions[i] = position;
+                    var look = m_charaLooks[i];
+                    look.isLeft = (m_charaMukis[i].muki == EnumMuki.Left)
+                        ? 1
+                        : 0;
+                    m_charaLooks[i] = look;
                 }
             }
         }

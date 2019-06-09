@@ -38,7 +38,7 @@
 	            sprites.Add(spriteList[i].name, sprite);
 
 	            var mesh = GenerateQuadMesh(sprite);
-	            Debug.Log(spriteList[i].name);
+	            // Debug.Log(spriteList[i].name);
 	            meshes.Add(spriteList[i].name, mesh);
 	            if (i == 0)
 	            {
