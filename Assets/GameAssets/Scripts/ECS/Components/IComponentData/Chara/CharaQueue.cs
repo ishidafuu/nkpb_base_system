@@ -23,5 +23,10 @@ namespace NKPB
             SetQueue(_motionType);
             muki = _muki;
         }
+
+        public void ClearQueue()
+        {
+            isQueue = false;
+        }
     }
 }

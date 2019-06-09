@@ -12,7 +12,7 @@ namespace NKPB
         public FlagInputCheck inputCheckFlag;
         public FlagMove moveFlag;
         public FlagMotion motionFlag;
-        public FlagUpdate updateFlag;
+        // public FlagUpdate updateFlag;
 
         // public bool HasFlag(EnumUpdateFlag flag)
         // {
