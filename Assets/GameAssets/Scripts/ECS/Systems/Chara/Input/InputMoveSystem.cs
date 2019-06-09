@@ -67,35 +67,110 @@ namespace NKPB
 
         void Friction(int i)
         {
-            var charaMove = m_charaMoves[i];
-            charaMove.Friction(Define.Instance.Move.BrakeDelta);
+            CharaMove charaMove = m_charaMoves[i];
+            UpdateFriction(ref charaMove, Define.Instance.Move.BrakeDelta);
             m_charaMoves[i] = charaMove;
+        }
+
+        // XZ方向減速
+        void UpdateFriction(ref CharaMove charaMove, int _brakeDelta)
+        {
+            if (charaMove.delta.x > 0)
+            {
+                charaMove.delta.x = Mathf.Min(0, charaMove.delta.x - _brakeDelta);
+            }
+            else if (charaMove.delta.x < 0)
+            {
+                charaMove.delta.x = Mathf.Max(0, charaMove.delta.x + _brakeDelta);
+            }
+
+            if (charaMove.delta.z > 0)
+            {
+                charaMove.delta.z = Mathf.Min(0, charaMove.delta.z - _brakeDelta);
+            }
+            else if (charaMove.delta.x < 0)
+            {
+                charaMove.delta.z = Mathf.Max(0, charaMove.delta.z + _brakeDelta);
+            }
         }
 
         void Stop(int i)
         {
-            var charaMove = m_charaMoves[i];
-            charaMove.Stop();
+            CharaMove charaMove = m_charaMoves[i];
+            ClearDelta(ref charaMove);
             m_charaMoves[i] = charaMove;
+        }
+
+        //XZ方向停止
+        void ClearDelta(ref CharaMove charaMove)
+        {
+            charaMove.delta.x = 0;
+            charaMove.delta.z = 0;
         }
 
         void Walk(int i)
         {
-            Debug.Log("Walk");
-            var charaMove = m_charaMoves[i];
-            charaMove.SetDelta(Define.Instance.Move.WalkSpeed, InputToMoveMuki(i));
+            // Debug.Log("Walk");
+            CharaMove charaMove = m_charaMoves[i];
+            SetDelta(ref charaMove, Define.Instance.Move.WalkSpeed, InputToMoveMuki(i));
             m_charaMoves[i] = charaMove;
         }
 
-        void Dash(int i)
+        void SetDelta(ref CharaMove charaMove, int _delta, EnumMoveMuki _moveMuki)
         {
-            Debug.Log("Dash");
-            var charaMove = m_charaMoves[i];
-            charaMove.SetDelta(Define.Instance.Move.WalkSpeed, InputToMoveMukiDash(i));
-            m_charaMoves[i] = charaMove;
+            charaMove.delta = DeltaToVector3Int(_delta, _moveMuki);
         }
 
-        public EnumMoveMuki InputToMoveMuki(int i)
+        Vector3Int DeltaToVector3Int(int _delta, EnumMoveMuki _moveMuki)
+        {
+            Vector3 res = Vector3.zero;
+            const float NANAME45 = 0.7f;
+            const float NANAME30 = 0.5f;
+            const float NANAME30L = 0.87f;
+            switch (_moveMuki)
+            {
+                case EnumMoveMuki.Left:
+                    res = new Vector3(-1, 0, 0);
+                    break;
+                case EnumMoveMuki.LeftLeftDown:
+                    res = new Vector3(-NANAME30L, 0, -NANAME30);
+                    break;
+                case EnumMoveMuki.LeftDown:
+                    res = new Vector3(-NANAME45, 0, -NANAME45);
+                    break;
+                case EnumMoveMuki.LeftLeftUp:
+                    res = new Vector3(-NANAME30L, 0, +NANAME30);
+                    break;
+                case EnumMoveMuki.LeftUp:
+                    res = new Vector3(-NANAME45, 0, +NANAME45);
+                    break;
+                case EnumMoveMuki.Right:
+                    res = new Vector3(1, 0, 0);
+                    break;
+                case EnumMoveMuki.RightRightDown:
+                    res = new Vector3(+NANAME30L, 0, -NANAME30);
+                    break;
+                case EnumMoveMuki.RightDown:
+                    res = new Vector3(+NANAME45, 0, -NANAME45);
+                    break;
+                case EnumMoveMuki.RightRightUp:
+                    res = new Vector3(+NANAME30L, 0, +NANAME30);
+                    break;
+                case EnumMoveMuki.RightUp:
+                    res = new Vector3(+NANAME45, 0, +NANAME45);
+                    break;
+                case EnumMoveMuki.Up:
+                    res = new Vector3(0, 0, 1);
+                    break;
+                case EnumMoveMuki.Down:
+                    res = new Vector3(0, 0, -1);
+                    break;
+            }
+            res *= _delta;
+            return new Vector3Int((int)res.x, 0, (int)res.z);
+        }
+
+        EnumMoveMuki InputToMoveMuki(int i)
         {
             var res = EnumMoveMuki.None;
 
@@ -144,7 +219,15 @@ namespace NKPB
             return res;
         }
 
-        public EnumMoveMuki InputToMoveMukiDash(int i)
+        void Dash(int i)
+        {
+            // Debug.Log("Dash");
+            CharaMove charaMove = m_charaMoves[i];
+            SetDelta(ref charaMove, Define.Instance.Move.WalkSpeed, InputToMoveMukiDash(i));
+            m_charaMoves[i] = charaMove;
+        }
+
+        EnumMoveMuki InputToMoveMukiDash(int i)
         {
             var res = EnumMoveMuki.None;
             var charaDash = m_charaDashs[i];
