@@ -6,7 +6,7 @@ namespace NKPB
     {
         public static ComponentType[] CharaComponentType = {
             typeof(CharaId),
-            typeof(Position),
+            typeof(Translation),
             typeof(CharaMove),
             typeof(CharaMuki),
             typeof(CharaDash),

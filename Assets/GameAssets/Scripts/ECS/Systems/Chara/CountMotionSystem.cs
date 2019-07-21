@@ -16,22 +16,28 @@ namespace NKPB
     /// </summary>
     public class CountMotionSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<CharaMotion>());
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<CharaMotion>());
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+
+            NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new CountJob()
             {
-                m_charaMotions = m_group.GetComponentDataArray<CharaMotion>()
+                charaMotions = charaMotions
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.charaMotions);
+            charaMotions.Dispose();
+
             return inputDeps;
         }
 
@@ -40,14 +46,14 @@ namespace NKPB
         //事前にNativeArrayにコピーすれば良いとは思う
         struct CountJob : IJob
         {
-            public ComponentDataArray<CharaMotion> m_charaMotions;
+            public NativeArray<CharaMotion> charaMotions;
 
             public void Execute()
             {
                 const int FRAMES_COUNT = 4;
-                for (int i = 0; i < m_charaMotions.Length; i++)
+                for (int i = 0; i < charaMotions.Length; i++)
                 {
-                    CharaMotion charaMotion = m_charaMotions[i];
+                    CharaMotion charaMotion = charaMotions[i];
                     //Shared.aniScriptSheet.scripts[(int)charaMotion.motionType].frames.Count;
                     charaMotion.count++;
                     charaMotion.totalCount++;
@@ -56,7 +62,7 @@ namespace NKPB
                     {
                         charaMotion.count = 0;
                     }
-                    m_charaMotions[i] = charaMotion;
+                    charaMotions[i] = charaMotion;
                 }
             }
         }

@@ -12,11 +12,8 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// 入力システム（Input.GetButtonDownはメインスレッドからのみ呼び出せるのでComponentSystemで呼び出す）
-    /// </summary>
     [UpdateInGroup(typeof(ScanGroup))]
-    [UpdateBefore(typeof(CountGroup))]
+    // [UpdateBefore(typeof(CountGroup))]
     public class PadScanSystem : ComponentSystem
     {
         enum EnumUnityButtonType
@@ -29,15 +26,16 @@ namespace NKPB
             Fire6,
         }
 
-        ComponentGroup m_group;
+        EntityQuery m_query;
         ReadOnlyCollection<string>[] ButtonTypeName;
         ReadOnlyCollection<string> HorizontalName;
         ReadOnlyCollection<string> VerticalName;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<PadScan>());
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<PadScan>()
+            );
 
             var playerNum = Settings.Instance.Common.PlayerCount;
             var tmpPlayerNames = new List<string>();
@@ -95,25 +93,25 @@ namespace NKPB
 
         protected override void OnUpdate()
         {
-            var PadScans = m_group.ToComponentDataArray<PadScan>(Allocator.TempJob);
-            for (int i = 0; i < PadScans.Length; i++)
+            var padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
+            for (int i = 0; i < padScans.Length; i++)
             {
-                var PadScan = PadScans[i];
-                SetCross(ref PadScan, i);
-                SetButton(ref PadScan, i);
-                PadScans[i] = PadScan;
+                var padScan = padScans[i];
+                SetCross(ref padScan, i);
+                SetButton(ref padScan, i);
+                padScans[i] = padScan;
             }
-            m_group.CopyFromComponentDataArray(PadScans);
-            PadScans.Dispose();
+            m_query.CopyFromComponentDataArray(padScans);
+            padScans.Dispose();
 
         }
 
-        void SetCross(ref PadScan PadScan, int playerNo)
+        void SetCross(ref PadScan padScan, int playerNo)
         {
             var nowAxis = new Vector2(Input.GetAxis(HorizontalName[playerNo]), Input.GetAxis(VerticalName[playerNo]));
-            PadScan.SetCross(nowAxis, Time.time);
-            // if (nowAxis != Vector2.zero)
-            // 	Debug.Log(nowAxis);
+            padScan.SetCross(nowAxis, Time.time);
+            if (nowAxis != Vector2.zero)
+                Debug.Log(nowAxis);
         }
 
         void SetButton(ref PadScan padScan, int playerNo)
@@ -141,8 +139,8 @@ namespace NKPB
                         padScan.buttonY.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                 }
-                // if (isPush)
-                // 	Debug.Log(buttonName);
+                if (isPush)
+                    Debug.Log(i);
             }
         }
     }

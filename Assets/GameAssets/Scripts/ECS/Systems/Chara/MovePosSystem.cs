@@ -1,4 +1,5 @@
 ﻿using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -9,36 +10,42 @@ namespace NKPB
 {
     public class MovePosSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<CharaMove>());
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<CharaMove>());
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
             var job = new PositionJob()
             {
-                m_charaMove = m_group.GetComponentDataArray<CharaMove>(),
+                charaMoves = charaMoves,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.charaMoves);
+
+            charaMoves.Dispose();
+
             return inputDeps;
         }
 
         [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public ComponentDataArray<CharaMove> m_charaMove;
+            public NativeArray<CharaMove> charaMoves;
             public void Execute()
             {
-                for (int i = 0; i < m_charaMove.Length; i++)
+                for (int i = 0; i < charaMoves.Length; i++)
                 {
-                    CharaMove charaMove = m_charaMove[i];
+                    CharaMove charaMove = charaMoves[i];
                     charaMove.position += charaMove.delta;
-                    m_charaMove[i] = charaMove;
+                    charaMoves[i] = charaMove;
                 }
             }
         }

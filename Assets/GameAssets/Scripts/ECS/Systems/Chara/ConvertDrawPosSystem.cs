@@ -13,43 +13,51 @@ namespace NKPB
 {
     public class ConvertDrawPosSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
+            m_query = GetEntityQuery(
                 ComponentType.ReadOnly<CharaMove>(),
-                ComponentType.Create<Position>()
+                ComponentType.ReadWrite<Translation>()
             );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
+            NativeArray<Translation> positions = m_query.ToComponentDataArray<Translation>(Allocator.TempJob);
+
             var job = new ConvertJob()
             {
-                m_charaMoves = m_group.GetComponentDataArray<CharaMove>(),
-                m_positions = m_group.GetComponentDataArray<Position>(),
+                charaMoves = charaMoves,
+                positions = positions,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.positions);
+
+            charaMoves.Dispose();
+            positions.Dispose();
+
             return inputDeps;
         }
 
         [BurstCompileAttribute]
         struct ConvertJob : IJob
         {
-            public ComponentDataArray<Position> m_positions;
-            [ReadOnly]
-            public ComponentDataArray<CharaMove> m_charaMoves;
+            public NativeArray<Translation> positions;
+            [ReadOnly] public NativeArray<CharaMove> charaMoves;
             public void Execute()
             {
-                for (int i = 0; i < m_positions.Length; i++)
+                for (int i = 0; i < positions.Length; i++)
                 {
-                    var position = m_positions[i];
-                    position.Value.x = m_charaMoves[i].position.x * 0.01f;
-                    position.Value.y = (m_charaMoves[i].position.y + m_charaMoves[i].position.z) * 0.01f;
-                    position.Value.z = -100f + position.Value.y * 0.01f;
-                    m_positions[i] = position;
+                    var position = positions[i];
+                    position.Value.x = charaMoves[i].position.x * 0.01f;
+                    position.Value.y = (charaMoves[i].position.y + charaMoves[i].position.z) * 0.01f;
+                    position.Value.z = 100f + position.Value.y * 0.01f;
+                    positions[i] = position;
                 }
             }
         }

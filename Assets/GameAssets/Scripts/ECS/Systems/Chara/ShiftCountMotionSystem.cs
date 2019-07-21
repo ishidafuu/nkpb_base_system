@@ -11,41 +11,42 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// 時間経過によるモーション変更システム
-    /// </summary>
     public class ShiftCountMotionSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<CharaMotion>()
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<CharaMotion>()
             );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new ShiftCountMotionJob()
             {
-                m_charaMotions = m_group.GetComponentDataArray<CharaMotion>()
+                charaMotions = charaMotions
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.charaMotions);
+            charaMotions.Dispose();
             return inputDeps;
         }
 
         [BurstCompileAttribute]
         struct ShiftCountMotionJob : IJob
         {
-            public ComponentDataArray<CharaMotion> m_charaMotions;
+            public NativeArray<CharaMotion> charaMotions;
 
             public void Execute()
             {
-                for (int i = 0; i < m_charaMotions.Length; i++)
+                for (int i = 0; i < charaMotions.Length; i++)
                 {
-                    CharaMotion charaMotion = m_charaMotions[i];
+                    CharaMotion charaMotion = charaMotions[i];
 
                     switch (charaMotion.motionType)
                     {
@@ -83,7 +84,7 @@ namespace NKPB
                             break;
                     }
 
-                    m_charaMotions[i] = charaMotion;
+                    charaMotions[i] = charaMotion;
                 }
 
             }

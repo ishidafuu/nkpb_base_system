@@ -16,44 +16,53 @@ namespace NKPB
     /// </summary>
     public class InputMotionSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<CharaQueue>(),
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<CharaQueue>(),
                 ComponentType.ReadOnly<CharaFlag>(),
                 ComponentType.ReadOnly<PadScan>());
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            NativeArray<CharaQueue> charaQueues = m_query.ToComponentDataArray<CharaQueue>(Allocator.TempJob);
+            NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
+            NativeArray<PadScan> padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
+
             var job = new InputJob()
             {
-                m_charaQueues = m_group.GetComponentDataArray<CharaQueue>(),
-                m_charaFlags = m_group.GetComponentDataArray<CharaFlag>(),
-                m_PadScans = m_group.GetComponentDataArray<PadScan>(),
+                charaQueues = charaQueues,
+                charaFlags = charaFlags,
+                padScans = padScans,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.charaQueues);
+
+            charaQueues.Dispose();
+            charaFlags.Dispose();
+            padScans.Dispose();
+
             return inputDeps;
         }
 
         [BurstCompileAttribute]
         struct InputJob : IJob
         {
-            public ComponentDataArray<CharaQueue> m_charaQueues;
-            [ReadOnly]
-            public ComponentDataArray<CharaFlag> m_charaFlags;
-            [ReadOnly]
-            public ComponentDataArray<PadScan> m_PadScans;
+            public NativeArray<CharaQueue> charaQueues;
+            [ReadOnly] public NativeArray<CharaFlag> charaFlags;
+            [ReadOnly] public NativeArray<PadScan> padScans;
 
             public void Execute()
             {
-                for (int i = 0; i < m_charaQueues.Length; i++)
+                for (int i = 0; i < charaQueues.Length; i++)
                 {
-                    var charaFlag = m_charaFlags[i];
+                    var charaFlag = charaFlags[i];
 
                     if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Jump))
                     {
@@ -85,7 +94,7 @@ namespace NKPB
 
             bool CheckJump(int i)
             {
-                if (m_PadScans[i].IsJumpPush())
+                if (padScans[i].IsJumpPush())
                 {
                     SetQueue(i, EnumMotion.Jump);
                     return true;
@@ -96,14 +105,14 @@ namespace NKPB
 
             bool CheckDash(int i)
             {
-                if (m_PadScans[i].crossLeft.isDouble || m_PadScans[i].crossRight.isDouble)
+                if (padScans[i].crossLeft.isDouble || padScans[i].crossRight.isDouble)
                 {
-                    var charaQueue = m_charaQueues[i];
-                    EnumMuki muki = (m_PadScans[i].crossLeft.isDouble)
+                    var charaQueue = charaQueues[i];
+                    EnumMuki muki = (padScans[i].crossLeft.isDouble)
                         ? EnumMuki.Left
                         : EnumMuki.Right;
                     charaQueue.SetQueueMuki(EnumMotion.Dash, muki);
-                    m_charaQueues[i] = charaQueue;
+                    charaQueues[i] = charaQueue;
 
                     return true;
                 }
@@ -113,7 +122,7 @@ namespace NKPB
 
             bool CheckWalk(int i)
             {
-                if (m_PadScans[i].IsAnyCrossPress())
+                if (padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Walk);
                     return true;
@@ -124,7 +133,7 @@ namespace NKPB
 
             bool CheckSlip(int i)
             {
-                if (m_PadScans[i].IsAnyCrossPress())
+                if (padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Slip);
                     return true;
@@ -135,7 +144,7 @@ namespace NKPB
 
             bool CheckIdle(int i)
             {
-                if (!m_PadScans[i].IsAnyCrossPress())
+                if (!padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Idle);
                     return true;
@@ -146,9 +155,9 @@ namespace NKPB
 
             private void SetQueue(int i, EnumMotion motion)
             {
-                var charaQueue = m_charaQueues[i];
+                var charaQueue = charaQueues[i];
                 charaQueue.SetQueue(motion);
-                m_charaQueues[i] = charaQueue;
+                charaQueues[i] = charaQueue;
             }
         }
     }

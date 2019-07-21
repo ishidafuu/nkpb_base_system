@@ -11,50 +11,55 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// 入力による向き変化システム
-    /// </summary>
     public class InputMukiSystem : JobComponentSystem
     {
-        ComponentGroup m_group;
+        EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
-            m_group = GetComponentGroup(
-                ComponentType.Create<CharaMuki>(),
+            m_query = GetEntityQuery(
+                ComponentType.ReadWrite<CharaMuki>(),
                 ComponentType.ReadOnly<CharaFlag>(),
                 ComponentType.ReadOnly<PadScan>());
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            NativeArray<CharaMuki> charaMukis = m_query.ToComponentDataArray<CharaMuki>(Allocator.TempJob);
+            NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
+            NativeArray<PadScan> padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
             var job = new InputJob()
             {
-                m_charaMukis = m_group.GetComponentDataArray<CharaMuki>(),
-                m_charaFlags = m_group.GetComponentDataArray<CharaFlag>(),
-                m_PadScans = m_group.GetComponentDataArray<PadScan>(),
+                charaMukis = charaMukis,
+                charaFlags = charaFlags,
+                padScans = padScans,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
+
+            m_query.CopyFromComponentDataArray(job.charaMukis);
+
+            charaMukis.Dispose();
+            charaFlags.Dispose();
+            padScans.Dispose();
+
             return inputDeps;
         }
 
         [BurstCompileAttribute]
         struct InputJob : IJob
         {
-            public ComponentDataArray<CharaMuki> m_charaMukis;
-            [ReadOnly]
-            public ComponentDataArray<CharaFlag> m_charaFlags;
-            [ReadOnly]
-            public ComponentDataArray<PadScan> m_PadScans;
+            public NativeArray<CharaMuki> charaMukis;
+            [ReadOnly] public NativeArray<CharaFlag> charaFlags;
+            [ReadOnly] public NativeArray<PadScan> padScans;
             public void Execute()
             {
 
-                for (int i = 0; i < m_charaFlags.Length; i++)
+                for (int i = 0; i < charaFlags.Length; i++)
                 {
                     //モーションごとの入力
-                    if (m_charaFlags[i].mukiFlag)
+                    if (charaFlags[i].mukiFlag)
                     {
                         CheckCrossX(i);
                     }
@@ -64,14 +69,14 @@ namespace NKPB
             //左右チェック
             bool CheckCrossX(int i)
             {
-                if (m_PadScans[i].crossLeft.isPress
-                    || m_PadScans[i].crossRight.isPress)
+                if (padScans[i].crossLeft.isPress
+                    || padScans[i].crossRight.isPress)
                 {
-                    var charaMuki = m_charaMukis[i];
-                    charaMuki.muki = m_PadScans[i].crossLeft.isPress
+                    var charaMuki = charaMukis[i];
+                    charaMuki.muki = padScans[i].crossLeft.isPress
                         ? EnumMuki.Left
                         : EnumMuki.Right;
-                    m_charaMukis[i] = charaMuki;
+                    charaMukis[i] = charaMuki;
                     return true;
                 }
 

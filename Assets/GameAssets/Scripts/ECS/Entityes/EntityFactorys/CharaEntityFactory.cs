@@ -24,7 +24,7 @@ namespace NKPB
             // 必要なキャラのみインプットをつける
             if (_i < Settings.Instance.Common.PlayerCount)
             {
-                _entityManager.AddComponent(entity, ComponentType.Create<PadScan>());
+                _entityManager.AddComponent(entity, ComponentType.ReadWrite<PadScan>());
             }
 
             // ID
@@ -36,7 +36,7 @@ namespace NKPB
             var posL = 0;
             var posH = 0;
 
-            _entityManager.SetComponentData(entity, new Position
+            _entityManager.SetComponentData(entity, new Translation
             {
                 Value = new float3(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0)
             });
