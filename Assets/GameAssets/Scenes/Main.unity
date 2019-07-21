@@ -266,8 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3089e87b712d02a4caf2b9e57c5316f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aniScriptSheet: {fileID: 0}
-  aniBasePos: {fileID: 0}
 --- !u!1001 &265125357
 PrefabInstance:
   m_ObjectHideFlags: 0

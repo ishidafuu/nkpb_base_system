@@ -30,25 +30,18 @@ namespace NKPB
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
             m_group.AddDependency(inputDeps);
-
-            NativeArray<CharaMuki> charaMukis = m_group.ToComponentDataArray<CharaMuki>(Allocator.TempJob);
-            NativeArray<CharaLook> charaLooks = m_group.ToComponentDataArray<CharaLook>(Allocator.TempJob);
-            NativeArray<Position> positions = m_group.ToComponentDataArray<Position>(Allocator.TempJob);
-            NativeArray<CharaMotion> charaMotions = m_group.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
-
-            NativeArray<Matrix4x4> charaMatrixes = new NativeArray<Matrix4x4>(charaMukis.Length, Allocator.TempJob);
-            BodyJob bodyJob = DoBodyJob(ref inputDeps, charaMukis, charaLooks, positions, charaMotions, charaMatrixes);
-
-            // var bgScrolls = m_group.ToComponentDataArray<BgScroll>(Allocator.TempJob);
-            // var bgScrollsMatrixs = new NativeArray<Matrix4x4>(toukiMeters.Length, Allocator.TempJob);
-            // BgScrollJob bgScrollJob = DoBgScrollJob(ref inputDeps, toukiMeters, bgScrollsMatrixs);
-
-            // 描画のためCompleteする
+            NativeArray<Matrix4x4> charaMatrixes = new NativeArray<Matrix4x4>(Settings.Instance.Common.CharaCount, Allocator.TempJob);
+            BodyJob job = DoBodyJob(ref inputDeps, charaMatrixes);
             inputDeps.Complete();
 
-            // JobBody(toukiMeters);
-            // DrawFrame();
-            // DrawToukiMeter(toukiMeterJob);
+            Draw(charaMatrixes, job);
+
+            charaMatrixes.Dispose();
+            return inputDeps;
+        }
+
+        private static NativeArray<Matrix4x4> Draw(NativeArray<Matrix4x4> charaMatrixes, BodyJob bodyJob)
+        {
             for (int i = 0; i < charaMatrixes.Length; i++)
             {
                 Graphics.DrawMesh(Shared.charaMeshMat.meshes["nm2body_01_01"],
@@ -56,31 +49,19 @@ namespace NKPB
                     Shared.charaMeshMat.material, 0);
             }
 
-            // NativeArrayの開放
-            charaMukis.Dispose();
-            charaLooks.Dispose();
-            positions.Dispose();
-            charaMotions.Dispose();
-            charaMatrixes.Dispose();
-            // bgScrollsMatrixs.Dispose();
-
-            return inputDeps;
+            return charaMatrixes;
         }
 
         private BodyJob DoBodyJob(ref JobHandle inputDeps,
-            NativeArray<CharaMuki> charaMukis,
-            NativeArray<CharaLook> charaLooks,
-            NativeArray<Position> positions,
-            NativeArray<CharaMotion> charaMotions,
             NativeArray<Matrix4x4> charaMatrixes)
         {
             var bodyJob = new BodyJob()
             {
                 charaMatrixes = charaMatrixes,
-                charaMukis = charaMukis,
-                charaLooks = charaLooks,
-                positions = positions,
-                charaMotions = charaMotions,
+                charaMukis = m_group.GetComponentDataArray<CharaMuki>(),
+                charaLooks = m_group.GetComponentDataArray<CharaLook>(),
+                positions = m_group.GetComponentDataArray<Position>(),
+                charaMotions = m_group.GetComponentDataArray<CharaMotion>(),
                 one = Vector3.one,
                 q = m_quaternion,
             };
@@ -93,10 +74,10 @@ namespace NKPB
         struct BodyJob : IJob
         {
             public NativeArray<Matrix4x4> charaMatrixes;
-            [ReadOnly] public NativeArray<Position> positions;
-            [ReadOnly] public NativeArray<CharaMuki> charaMukis;
-            [ReadOnly] public NativeArray<CharaLook> charaLooks;
-            [ReadOnly] public NativeArray<CharaMotion> charaMotions;
+            [ReadOnly] public ComponentDataArray<Position> positions;
+            [ReadOnly] public ComponentDataArray<CharaMuki> charaMukis;
+            [ReadOnly] public ComponentDataArray<CharaLook> charaLooks;
+            [ReadOnly] public ComponentDataArray<CharaMotion> charaMotions;
             [ReadOnly] public Vector3 one;
             [ReadOnly] public Quaternion q;
 

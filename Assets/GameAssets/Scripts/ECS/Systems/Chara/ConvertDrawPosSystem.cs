@@ -11,8 +11,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-
-    //ゲーム座標を描画座標に変換
     public class ConvertDrawPosSystem : JobComponentSystem
     {
         ComponentGroup m_group;

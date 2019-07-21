@@ -3,9 +3,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// キャラのモーション
-    /// </summary>
     public struct CharaMotion : IComponentData
     {
         public EnumMotion motionType;

@@ -3,9 +3,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// キャラの状態変化予約
-    /// /// </summary>
     public struct CharaQueue : IComponentData
     {
         public boolean isQueue { get; private set; }

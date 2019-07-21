@@ -2,9 +2,6 @@ using Unity.Entities;
 using UnityEngine;
 namespace NKPB
 {
-    /// <summary>
-    /// キー入力
-    /// </summary>
     public struct PadScan : IComponentData
     {
         // 十字のバッファ

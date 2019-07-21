@@ -39,9 +39,9 @@ namespace NKPB
                 m_charaDashs = m_group.GetComponentDataArray<CharaDash>(),
                 m_charaFlags = m_group.GetComponentDataArray<CharaFlag>(),
                 m_padScans = m_group.GetComponentDataArray<PadScan>(),
-                m_brakeDelta = Define.Instance.Move.BrakeDelta,
-                m_walkSpeed = Define.Instance.Move.WalkSpeed,
-                m_dashSpeed = Define.Instance.Move.DashSpeed,
+                m_brakeDelta = Settings.Instance.Move.BrakeDelta,
+                m_walkSpeed = Settings.Instance.Move.WalkSpeed,
+                m_dashSpeed = Settings.Instance.Move.DashSpeed,
             };
 
             inputDeps = job.Schedule(inputDeps);

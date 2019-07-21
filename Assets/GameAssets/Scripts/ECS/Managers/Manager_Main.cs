@@ -18,64 +18,37 @@ using UnityEngine.U2D;
 
 namespace NKPB
 {
-
-    /// <summary>
-    /// ECSのセットアップを行うManager_Main Component
-    /// </summary>
     sealed class Manager_Main : MonoBehaviour
     {
-        // ワールドとシーン名を一致させる
         const string SCENE_NAME = "Main";
-
-        // エンティティリスト
         List<Entity> m_playerEntityList = new List<Entity>();
 
         void Start()
         {
-            // シーンの判定
             var scene = SceneManager.GetActiveScene();
             if (scene.name != SCENE_NAME)
                 return;
-
-            // ワールド生成
             var manager = InitializeWorld();
-
-            // SharedComponentDataの準備
             ReadySharedComponentData();
-
-            // コンポーネントのキャッシュ
             ComponentCache();
-
-            // エンティティ生成
             InitializeEntities(manager);
         }
 
-        /// <summary>
-        /// ワールド生成
-        /// </summary>
-        /// <returns></returns>
         EntityManager InitializeWorld()
         {
-            var worlds = new World[1];
-            ref
-            var world = ref worlds[0];
+            World[] worlds = new World[1];
+            ref World world = ref worlds[0];
+            world = new World(SCENE_NAME);
 
             world = new World(SCENE_NAME);
             var manager = world.CreateManager<EntityManager>();
 
-            // ComponentSystemの初期化
             InitializeSystem(world);
-
-            // PlayerLoopへのWorldの登録
             ScriptBehaviourUpdateOrder.UpdatePlayerLoop(worlds);
 
             return manager;
         }
 
-        /// <summary>
-        /// ComponentSystemの初期化
-        /// </summary>
-        /// <param name="world"></param>
         void InitializeSystem(World world)
         {
             // 入力システム
@@ -107,61 +80,24 @@ namespace NKPB
 
         }
 
-        // 各コンポーネントのキャッシュ
         void ComponentCache()
         {
             Cache.pixelPerfectCamera = FindObjectOfType<PixelPerfectCamera>();
-            // var tileMaps = FindObjectsOfType<Tilemap>();
-            // foreach (var item in tileMaps)
-            // {
-            //     // Debug.Log(item.layoutGrid.name);
-            //     if (item.layoutGrid.name == "PheromGrid")
-            //     {
-            //         Cache.pheromMap = item;
-            //         Cache.pheromMap.ClearAllTiles();
-            //         Cache.pheromMap.size = new Vector3Int(Define.Instance.GRID_SIZE, Define.Instance.GRID_SIZE, 0);
-            //     }
-            // }
         }
 
-        // SharedComponentDataの読み込み
         void ReadySharedComponentData()
         {
             Shared.ReadySharedComponentData();
         }
 
-        /// <summary>
-        /// エンティティ生成
-        /// </summary>
-        /// <param name="manager"></param>
         void InitializeEntities(EntityManager manager)
         {
-            // プレーヤー作成
-            // CreatePlayerEntity(manager);
-            // キャラ作成
             CreateCharaEntity(manager);
         }
 
-        /// <summary>
-        /// プレーヤーエンティティ作成
-        /// </summary>
-        /// <param name="manager"></param>
-        // void CreatePlayerEntity(EntityManager manager)
-        // {
-        //     for (int i = 0; i < Define.Instance.PLAYER_NUM; i++)
-        //     {
-        //         var entity = PlayerEntityFactory.CreateEntity(i, manager);
-        //         // m_playerEntityList.Add(entity);
-        //     }
-        // }
-
-        /// <summary>
-        /// キャラエンティティ作成
-        /// </summary>
-        /// <param name="manager"></param>
         void CreateCharaEntity(EntityManager manager)
         {
-            for (int i = 0; i < Define.Instance.Common.CharaNum; i++)
+            for (int i = 0; i < Settings.Instance.Common.CharaCount; i++)
             {
                 var playerEntity = (i < m_playerEntityList.Count)
                     ? m_playerEntityList[i]
@@ -170,20 +106,5 @@ namespace NKPB
                 var entity = CharaEntityFactory.CreateEntity(i, manager, ref Shared.charaMeshMat);
             }
         }
-
-        // void InitializeEntity(ref Unity.Mathematics.Random random, EntityManager manager, Entity entity)
-        // {
-        //     var moves = manager.GetBuffer<DanceMove>(entity);
-        //     DanceMove move = default;
-        //     for (uint i = 0; i < danceLoopLength; ++i)
-        //     {
-        //         var values = random.NextFloat4() * 10f - 5f;
-        //         move.Duration = values.w + 5f;
-        //         move.Velocity = values.xyz;
-        //         random.state = random.NextUInt();
-        //         moves.Add(move);
-        //     }
-        //     manager.SetComponentData(entity, new Velocity { Value = (random.NextFloat3() - 0.5f) * 8f });
-        // }
     }
 }

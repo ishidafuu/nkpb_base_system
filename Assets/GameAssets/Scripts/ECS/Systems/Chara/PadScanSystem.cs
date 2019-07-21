@@ -39,7 +39,7 @@ namespace NKPB
             m_group = GetComponentGroup(
                 ComponentType.Create<PadScan>());
 
-            var playerNum = Define.Instance.Common.PlayerNum;
+            var playerNum = Settings.Instance.Common.PlayerCount;
             var tmpPlayerNames = new List<string>();
             for (int i = 0; i < playerNum; i++)
             {
@@ -53,7 +53,7 @@ namespace NKPB
 
         private void InitButtonTypeName(List<string> tpmPlayerNames)
         {
-            var ButtonNum = Define.Instance.Common.ButtonNum;
+            var ButtonNum = Settings.Instance.Common.ButtonCount;
             ButtonTypeName = new ReadOnlyCollection<string>[ButtonNum];
 
             var buttonNames = new List<string>();
@@ -118,7 +118,7 @@ namespace NKPB
 
         void SetButton(ref PadScan padScan, int playerNo)
         {
-            var ButtonNum = Define.Instance.Common.ButtonNum;
+            var ButtonNum = Settings.Instance.Common.ButtonCount;
 
             for (int i = 0; i < ButtonNum; i++)
             {

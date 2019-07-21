@@ -7,8 +7,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-
-    //座標移動
     public class MovePosSystem : JobComponentSystem
     {
         ComponentGroup m_group;
