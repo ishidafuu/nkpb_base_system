@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateInGroup(typeof(MoveGroup))]
     public class MovePosSystem : JobComponentSystem
     {
         EntityQuery m_query;

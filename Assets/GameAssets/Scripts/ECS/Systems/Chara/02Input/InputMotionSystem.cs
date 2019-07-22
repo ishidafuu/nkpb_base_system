@@ -11,7 +11,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateInGroup(typeof(InputGroup))]
     // [UpdateBefore(typeof(MovePosSystem))]
     public class InputMotionSystem : JobComponentSystem
     {

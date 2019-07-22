@@ -13,6 +13,7 @@ namespace NKPB
             typeof(CharaLook),
             typeof(CharaMotion),
             typeof(CharaFlag),
+            typeof(CharaQueue),
             // typeof(PadScan), // 入力（ここでは付けずCharaEntityFactoryで必要なキャラのみつける）
         };
     }

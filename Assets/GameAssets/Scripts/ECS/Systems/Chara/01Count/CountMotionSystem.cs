@@ -11,9 +11,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-
-    [UpdateInGroup(typeof(CountGroup))]
-    // [UpdateBefore(typeof(InputMotionSystem))]
     public class CountMotionSystem : JobComponentSystem
     {
         EntityQuery m_query;
@@ -42,8 +39,6 @@ namespace NKPB
         }
 
         // [BurstCompileAttribute]
-        //Sharedを使っているのでバーストできない
-        //事前にNativeArrayにコピーすれば良いとは思う
         struct CountJob : IJob
         {
             public NativeArray<CharaMotion> charaMotions;

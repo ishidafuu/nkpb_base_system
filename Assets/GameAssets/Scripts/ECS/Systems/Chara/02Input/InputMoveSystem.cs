@@ -11,7 +11,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateInGroup(typeof(InputGroup))]
     public class InputMoveSystem : JobComponentSystem
     {
         EntityQuery m_query;

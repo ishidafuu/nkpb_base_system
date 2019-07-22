@@ -11,8 +11,6 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateInGroup(typeof(JudgeGroup))]
-    // [UpdateBefore(typeof(CharaDrawSystem))]
     public class QueueMotionSystem : JobComponentSystem
     {
         EntityQuery m_query;
@@ -43,19 +41,20 @@ namespace NKPB
 
             m_query.CopyFromComponentDataArray(job.charaMotions);
             m_query.CopyFromComponentDataArray(job.charaFlags);
+            m_query.CopyFromComponentDataArray(job.charaQueues);
 
             charaMotions.Dispose();
             charaFlags.Dispose();
-            charaFlags.Dispose();
+            charaQueues.Dispose();
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct InputJob : IJob
         {
             public NativeArray<CharaMotion> charaMotions;
             public NativeArray<CharaFlag> charaFlags;
-            [ReadOnly] public NativeArray<CharaQueue> charaQueues;
+            public NativeArray<CharaQueue> charaQueues;
 
             public void Execute()
             {
