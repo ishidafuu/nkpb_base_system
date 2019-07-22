@@ -11,9 +11,9 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// モーションの時間進行システム
-    /// </summary>
+
+    [UpdateInGroup(typeof(CountGroup))]
+    // [UpdateBefore(typeof(InputMotionSystem))]
     public class CountMotionSystem : JobComponentSystem
     {
         EntityQuery m_query;

@@ -11,6 +11,7 @@ using UnityEngine;
 
 namespace NKPB
 {
+    [UpdateInGroup(typeof(CountGroup))]
     public class ShiftCountMotionSystem : JobComponentSystem
     {
         EntityQuery m_query;

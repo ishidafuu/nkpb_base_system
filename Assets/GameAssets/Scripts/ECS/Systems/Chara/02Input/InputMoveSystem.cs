@@ -11,9 +11,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    /// <summary>
-    /// 入力による向き変化システム
-    /// </summary>
+    [UpdateInGroup(typeof(InputGroup))]
     public class InputMoveSystem : JobComponentSystem
     {
         EntityQuery m_query;

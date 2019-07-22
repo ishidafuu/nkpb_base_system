@@ -13,7 +13,7 @@ using UnityEngine;
 namespace NKPB
 {
     [UpdateInGroup(typeof(ScanGroup))]
-    // [UpdateBefore(typeof(CountGroup))]
+    // [UpdateBefore(typeof(CountMotionSystem))]
     public class PadScanSystem : ComponentSystem
     {
         enum EnumUnityButtonType
@@ -110,8 +110,8 @@ namespace NKPB
         {
             var nowAxis = new Vector2(Input.GetAxis(HorizontalName[playerNo]), Input.GetAxis(VerticalName[playerNo]));
             padScan.SetCross(nowAxis, Time.time);
-            if (nowAxis != Vector2.zero)
-                Debug.Log(nowAxis);
+            // if (nowAxis != Vector2.zero)
+            //     Debug.Log(nowAxis);
         }
 
         void SetButton(ref PadScan padScan, int playerNo)
@@ -139,8 +139,8 @@ namespace NKPB
                         padScan.buttonY.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                 }
-                if (isPush)
-                    Debug.Log(i);
+                // if (isPush)
+                //     Debug.Log(i);
             }
         }
     }

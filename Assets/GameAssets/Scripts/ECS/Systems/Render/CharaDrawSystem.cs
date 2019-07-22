@@ -9,8 +9,6 @@ using UnityEngine.Experimental.PlayerLoop;
 namespace NKPB
 {
     [UpdateInGroup(typeof(RenderGroup))]
-    // [UpdateAfter(typeof(CountGroup))]
-    // [UpdateAfter(typeof(PreLateUpdate.ParticleSystemBeginUpdateAll))]
     public class CharaDrawSystem : JobComponentSystem
     {
         EntityQuery m_query;

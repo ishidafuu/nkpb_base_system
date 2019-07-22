@@ -42,55 +42,75 @@ namespace NKPB
             World.Active = world;
 
             InitializationSystemGroup initializationSystemGroup = world.GetOrCreateSystem<InitializationSystemGroup>();
-            SimulationSystemGroup simulationSystemGroup = world.GetOrCreateSystem<SimulationSystemGroup>();
-            PresentationSystemGroup presentationSystemGroup = world.GetOrCreateSystem<PresentationSystemGroup>();
-
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<PadScanSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CountMotionSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ShiftCountMotionSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMotionSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMukiSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMoveSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MovePosSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LookSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawPosSystem>());
-            simulationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CharaDrawSystem>());
-
             initializationSystemGroup.SortSystemUpdateList();
+
+            SimulationSystemGroup simulationSystemGroup = world.GetOrCreateSystem<SimulationSystemGroup>();
+            AddScanGroup(world, simulationSystemGroup);
+            AddCountGroup(world, simulationSystemGroup);
+            AddInputGroup(world, simulationSystemGroup);
+            AddMoveGroup(world, simulationSystemGroup);
+            AddJudgeGroup(world, simulationSystemGroup);
+            AddPreRenderGroup(world, simulationSystemGroup);
             simulationSystemGroup.SortSystemUpdateList();
+
+            PresentationSystemGroup presentationSystemGroup = world.GetOrCreateSystem<PresentationSystemGroup>();
+            presentationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CharaDrawSystem>());
             presentationSystemGroup.SortSystemUpdateList();
 
-            InitializeSystem(world);
             ScriptBehaviourUpdateOrder.UpdatePlayerLoop(world);
 
             return world.EntityManager;
         }
-
-        void InitializeSystem(World world)
+        private static void AddScanGroup(World world, SimulationSystemGroup simulationSystemGroup)
         {
-            // 入力システム
-            // world.CreateManager(typeof(PadScanSystem));
+            ScanGroup scanGroup = world.GetOrCreateSystem<ScanGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(scanGroup);
+            scanGroup.AddSystemToUpdateList(world.GetOrCreateSystem<PadScanSystem>());
+            scanGroup.SortSystemUpdateList();
+        }
 
-            // // モーションの時間進行システム
-            // world.CreateManager(typeof(CountMotionSystem));
-            // // 時間経過によるモーション変更システム
-            // world.CreateManager(typeof(ShiftCountMotionSystem));
-            // // 入力による状態変化システム
-            // world.CreateManager(typeof(InputMotionSystem));
-            // // 入力による向き変化システム
-            // world.CreateManager(typeof(InputMukiSystem));
-            // // 入力による座標変化システム
-            // world.CreateManager(typeof(InputMoveSystem));
-            // // 座標移動システム
-            // world.CreateManager(typeof(MovePosSystem));
-            // // 描画向き変換
-            // world.CreateManager(typeof(LookSystem));
-            // // 描画座標変換システム
-            // world.CreateManager(typeof(ConvertDrawPosSystem));
-            // // Renderer
-            // // 各パーツの描画位置決定および描画
-            // world.CreateManager(typeof(CharaDrawSystem));
+        private static void AddCountGroup(World world, SimulationSystemGroup simulationSystemGroup)
+        {
+            CountGroup countGroup = world.GetOrCreateSystem<CountGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(countGroup);
+            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CountMotionSystem>());
+            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ShiftCountMotionSystem>());
+            countGroup.SortSystemUpdateList();
+        }
 
+        private static void AddInputGroup(World world, SimulationSystemGroup simulationSystemGroup)
+        {
+            InputGroup inputGroup = world.GetOrCreateSystem<InputGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(inputGroup);
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMotionSystem>());
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMukiSystem>());
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMoveSystem>());
+            inputGroup.SortSystemUpdateList();
+        }
+
+        private static void AddMoveGroup(World world, SimulationSystemGroup simulationSystemGroup)
+        {
+            MoveGroup moveGroup = world.GetOrCreateSystem<MoveGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(moveGroup);
+            moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MovePosSystem>());
+            moveGroup.SortSystemUpdateList();
+        }
+
+        private static void AddJudgeGroup(World world, SimulationSystemGroup simulationSystemGroup)
+        {
+            JudgeGroup judgeGroup = world.GetOrCreateSystem<JudgeGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(judgeGroup);
+            judgeGroup.AddSystemToUpdateList(world.GetOrCreateSystem<QueueMotionSystem>());
+            judgeGroup.SortSystemUpdateList();
+        }
+
+        private static void AddPreRenderGroup(World world, SimulationSystemGroup simulationSystemGroup)
+        {
+            PreRenderGroup preRenderGroup = world.GetOrCreateSystem<PreRenderGroup>();
+            simulationSystemGroup.AddSystemToUpdateList(preRenderGroup);
+            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LookSystem>());
+            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawPosSystem>());
+            preRenderGroup.SortSystemUpdateList();
         }
 
         void ComponentCache()

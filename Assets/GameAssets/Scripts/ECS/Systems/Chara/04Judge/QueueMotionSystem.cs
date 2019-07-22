@@ -11,6 +11,8 @@ using UnityEngine;
 
 namespace NKPB
 {
+    [UpdateInGroup(typeof(JudgeGroup))]
+    // [UpdateBefore(typeof(CharaDrawSystem))]
     public class QueueMotionSystem : JobComponentSystem
     {
         EntityQuery m_query;
