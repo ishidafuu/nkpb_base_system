@@ -189,11 +189,11 @@ namespace NKPB
 
         void CreateObjectPack()
         {
-            CharacterMotionMaster obj = CreateInstance(typeof(CharacterMotionMaster))as CharacterMotionMaster;
+            CharacterMotionMaster obj = CreateInstance(typeof(CharacterMotionMaster)) as CharacterMotionMaster;
 
             foreach (var item in m_hitboxManager.m_Animations)
             {
-                obj.motionDatas.Add(CreateMotionDataObject(item));
+                obj.motionData.Add(CreateMotionDataObject(item));
             }
 
             AssetDatabase.CreateAsset(obj, CharacterMotionMasterOutputPath);
@@ -205,11 +205,11 @@ namespace NKPB
             CharacterMotionData res = new CharacterMotionData();
 
             res.motionName = hitbox.clip.name;
-            res.framedatas = hitbox.framedata
+            res.frameData = hitbox.frameData
                 .Select(x => new CharacterMotionFrame()
                 {
                     collider = x.collider,
-                        events = x.events,
+                    events = x.events,
                 }).ToArray();
 
             var curves = AnimationUtility.GetObjectReferenceCurveBindings(hitbox.clip);
@@ -222,9 +222,9 @@ namespace NKPB
                     .Select(x => x.value.ToString().Replace(" (UnityEngine.Sprite)", ""))
                     .ToArray();
 
-                for (int i = 0; i < res.framedatas.Length; i++)
+                for (int i = 0; i < res.frameData.Length; i++)
                 {
-                    res.framedatas[i].imageName = imageNames[i];
+                    res.frameData[i].imageName = imageNames[i];
                 }
             }
 

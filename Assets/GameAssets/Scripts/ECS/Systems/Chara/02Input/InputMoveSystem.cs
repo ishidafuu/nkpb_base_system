@@ -102,7 +102,6 @@ namespace NKPB
                 m_charaMoves[i] = charaMove;
             }
 
-            // XZ方向減速
             void UpdateFriction(ref CharaMove charaMove, int _brakeDelta)
             {
                 if (charaMove.delta.x > 0)
@@ -249,7 +248,6 @@ namespace NKPB
 
             void Dash(int i)
             {
-                // Debug.Log("Dash");
                 CharaMove charaMove = m_charaMoves[i];
                 SetDelta(ref charaMove, DashSpeed, InputToMoveMukiDash(i));
                 m_charaMoves[i] = charaMove;

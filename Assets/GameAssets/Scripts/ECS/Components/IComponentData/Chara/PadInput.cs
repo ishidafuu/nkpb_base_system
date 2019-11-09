@@ -71,7 +71,6 @@ namespace NKPB
 
         public bool IsAnyCrossPress()
         {
-            Debug.Log(m_crossUp.m_isPress || m_crossDown.m_isPress || m_crossLeft.m_isPress || m_crossRight.m_isPress);
             return (m_crossUp.m_isPress || m_crossDown.m_isPress || m_crossLeft.m_isPress || m_crossRight.m_isPress);
         }
 

@@ -25,8 +25,8 @@ namespace NKPB
                 return new serializableData
                 {
                     framerate = v.framerate,
-                        hasnextframe = v.hasnextframe,
-                        numColliders = (v.frame.collider == null ? 0 : v.frame.collider.Length),
+                    hasnextframe = v.hasnextframe,
+                    numColliders = (v.frame.collider == null ? 0 : v.frame.collider.Length),
                 };
             }
         }
@@ -37,8 +37,8 @@ namespace NKPB
 
         public internalFrameData(HitboxAnimation source, int frameID)
         {
-            frame = source.framedata[frameID];
-            hasnextframe = ((frameID + 1) < source.framedata.Length);
+            frame = source.frameData[frameID];
+            hasnextframe = ((frameID + 1) < source.frameData.Length);
             framerate = (source.clip != null)
                 ? source.clip.frameRate
                 : 0f;
@@ -97,7 +97,7 @@ namespace NKPB
             return new internalFrameData
             {
                 framerate = v.framerate,
-                    hasnextframe = v.hasnextframe,
+                hasnextframe = v.hasnextframe,
             };
         }
 

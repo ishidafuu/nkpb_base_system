@@ -7,6 +7,6 @@ namespace NKPB
     [Serializable]
     public class CharacterMotionMaster : ScriptableObject
     {
-        public List<CharacterMotionData> motionDatas = new List<CharacterMotionData>();
+        public List<CharacterMotionData> motionData = new List<CharacterMotionData>();
     }
 }

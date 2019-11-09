@@ -15,7 +15,7 @@ namespace NKPB
     public struct CharacterMotionData
     {
         public string motionName;
-        public CharacterMotionFrame[] framedatas;
+        public CharacterMotionFrame[] frameData;
     }
 
     [Serializable]
@@ -30,7 +30,7 @@ namespace NKPB
     public struct HitboxAnimation
     {
         public AnimationClip clip;
-        public HitboxAnimationFrame[] framedata;
+        public HitboxAnimationFrame[] frameData;
     }
 
     [Serializable]

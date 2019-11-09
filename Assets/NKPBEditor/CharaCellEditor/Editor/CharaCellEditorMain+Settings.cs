@@ -19,7 +19,7 @@ namespace NKPB
         //Assets/GameAssets/Resources/Sprites/nm2body.png
         const string KaoFileName = "kao";
         const string ZuraFileName = "zura";
-        const string ScriptableObjectFilePath = "Assets/GameAssets/ScriptableObjects/CharaCell.asset";
+        const string ScriptableObjectFilePath = "Assets/GameAssets/Resources/CharaCell/CharaCell.asset";
 
     }
 }

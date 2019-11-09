@@ -15,10 +15,18 @@ namespace NKPB
     {
         public static MeshMatList m_charaMeshMat;
 
+        public static CharaCellList m_charaCellList;
+        public static CharaMotionList m_charaMotionList;
+
         public static void ReadySharedComponentData()
         {
             m_charaMeshMat = new MeshMatList(PathSettings.CharaSprite, PathSettings.DefaultShader);
 
+            m_charaCellList = new CharaCellList();
+            m_charaCellList.Init();
+
+            m_charaMotionList = new CharaMotionList();
+            m_charaMotionList.Init();
         }
 
     }

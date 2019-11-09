@@ -65,8 +65,8 @@ namespace NKPB
 
             if (Animations == null
                 || SelectedAnimation >= Animations.Length
-                || Animations[SelectedAnimation].framedata == null
-                || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)
+                || Animations[SelectedAnimation].frameData == null
+                || SelectedFrame >= Animations[SelectedAnimation].frameData.Length)
             {
                 return;
             }
@@ -151,7 +151,7 @@ namespace NKPB
         private void DrawTimeLineTack(Vector2 position, float width, Vector2 mouse, EventType eventType, int eventButton, bool isRepaint)
         {
             var animation = Animations[SelectedAnimation];
-            var frames = animation.framedata;
+            var frames = animation.frameData;
             var length = frames.Length;
 
             const int TACK_SIZE = 15;
@@ -230,10 +230,10 @@ namespace NKPB
                         }
                         else if (eventType == EventType.MouseDown && eventContains && eventButton == 1)
                         {
-                            var list = new List<HitboxFrameEventData>(Animations[SelectedAnimation].framedata[i].events);
+                            var list = new List<HitboxFrameEventData>(Animations[SelectedAnimation].frameData[i].events);
 
                             list.RemoveAt(j);
-                            Animations[SelectedAnimation].framedata[i].events = list.ToArray();
+                            Animations[SelectedAnimation].frameData[i].events = list.ToArray();
                             //If we accidentally opened a menu while deleting this event lets close it.
                             if (m_isEditorMenuOpen)
                             {
@@ -248,11 +248,11 @@ namespace NKPB
         void RepairFrameData()
         {
             var length = m_targetManager.GetNumFrames(SelectedAnimation);
-            var diff = length - m_targetManager.m_Animations[SelectedAnimation].framedata.Length;
+            var diff = length - m_targetManager.m_Animations[SelectedAnimation].frameData.Length;
 
             if (diff != 0)
             {
-                var list = new List<HitboxAnimationFrame>(m_targetManager.m_Animations[SelectedAnimation].framedata);
+                var list = new List<HitboxAnimationFrame>(m_targetManager.m_Animations[SelectedAnimation].frameData);
 
                 while (diff < 0)
                 {
@@ -266,7 +266,7 @@ namespace NKPB
                     diff--;
                 }
 
-                m_targetManager.m_Animations[SelectedAnimation].framedata = list.ToArray();
+                m_targetManager.m_Animations[SelectedAnimation].frameData = list.ToArray();
             }
             else
             {
@@ -278,8 +278,8 @@ namespace NKPB
                     {
                         var keyframes = AnimationUtility.GetObjectReferenceCurve(m_targetManager.m_Animations[SelectedAnimation].clip, curves[i]);
 
-                        for (int j = 0; j < m_targetManager.m_Animations[SelectedAnimation].framedata.Length && j < keyframes.Length; j++)
-                            m_targetManager.m_Animations[SelectedAnimation].framedata[j].time = keyframes[j].time;
+                        for (int j = 0; j < m_targetManager.m_Animations[SelectedAnimation].frameData.Length && j < keyframes.Length; j++)
+                            m_targetManager.m_Animations[SelectedAnimation].frameData[j].time = keyframes[j].time;
                     }
                 }
 
@@ -299,13 +299,13 @@ namespace NKPB
 
             if (Animations == null
                 || SelectedAnimation >= Animations.Length
-                || Animations[SelectedAnimation].framedata == null
-                || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)
+                || Animations[SelectedAnimation].frameData == null
+                || SelectedFrame >= Animations[SelectedAnimation].frameData.Length)
             {
                 return;
             }
 
-            var framedata = Animations[SelectedAnimation].framedata[SelectedFrame];
+            var framedata = Animations[SelectedAnimation].frameData[SelectedFrame];
             var eventType = Event.current.type;
             var eventButton = Event.current.button;
 
@@ -358,14 +358,14 @@ namespace NKPB
                         {
                             var index = i;
                             m_GizmoDragHandle[currGizmo * 2 + 0].action = (Vector2 v) =>
-                                Animations[SelectedAnimation].framedata[SelectedFrame].events[index].intParam = IntConverter.EncodeVector2ToInt(v / scale);
+                                Animations[SelectedAnimation].frameData[SelectedFrame].events[index].intParam = IntConverter.EncodeVector2ToInt(v / scale);
                             m_MouseOverHandle = m_GizmoDragHandle[currGizmo * 2 + 0];
                         }
                         if (m_GizmoDragHandle[currGizmo * 2 + 1].Draw(position + dest, mouse, MouseCursor.Pan))
                         {
                             var index = i;
                             m_GizmoDragHandle[currGizmo * 2 + 1].action = (Vector2 v) =>
-                                Animations[SelectedAnimation].framedata[SelectedFrame].events[index].floatParam = IntConverter.EncodeVector2ToInt(v / scale);
+                                Animations[SelectedAnimation].frameData[SelectedFrame].events[index].floatParam = IntConverter.EncodeVector2ToInt(v / scale);
                             m_MouseOverHandle = m_GizmoDragHandle[currGizmo * 2 + 1];
                         }
 
@@ -465,8 +465,8 @@ namespace NKPB
             UpdateSerializedObject();
 
             if (Animations == null || SelectedAnimation >= Animations.Length
-                || Animations[SelectedAnimation].framedata == null || SelectedFrame >= Animations[SelectedAnimation].framedata.Length)return;
-            var framedata = Animations[SelectedAnimation].framedata[SelectedFrame];
+                || Animations[SelectedAnimation].frameData == null || SelectedFrame >= Animations[SelectedAnimation].frameData.Length) return;
+            var framedata = Animations[SelectedAnimation].frameData[SelectedFrame];
             var colliderArray = framedata.collider;
             var eventType = Event.current.type;
             var eventButton = Event.current.button;

@@ -171,7 +171,7 @@ MonoBehaviour:
       events: []
       time: 0.18333332
   m_MaxHitboxes: 2
-  m_CurrentAnimation: 2
+  m_CurrentAnimation: 0
   m_CurrentFrame: 0
   m_CurrentCollider: 0
 --- !u!212 &614589797469691088
@@ -199,6 +199,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -211,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -6358383077048945438, guid: 9112c0d99c23cd9429ba36736f0c4c65,
+  m_Sprite: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

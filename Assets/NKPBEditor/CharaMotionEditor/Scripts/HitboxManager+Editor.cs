@@ -19,7 +19,7 @@ namespace NKPB
         {
             var animation = m_Animations[animationID];
 
-            if (animation.clip == null)return;
+            if (animation.clip == null) return;
 
             var clip = animation.clip;
             var numFrames = GetNumFrames(animationID);
@@ -29,10 +29,10 @@ namespace NKPB
 
             for (int k = 0; k < numFrames; k++)
             {
-                if (animation.framedata.Length <= k)
+                if (animation.frameData.Length <= k)
                     break;
 
-                var framedata = animation.framedata[k];
+                var framedata = animation.frameData[k];
 
                 AnimationEvent _event = new AnimationEvent();
 
@@ -43,15 +43,15 @@ namespace NKPB
                 _event.time = framedata.time;
                 events.Add(_event);
 
-                if (animation.framedata[k].events != null)
-                    for (int i = 0; i < animation.framedata[k].events.Length; i++)
+                if (animation.frameData[k].events != null)
+                    for (int i = 0; i < animation.frameData[k].events.Length; i++)
                     {
                         AnimationEvent frame_event = new AnimationEvent();
 
-                        frame_event.functionName = "EVENT_" + animation.framedata[k].events[i].id.ToString();
-                        frame_event.intParameter = animation.framedata[k].events[i].intParam;
-                        frame_event.floatParameter = animation.framedata[k].events[i].floatParam;
-                        frame_event.stringParameter = animation.framedata[k].events[i].stringParam;
+                        frame_event.functionName = "EVENT_" + animation.frameData[k].events[i].id.ToString();
+                        frame_event.intParameter = animation.frameData[k].events[i].intParam;
+                        frame_event.floatParameter = animation.frameData[k].events[i].floatParam;
+                        frame_event.stringParameter = animation.frameData[k].events[i].stringParam;
                         frame_event.time = framedata.time;
                         events.Add(frame_event);
                     }
@@ -115,11 +115,11 @@ namespace NKPB
         {
             if (m_Animations == null
                 || m_CurrentAnimation >= m_Animations.Length
-                || m_Animations[m_CurrentAnimation].framedata == null
-                || m_CurrentFrame >= m_Animations[m_CurrentAnimation].framedata.Length)
+                || m_Animations[m_CurrentAnimation].frameData == null
+                || m_CurrentFrame >= m_Animations[m_CurrentAnimation].frameData.Length)
                 return;
 
-            var framedata = m_Animations[m_CurrentAnimation].framedata[m_CurrentFrame];
+            var framedata = m_Animations[m_CurrentAnimation].frameData[m_CurrentFrame];
             var collider = framedata.collider;
 
             for (int i = 0; i < collider.Length; i++)

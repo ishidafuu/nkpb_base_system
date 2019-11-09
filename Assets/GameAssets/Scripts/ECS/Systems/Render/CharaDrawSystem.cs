@@ -12,7 +12,8 @@ namespace NKPB
     public class CharaDrawSystem : JobComponentSystem
     {
         EntityQuery m_query;
-        Quaternion m_quaternion;
+        Quaternion m_Quaternion = Quaternion.Euler(new Vector3(-90, 0, 0));
+        Quaternion m_QuaternionRev = Quaternion.Euler(new Vector3(-90, 180, 0));
 
         protected override void OnCreateManager()
         {
@@ -22,7 +23,6 @@ namespace NKPB
                 ComponentType.ReadOnly<Translation>(),
                 ComponentType.ReadOnly<CharaMotion>()
             );
-            m_quaternion = Quaternion.Euler(new Vector3(-90, 0, 0));
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -54,17 +54,18 @@ namespace NKPB
         {
             NativeArray<CharaMuki> charaMukis = m_query.ToComponentDataArray<CharaMuki>(Allocator.TempJob);
             NativeArray<CharaLook> charaLooks = m_query.ToComponentDataArray<CharaLook>(Allocator.TempJob);
-            NativeArray<Translation> positions = m_query.ToComponentDataArray<Translation>(Allocator.TempJob);
+            NativeArray<Translation> transrations = m_query.ToComponentDataArray<Translation>(Allocator.TempJob);
             NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new BodyJob()
             {
                 m_charaMatrixes = charaMatrixes,
                 m_charaMukis = charaMukis,
                 m_charaLooks = charaLooks,
-                m_positions = positions,
+                m_translations = transrations,
                 m_charaMotions = charaMotions,
                 One = Vector3.one,
-                Q = m_quaternion,
+                Q = m_Quaternion,
+                QRev = m_QuaternionRev,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
@@ -73,7 +74,7 @@ namespace NKPB
 
             charaMukis.Dispose();
             charaLooks.Dispose();
-            positions.Dispose();
+            transrations.Dispose();
             charaMotions.Dispose();
 
             return job;
@@ -83,12 +84,13 @@ namespace NKPB
         struct BodyJob : IJob
         {
             public NativeArray<Matrix4x4> m_charaMatrixes;
-            [ReadOnly] public NativeArray<Translation> m_positions;
+            [ReadOnly] public NativeArray<Translation> m_translations;
             [ReadOnly] public NativeArray<CharaMuki> m_charaMukis;
             [ReadOnly] public NativeArray<CharaLook> m_charaLooks;
             [ReadOnly] public NativeArray<CharaMotion> m_charaMotions;
             [ReadOnly] public Vector3 One;
             [ReadOnly] public Quaternion Q;
+            [ReadOnly] public Quaternion QRev;
 
             public void Execute()
             {
@@ -96,11 +98,12 @@ namespace NKPB
                 {
                     bool isBack = (m_charaLooks[i].isBack != 0);
                     bool isLeft = (m_charaLooks[i].isLeft != 0);
-                    float bodyDepth = m_positions[i].Value.z;
-                    float bodyX = m_positions[i].Value.x;
+                    float bodyDepth = m_translations[i].Value.z;
+                    float bodyX = m_translations[i].Value.x;
                     m_charaMatrixes[i] = Matrix4x4.TRS(
-                        new Vector3(bodyX, m_positions[i].Value.y, bodyDepth),
-                        Q, One);
+                        new Vector3(bodyX, m_translations[i].Value.y, bodyDepth),
+                         isLeft ? QRev : Q,
+                         Vector3.one);
                 }
             }
         }

@@ -106,7 +106,7 @@ namespace NKPB
                 {
 
                     var clip = HitboxData.FindPropertyRelative(nameof(selectedAnimation.clip));
-                    var framedata = HitboxData.FindPropertyRelative(nameof(selectedAnimation.framedata));
+                    var framedata = HitboxData.FindPropertyRelative(nameof(selectedAnimation.frameData));
                     var oldclip = clip.objectReferenceValue;
 
                     GUIAnimationSettingsLayout(HitboxData, clip);
@@ -120,10 +120,10 @@ namespace NKPB
             var maxHitboxes = 1;
             if (this.Animations != null)
                 for (int i = 0; i < this.Animations.Length; i++)
-                    if (this.Animations[i].framedata != null)
-                        for (int j = 0; j < this.Animations[i].framedata.Length; j++)
-                            if (this.Animations[i].framedata[j].collider != null)
-                                maxHitboxes = Mathf.Max(maxHitboxes, this.Animations[i].framedata[j].collider.Length);
+                    if (this.Animations[i].frameData != null)
+                        for (int j = 0; j < this.Animations[i].frameData.Length; j++)
+                            if (this.Animations[i].frameData[j].collider != null)
+                                maxHitboxes = Mathf.Max(maxHitboxes, this.Animations[i].frameData[j].collider.Length);
 
             m_targetObject.FindProperty(nameof(m_targetManager.m_MaxHitboxes)).intValue = maxHitboxes;
             ApplySerializedProperties();
