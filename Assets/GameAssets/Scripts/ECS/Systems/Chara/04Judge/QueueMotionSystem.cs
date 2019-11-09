@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -31,17 +30,17 @@ namespace NKPB
 
             var job = new InputJob()
             {
-                charaMotions = charaMotions,
-                charaFlags = charaFlags,
-                charaQueues = charaQueues,
+                m_charaMotions = charaMotions,
+                m_charaFlags = charaFlags,
+                m_charaQueues = charaQueues,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMotions);
-            m_query.CopyFromComponentDataArray(job.charaFlags);
-            m_query.CopyFromComponentDataArray(job.charaQueues);
+            m_query.CopyFromComponentDataArray(job.m_charaMotions);
+            m_query.CopyFromComponentDataArray(job.m_charaFlags);
+            m_query.CopyFromComponentDataArray(job.m_charaQueues);
 
             charaMotions.Dispose();
             charaFlags.Dispose();
@@ -52,19 +51,19 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct InputJob : IJob
         {
-            public NativeArray<CharaMotion> charaMotions;
-            public NativeArray<CharaFlag> charaFlags;
-            public NativeArray<CharaQueue> charaQueues;
+            public NativeArray<CharaMotion> m_charaMotions;
+            public NativeArray<CharaFlag> m_charaFlags;
+            public NativeArray<CharaQueue> m_charaQueues;
 
             public void Execute()
             {
-                for (int i = 0; i < charaQueues.Length; i++)
+                for (int i = 0; i < m_charaQueues.Length; i++)
                 {
-                    var charaQueue = charaQueues[i];
+                    var charaQueue = m_charaQueues[i];
 
                     if (charaQueue.isQueue)
                     {
-                        var charaMotion = charaMotions[i];
+                        var charaMotion = m_charaMotions[i];
                         charaMotion.SwitchMotion(charaQueue.motionType);
 
                         switch (charaQueue.motionType)
@@ -73,6 +72,7 @@ namespace NKPB
                                 UpdateIdleFlags(i);
                                 break;
                             case EnumMotion.Walk:
+                                UpdateWalkFlags(i);
                                 break;
                             case EnumMotion.Dash:
                                 break;
@@ -101,7 +101,7 @@ namespace NKPB
                     }
 
                     charaQueue.ClearQueue();
-                    charaQueues[i] = charaQueue;
+                    m_charaQueues[i] = charaQueue;
                 }
             }
             // Jump = 0x0001,
@@ -111,12 +111,22 @@ namespace NKPB
             //     Idle = 0x0010,
             void UpdateIdleFlags(int i)
             {
-                var charaFlag = charaFlags[i];
+                var charaFlag = m_charaFlags[i];
                 charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
                 charaFlag.moveFlag = FlagMove.Stop;
                 charaFlag.motionFlag = FlagMotion.None;
                 charaFlag.mukiFlag = true;
-                charaFlags[i] = charaFlag;
+                m_charaFlags[i] = charaFlag;
+            }
+
+            void UpdateWalkFlags(int i)
+            {
+                var charaFlag = m_charaFlags[i];
+                charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
+                charaFlag.moveFlag = FlagMove.Walk;
+                charaFlag.motionFlag = FlagMotion.Move;
+                charaFlag.mukiFlag = true;
+                m_charaFlags[i] = charaFlag;
             }
 
         }

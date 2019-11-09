@@ -2,20 +2,14 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/GameAssets/Resources/Sprites/BackGround/bg00.tpsheet
-- Assets/GameAssets/Resources/Sprites/Character/chara00.tpsheet
 - Assets/GameAssets/Resources/Sprites/nm2body.tpsheet
 - Assets/Resources/TPSprites/body.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/GameAssets/Resources/Sprites/BackGround/bg00.png
-- Assets/GameAssets/Resources/Sprites/Character/chara00.png
 - Assets/GameAssets/Resources/Sprites/nm2body.png
 - Assets/Resources/TPSprites/body.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
-- 
-- 
 - 
 - 
 enableDebugOutput: 0

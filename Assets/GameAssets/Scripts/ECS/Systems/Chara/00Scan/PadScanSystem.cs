@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -127,16 +126,16 @@ namespace NKPB
                 switch ((EnumUnityButtonType)i)
                 {
                     case EnumUnityButtonType.Fire1:
-                        padScan.buttonA.SetButtonData(isPush, isPress, isPop, Time.time);
+                        padScan.m_buttonA.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                     case EnumUnityButtonType.Fire2:
-                        padScan.buttonB.SetButtonData(isPush, isPress, isPop, Time.time);
+                        padScan.m_buttonB.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                     case EnumUnityButtonType.Fire3:
-                        padScan.buttonX.SetButtonData(isPush, isPress, isPop, Time.time);
+                        padScan.m_buttonX.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                     case EnumUnityButtonType.Fire4:
-                        padScan.buttonY.SetButtonData(isPush, isPress, isPop, Time.time);
+                        padScan.m_buttonY.SetButtonData(isPush, isPress, isPop, Time.time);
                         break;
                 }
                 // if (isPush)

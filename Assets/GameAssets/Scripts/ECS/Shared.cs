@@ -13,12 +13,11 @@ namespace NKPB
 {
     public static class Shared
     {
-        public static MeshMatList charaMeshMat;
+        public static MeshMatList m_charaMeshMat;
 
         public static void ReadySharedComponentData()
         {
-            charaMeshMat = new MeshMatList(PathSettings.CharaSprite, PathSettings.DefaultShader);
-            // meterMeshMat = new MeshMatList("yyhs/bg/meter", ShaderBg);
+            m_charaMeshMat = new MeshMatList(PathSettings.CharaSprite, PathSettings.DefaultShader);
 
         }
 

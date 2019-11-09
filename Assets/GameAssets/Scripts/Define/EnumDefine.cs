@@ -52,7 +52,6 @@ namespace NKPB
         Right = 1,
     }
 
-    // パーツ位置
     public enum EnumMotion
     {
         Idle = 0,

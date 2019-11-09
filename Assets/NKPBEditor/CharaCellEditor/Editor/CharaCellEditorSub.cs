@@ -175,7 +175,7 @@ namespace NKPB
         private void MoveCamera()
         {
             Event e = Event.current;
-            if (e.button != 2)return;
+            if (e.button != 2) return;
             if (e.type == EventType.MouseDown)
             {
                 m_mouseStPos = e.mousePosition;
@@ -195,7 +195,7 @@ namespace NKPB
         {
             // クリックされた位置を探して、その場所に画像データを入れる
             Event e = Event.current;
-            if (e.button != 0)return;
+            if (e.button != 0) return;
 
             if (e.type == EventType.MouseDown) //クリック
             {
@@ -246,7 +246,7 @@ namespace NKPB
         {
             // クリックされた位置を探して、その場所に画像データを入れる
             Event e = Event.current;
-            if (e.button != 1)return;
+            if (e.button != 1) return;
 
             if (e.type == EventType.MouseDown) //クリック
             {
@@ -308,21 +308,21 @@ namespace NKPB
         {
             const int BASEY = -32;
             float angle = cell.faceAngle * 90;
-            Vector2 kaoRev = Vector2.zero;
+            Vector2 zuraRev = Vector2.zero;
             switch (cell.faceAngle)
             {
                 case 0:
                     angle = 0;
-                    kaoRev.y += 1;
+                    zuraRev.y -= 1;
                     break;
                 case 1:
-                    kaoRev.x -= 1;
+                    zuraRev.x += 1;
                     break;
                 case 2:
-                    kaoRev.y -= 1;
+                    zuraRev.y += 1;
                     break;
                 case 3:
-                    kaoRev.x += 1;
+                    zuraRev.x -= 1;
                     break;
             }
 
@@ -331,7 +331,7 @@ namespace NKPB
                 Sprite kao = m_parent.GetSelectedKaoSprite();
 
                 Vector2 kaopos = new Vector2(-kao.pivot.x + cell.faceX, cell.faceY + BASEY);
-                kaopos += kaoRev;
+                // kaopos += zuraRev;
                 Vector2 size = new Vector2(kao.rect.width, kao.rect.height);
                 Rect drawRect = new Rect((m_camPos + kaopos) * mag, size * mag);
                 Vector2 rotatePivot = new Vector2(drawRect.center.x, drawRect.center.y - drawRect.height / 2);
@@ -347,6 +347,7 @@ namespace NKPB
             {
                 Sprite zura = m_parent.GetSelectedZuraSprite();
                 Vector2 zurapos = new Vector2(-zura.pivot.x + cell.faceX, cell.faceY + BASEY);
+                zurapos += zuraRev;
                 Vector2 size = new Vector2(zura.rect.width, zura.rect.height);
                 Rect drawRect = new Rect((m_camPos + zurapos) * mag, size * mag);
 
@@ -370,7 +371,7 @@ namespace NKPB
             CharaCell cell = m_parent.GetSelectedCharCell();
 
             //顔奥表示
-            if (cell.faceZ == 1)DrawFace(pos, cell);
+            if (cell.faceZ == 1) DrawFace(pos, cell);
             {
                 //DebugPanel.Log("sp.rect", sp.rect);
                 //Vector2 pos = new Vector2((1 * GRIDSIZE) + 0, (1 * GRIDSIZE) - 0);
@@ -385,7 +386,7 @@ namespace NKPB
             }
 
             //顔手前表示
-            if (cell.faceZ == 0)DrawFace(pos, cell);
+            if (cell.faceZ == 0) DrawFace(pos, cell);
 
             DrawGridLine3();
 

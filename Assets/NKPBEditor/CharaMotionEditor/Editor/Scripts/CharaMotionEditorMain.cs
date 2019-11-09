@@ -121,8 +121,6 @@ namespace NKPB
             }
 
             GUIRenderInspector();
-            // GUICharacterSettings();
-            // GUIPaletteEditor();
 
             EditorGUILayout.EndScrollView();
             EditorGUILayout.EndVertical();
@@ -136,22 +134,6 @@ namespace NKPB
                 RenderInspector(m_Inspector);
             }
         }
-
-        // private void GUICharacterSettings()
-        // {
-        //     EditorGUILayout.Separator();
-        //     m_showCharacterEditor = EditorGUILayout.Foldout(m_showCharacterEditor, new GUIContent("Character Settings"), true);
-
-        //     if (m_showCharacterEditor && m_target != null)
-        //     {
-        //         ICharacter player = m_target.GetComponentInChildren<ICharacter>();
-
-        //         if (player != null)
-        //         {
-        //             Editor.CreateEditor((Object)player).OnInspectorGUI();
-        //         }
-        //     }
-        // }
 
         void RenderInspector(HitBoxManagerInspector inspector)
         {
@@ -185,50 +167,5 @@ namespace NKPB
 
             return result;
         }
-
-        // private void GUIPaletteEditor()
-        // {
-        //     EditorGUILayout.Separator();
-        //     m_showPaletteEditor = EditorGUILayout.Foldout(m_showPaletteEditor,
-        //         new GUIContent("Palette Editor",
-        //             "View, modify, and create palettes for characters here."), true);
-
-        //     if (m_currentEvent.type == EventType.MouseMove)
-        //         m_previewPaletteIndex = -1;
-
-        //     if (m_target != null && m_hitboxManager != null && m_showPaletteEditor)
-        //     {
-        //         var character = m_target.GetComponentInChildren<ICharacter>();
-
-        //         if (character != null)
-        //         {
-        //             var group = character.PaletteGroup;
-
-        //             if (group != null && group.Palettes.Length > 0)
-        //             {
-        //                 var serialized = new SerializedObject((Object)character);
-        //                 var list = new List<SpritePalette>(group.Palettes);
-        //                 var names = list.Select((SpritePalette sp) => sp.Name);
-        //                 var serializedpalette = serialized.FindProperty("m_ActivePalette");
-        //                 var palette = character.ActivePalette;
-
-        //                 palette = group.Palettes[EditorGUILayout.Popup(Mathf.Max(0, list.IndexOf(character.ActivePalette)), names.ToArray())];
-        //                 serializedpalette.objectReferenceValue = palette;
-        //                 serialized.ApplyModifiedProperties();
-
-        //                 if (palette != null)
-        //                 {
-        //                     SpritePaletteInspector paletteInspector = (SpritePaletteInspector)Editor.CreateEditor(palette);
-
-        //                     paletteInspector.OnInspectorGUI();
-
-        //                     if (m_currentEvent.type == EventType.MouseMove)
-        //                         m_previewPaletteIndex = paletteInspector.MouseOverIndex;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
     }
 }

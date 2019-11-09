@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -31,34 +30,34 @@ namespace NKPB
 
             var job = new ConvertJob()
             {
-                charaLooks = charaLooks,
-                charaMukis = charaMukis,
+                m_charaLooks = charaLooks,
+                m_charaMukis = charaMukis,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaLooks);
+            m_query.CopyFromComponentDataArray(job.m_charaLooks);
             charaLooks.Dispose();
             charaMukis.Dispose();
 
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct ConvertJob : IJob
         {
-            public NativeArray<CharaLook> charaLooks;
-            [ReadOnly] public NativeArray<CharaMuki> charaMukis;
+            public NativeArray<CharaLook> m_charaLooks;
+            [ReadOnly] public NativeArray<CharaMuki> m_charaMukis;
 
             public void Execute()
             {
-                for (int i = 0; i < charaLooks.Length; i++)
+                for (int i = 0; i < m_charaLooks.Length; i++)
                 {
-                    var look = charaLooks[i];
-                    look.isLeft = (charaMukis[i].muki == EnumMuki.Left)
+                    var look = m_charaLooks[i];
+                    look.isLeft = (m_charaMukis[i].muki == EnumMuki.Left)
                         ? 1
                         : 0;
-                    charaLooks[i] = look;
+                    m_charaLooks[i] = look;
                 }
             }
         }

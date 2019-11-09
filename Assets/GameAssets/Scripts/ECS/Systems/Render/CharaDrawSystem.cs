@@ -41,9 +41,9 @@ namespace NKPB
         {
             for (int i = 0; i < charaMatrixes.Length; i++)
             {
-                Graphics.DrawMesh(Shared.charaMeshMat.meshes["nm2body_01_01"],
-                    bodyJob.charaMatrixes[i],
-                    Shared.charaMeshMat.material, 0);
+                Graphics.DrawMesh(Shared.m_charaMeshMat.m_meshDict["nm2body_01_01"],
+                    bodyJob.m_charaMatrixes[i],
+                    Shared.m_charaMeshMat.m_materialDict["nm2body_01_01"], 0);
             }
 
             return charaMatrixes;
@@ -58,13 +58,13 @@ namespace NKPB
             NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new BodyJob()
             {
-                charaMatrixes = charaMatrixes,
-                charaMukis = charaMukis,
-                charaLooks = charaLooks,
-                positions = positions,
-                charaMotions = charaMotions,
-                one = Vector3.one,
-                q = m_quaternion,
+                m_charaMatrixes = charaMatrixes,
+                m_charaMukis = charaMukis,
+                m_charaLooks = charaLooks,
+                m_positions = positions,
+                m_charaMotions = charaMotions,
+                One = Vector3.one,
+                Q = m_quaternion,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
@@ -79,28 +79,28 @@ namespace NKPB
             return job;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct BodyJob : IJob
         {
-            public NativeArray<Matrix4x4> charaMatrixes;
-            [ReadOnly] public NativeArray<Translation> positions;
-            [ReadOnly] public NativeArray<CharaMuki> charaMukis;
-            [ReadOnly] public NativeArray<CharaLook> charaLooks;
-            [ReadOnly] public NativeArray<CharaMotion> charaMotions;
-            [ReadOnly] public Vector3 one;
-            [ReadOnly] public Quaternion q;
+            public NativeArray<Matrix4x4> m_charaMatrixes;
+            [ReadOnly] public NativeArray<Translation> m_positions;
+            [ReadOnly] public NativeArray<CharaMuki> m_charaMukis;
+            [ReadOnly] public NativeArray<CharaLook> m_charaLooks;
+            [ReadOnly] public NativeArray<CharaMotion> m_charaMotions;
+            [ReadOnly] public Vector3 One;
+            [ReadOnly] public Quaternion Q;
 
             public void Execute()
             {
-                for (int i = 0; i < charaMukis.Length; i++)
+                for (int i = 0; i < m_charaMukis.Length; i++)
                 {
-                    bool isBack = (charaLooks[i].isBack != 0);
-                    bool isLeft = (charaLooks[i].isLeft != 0);
-                    float bodyDepth = positions[i].Value.z;
-                    float bodyX = positions[i].Value.x;
-                    charaMatrixes[i] = Matrix4x4.TRS(
-                        new Vector3(bodyX, positions[i].Value.y, bodyDepth),
-                        q, one);
+                    bool isBack = (m_charaLooks[i].isBack != 0);
+                    bool isLeft = (m_charaLooks[i].isLeft != 0);
+                    float bodyDepth = m_positions[i].Value.z;
+                    float bodyX = m_positions[i].Value.x;
+                    m_charaMatrixes[i] = Matrix4x4.TRS(
+                        new Vector3(bodyX, m_positions[i].Value.y, bodyDepth),
+                        Q, One);
                 }
             }
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -27,12 +26,12 @@ namespace NKPB
             NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new CountJob()
             {
-                charaMotions = charaMotions
+                m_charaMotions = charaMotions
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMotions);
+            m_query.CopyFromComponentDataArray(job.m_charaMotions);
             charaMotions.Dispose();
 
             return inputDeps;
@@ -41,14 +40,14 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct CountJob : IJob
         {
-            public NativeArray<CharaMotion> charaMotions;
+            public NativeArray<CharaMotion> m_charaMotions;
 
             public void Execute()
             {
                 const int FRAMES_COUNT = 4;
-                for (int i = 0; i < charaMotions.Length; i++)
+                for (int i = 0; i < m_charaMotions.Length; i++)
                 {
-                    CharaMotion charaMotion = charaMotions[i];
+                    CharaMotion charaMotion = m_charaMotions[i];
                     //Shared.aniScriptSheet.scripts[(int)charaMotion.motionType].frames.Count;
                     charaMotion.count++;
                     charaMotion.totalCount++;
@@ -57,7 +56,7 @@ namespace NKPB
                     {
                         charaMotion.count = 0;
                     }
-                    charaMotions[i] = charaMotion;
+                    m_charaMotions[i] = charaMotion;
                 }
             }
         }

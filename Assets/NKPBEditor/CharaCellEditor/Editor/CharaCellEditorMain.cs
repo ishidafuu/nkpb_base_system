@@ -68,8 +68,8 @@ namespace NKPB
 
         public void SetFaceNo(int faceNo)
         {
-            if (faceNo < 0)return;
-            if (faceNo > KAO_MAX)return;
+            if (faceNo < 0) return;
+            if (faceNo > KAO_MAX) return;
 
             m_charCells[m_selectedSprite].faceNo = faceNo;
         }
@@ -77,11 +77,11 @@ namespace NKPB
         {
             if (isDec)
             {
-                if (m_charCells[m_selectedSprite].faceNo > 0)m_charCells[m_selectedSprite].faceNo--;
+                if (m_charCells[m_selectedSprite].faceNo > 0) m_charCells[m_selectedSprite].faceNo--;
             }
             else
             {
-                if (m_charCells[m_selectedSprite].faceNo < KAO_MAX)m_charCells[m_selectedSprite].faceNo++;
+                if (m_charCells[m_selectedSprite].faceNo < KAO_MAX) m_charCells[m_selectedSprite].faceNo++;
             }
 
         }
@@ -106,8 +106,8 @@ namespace NKPB
 
         public void SetFaceZ(int faceZ)
         {
-            if (faceZ < 0)return;
-            if (faceZ > 1)return;
+            if (faceZ < 0) return;
+            if (faceZ > 1) return;
             m_charCells[m_selectedSprite].faceZ = faceZ;
         }
 
@@ -171,7 +171,7 @@ namespace NKPB
                 // listがnullまたは空ならエラーで返す
                 m_bodySprites = new Sprite[list.Length];
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)m_bodySprites[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i) m_bodySprites[i] = list[i] as Sprite;
             }
 
             {
@@ -181,7 +181,7 @@ namespace NKPB
                 m_kaoSprites = new Sprite[list.Length];
                 Debug.Log(m_kaoSprites.Length);
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)m_kaoSprites[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i) m_kaoSprites[i] = list[i] as Sprite;
             }
 
             {
@@ -191,7 +191,7 @@ namespace NKPB
                 m_zuraSprites = new Sprite[list.Length];
                 Debug.Log(m_zuraSprites.Length);
                 // listを回してDictionaryに格納
-                for (int i = 0; i < list.Length; ++i)m_zuraSprites[i] = list[i] as Sprite;
+                for (int i = 0; i < list.Length; ++i) m_zuraSprites[i] = list[i] as Sprite;
             }
 
             LoadFile();
@@ -258,13 +258,13 @@ namespace NKPB
                     }
 
                     //GUILayout.FlexibleSpace();
-                    if (m_selectedSprite == index)GUI.color = new Color(1f, 0.5f, 1f, 1f);
+                    if (m_selectedSprite == index) GUI.color = new Color(1f, 0.5f, 1f, 1f);
                     if (GUILayout.Button(contents, GUILayout.MaxWidth(TIPSIZE * 5), GUILayout.Height(TIPSIZE), GUILayout.ExpandWidth(false), GUILayout.ExpandHeight(false)))
                     {
                         m_selectedSprite = index;
                         RefreshEditorWindow();
                     }
-                    if (m_selectedSprite == index)GUI.color = new Color(1f, 1f, 1f, 1f);
+                    if (m_selectedSprite == index) GUI.color = new Color(1f, 1f, 1f, 1f);
 
                     Rect lastRect = GUILayoutUtility.GetLastRect();
 
@@ -287,7 +287,7 @@ namespace NKPB
         {
             EditorGUILayout.BeginVertical();
             GUILayout.FlexibleSpace();
-            if (m_dummy == null)m_dummy = new Texture2D(TIPSIZE, TIPSIZE);
+            if (m_dummy == null) m_dummy = new Texture2D(TIPSIZE, TIPSIZE);
             GUILayout.Box(m_dummy);
             Rect lastRect = GUILayoutUtility.GetLastRect();
             lastRect.x += (lastRect.width - TIPSIZE) / 2;
@@ -330,7 +330,7 @@ namespace NKPB
 
         void OpenEditorWindow()
         {
-            if (m_subWindow != null)m_subWindow.Close();
+            if (m_subWindow != null) m_subWindow.Close();
 
             if (m_subWindow == null)
             {

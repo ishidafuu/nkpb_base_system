@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -27,27 +26,27 @@ namespace NKPB
             NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             var job = new ShiftCountMotionJob()
             {
-                charaMotions = charaMotions
+                m_charaMotions = charaMotions
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMotions);
+            m_query.CopyFromComponentDataArray(job.m_charaMotions);
             charaMotions.Dispose();
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct ShiftCountMotionJob : IJob
         {
-            public NativeArray<CharaMotion> charaMotions;
+            public NativeArray<CharaMotion> m_charaMotions;
 
             public void Execute()
             {
-                for (int i = 0; i < charaMotions.Length; i++)
+                for (int i = 0; i < m_charaMotions.Length; i++)
                 {
-                    CharaMotion charaMotion = charaMotions[i];
-
+                    CharaMotion charaMotion = m_charaMotions[i];
+                    // Debug.Log(charaMotion.motionType);
                     switch (charaMotion.motionType)
                     {
                         case EnumMotion.Idle:
@@ -84,7 +83,7 @@ namespace NKPB
                             break;
                     }
 
-                    charaMotions[i] = charaMotion;
+                    m_charaMotions[i] = charaMotion;
                 }
 
             }

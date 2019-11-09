@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -32,15 +31,15 @@ namespace NKPB
 
             var job = new InputJob()
             {
-                charaQueues = charaQueues,
-                charaFlags = charaFlags,
-                padScans = padScans,
+                m_charaQueues = charaQueues,
+                m_charaFlags = charaFlags,
+                m_padScans = padScans,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaQueues);
+            m_query.CopyFromComponentDataArray(job.m_charaQueues);
 
             charaQueues.Dispose();
             charaFlags.Dispose();
@@ -49,51 +48,57 @@ namespace NKPB
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct InputJob : IJob
         {
-            public NativeArray<CharaQueue> charaQueues;
-            [ReadOnly] public NativeArray<CharaFlag> charaFlags;
-            [ReadOnly] public NativeArray<PadScan> padScans;
+            public NativeArray<CharaQueue> m_charaQueues;
+            [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
+            [ReadOnly] public NativeArray<PadScan> m_padScans;
 
             public void Execute()
             {
-                for (int i = 0; i < charaQueues.Length; i++)
+                for (int i = 0; i < m_charaQueues.Length; i++)
                 {
-                    var charaFlag = charaFlags[i];
+                    var charaFlag = m_charaFlags[i];
 
                     if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Jump))
                     {
                         if (CheckJump(i))
                             break;
                     }
-                    else if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Dash))
+
+                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Dash))
                     {
                         if (CheckDash(i))
                             break;
                     }
-                    else if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Walk))
+
+                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Walk))
                     {
                         if (CheckWalk(i))
                             break;
                     }
-                    else if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Slip))
+
+                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Slip))
                     {
                         if (CheckSlip(i))
                             break;
                     }
-                    else if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Idle))
+
+                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Idle))
                     {
                         if (CheckIdle(i))
                             break;
                     }
+
                 }
             }
 
             bool CheckJump(int i)
             {
-                if (padScans[i].IsJumpPush())
+                if (m_padScans[i].IsJumpPush())
                 {
+                    Debug.Log("asdfasdf");
                     SetQueue(i, EnumMotion.Jump);
                     return true;
                 }
@@ -103,14 +108,14 @@ namespace NKPB
 
             bool CheckDash(int i)
             {
-                if (padScans[i].crossLeft.isDouble || padScans[i].crossRight.isDouble)
+                if (m_padScans[i].m_crossLeft.m_isDouble || m_padScans[i].m_crossRight.m_isDouble)
                 {
-                    var charaQueue = charaQueues[i];
-                    EnumMuki muki = (padScans[i].crossLeft.isDouble)
+                    var charaQueue = m_charaQueues[i];
+                    EnumMuki muki = (m_padScans[i].m_crossLeft.m_isDouble)
                         ? EnumMuki.Left
                         : EnumMuki.Right;
                     charaQueue.SetQueueMuki(EnumMotion.Dash, muki);
-                    charaQueues[i] = charaQueue;
+                    m_charaQueues[i] = charaQueue;
 
                     return true;
                 }
@@ -120,7 +125,8 @@ namespace NKPB
 
             bool CheckWalk(int i)
             {
-                if (padScans[i].IsAnyCrossPress())
+
+                if (m_padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Walk);
                     return true;
@@ -131,7 +137,7 @@ namespace NKPB
 
             bool CheckSlip(int i)
             {
-                if (padScans[i].IsAnyCrossPress())
+                if (m_padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Slip);
                     return true;
@@ -142,9 +148,10 @@ namespace NKPB
 
             bool CheckIdle(int i)
             {
-                if (!padScans[i].IsAnyCrossPress())
+                if (!m_padScans[i].IsAnyCrossPress())
                 {
                     SetQueue(i, EnumMotion.Idle);
+
                     return true;
                 }
 
@@ -153,9 +160,9 @@ namespace NKPB
 
             private void SetQueue(int i, EnumMotion motion)
             {
-                var charaQueue = charaQueues[i];
+                var charaQueue = m_charaQueues[i];
                 charaQueue.SetQueue(motion);
-                charaQueues[i] = charaQueue;
+                m_charaQueues[i] = charaQueue;
             }
         }
     }

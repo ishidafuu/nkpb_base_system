@@ -23,29 +23,29 @@ namespace NKPB
             NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
             var job = new PositionJob()
             {
-                charaMoves = charaMoves,
+                m_charaMoves = charaMoves,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMoves);
+            m_query.CopyFromComponentDataArray(job.m_charaMoves);
 
             charaMoves.Dispose();
 
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaMove> charaMoves;
+            public NativeArray<CharaMove> m_charaMoves;
             public void Execute()
             {
-                for (int i = 0; i < charaMoves.Length; i++)
+                for (int i = 0; i < m_charaMoves.Length; i++)
                 {
-                    CharaMove charaMove = charaMoves[i];
+                    CharaMove charaMove = m_charaMoves[i];
                     charaMove.position += charaMove.delta;
-                    charaMoves[i] = charaMove;
+                    m_charaMoves[i] = charaMove;
                 }
             }
         }

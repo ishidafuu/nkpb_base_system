@@ -5,48 +5,48 @@ namespace NKPB
     public struct PadScan : IComponentData
     {
         // 十字のバッファ
-        Vector2 axis;
+        Vector2 m_axis;
         // 十字
-        public Button crossUp { get; private set; }
-        public Button crossDown { get; private set; }
-        public Button crossLeft { get; private set; }
-        public Button crossRight { get; private set; }
+        public Button m_crossUp;
+        public Button m_crossDown;
+        public Button m_crossLeft;
+        public Button m_crossRight;
         // ボタン
-        public Button buttonA { get; private set; }
-        public Button buttonB { get; private set; }
-        public Button buttonX { get; private set; }
-        public Button buttonY { get; private set; }
-        public void SetCross(Vector2 _axis, float _time)
+        public Button m_buttonA;
+        public Button m_buttonB;
+        public Button m_buttonX;
+        public Button m_buttonY;
+        public void SetCross(Vector2 axis, float time)
         {
             // 直前キーから変更無ければ処理しない
-            if (_axis != axis)
+            if (axis != m_axis)
             {
-                var isUp = (_axis.y > +0.1f);
-                var isDown = (_axis.y < -0.1f);
-                var isRight = (_axis.x > +0.1f);
-                var isLeft = (_axis.x < -0.1f);
+                var isUp = (axis.y > +0.1f);
+                var isDown = (axis.y < -0.1f);
+                var isRight = (axis.x > +0.1f);
+                var isLeft = (axis.x < -0.1f);
 
-                axis = _axis;
-                crossUp.SetCrossData(isUp, Time.time);
-                crossDown.SetCrossData(isDown, Time.time);
-                crossRight.SetCrossData(isRight, Time.time);
-                crossLeft.SetCrossData(isLeft, Time.time);
+                m_axis = axis;
+                m_crossUp.SetCrossData(isUp, Time.time);
+                m_crossDown.SetCrossData(isDown, Time.time);
+                m_crossRight.SetCrossData(isRight, Time.time);
+                m_crossLeft.SetCrossData(isLeft, Time.time);
                 // Debug.Log(axis);
             }
         }
 
         public EnumCrossType GetPressCross()
         {
-            if (crossUp.isPress)
+            if (m_crossUp.m_isPress)
                 return EnumCrossType.Up;
 
-            if (crossDown.isPress)
+            if (m_crossDown.m_isPress)
                 return EnumCrossType.Down;
 
-            if (crossLeft.isPress)
+            if (m_crossLeft.m_isPress)
                 return EnumCrossType.Left;
 
-            if (crossRight.isPress)
+            if (m_crossRight.m_isPress)
                 return EnumCrossType.Right;
 
             return EnumCrossType.None;
@@ -54,37 +54,31 @@ namespace NKPB
 
         public EnumButtonType GetPressButton()
         {
-            if (buttonA.isPress)
+            if (m_buttonA.m_isPress)
                 return EnumButtonType.A;
 
-            if (buttonB.isPress)
+            if (m_buttonB.m_isPress)
                 return EnumButtonType.B;
 
-            if (buttonX.isPress)
+            if (m_buttonX.m_isPress)
                 return EnumButtonType.X;
 
-            if (buttonY.isPress)
+            if (m_buttonY.m_isPress)
                 return EnumButtonType.Y;
 
             return EnumButtonType.None;
         }
 
-        /// <summary>
-        /// どれか十字が押されてる
-        /// </summary>
-        /// <returns></returns>
         public bool IsAnyCrossPress()
         {
-            return (crossUp.isPress || crossDown.isPress || crossLeft.isPress || crossRight.isPress);
+            Debug.Log(m_crossUp.m_isPress || m_crossDown.m_isPress || m_crossLeft.m_isPress || m_crossRight.m_isPress);
+            return (m_crossUp.m_isPress || m_crossDown.m_isPress || m_crossLeft.m_isPress || m_crossRight.m_isPress);
         }
-        /// <summary>
-        /// ジャンプ入力
-        /// </summary>
-        /// <returns></returns>
+
         public bool IsJumpPush()
         {
-            return ((buttonA.isPress && buttonB.isPush)
-                || (buttonA.isPush && buttonB.isPress));
+            return ((m_buttonA.m_isPress && m_buttonB.m_isPush)
+                || (m_buttonA.m_isPush && m_buttonB.m_isPress));
         }
 
     }
@@ -94,38 +88,38 @@ namespace NKPB
         // 連打受付時間
         const float DOUBLE_TIME = 0.4f;
         // 押した瞬間
-        public boolean isPush { get; private set; }
+        public boolean m_isPush;
         // 押してる
-        public boolean isPress { get; private set; }
+        public boolean m_isPress;
         // 離した瞬間
-        public boolean isPop { get; private set; }
+        public boolean m_isPop;
         // 連打
-        public boolean isDouble { get; private set; }
+        public boolean m_isDouble;
         // ダッシュ用直前押した瞬間時間
-        public float lastPushTime { get; private set; }
+        float m_lastPushTime;
 
         public void SetButtonData(bool _isPush, bool _isPress, bool _isPop, float _time)
         {
-            isPush = _isPush;
-            isPress = _isPress;
-            isPop = _isPop;
-            isDouble = (_isPush && ((_time - lastPushTime) < DOUBLE_TIME));
+            m_isPush = _isPush;
+            m_isPress = _isPress;
+            m_isPop = _isPop;
+            m_isDouble = (_isPush && ((_time - m_lastPushTime) < DOUBLE_TIME));
             if (_isPush)
-                lastPushTime = _time;
+                m_lastPushTime = _time;
 
         }
 
         public void SetCrossData(bool _isPress, float _time)
         {
-            isPush = (!isPress && _isPress);
-            isPress = (_isPress);
-            isPop = (isPress && !_isPress);
-            isDouble = (isPush && ((_time - lastPushTime) < DOUBLE_TIME));
-            if (isPush)
-                lastPushTime = _time;
+            m_isPush = (!m_isPress && _isPress);
+            m_isPress = (_isPress);
+            m_isPop = (m_isPress && !_isPress);
+            m_isDouble = (m_isPush && ((_time - m_lastPushTime) < DOUBLE_TIME));
+            if (m_isPush)
+                m_lastPushTime = _time;
 
-            // if (isPress)
-            // 	Debug.Log("isPress");
+            // if (m_isPress)
+            //     Debug.Log("isPress");
         }
     }
 }

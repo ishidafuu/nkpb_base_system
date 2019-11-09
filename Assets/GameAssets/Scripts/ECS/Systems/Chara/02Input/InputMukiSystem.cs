@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -31,15 +30,15 @@ namespace NKPB
             NativeArray<PadScan> padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
             var job = new InputJob()
             {
-                charaMukis = charaMukis,
-                charaFlags = charaFlags,
-                padScans = padScans,
+                m_charaMukis = charaMukis,
+                m_charaFlags = charaFlags,
+                m_padScans = padScans,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMukis);
+            m_query.CopyFromComponentDataArray(job.m_charaMukis);
 
             charaMukis.Dispose();
             charaFlags.Dispose();
@@ -51,16 +50,16 @@ namespace NKPB
         [BurstCompileAttribute]
         struct InputJob : IJob
         {
-            public NativeArray<CharaMuki> charaMukis;
-            [ReadOnly] public NativeArray<CharaFlag> charaFlags;
-            [ReadOnly] public NativeArray<PadScan> padScans;
+            public NativeArray<CharaMuki> m_charaMukis;
+            [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
+            [ReadOnly] public NativeArray<PadScan> m_padScans;
             public void Execute()
             {
 
-                for (int i = 0; i < charaFlags.Length; i++)
+                for (int i = 0; i < m_charaFlags.Length; i++)
                 {
                     //モーションごとの入力
-                    if (charaFlags[i].mukiFlag)
+                    if (m_charaFlags[i].mukiFlag)
                     {
                         CheckCrossX(i);
                     }
@@ -70,14 +69,14 @@ namespace NKPB
             //左右チェック
             bool CheckCrossX(int i)
             {
-                if (padScans[i].crossLeft.isPress
-                    || padScans[i].crossRight.isPress)
+                if (m_padScans[i].m_crossLeft.m_isPress
+                    || m_padScans[i].m_crossRight.m_isPress)
                 {
-                    var charaMuki = charaMukis[i];
-                    charaMuki.muki = padScans[i].crossLeft.isPress
+                    var charaMuki = m_charaMukis[i];
+                    charaMuki.muki = m_padScans[i].m_crossLeft.m_isPress
                         ? EnumMuki.Left
                         : EnumMuki.Right;
-                    charaMukis[i] = charaMuki;
+                    m_charaMukis[i] = charaMuki;
                     return true;
                 }
 

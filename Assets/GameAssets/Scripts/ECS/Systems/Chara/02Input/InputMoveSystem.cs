@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -28,51 +27,51 @@ namespace NKPB
         {
 
             NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
-            NativeArray<CharaDash> charaDashs = m_query.ToComponentDataArray<CharaDash>(Allocator.TempJob);
+            NativeArray<CharaDash> charaDashes = m_query.ToComponentDataArray<CharaDash>(Allocator.TempJob);
             NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
             NativeArray<PadScan> padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
 
             var job = new MoveJob()
             {
-                charaMoves = charaMoves,
-                charaDashs = charaDashs,
-                charaFlags = charaFlags,
-                padScans = padScans,
-                brakeDelta = Settings.Instance.Move.BrakeDelta,
-                walkSpeed = Settings.Instance.Move.WalkSpeed,
-                dashSpeed = Settings.Instance.Move.DashSpeed,
+                m_charaMoves = charaMoves,
+                m_charaDashes = charaDashes,
+                m_charaFlags = charaFlags,
+                m_padScans = padScans,
+                BrakeDelta = Settings.Instance.Move.BrakeDelta,
+                WalkSpeed = Settings.Instance.Move.WalkSpeed,
+                DashSpeed = Settings.Instance.Move.DashSpeed,
             };
 
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.charaMoves);
+            m_query.CopyFromComponentDataArray(job.m_charaMoves);
 
             charaMoves.Dispose();
-            charaDashs.Dispose();
+            charaDashes.Dispose();
             charaFlags.Dispose();
             padScans.Dispose();
 
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct MoveJob : IJob
         {
-            public NativeArray<CharaMove> charaMoves;
-            [ReadOnly] public NativeArray<CharaDash> charaDashs;
-            [ReadOnly] public NativeArray<CharaFlag> charaFlags;
-            [ReadOnly] public NativeArray<PadScan> padScans;
-            [ReadOnly] public int brakeDelta;
-            [ReadOnly] public int walkSpeed;
-            [ReadOnly] public int dashSpeed;
+            public NativeArray<CharaMove> m_charaMoves;
+            [ReadOnly] public NativeArray<CharaDash> m_charaDashes;
+            [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
+            [ReadOnly] public NativeArray<PadScan> m_padScans;
+            [ReadOnly] public int BrakeDelta;
+            [ReadOnly] public int WalkSpeed;
+            [ReadOnly] public int DashSpeed;
 
             public void Execute()
             {
 
-                for (int i = 0; i < charaFlags.Length; i++)
+                for (int i = 0; i < m_charaFlags.Length; i++)
                 {
-                    var charaFlag = charaFlags[i];
+                    var charaFlag = m_charaFlags[i];
 
                     if (charaFlag.moveFlag.IsFlag(FlagMove.Walk))
                     {
@@ -98,9 +97,9 @@ namespace NKPB
 
             void Friction(int i)
             {
-                CharaMove charaMove = charaMoves[i];
-                UpdateFriction(ref charaMove, brakeDelta);
-                charaMoves[i] = charaMove;
+                CharaMove charaMove = m_charaMoves[i];
+                UpdateFriction(ref charaMove, BrakeDelta);
+                m_charaMoves[i] = charaMove;
             }
 
             // XZ方向減速
@@ -127,12 +126,11 @@ namespace NKPB
 
             void Stop(int i)
             {
-                CharaMove charaMove = charaMoves[i];
+                CharaMove charaMove = m_charaMoves[i];
                 ClearDelta(ref charaMove);
-                charaMoves[i] = charaMove;
+                m_charaMoves[i] = charaMove;
             }
 
-            //XZ方向停止
             void ClearDelta(ref CharaMove charaMove)
             {
                 charaMove.delta.x = 0;
@@ -141,10 +139,9 @@ namespace NKPB
 
             void Walk(int i)
             {
-                // Debug.Log("Walk");
-                CharaMove charaMove = charaMoves[i];
-                SetDelta(ref charaMove, walkSpeed, InputToMoveMuki(i));
-                charaMoves[i] = charaMove;
+                CharaMove charaMove = m_charaMoves[i];
+                SetDelta(ref charaMove, WalkSpeed, InputToMoveMuki(i));
+                m_charaMoves[i] = charaMove;
             }
 
             void SetDelta(ref CharaMove charaMove, int _delta, EnumMoveMuki _moveMuki)
@@ -205,13 +202,13 @@ namespace NKPB
             {
                 var res = EnumMoveMuki.None;
 
-                if (padScans[i].crossLeft.isPress)
+                if (m_padScans[i].m_crossLeft.m_isPress)
                 {
-                    if (padScans[i].crossUp.isPress)
+                    if (m_padScans[i].m_crossUp.m_isPress)
                     {
                         res = EnumMoveMuki.LeftUp;
                     }
-                    else if (padScans[i].crossDown.isPress)
+                    else if (m_padScans[i].m_crossDown.m_isPress)
                     {
                         res = EnumMoveMuki.LeftDown;
                     }
@@ -220,13 +217,13 @@ namespace NKPB
                         res = EnumMoveMuki.Left;
                     }
                 }
-                else if (padScans[i].crossRight.isPress)
+                else if (m_padScans[i].m_crossRight.m_isPress)
                 {
-                    if (padScans[i].crossUp.isPress)
+                    if (m_padScans[i].m_crossUp.m_isPress)
                     {
                         res = EnumMoveMuki.RightUp;
                     }
-                    else if (padScans[i].crossDown.isPress)
+                    else if (m_padScans[i].m_crossDown.m_isPress)
                     {
                         res = EnumMoveMuki.RightDown;
                     }
@@ -237,11 +234,11 @@ namespace NKPB
                 }
                 else
                 {
-                    if (padScans[i].crossUp.isPress)
+                    if (m_padScans[i].m_crossUp.m_isPress)
                     {
                         res = EnumMoveMuki.Up;
                     }
-                    else if (padScans[i].crossDown.isPress)
+                    else if (m_padScans[i].m_crossDown.m_isPress)
                     {
                         res = EnumMoveMuki.Down;
                     }
@@ -253,24 +250,24 @@ namespace NKPB
             void Dash(int i)
             {
                 // Debug.Log("Dash");
-                CharaMove charaMove = charaMoves[i];
-                SetDelta(ref charaMove, dashSpeed, InputToMoveMukiDash(i));
-                charaMoves[i] = charaMove;
+                CharaMove charaMove = m_charaMoves[i];
+                SetDelta(ref charaMove, DashSpeed, InputToMoveMukiDash(i));
+                m_charaMoves[i] = charaMove;
             }
 
             EnumMoveMuki InputToMoveMukiDash(int i)
             {
                 var res = EnumMoveMuki.None;
-                var charaDash = charaDashs[i];
+                var charaDash = m_charaDashes[i];
                 if (charaDash.dashMuki == EnumMuki.Left)
                 {
-                    if (padScans[i].crossLeft.isPress)
+                    if (m_padScans[i].m_crossLeft.m_isPress)
                     {
-                        if (padScans[i].crossUp.isPress)
+                        if (m_padScans[i].m_crossUp.m_isPress)
                         {
                             res = EnumMoveMuki.LeftLeftUp;
                         }
-                        else if (padScans[i].crossDown.isPress)
+                        else if (m_padScans[i].m_crossDown.m_isPress)
                         {
                             res = EnumMoveMuki.LeftLeftDown;
                         }
@@ -281,11 +278,11 @@ namespace NKPB
                     }
                     else
                     {
-                        if (padScans[i].crossUp.isPress)
+                        if (m_padScans[i].m_crossUp.m_isPress)
                         {
                             res = EnumMoveMuki.LeftUp;
                         }
-                        else if (padScans[i].crossDown.isPress)
+                        else if (m_padScans[i].m_crossDown.m_isPress)
                         {
                             res = EnumMoveMuki.LeftDown;
                         }
@@ -297,13 +294,13 @@ namespace NKPB
                 }
                 else if (charaDash.dashMuki == EnumMuki.Right)
                 {
-                    if (padScans[i].crossRight.isPress)
+                    if (m_padScans[i].m_crossRight.m_isPress)
                     {
-                        if (padScans[i].crossUp.isPress)
+                        if (m_padScans[i].m_crossUp.m_isPress)
                         {
                             res = EnumMoveMuki.RightRightUp;
                         }
-                        else if (padScans[i].crossDown.isPress)
+                        else if (m_padScans[i].m_crossDown.m_isPress)
                         {
                             res = EnumMoveMuki.RightRightDown;
                         }
@@ -314,11 +311,11 @@ namespace NKPB
                     }
                     else
                     {
-                        if (padScans[i].crossUp.isPress)
+                        if (m_padScans[i].m_crossUp.m_isPress)
                         {
                             res = EnumMoveMuki.RightUp;
                         }
-                        else if (padScans[i].crossDown.isPress)
+                        else if (m_padScans[i].m_crossDown.m_isPress)
                         {
                             res = EnumMoveMuki.RightDown;
                         }

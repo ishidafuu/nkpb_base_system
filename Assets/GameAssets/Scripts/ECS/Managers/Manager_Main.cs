@@ -136,7 +136,7 @@ namespace NKPB
                 //     ? m_playerEntityList[i]
                 //     : Entity.Null;
 
-                var entity = CharaEntityFactory.CreateEntity(i, manager, ref Shared.charaMeshMat);
+                var entity = CharaEntityFactory.CreateEntity(i, manager);
             }
         }
     }

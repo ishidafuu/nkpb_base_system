@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using HedgehogTeam.EasyTouch;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -30,13 +29,13 @@ namespace NKPB
 
             var job = new ConvertJob()
             {
-                charaMoves = charaMoves,
-                positions = positions,
+                m_charaMoves = charaMoves,
+                m_positions = positions,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.positions);
+            m_query.CopyFromComponentDataArray(job.m_positions);
 
             charaMoves.Dispose();
             positions.Dispose();
@@ -44,20 +43,20 @@ namespace NKPB
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct ConvertJob : IJob
         {
-            public NativeArray<Translation> positions;
-            [ReadOnly] public NativeArray<CharaMove> charaMoves;
+            public NativeArray<Translation> m_positions;
+            [ReadOnly] public NativeArray<CharaMove> m_charaMoves;
             public void Execute()
             {
-                for (int i = 0; i < positions.Length; i++)
+                for (int i = 0; i < m_positions.Length; i++)
                 {
-                    var position = positions[i];
-                    position.Value.x = charaMoves[i].position.x * 0.01f;
-                    position.Value.y = (charaMoves[i].position.y + charaMoves[i].position.z) * 0.01f;
+                    var position = m_positions[i];
+                    position.Value.x = m_charaMoves[i].position.x * 0.01f;
+                    position.Value.y = (m_charaMoves[i].position.y + m_charaMoves[i].position.z) * 0.01f;
                     position.Value.z = 100f + position.Value.y * 0.01f;
-                    positions[i] = position;
+                    m_positions[i] = position;
                 }
             }
         }
