@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    public class CountMotionSystem : JobComponentSystem
+    public class MotionCountSystem : JobComponentSystem
     {
         EntityQuery m_query;
 
@@ -44,17 +44,17 @@ namespace NKPB
 
             public void Execute()
             {
-                const int FRAMES_COUNT = 4;
+                const int FRAMES_COUNT = 3;
                 for (int i = 0; i < m_charaMotions.Length; i++)
                 {
                     CharaMotion charaMotion = m_charaMotions[i];
                     //Shared.aniScriptSheet.scripts[(int)charaMotion.motionType].frames.Count;
-                    charaMotion.count++;
-                    charaMotion.totalCount++;
+                    charaMotion.m_count++;
                     //４カウントで１アニメカウント
-                    if ((charaMotion.count >> 2) >= FRAMES_COUNT)
+                    if ((charaMotion.m_count >> 2) >= FRAMES_COUNT)
                     {
-                        charaMotion.count = 0;
+                        charaMotion.m_count = 0;
+                        charaMotion.m_frame++;
                     }
                     m_charaMotions[i] = charaMotion;
                 }

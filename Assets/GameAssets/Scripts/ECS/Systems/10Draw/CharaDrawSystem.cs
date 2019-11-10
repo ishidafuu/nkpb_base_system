@@ -29,33 +29,37 @@ namespace NKPB
         {
             m_query.AddDependency(inputDeps);
             NativeArray<Matrix4x4> charaMatrixes = new NativeArray<Matrix4x4>(Settings.Instance.Common.CharaCount, Allocator.TempJob);
-            BodyJob job = DoBodyJob(ref inputDeps, charaMatrixes);
+            NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
+            BodyJob job = DoBodyJob(ref inputDeps, charaMatrixes, charaMotions);
 
-            Draw(charaMatrixes, job);
-
+            Draw(charaMatrixes, charaMotions, job);
+            charaMotions.Dispose();
             charaMatrixes.Dispose();
             return inputDeps;
         }
 
-        private static NativeArray<Matrix4x4> Draw(NativeArray<Matrix4x4> charaMatrixes, BodyJob bodyJob)
+        private static NativeArray<Matrix4x4> Draw(NativeArray<Matrix4x4> charaMatrixes, NativeArray<CharaMotion> charaMotions,
+            BodyJob bodyJob)
         {
             for (int i = 0; i < charaMatrixes.Length; i++)
             {
-                Graphics.DrawMesh(Shared.m_charaMeshMat.m_meshDict["nm2body_01_01"],
+                string imageName = Shared.m_charaMotionList.GetImageName(charaMotions[i]);
+                Graphics.DrawMesh(Shared.m_charaMeshMat.m_meshDict[imageName],
                     bodyJob.m_charaMatrixes[i],
-                    Shared.m_charaMeshMat.m_materialDict["nm2body_01_01"], 0);
+                    Shared.m_charaMeshMat.m_materialDict[imageName], 0);
             }
 
             return charaMatrixes;
         }
 
         private BodyJob DoBodyJob(ref JobHandle inputDeps,
-            NativeArray<Matrix4x4> charaMatrixes)
+            NativeArray<Matrix4x4> charaMatrixes,
+            NativeArray<CharaMotion> charaMotions)
         {
             NativeArray<CharaMuki> charaMukis = m_query.ToComponentDataArray<CharaMuki>(Allocator.TempJob);
             NativeArray<CharaLook> charaLooks = m_query.ToComponentDataArray<CharaLook>(Allocator.TempJob);
             NativeArray<Translation> transrations = m_query.ToComponentDataArray<Translation>(Allocator.TempJob);
-            NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
+
             var job = new BodyJob()
             {
                 m_charaMatrixes = charaMatrixes,
@@ -75,7 +79,7 @@ namespace NKPB
             charaMukis.Dispose();
             charaLooks.Dispose();
             transrations.Dispose();
-            charaMotions.Dispose();
+
 
             return job;
         }

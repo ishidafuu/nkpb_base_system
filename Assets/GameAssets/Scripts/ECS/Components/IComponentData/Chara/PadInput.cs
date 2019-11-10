@@ -16,23 +16,30 @@ namespace NKPB
         public Button m_buttonB;
         public Button m_buttonX;
         public Button m_buttonY;
+
+        public void Init()
+        {
+            m_crossUp.Init();
+            m_crossDown.Init();
+            m_crossLeft.Init();
+            m_crossRight.Init();
+            m_buttonA.Init();
+            m_buttonB.Init();
+            m_buttonX.Init();
+            m_buttonY.Init();
+        }
+
         public void SetCross(Vector2 axis, float time)
         {
-            // 直前キーから変更無ければ処理しない
-            if (axis != m_axis)
-            {
-                var isUp = (axis.y > +0.1f);
-                var isDown = (axis.y < -0.1f);
-                var isRight = (axis.x > +0.1f);
-                var isLeft = (axis.x < -0.1f);
-
-                m_axis = axis;
-                m_crossUp.SetCrossData(isUp, Time.time);
-                m_crossDown.SetCrossData(isDown, Time.time);
-                m_crossRight.SetCrossData(isRight, Time.time);
-                m_crossLeft.SetCrossData(isLeft, Time.time);
-                // Debug.Log(axis);
-            }
+            var isUp = (axis.y > +0.1f);
+            var isDown = (axis.y < -0.1f);
+            var isRight = (axis.x > +0.1f);
+            var isLeft = (axis.x < -0.1f);
+            m_axis = axis;
+            m_crossUp.SetCrossData(isUp, Time.time);
+            m_crossDown.SetCrossData(isDown, Time.time);
+            m_crossRight.SetCrossData(isRight, Time.time);
+            m_crossLeft.SetCrossData(isLeft, Time.time);
         }
 
         public EnumCrossType GetPressCross()
@@ -74,6 +81,11 @@ namespace NKPB
             return (m_crossUp.m_isPress || m_crossDown.m_isPress || m_crossLeft.m_isPress || m_crossRight.m_isPress);
         }
 
+        public bool IsAnyCrossPush()
+        {
+            return (m_crossUp.m_isPush || m_crossDown.m_isPush || m_crossLeft.m_isPush || m_crossRight.m_isPush);
+        }
+
         public bool IsJumpPush()
         {
             return ((m_buttonA.m_isPress && m_buttonB.m_isPush)
@@ -97,25 +109,33 @@ namespace NKPB
         // ダッシュ用直前押した瞬間時間
         float m_lastPushTime;
 
-        public void SetButtonData(bool _isPush, bool _isPress, bool _isPop, float _time)
+        public void Init()
         {
-            m_isPush = _isPush;
-            m_isPress = _isPress;
-            m_isPop = _isPop;
-            m_isDouble = (_isPush && ((_time - m_lastPushTime) < DOUBLE_TIME));
-            if (_isPush)
-                m_lastPushTime = _time;
+            // 開始時にボタンを押すとダッシュする対策
+            m_lastPushTime = -100;
+        }
+
+        public void SetButtonData(bool isPush, bool isPress, bool isPop, float time)
+        {
+            m_isPush = isPush;
+            m_isPress = isPress;
+            m_isPop = isPop;
+            m_isDouble = (isPush && ((time - m_lastPushTime) < DOUBLE_TIME));
+            if (isPush)
+            {
+                m_lastPushTime = time;
+            }
 
         }
 
-        public void SetCrossData(bool _isPress, float _time)
+        public void SetCrossData(bool isPress, float time)
         {
-            m_isPush = (!m_isPress && _isPress);
-            m_isPress = (_isPress);
-            m_isPop = (m_isPress && !_isPress);
-            m_isDouble = (m_isPush && ((_time - m_lastPushTime) < DOUBLE_TIME));
+            m_isPush = (!m_isPress && isPress);
+            m_isPress = (isPress);
+            m_isPop = (m_isPress && !isPress);
+            m_isDouble = (m_isPush && ((time - m_lastPushTime) < DOUBLE_TIME));
             if (m_isPush)
-                m_lastPushTime = _time;
+                m_lastPushTime = time;
 
             // if (m_isPress)
             //     Debug.Log("isPress");

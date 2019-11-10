@@ -52,13 +52,13 @@ namespace NKPB
         Right = 1,
     }
 
-    public enum EnumMotion
+    public enum EnumMotionType
     {
         Idle = 0,
-        Walk,
-        Dash,
-        Slip,
         Jump,
+        Dash,
+        Walk,
+        Slip,
         Fall,
         Land,
         Damage,
@@ -84,4 +84,6 @@ namespace NKPB
         RightDown,
         Down,
     }
+
+
 }

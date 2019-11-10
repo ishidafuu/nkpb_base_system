@@ -23,6 +23,9 @@ namespace NKPB
             if (_i < Settings.Instance.Common.PlayerCount)
             {
                 _entityManager.AddComponent(entity, ComponentType.ReadWrite<PadScan>());
+                var padScan = new PadScan();
+                padScan.Init();
+                _entityManager.SetComponentData(entity, padScan);
             }
 
             // ID
@@ -39,15 +42,15 @@ namespace NKPB
                 Value = new float3(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0)
             });
 
-            _entityManager.SetComponentData(entity, new CharaMove
+            _entityManager.SetComponentData(entity, new CharaDelta
             {
-                position = new Vector3Int(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0),
-                delta = Vector3Int.zero
+                m_position = new Vector3Int(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0),
+                m_delta = Vector3Int.zero
             });
 
             _entityManager.SetComponentData(entity, new CharaMotion
             {
-                motionType = EnumMotion.Idle
+                m_motionType = EnumMotionType.Idle
             });
 
             _entityManager.SetComponentData(entity, new CharaLook

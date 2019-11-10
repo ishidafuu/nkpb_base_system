@@ -8,19 +8,19 @@ using UnityEngine;
 
 namespace NKPB
 {
-    public class MovePosSystem : JobComponentSystem
+    public class PosMoveSystem : JobComponentSystem
     {
         EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaMove>());
+                ComponentType.ReadWrite<CharaDelta>());
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
+            NativeArray<CharaDelta> charaMoves = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
             var job = new PositionJob()
             {
                 m_charaMoves = charaMoves,
@@ -38,13 +38,13 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaMove> m_charaMoves;
+            public NativeArray<CharaDelta> m_charaMoves;
             public void Execute()
             {
                 for (int i = 0; i < m_charaMoves.Length; i++)
                 {
-                    CharaMove charaMove = m_charaMoves[i];
-                    charaMove.position += charaMove.delta;
+                    CharaDelta charaMove = m_charaMoves[i];
+                    charaMove.m_position += charaMove.m_delta;
                     m_charaMoves[i] = charaMove;
                 }
             }

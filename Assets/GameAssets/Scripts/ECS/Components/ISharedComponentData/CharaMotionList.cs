@@ -24,6 +24,24 @@ namespace NKPB
             m_charaMotionList = loadObjects[0].motionData;
         }
 
+        public CharacterMotionFrame GetMotionData(CharaMotion motion)
+        {
+            if ((int)motion.m_motionType >= m_charaMotionList.Count)
+            {
+                Debug.LogError($"Out of m_charaMotionList.Count {motion.m_motionType}");
+            }
+            // Debug.Log(motion.m_motionType); 
+            int len = m_charaMotionList[(int)motion.m_motionType].frameData.Length;
+            int index = motion.m_frame % len;
+
+            return m_charaMotionList[(int)motion.m_motionType].frameData[index];
+        }
+
+        public string GetImageName(CharaMotion motion)
+        {
+            return GetMotionData(motion).imageName;
+        }
+
         public bool Equals(CharaMotionList obj)
         {
             return false;

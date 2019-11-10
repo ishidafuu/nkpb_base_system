@@ -31,9 +31,6 @@ AnimationClip:
     - time: 0.3
       value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
-    - time: 0.3833333
-      value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
-        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -57,13 +54,12 @@ AnimationClip:
     - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
     - {fileID: 790717641122099657, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
     - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
-    - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.39999998
+    m_StopTime: 0.3166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -106,15 +102,8 @@ AnimationClip:
     messageOptions: 0
   - time: 0.3
     functionName: UpdateHitbox
-    data: AAAAAAAAcEIBAAAA
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 3
-    messageOptions: 0
-  - time: 0.3833333
-    functionName: UpdateHitbox
     data: AAAAAAAAcEIAAAAA
     objectReferenceParameter: {fileID: 0}
     floatParameter: 3
-    intParameter: 4
+    intParameter: 3
     messageOptions: 0

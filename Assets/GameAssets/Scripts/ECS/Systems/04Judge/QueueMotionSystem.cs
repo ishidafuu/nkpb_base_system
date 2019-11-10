@@ -19,7 +19,9 @@ namespace NKPB
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaMotion>(),
                 ComponentType.ReadWrite<CharaFlag>(),
-                ComponentType.ReadWrite<CharaQueue>());
+                ComponentType.ReadWrite<CharaQueue>(),
+                ComponentType.ReadWrite<CharaDash>()
+                );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -27,12 +29,14 @@ namespace NKPB
             NativeArray<CharaMotion> charaMotions = m_query.ToComponentDataArray<CharaMotion>(Allocator.TempJob);
             NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
             NativeArray<CharaQueue> charaQueues = m_query.ToComponentDataArray<CharaQueue>(Allocator.TempJob);
+            NativeArray<CharaDash> charaDashes = m_query.ToComponentDataArray<CharaDash>(Allocator.TempJob);
 
             var job = new InputJob()
             {
                 m_charaMotions = charaMotions,
                 m_charaFlags = charaFlags,
                 m_charaQueues = charaQueues,
+                m_charaDashes = charaDashes,
             };
 
             inputDeps = job.Schedule(inputDeps);
@@ -41,10 +45,12 @@ namespace NKPB
             m_query.CopyFromComponentDataArray(job.m_charaMotions);
             m_query.CopyFromComponentDataArray(job.m_charaFlags);
             m_query.CopyFromComponentDataArray(job.m_charaQueues);
+            m_query.CopyFromComponentDataArray(job.m_charaDashes);
 
             charaMotions.Dispose();
             charaFlags.Dispose();
             charaQueues.Dispose();
+            charaDashes.Dispose();
             return inputDeps;
         }
 
@@ -54,6 +60,7 @@ namespace NKPB
             public NativeArray<CharaMotion> m_charaMotions;
             public NativeArray<CharaFlag> m_charaFlags;
             public NativeArray<CharaQueue> m_charaQueues;
+            public NativeArray<CharaDash> m_charaDashes;
 
             public void Execute()
             {
@@ -61,72 +68,93 @@ namespace NKPB
                 {
                     var charaQueue = m_charaQueues[i];
 
-                    if (charaQueue.isQueue)
+                    if (charaQueue.m_isQueue)
                     {
                         var charaMotion = m_charaMotions[i];
-                        charaMotion.SwitchMotion(charaQueue.motionType);
+                        var charaFlag = m_charaFlags[i];
+                        SwitchMotion(ref charaMotion, charaQueue.m_motionType);
 
-                        switch (charaQueue.motionType)
+                        switch (charaQueue.m_motionType)
                         {
-                            case EnumMotion.Idle:
-                                UpdateIdleFlags(i);
+                            case EnumMotionType.Idle:
+                                UpdateIdleFlags(ref charaFlag);
                                 break;
-                            case EnumMotion.Walk:
-                                UpdateWalkFlags(i);
+                            case EnumMotionType.Walk:
+                                UpdateWalkFlags(ref charaFlag);
                                 break;
-                            case EnumMotion.Dash:
+                            case EnumMotionType.Dash:
+                                UpdateDashFlags(ref charaFlag);
+                                UpdateDashState(i, charaQueue.m_muki);
                                 break;
-                            case EnumMotion.Slip:
+                            case EnumMotionType.Slip:
                                 break;
-                            case EnumMotion.Jump:
+                            case EnumMotionType.Jump:
                                 break;
-                            case EnumMotion.Fall:
+                            case EnumMotionType.Fall:
                                 break;
-                            case EnumMotion.Land:
+                            case EnumMotionType.Land:
                                 break;
-                            case EnumMotion.Damage:
+                            case EnumMotionType.Damage:
                                 break;
-                            case EnumMotion.Fly:
+                            case EnumMotionType.Fly:
                                 break;
-                            case EnumMotion.Down:
+                            case EnumMotionType.Down:
                                 break;
-                            case EnumMotion.Dead:
+                            case EnumMotionType.Dead:
                                 break;
-                            case EnumMotion.Action:
+                            case EnumMotionType.Action:
                                 break;
                             default:
                                 Debug.Assert(false);
                                 break;
                         }
+
+
+                        m_charaMotions[i] = charaMotion;
+                        m_charaFlags[i] = charaFlag;
                     }
 
-                    charaQueue.ClearQueue();
+                    charaQueue.m_isQueue = false;
                     m_charaQueues[i] = charaQueue;
                 }
             }
-            // Jump = 0x0001,
-            //     Dash = 0x0002,
-            //     Walk = 0x0004,
-            //     Slip = 0x0008,
-            //     Idle = 0x0010,
-            void UpdateIdleFlags(int i)
+
+            private void UpdateDashState(int i, EnumMuki muki)
             {
-                var charaFlag = m_charaFlags[i];
+                var charaDashes = m_charaDashes[i];
+                charaDashes.dashMuki = muki;
+                m_charaDashes[i] = charaDashes;
+            }
+
+            void SwitchMotion(ref CharaMotion charaMotion, EnumMotionType motionType)
+            {
+                charaMotion.m_motionType = motionType;
+                charaMotion.m_count = 0;
+                charaMotion.m_frame = 0;
+            }
+
+            void UpdateIdleFlags(ref CharaFlag charaFlag)
+            {
                 charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
                 charaFlag.moveFlag = FlagMove.Stop;
                 charaFlag.motionFlag = FlagMotion.None;
                 charaFlag.mukiFlag = true;
-                m_charaFlags[i] = charaFlag;
             }
 
-            void UpdateWalkFlags(int i)
+            void UpdateWalkFlags(ref CharaFlag charaFlag)
             {
-                var charaFlag = m_charaFlags[i];
                 charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
                 charaFlag.moveFlag = FlagMove.Walk;
                 charaFlag.motionFlag = FlagMotion.Move;
                 charaFlag.mukiFlag = true;
-                m_charaFlags[i] = charaFlag;
+            }
+
+            void UpdateDashFlags(ref CharaFlag charaFlag)
+            {
+                charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Slip;
+                charaFlag.moveFlag = FlagMove.Dash;
+                charaFlag.motionFlag = FlagMotion.Dash;
+                charaFlag.mukiFlag = true;
             }
 
         }

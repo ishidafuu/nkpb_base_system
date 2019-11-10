@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MoveSettings
   m_EditorClassIdentifier: 
   WalkSpeed: 100
-  DashSpeed: 300
+  DashSpeed: 200
+  BrakeDelta: 0

@@ -10,14 +10,14 @@ using UnityEngine;
 
 namespace NKPB
 {
-    public class InputMoveSystem : JobComponentSystem
+    public class MoveInputSystem : JobComponentSystem
     {
         EntityQuery m_query;
 
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaMove>(),
+                ComponentType.ReadWrite<CharaDelta>(),
                 ComponentType.ReadOnly<CharaDash>(),
                 ComponentType.ReadOnly<CharaFlag>(),
                 ComponentType.ReadOnly<PadScan>());
@@ -26,14 +26,14 @@ namespace NKPB
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
 
-            NativeArray<CharaMove> charaMoves = m_query.ToComponentDataArray<CharaMove>(Allocator.TempJob);
+            NativeArray<CharaDelta> charaDeltas = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
             NativeArray<CharaDash> charaDashes = m_query.ToComponentDataArray<CharaDash>(Allocator.TempJob);
             NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
             NativeArray<PadScan> padScans = m_query.ToComponentDataArray<PadScan>(Allocator.TempJob);
 
             var job = new MoveJob()
             {
-                m_charaMoves = charaMoves,
+                m_charaDeltas = charaDeltas,
                 m_charaDashes = charaDashes,
                 m_charaFlags = charaFlags,
                 m_padScans = padScans,
@@ -45,9 +45,9 @@ namespace NKPB
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.m_charaMoves);
+            m_query.CopyFromComponentDataArray(job.m_charaDeltas);
 
-            charaMoves.Dispose();
+            charaDeltas.Dispose();
             charaDashes.Dispose();
             charaFlags.Dispose();
             padScans.Dispose();
@@ -58,7 +58,7 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct MoveJob : IJob
         {
-            public NativeArray<CharaMove> m_charaMoves;
+            public NativeArray<CharaDelta> m_charaDeltas;
             [ReadOnly] public NativeArray<CharaDash> m_charaDashes;
             [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
             [ReadOnly] public NativeArray<PadScan> m_padScans;
@@ -72,80 +72,65 @@ namespace NKPB
                 for (int i = 0; i < m_charaFlags.Length; i++)
                 {
                     var charaFlag = m_charaFlags[i];
+                    var charaDelta = m_charaDeltas[i];
 
                     if (charaFlag.moveFlag.IsFlag(FlagMove.Walk))
                     {
-                        Walk(i);
+                        SetDelta(ref charaDelta, WalkSpeed, InputToMoveMuki(i));
+                        // Debug.Log("Walk" + i);
                     }
 
                     if (charaFlag.moveFlag.IsFlag(FlagMove.Friction))
                     {
-                        Friction(i);
+                        UpdateFriction(ref charaDelta, BrakeDelta);
                     }
 
                     if (charaFlag.moveFlag.IsFlag(FlagMove.Stop))
                     {
-                        Stop(i);
+                        ClearDelta(ref charaDelta);
                     }
 
                     if (charaFlag.moveFlag.IsFlag(FlagMove.Dash))
                     {
-                        Dash(i);
+                        SetDelta(ref charaDelta, DashSpeed, InputToMoveMukiDash(i));
+                        // Debug.Log("Dash");
                     }
+
+                    m_charaDeltas[i] = charaDelta;
                 }
             }
 
-            void Friction(int i)
+            void UpdateFriction(ref CharaDelta charaDelta, int _brakeDelta)
             {
-                CharaMove charaMove = m_charaMoves[i];
-                UpdateFriction(ref charaMove, BrakeDelta);
-                m_charaMoves[i] = charaMove;
-            }
-
-            void UpdateFriction(ref CharaMove charaMove, int _brakeDelta)
-            {
-                if (charaMove.delta.x > 0)
+                if (charaDelta.m_delta.x > 0)
                 {
-                    charaMove.delta.x = Mathf.Min(0, charaMove.delta.x - _brakeDelta);
+                    charaDelta.m_delta.x = Mathf.Min(0, charaDelta.m_delta.x - _brakeDelta);
                 }
-                else if (charaMove.delta.x < 0)
+                else if (charaDelta.m_delta.x < 0)
                 {
-                    charaMove.delta.x = Mathf.Max(0, charaMove.delta.x + _brakeDelta);
+                    charaDelta.m_delta.x = Mathf.Max(0, charaDelta.m_delta.x + _brakeDelta);
                 }
 
-                if (charaMove.delta.z > 0)
+                if (charaDelta.m_delta.z > 0)
                 {
-                    charaMove.delta.z = Mathf.Min(0, charaMove.delta.z - _brakeDelta);
+                    charaDelta.m_delta.z = Mathf.Min(0, charaDelta.m_delta.z - _brakeDelta);
                 }
-                else if (charaMove.delta.x < 0)
+                else if (charaDelta.m_delta.x < 0)
                 {
-                    charaMove.delta.z = Mathf.Max(0, charaMove.delta.z + _brakeDelta);
+                    charaDelta.m_delta.z = Mathf.Max(0, charaDelta.m_delta.z + _brakeDelta);
                 }
             }
 
-            void Stop(int i)
+            void ClearDelta(ref CharaDelta charaPos)
             {
-                CharaMove charaMove = m_charaMoves[i];
-                ClearDelta(ref charaMove);
-                m_charaMoves[i] = charaMove;
+                charaPos.m_delta.x = 0;
+                charaPos.m_delta.z = 0;
             }
 
-            void ClearDelta(ref CharaMove charaMove)
-            {
-                charaMove.delta.x = 0;
-                charaMove.delta.z = 0;
-            }
 
-            void Walk(int i)
+            void SetDelta(ref CharaDelta charaDelta, int _delta, EnumMoveMuki _moveMuki)
             {
-                CharaMove charaMove = m_charaMoves[i];
-                SetDelta(ref charaMove, WalkSpeed, InputToMoveMuki(i));
-                m_charaMoves[i] = charaMove;
-            }
-
-            void SetDelta(ref CharaMove charaMove, int _delta, EnumMoveMuki _moveMuki)
-            {
-                charaMove.delta = DeltaToVector3Int(_delta, _moveMuki);
+                charaDelta.m_delta = DeltaToVector3Int(_delta, _moveMuki);
             }
 
             Vector3Int DeltaToVector3Int(int _delta, EnumMoveMuki _moveMuki)
@@ -244,13 +229,6 @@ namespace NKPB
                 }
 
                 return res;
-            }
-
-            void Dash(int i)
-            {
-                CharaMove charaMove = m_charaMoves[i];
-                SetDelta(ref charaMove, DashSpeed, InputToMoveMukiDash(i));
-                m_charaMoves[i] = charaMove;
             }
 
             EnumMoveMuki InputToMoveMukiDash(int i)

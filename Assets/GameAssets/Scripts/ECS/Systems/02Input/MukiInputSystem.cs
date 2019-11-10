@@ -10,8 +10,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateInGroup(typeof(InputGroup))]
-    public class InputMukiSystem : JobComponentSystem
+    public class MukiInputSystem : JobComponentSystem
     {
         EntityQuery m_query;
 

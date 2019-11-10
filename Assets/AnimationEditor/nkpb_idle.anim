@@ -73,7 +73,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: UpdateHitbox
-    data: AQAAAAAAcEIBAAAA9////wcAAAAQAAAAEAAAAAAAAAA=
+    data: AAAAAAAAcEIBAAAA
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

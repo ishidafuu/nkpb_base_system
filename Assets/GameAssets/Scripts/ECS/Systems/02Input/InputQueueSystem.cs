@@ -10,8 +10,7 @@ using UnityEngine;
 
 namespace NKPB
 {
-    // [UpdateBefore(typeof(MovePosSystem))]
-    public class InputMotionSystem : JobComponentSystem
+    public class InputQueueSystem : JobComponentSystem
     {
         EntityQuery m_query;
 
@@ -98,8 +97,7 @@ namespace NKPB
             {
                 if (m_padScans[i].IsJumpPush())
                 {
-                    Debug.Log("asdfasdf");
-                    SetQueue(i, EnumMotion.Jump);
+                    SetQueue(i, EnumMotionType.Jump);
                     return true;
                 }
 
@@ -110,12 +108,10 @@ namespace NKPB
             {
                 if (m_padScans[i].m_crossLeft.m_isDouble || m_padScans[i].m_crossRight.m_isDouble)
                 {
-                    var charaQueue = m_charaQueues[i];
                     EnumMuki muki = (m_padScans[i].m_crossLeft.m_isDouble)
                         ? EnumMuki.Left
                         : EnumMuki.Right;
-                    charaQueue.SetQueueMuki(EnumMotion.Dash, muki);
-                    m_charaQueues[i] = charaQueue;
+                    SetQueue(i, EnumMotionType.Dash, muki);
 
                     return true;
                 }
@@ -125,10 +121,9 @@ namespace NKPB
 
             bool CheckWalk(int i)
             {
-
                 if (m_padScans[i].IsAnyCrossPress())
                 {
-                    SetQueue(i, EnumMotion.Walk);
+                    SetQueue(i, EnumMotionType.Walk);
                     return true;
                 }
 
@@ -137,9 +132,9 @@ namespace NKPB
 
             bool CheckSlip(int i)
             {
-                if (m_padScans[i].IsAnyCrossPress())
+                if (m_padScans[i].IsAnyCrossPush())
                 {
-                    SetQueue(i, EnumMotion.Slip);
+                    SetQueue(i, EnumMotionType.Slip);
                     return true;
                 }
 
@@ -150,7 +145,7 @@ namespace NKPB
             {
                 if (!m_padScans[i].IsAnyCrossPress())
                 {
-                    SetQueue(i, EnumMotion.Idle);
+                    SetQueue(i, EnumMotionType.Idle);
 
                     return true;
                 }
@@ -158,10 +153,10 @@ namespace NKPB
                 return false;
             }
 
-            private void SetQueue(int i, EnumMotion motion)
+            private void SetQueue(int i, EnumMotionType motionType, EnumMuki muki = EnumMuki.None)
             {
                 var charaQueue = m_charaQueues[i];
-                charaQueue.SetQueue(motion);
+                charaQueue.SetQueue(motionType, muki);
                 m_charaQueues[i] = charaQueue;
             }
         }

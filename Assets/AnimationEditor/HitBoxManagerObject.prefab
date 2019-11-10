@@ -47,132 +47,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animations:
   - clip: {fileID: 7400000, guid: 1572d5867c81ae24394b83580f40b714, type: 2}
-    framedata:
-    - imageName: nm2body_01_01
-      collider:
-      - rect:
-          x: -9
-          y: 7
-          width: 16
-          height: 16
-        type: 0
+    frameData:
+    - imageName: 
+      collider: []
       events: []
       time: 0
-    - imageName: nm2body_01_01
+    - imageName: 
       collider: []
       events: []
       time: 0.083333336
   - clip: {fileID: 7400000, guid: 3364bb72f260a724fb59ee737d968438, type: 2}
-    framedata:
-    - imageName: nm2body_01_06
+    frameData:
+    - imageName: 
       collider: []
       events: []
       time: 0
-    - imageName: nm2body_01_07
+    - imageName: 
       collider: []
-      events:
-      - id: 4
-        intParam: 10
-        floatParam: 0
-        stringParam: 
+      events: []
       time: 0.1
-    - imageName: nm2body_01_08
+    - imageName: 
       collider: []
       events: []
       time: 0.2
-    - imageName: nm2body_01_08
+    - imageName: 
       collider: []
       events: []
       time: 0.28333333
   - clip: {fileID: 7400000, guid: 90c47d9a9c329ab408b729b423d78c21, type: 2}
-    framedata:
-    - imageName: nm2body_01_10
+    frameData:
+    - imageName: 
       collider: []
       events: []
       time: 0
-    - imageName: nm2body_01_01
+    - imageName: 
       collider: []
       events: []
       time: 0.1
-    - imageName: nm2body_01_04
+    - imageName: 
       collider: []
       events: []
       time: 0.2
-    - imageName: nm2body_01_01
+    - imageName: 
       collider: []
       events: []
       time: 0.3
-    - imageName: nm2body_01_01
-      collider: []
-      events: []
-      time: 0.38333333
   - clip: {fileID: 7400000, guid: dd03d075f2252bf439db74eb8ba854c6, type: 2}
-    framedata:
-    - imageName: nm2body_01_02
+    frameData:
+    - imageName: 
       collider: []
       events: []
       time: 0
-    - imageName: nm2body_01_01
+    - imageName: 
       collider: []
       events: []
       time: 0.1
-    - imageName: nm2body_01_03
+    - imageName: 
       collider: []
       events: []
       time: 0.2
-    - imageName: nm2body_01_01
+    - imageName: 
       collider: []
       events: []
       time: 0.3
-    - imageName: nm2body_01_01
+  - clip: {fileID: 7400000, guid: cf9dd5fe66a132c478711035f2fd85d1, type: 2}
+    frameData:
+    - imageName: 
       collider: []
       events: []
-      time: 0.3833333
-  - clip: {fileID: 7400000, guid: cf9dd5fe66a132c478711035f2fd85d1, type: 2}
-    framedata:
-    - imageName: nm2body_02_13
-      collider:
-      - rect:
-          x: 0
-          y: 0
-          width: 16
-          height: 16
-        type: 0
-      events: []
       time: 0
-    - imageName: nm2body_03_03
-      collider:
-      - rect:
-          x: 0
-          y: 0
-          width: 16
-          height: 16
-        type: 0
+    - imageName: 
+      collider: []
       events: []
       time: 0.06666666
-    - imageName: nm2body_03_04
+    - imageName: 
       collider: []
       events: []
       time: 0.13333333
-    - imageName: nm2body_03_04
-      collider:
-      - rect:
-          x: 6
-          y: 14
-          width: 16
-          height: 11
-        type: 5
-      - rect:
-          x: -8
-          y: 8
-          width: 16
-          height: 16
-        type: 3
+    - imageName: 
+      collider: []
       events: []
       time: 0.18333332
-  m_MaxHitboxes: 2
-  m_CurrentAnimation: 0
-  m_CurrentFrame: 0
+  m_MaxHitboxes: 1
+  m_CurrentAnimation: 2
+  m_CurrentFrame: 3
   m_CurrentCollider: 0
 --- !u!212 &614589797469691088
 SpriteRenderer:

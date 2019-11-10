@@ -241,6 +241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3496483356464400338, guid: 23123d37ad087e9438b582bbae39d666,
         type: 3}
+      propertyPath: m_Animations.Array.data[0].frameData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496483356464400338, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
       propertyPath: m_CurrentFrame
       value: 0
       objectReference: {fileID: 0}
@@ -249,11 +254,16 @@ PrefabInstance:
       propertyPath: m_CurrentCollider
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3496483356464400338, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_MaxHitboxes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 614589797469691088, guid: 23123d37ad087e9438b582bbae39d666,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4387423401934122530, guid: 9112c0d99c23cd9429ba36736f0c4c65,
+      objectReference: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23123d37ad087e9438b582bbae39d666, type: 3}

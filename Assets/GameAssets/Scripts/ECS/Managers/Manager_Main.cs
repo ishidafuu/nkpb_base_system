@@ -73,8 +73,8 @@ namespace NKPB
         {
             CountGroup countGroup = world.GetOrCreateSystem<CountGroup>();
             simulationSystemGroup.AddSystemToUpdateList(countGroup);
-            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CountMotionSystem>());
-            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ShiftCountMotionSystem>());
+            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MotionCountSystem>());
+            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CountQueueSystem>());
             countGroup.SortSystemUpdateList();
         }
 
@@ -82,9 +82,9 @@ namespace NKPB
         {
             InputGroup inputGroup = world.GetOrCreateSystem<InputGroup>();
             simulationSystemGroup.AddSystemToUpdateList(inputGroup);
-            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMotionSystem>());
-            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMukiSystem>());
-            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputMoveSystem>());
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<InputQueueSystem>());
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MukiInputSystem>());
+            inputGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MoveInputSystem>());
             inputGroup.SortSystemUpdateList();
         }
 
@@ -92,7 +92,7 @@ namespace NKPB
         {
             MoveGroup moveGroup = world.GetOrCreateSystem<MoveGroup>();
             simulationSystemGroup.AddSystemToUpdateList(moveGroup);
-            moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MovePosSystem>());
+            moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<PosMoveSystem>());
             moveGroup.SortSystemUpdateList();
         }
 
@@ -109,7 +109,7 @@ namespace NKPB
             PreRenderGroup preRenderGroup = world.GetOrCreateSystem<PreRenderGroup>();
             simulationSystemGroup.AddSystemToUpdateList(preRenderGroup);
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LookSystem>());
-            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawPosSystem>());
+            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawTranslationSystem>());
             preRenderGroup.SortSystemUpdateList();
         }
 

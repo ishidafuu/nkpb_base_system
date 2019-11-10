@@ -90,35 +90,4 @@ namespace NKPB
             param &= ~flag;
         }
     }
-
-    // [Flags]
-    // public enum FlagUpdate
-    // {
-    //     None = 0x0000,
-    //     // 空中
-    //     Air = 0x001,
-    //     // ダッシュ
-    //     Dash = 0x002,
-    //     // ダメージ
-    //     Damage = 0x003,
-    //     };
-
-    //     public static partial class FlagUpdateExtend
-    //     {
-    //     public static bool IsFlag(this FlagUpdate param, FlagUpdate flag)
-    //     {
-    //     //motionFlags.HasFlagはバーストできないので != 0で代用
-    //     return (param & flag) != 0;
-    //     }
-
-    //     public static void AddFlag(this FlagUpdate param, FlagUpdate flag)
-    //     {
-    //         param |= flag;
-    //     }
-
-    //     public static void SubFlag(this FlagUpdate param, FlagUpdate flag)
-    //     {
-    //         param &= ~flag;
-    //     }
-    // }
 }

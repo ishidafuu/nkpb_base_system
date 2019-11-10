@@ -5,25 +5,20 @@ namespace NKPB
 {
     public struct CharaQueue : IComponentData
     {
-        public boolean isQueue { get; private set; }
-        public EnumMotion motionType { get; private set; }
-        public EnumMuki muki { get; private set; }
+        public boolean m_isQueue;
+        public EnumMotionType m_motionType;
+        public EnumMuki m_muki;
 
-        public void SetQueue(EnumMotion _motionType)
+        public void SetQueue(EnumMotionType motionType, EnumMuki muki = EnumMuki.None)
         {
-            isQueue = true;
-            motionType = _motionType;
-        }
+            m_isQueue = true;
+            m_motionType = motionType;
+            if (muki != EnumMuki.None)
+            {
+                m_muki = muki;
+            }
 
-        public void SetQueueMuki(EnumMotion _motionType, EnumMuki _muki)
-        {
-            SetQueue(_motionType);
-            muki = _muki;
-        }
-
-        public void ClearQueue()
-        {
-            isQueue = false;
+            // Debug.Log($"SetQueue:{motionType}");
         }
     }
 }
