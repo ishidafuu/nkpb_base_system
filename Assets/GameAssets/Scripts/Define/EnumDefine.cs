@@ -85,5 +85,17 @@ namespace NKPB
         Down,
     }
 
-
+    public enum EnumShapeType
+    {
+        Empty,
+        Box,
+        LUpSlope,
+        RUpSlope,
+        LUpSlope2H,
+        LUpSlope2L,
+        RUpSlope2L,
+        RUpSlope2H,
+        SlashWall,
+        BSlashWall,
+    }
 }

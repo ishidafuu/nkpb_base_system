@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class TileFloor
+namespace NKPB
 {
-    public enShapeType shapeNo;
-    public int baseY;
-    public int stX;
-    public int stZ;
-    public int palNo;
-    public TileFloor(enShapeType shapeNo, int palNo, int baseY, int stX, int stZ)
+    public class TileFloor
     {
-        this.shapeNo = shapeNo;
-        this.palNo = palNo;
-        this.baseY = baseY;
-        this.stX = stX;
-        this.stZ = stZ;
+        public EnumShapeType shapeNo;
+        public int baseY;
+        public int stX;
+        public int stZ;
+        public int palNo;
+        public TileFloor(EnumShapeType shapeNo, int palNo, int baseY, int stX, int stZ)
+        {
+            this.shapeNo = shapeNo;
+            this.palNo = palNo;
+            this.baseY = baseY;
+            this.stX = stX;
+            this.stZ = stZ;
+        }
     }
 }

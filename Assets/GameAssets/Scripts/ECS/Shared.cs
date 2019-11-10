@@ -17,6 +17,8 @@ namespace NKPB
 
         public static CharaCellList m_charaCellList;
         public static CharaMotionList m_charaMotionList;
+        public static MapTipList m_mapTipList;
+
 
         public static void ReadySharedComponentData()
         {
@@ -27,6 +29,9 @@ namespace NKPB
 
             m_charaMotionList = new CharaMotionList();
             m_charaMotionList.Init();
+
+            m_mapTipList = new MapTipList();
+            m_mapTipList.Init();
         }
 
     }
