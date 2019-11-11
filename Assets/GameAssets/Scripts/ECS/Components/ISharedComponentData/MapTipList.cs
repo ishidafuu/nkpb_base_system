@@ -8,11 +8,11 @@ namespace NKPB
     [Serializable]
     public struct MapTipList : IEquatable<MapTipList>, ISharedComponentData
     {
-        List<MapTips> m_MapTipList;
+        public List<NativeMapTips> m_MapTipList;
 
         public void Init()
         {
-            m_MapTipList = new List<MapTips>();
+            m_MapTipList = new List<NativeMapTips>();
 
             var loadObjects = Resources.LoadAll<MapTips>(PathSettings.MapData);
             if (loadObjects.Length == 0)
@@ -23,7 +23,17 @@ namespace NKPB
 
             foreach (var item in loadObjects)
             {
-                m_MapTipList.Add(item);
+                var newMapTips = new NativeMapTips(item);
+                m_MapTipList.Add(newMapTips);
+            }
+        }
+
+        public void Dispose()
+        {
+            Debug.Log($"Dispose");
+            foreach (var item in m_MapTipList)
+            {
+                item.Dispose();
             }
         }
 

@@ -15,6 +15,9 @@ namespace NKPB
     public class MoveGroup : ComponentSystemGroup { }
 
     [UpdateAfter(typeof(MoveGroup))]
+    public class MapGroup : ComponentSystemGroup { }
+
+    [UpdateAfter(typeof(MapGroup))]
     public class JudgeGroup : ComponentSystemGroup { }
 
     [UpdateAfter(typeof(JudgeGroup))]

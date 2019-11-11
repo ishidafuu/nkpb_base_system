@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace NKPB
 {
+    [UpdateAfter(typeof(PosMoveSystem))]
     public class MapUpdateSystem : JobComponentSystem
     {
         EntityQuery m_query;

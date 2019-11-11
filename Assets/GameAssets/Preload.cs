@@ -1,14 +1,18 @@
 using Unity.Entities;
 using UnityEngine;
 
-static class Preload
+namespace NKPB
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void Initialize() => PlayerLoopManager.RegisterDomainUnload(DomainUnloadShutdown, 10000);
-
-    static void DomainUnloadShutdown()
+    static class Preload
     {
-        World.DisposeAllWorlds();
-        ScriptBehaviourUpdateOrder.UpdatePlayerLoop(World.Active);
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void Initialize() => PlayerLoopManager.RegisterDomainUnload(DomainUnloadShutdown, 10000);
+
+        static void DomainUnloadShutdown()
+        {
+            World.DisposeAllWorlds();
+            Shared.m_mapTipList.Dispose();
+            ScriptBehaviourUpdateOrder.UpdatePlayerLoop(World.Active);
+        }
     }
 }
