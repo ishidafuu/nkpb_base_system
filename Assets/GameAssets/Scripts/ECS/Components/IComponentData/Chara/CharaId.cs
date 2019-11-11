@@ -3,6 +3,6 @@ namespace NKPB
 {
     public struct CharaId : IComponentData
     {
-        public int myId;
+        public int m_myId;
     }
 }

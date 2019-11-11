@@ -122,7 +122,7 @@ namespace NKPB
             private void UpdateDashState(int i, EnumMuki muki)
             {
                 var charaDashes = m_charaDashes[i];
-                charaDashes.dashMuki = muki;
+                charaDashes.m_dashMuki = muki;
                 m_charaDashes[i] = charaDashes;
             }
 
@@ -135,26 +135,26 @@ namespace NKPB
 
             void UpdateIdleFlags(ref CharaFlag charaFlag)
             {
-                charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
-                charaFlag.moveFlag = FlagMove.Stop;
-                charaFlag.motionFlag = FlagMotion.None;
-                charaFlag.mukiFlag = true;
+                charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
+                charaFlag.m_moveFlag = FlagMove.Stop;
+                charaFlag.m_motionFlag = FlagMotion.None;
+                charaFlag.m_mukiFlag = true;
             }
 
             void UpdateWalkFlags(ref CharaFlag charaFlag)
             {
-                charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
-                charaFlag.moveFlag = FlagMove.Walk;
-                charaFlag.motionFlag = FlagMotion.Move;
-                charaFlag.mukiFlag = true;
+                charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
+                charaFlag.m_moveFlag = FlagMove.Walk;
+                charaFlag.m_motionFlag = FlagMotion.Move;
+                charaFlag.m_mukiFlag = true;
             }
 
             void UpdateDashFlags(ref CharaFlag charaFlag)
             {
-                charaFlag.inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Slip;
-                charaFlag.moveFlag = FlagMove.Dash;
-                charaFlag.motionFlag = FlagMotion.Dash;
-                charaFlag.mukiFlag = true;
+                charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Slip;
+                charaFlag.m_moveFlag = FlagMove.Dash;
+                charaFlag.m_motionFlag = FlagMotion.Dash;
+                charaFlag.m_mukiFlag = true;
             }
 
         }

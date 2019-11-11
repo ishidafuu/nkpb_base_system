@@ -3,8 +3,7 @@ namespace NKPB
 {
     public struct CharaLook : IComponentData
     {
-        public int isLeft;
-        public int isBack;
-        public int faceNo;
+        public boolean m_isLeft;
+        public int m_faceNo;
     }
 }

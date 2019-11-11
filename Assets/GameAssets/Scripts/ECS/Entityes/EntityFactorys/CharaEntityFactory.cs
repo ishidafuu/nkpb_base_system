@@ -14,62 +14,71 @@ namespace NKPB
 {
     public static class CharaEntityFactory
     {
-        public static Entity CreateEntity(int _i, EntityManager _entityManager)
+        public static Entity CreateEntity(int i, EntityManager entityManager)
         {
-            var archetype = _entityManager.CreateArchetype(ComponentTypes.CharaComponentType);
-            var entity = _entityManager.CreateEntity(archetype);
+            var archetype = entityManager.CreateArchetype(ComponentTypes.CharaComponentType);
+            var entity = entityManager.CreateEntity(archetype);
 
             // 必要なキャラのみインプットをつける
-            if (_i < Settings.Instance.Common.PlayerCount)
+            if (i < Settings.Instance.Common.PlayerCount)
             {
-                _entityManager.AddComponent(entity, ComponentType.ReadWrite<PadScan>());
+                entityManager.AddComponent(entity, ComponentType.ReadWrite<PadScan>());
                 var padScan = new PadScan();
                 padScan.Init();
-                _entityManager.SetComponentData(entity, padScan);
+                entityManager.SetComponentData(entity, padScan);
             }
 
             // ID
-            _entityManager.SetComponentData(entity, new CharaId
+            entityManager.SetComponentData(entity, new CharaId
             {
-                myId = _i,
+                m_myId = i,
             });
 
             var posL = 0;
             var posH = 0;
 
-            _entityManager.SetComponentData(entity, new Translation
+            entityManager.SetComponentData(entity, new Translation
             {
                 Value = new float3(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0)
             });
 
-            _entityManager.SetComponentData(entity, new CharaDelta
+            entityManager.SetComponentData(entity, new CharaDelta
             {
                 m_position = new Vector3Int(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0),
                 m_delta = Vector3Int.zero
             });
 
-            _entityManager.SetComponentData(entity, new CharaMotion
+            entityManager.SetComponentData(entity, new CharaMotion
             {
                 m_motionType = EnumMotionType.Idle
             });
 
-            _entityManager.SetComponentData(entity, new CharaLook
+            entityManager.SetComponentData(entity, new CharaLook
             {
-                isLeft = 0,
-                isBack = 0
+                m_isLeft = false,
             });
 
-            _entityManager.SetComponentData(entity, new CharaFlag
+            entityManager.SetComponentData(entity, new CharaFlag
             {
-                inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk,
-                moveFlag = FlagMove.Stop,
-                motionFlag = FlagMotion.None,
-                mukiFlag = true,
+                m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk,
+                m_moveFlag = FlagMove.Stop,
+                m_motionFlag = FlagMotion.None,
+                m_mukiFlag = true,
             });
 
-            _entityManager.SetComponentData(entity, new CharaDash
+            entityManager.SetComponentData(entity, new CharaDash
             {
-                dashMuki = EnumMuki.None
+                m_dashMuki = EnumMuki.None
+            });
+
+            entityManager.SetComponentData(entity, new CharaMuki
+            {
+                m_muki = EnumMuki.Right
+            });
+
+            entityManager.SetComponentData(entity, new CharaMap
+            {
+
             });
 
 

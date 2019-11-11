@@ -54,9 +54,7 @@ namespace NKPB
                 for (int i = 0; i < m_charaLooks.Length; i++)
                 {
                     var look = m_charaLooks[i];
-                    look.isLeft = (m_charaMukis[i].muki == EnumMuki.Left)
-                        ? 1
-                        : 0;
+                    look.m_isLeft = (m_charaMukis[i].m_muki == EnumMuki.Left);
                     m_charaLooks[i] = look;
                 }
             }

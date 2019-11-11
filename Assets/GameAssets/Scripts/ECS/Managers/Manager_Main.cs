@@ -101,6 +101,7 @@ namespace NKPB
             JudgeGroup judgeGroup = world.GetOrCreateSystem<JudgeGroup>();
             simulationSystemGroup.AddSystemToUpdateList(judgeGroup);
             judgeGroup.AddSystemToUpdateList(world.GetOrCreateSystem<QueueMotionSystem>());
+            judgeGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapUpdateSystem>());
             judgeGroup.SortSystemUpdateList();
         }
 
@@ -110,6 +111,7 @@ namespace NKPB
             simulationSystemGroup.AddSystemToUpdateList(preRenderGroup);
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LookSystem>());
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawTranslationSystem>());
+            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LastMapUpdateSystem>());
             preRenderGroup.SortSystemUpdateList();
         }
 

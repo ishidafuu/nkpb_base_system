@@ -74,23 +74,23 @@ namespace NKPB
                     var charaFlag = m_charaFlags[i];
                     var charaDelta = m_charaDeltas[i];
 
-                    if (charaFlag.moveFlag.IsFlag(FlagMove.Walk))
+                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Walk))
                     {
                         SetDelta(ref charaDelta, WalkSpeed, InputToMoveMuki(i));
                         // Debug.Log("Walk" + i);
                     }
 
-                    if (charaFlag.moveFlag.IsFlag(FlagMove.Friction))
+                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Friction))
                     {
                         UpdateFriction(ref charaDelta, BrakeDelta);
                     }
 
-                    if (charaFlag.moveFlag.IsFlag(FlagMove.Stop))
+                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Stop))
                     {
                         ClearDelta(ref charaDelta);
                     }
 
-                    if (charaFlag.moveFlag.IsFlag(FlagMove.Dash))
+                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Dash))
                     {
                         SetDelta(ref charaDelta, DashSpeed, InputToMoveMukiDash(i));
                         // Debug.Log("Dash");
@@ -235,7 +235,7 @@ namespace NKPB
             {
                 var res = EnumMoveMuki.None;
                 var charaDash = m_charaDashes[i];
-                if (charaDash.dashMuki == EnumMuki.Left)
+                if (charaDash.m_dashMuki == EnumMuki.Left)
                 {
                     if (m_padScans[i].m_crossLeft.m_isPress)
                     {
@@ -268,7 +268,7 @@ namespace NKPB
                         }
                     }
                 }
-                else if (charaDash.dashMuki == EnumMuki.Right)
+                else if (charaDash.m_dashMuki == EnumMuki.Right)
                 {
                     if (m_padScans[i].m_crossRight.m_isPress)
                     {

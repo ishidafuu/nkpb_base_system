@@ -58,7 +58,7 @@ namespace NKPB
                 for (int i = 0; i < m_charaFlags.Length; i++)
                 {
                     //モーションごとの入力
-                    if (m_charaFlags[i].mukiFlag)
+                    if (m_charaFlags[i].m_mukiFlag)
                     {
                         CheckCrossX(i);
                     }
@@ -72,7 +72,7 @@ namespace NKPB
                     || m_padScans[i].m_crossRight.m_isPress)
                 {
                     var charaMuki = m_charaMukis[i];
-                    charaMuki.muki = m_padScans[i].m_crossLeft.m_isPress
+                    charaMuki.m_muki = m_padScans[i].m_crossLeft.m_isPress
                         ? EnumMuki.Left
                         : EnumMuki.Right;
                     m_charaMukis[i] = charaMuki;

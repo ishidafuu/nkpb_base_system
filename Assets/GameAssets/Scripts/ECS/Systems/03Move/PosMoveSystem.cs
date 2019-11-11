@@ -15,7 +15,8 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaDelta>());
+                ComponentType.ReadWrite<CharaDelta>()
+                );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)

@@ -707,8 +707,8 @@ namespace PowerTools
 
             // Setup preview camera size/pos
             float finalScaleInv = 1.0f / (scale * sprite.pixelsPerUnit);
-            data.m_prevRender.m_Camera.orthographicSize = 0.5f * rect.height * finalScaleInv;
-            data.m_prevRender.m_Camera.transform.position = new Vector3(-offset.x * finalScaleInv, offset.y * finalScaleInv, -10f);
+            data.m_prevRender.camera.orthographicSize = 0.5f * rect.height * finalScaleInv;
+            data.m_prevRender.camera.transform.position = new Vector3(-offset.x * finalScaleInv, offset.y * finalScaleInv, -10f);
 
             // begin preview
             data.m_prevRender.BeginPreview(rect, GUIStyle.none);
@@ -728,7 +728,7 @@ namespace PowerTools
             data.m_prevRender.DrawMesh(data.m_previewMesh, pivotOffset / sprite.pixelsPerUnit, Quaternion.identity, data.m_mat, 0);
 
             // Render preview to texture
-            data.m_prevRender.m_Camera.Render();
+            data.m_prevRender.camera.Render();
             Texture texture = data.m_prevRender.EndPreview();
             texture.filterMode = FilterMode.Point;
 

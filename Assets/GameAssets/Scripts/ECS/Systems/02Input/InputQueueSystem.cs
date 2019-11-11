@@ -60,31 +60,31 @@ namespace NKPB
                 {
                     var charaFlag = m_charaFlags[i];
 
-                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Jump))
+                    if (charaFlag.m_inputCheckFlag.IsFlag(FlagInputCheck.Jump))
                     {
                         if (CheckJump(i))
                             break;
                     }
 
-                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Dash))
+                    if (charaFlag.m_inputCheckFlag.IsFlag(FlagInputCheck.Dash))
                     {
                         if (CheckDash(i))
                             break;
                     }
 
-                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Walk))
+                    if (charaFlag.m_inputCheckFlag.IsFlag(FlagInputCheck.Walk))
                     {
                         if (CheckWalk(i))
                             break;
                     }
 
-                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Slip))
+                    if (charaFlag.m_inputCheckFlag.IsFlag(FlagInputCheck.Slip))
                     {
                         if (CheckSlip(i))
                             break;
                     }
 
-                    if (charaFlag.inputCheckFlag.IsFlag(FlagInputCheck.Idle))
+                    if (charaFlag.m_inputCheckFlag.IsFlag(FlagInputCheck.Idle))
                     {
                         if (CheckIdle(i))
                             break;

@@ -53,9 +53,9 @@ namespace NKPB
                 for (int i = 0; i < m_positions.Length; i++)
                 {
                     var position = m_positions[i];
-                    position.Value.x = m_charaMoves[i].m_position.x * 0.01f;
-                    position.Value.y = (m_charaMoves[i].m_position.y + m_charaMoves[i].m_position.z) * 0.01f;
-                    position.Value.z = 100f + position.Value.y * 0.01f;
+                    position.Value.x = m_charaMoves[i].m_position.x >> 8;
+                    position.Value.y = (m_charaMoves[i].m_position.y + m_charaMoves[i].m_position.z) >> 8;
+                    position.Value.z = 100 + (m_charaMoves[i].m_position.z >> 10);
                     m_positions[i] = position;
                 }
             }

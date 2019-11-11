@@ -100,8 +100,7 @@ namespace NKPB
             {
                 for (int i = 0; i < m_charaMukis.Length; i++)
                 {
-                    bool isBack = (m_charaLooks[i].isBack != 0);
-                    bool isLeft = (m_charaLooks[i].isLeft != 0);
+                    bool isLeft = m_charaLooks[i].m_isLeft;
                     float bodyDepth = m_translations[i].Value.z;
                     float bodyX = m_translations[i].Value.x;
                     m_charaMatrixes[i] = Matrix4x4.TRS(

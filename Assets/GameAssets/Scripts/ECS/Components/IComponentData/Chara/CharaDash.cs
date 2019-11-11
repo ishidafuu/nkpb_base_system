@@ -4,6 +4,6 @@ namespace NKPB
 {
     public struct CharaDash : IComponentData
     {
-        public EnumMuki dashMuki;
+        public EnumMuki m_dashMuki;
     }
 }
