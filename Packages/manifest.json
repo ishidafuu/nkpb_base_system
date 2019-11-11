@@ -12,6 +12,8 @@
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.1.0",
     "com.unity.ugui": "1.0.0",
+    "unienumextension": "https://github.com/pCYSl5EDgo/UniEnumExtension.git",
+    "uninativelinq": "https://github.com/pCYSl5EDgo/UniNativeLinq-EditorExtension.git",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -43,5 +45,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "unienumextension": {
+      "hash": "6a6629b95ae07198e51b936f8ded7f242084a6ca",
+      "revision": "HEAD"
+    },
+    "uninativelinq": {
+      "hash": "c7c11b42f3a79ea13aea05c6e9a37d21c1c88de8",
+      "revision": "HEAD"
+    }
   }
 }
