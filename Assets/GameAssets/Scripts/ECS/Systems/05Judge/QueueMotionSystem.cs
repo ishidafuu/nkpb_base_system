@@ -20,7 +20,8 @@ namespace NKPB
                 ComponentType.ReadWrite<CharaMotion>(),
                 ComponentType.ReadWrite<CharaFlag>(),
                 ComponentType.ReadWrite<CharaQueue>(),
-                ComponentType.ReadWrite<CharaDash>()
+                ComponentType.ReadWrite<CharaDash>(),
+                ComponentType.ReadWrite<CharaDelta>()
                 );
         }
 
@@ -30,6 +31,7 @@ namespace NKPB
             NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
             NativeArray<CharaQueue> charaQueues = m_query.ToComponentDataArray<CharaQueue>(Allocator.TempJob);
             NativeArray<CharaDash> charaDashes = m_query.ToComponentDataArray<CharaDash>(Allocator.TempJob);
+            NativeArray<CharaDelta> charaDeltas = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
 
             var job = new InputJob()
             {
@@ -37,6 +39,9 @@ namespace NKPB
                 m_charaFlags = charaFlags,
                 m_charaQueues = charaQueues,
                 m_charaDashes = charaDashes,
+                m_charaDeltas = charaDeltas,
+                JumpSpeed = Settings.Instance.Move.JumpSpeed,
+
             };
 
             inputDeps = job.Schedule(inputDeps);
@@ -46,11 +51,13 @@ namespace NKPB
             m_query.CopyFromComponentDataArray(job.m_charaFlags);
             m_query.CopyFromComponentDataArray(job.m_charaQueues);
             m_query.CopyFromComponentDataArray(job.m_charaDashes);
+            m_query.CopyFromComponentDataArray(job.m_charaDeltas);
 
             charaMotions.Dispose();
             charaFlags.Dispose();
             charaQueues.Dispose();
             charaDashes.Dispose();
+            charaDeltas.Dispose();
             return inputDeps;
         }
 
@@ -61,6 +68,8 @@ namespace NKPB
             public NativeArray<CharaFlag> m_charaFlags;
             public NativeArray<CharaQueue> m_charaQueues;
             public NativeArray<CharaDash> m_charaDashes;
+            public NativeArray<CharaDelta> m_charaDeltas;
+            public int JumpSpeed;
 
             public void Execute()
             {
@@ -72,6 +81,7 @@ namespace NKPB
                     {
                         var charaMotion = m_charaMotions[i];
                         var charaFlag = m_charaFlags[i];
+                        var charaDelta = m_charaDeltas[i];
                         SwitchMotion(ref charaMotion, charaQueue.m_motionType);
 
                         switch (charaQueue.m_motionType)
@@ -89,6 +99,8 @@ namespace NKPB
                             case EnumMotionType.Slip:
                                 break;
                             case EnumMotionType.Jump:
+                                UpdateJumpFlags(ref charaFlag);
+                                UpdateJumpState(ref charaDelta);
                                 break;
                             case EnumMotionType.Fall:
                                 break;
@@ -112,6 +124,7 @@ namespace NKPB
 
                         m_charaMotions[i] = charaMotion;
                         m_charaFlags[i] = charaFlag;
+                        m_charaDeltas[i] = charaDelta;
                     }
 
                     charaQueue.m_isQueue = false;
@@ -119,12 +132,7 @@ namespace NKPB
                 }
             }
 
-            private void UpdateDashState(int i, EnumMuki muki)
-            {
-                var charaDashes = m_charaDashes[i];
-                charaDashes.m_dashMuki = muki;
-                m_charaDashes[i] = charaDashes;
-            }
+
 
             void SwitchMotion(ref CharaMotion charaMotion, EnumMotionType motionType)
             {
@@ -155,6 +163,26 @@ namespace NKPB
                 charaFlag.m_moveFlag = FlagMove.Dash;
                 charaFlag.m_motionFlag = FlagMotion.Dash;
                 charaFlag.m_mukiFlag = true;
+            }
+
+            private void UpdateDashState(int i, EnumMuki muki)
+            {
+                var charaDashes = m_charaDashes[i];
+                charaDashes.m_dashMuki = muki;
+                m_charaDashes[i] = charaDashes;
+            }
+
+            void UpdateJumpFlags(ref CharaFlag charaFlag)
+            {
+                charaFlag.m_inputCheckFlag = FlagInputCheck.Slip;
+                charaFlag.m_moveFlag = FlagMove.Air;
+                charaFlag.m_motionFlag = FlagMotion.Jump;
+                charaFlag.m_mukiFlag = true;
+            }
+
+            private void UpdateJumpState(ref CharaDelta charaDelta)
+            {
+                charaDelta.m_delta.y = JumpSpeed;
             }
 
         }

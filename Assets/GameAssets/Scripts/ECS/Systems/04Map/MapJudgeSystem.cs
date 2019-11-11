@@ -16,18 +16,24 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaMap>()
+                ComponentType.ReadWrite<CharaMap>(),
+                ComponentType.ReadWrite<CharaQueue>(),
+                ComponentType.ReadOnly<CharaFlag>()
                 );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
             NativeArray<CharaMap> charaMaps = m_query.ToComponentDataArray<CharaMap>(Allocator.TempJob);
+            NativeArray<CharaQueue> charaQueues = m_query.ToComponentDataArray<CharaQueue>(Allocator.TempJob);
+            NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
 
             NativeMapTips mapTips = Shared.m_mapTipList.m_MapTipList[0];
             var job = new PositionJob()
             {
                 m_charaMaps = charaMaps,
+                m_charaQueues = charaQueues,
+                m_charaFlags = charaFlags,
                 MapSizeX = mapTips.m_mapSizeX,
                 MapSizeY = mapTips.m_mapSizeY,
                 MapSizeZ = mapTips.m_mapSizeZ,
@@ -37,8 +43,11 @@ namespace NKPB
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
+            m_query.CopyFromComponentDataArray(job.m_charaQueues);
             m_query.CopyFromComponentDataArray(job.m_charaMaps);
 
+            charaFlags.Dispose();
+            charaQueues.Dispose();
             charaMaps.Dispose();
 
             return inputDeps;
@@ -48,6 +57,8 @@ namespace NKPB
         struct PositionJob : IJob
         {
             public NativeArray<CharaMap> m_charaMaps;
+            public NativeArray<CharaQueue> m_charaQueues;
+            [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
             public int MapSizeX;
             public int MapSizeY;
             public int MapSizeZ;

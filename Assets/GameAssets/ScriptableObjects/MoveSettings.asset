@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 256
   DashSpeed: 512
+  Gravity: 30
+  JumpSpeed: 800
   BrakeDelta: 0

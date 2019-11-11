@@ -70,6 +70,7 @@ namespace NKPB
         Dash = 0x0002,
         Friction = 0x0004,
         Stop = 0x0008,
+        Air = 0x0010,
     };
 
     public static partial class FlagMoveExtend

@@ -77,56 +77,16 @@ namespace NKPB
                     if (charaFlag.m_moveFlag.IsFlag(FlagMove.Walk))
                     {
                         SetDelta(ref charaDelta, WalkSpeed, InputToMoveMuki(i));
-                        // Debug.Log("Walk" + i);
-                    }
-
-                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Friction))
-                    {
-                        UpdateFriction(ref charaDelta, BrakeDelta);
-                    }
-
-                    if (charaFlag.m_moveFlag.IsFlag(FlagMove.Stop))
-                    {
-                        ClearDelta(ref charaDelta);
                     }
 
                     if (charaFlag.m_moveFlag.IsFlag(FlagMove.Dash))
                     {
                         SetDelta(ref charaDelta, DashSpeed, InputToMoveMukiDash(i));
-                        // Debug.Log("Dash");
                     }
 
                     m_charaDeltas[i] = charaDelta;
                 }
             }
-
-            void UpdateFriction(ref CharaDelta charaDelta, int _brakeDelta)
-            {
-                if (charaDelta.m_delta.x > 0)
-                {
-                    charaDelta.m_delta.x = Mathf.Min(0, charaDelta.m_delta.x - _brakeDelta);
-                }
-                else if (charaDelta.m_delta.x < 0)
-                {
-                    charaDelta.m_delta.x = Mathf.Max(0, charaDelta.m_delta.x + _brakeDelta);
-                }
-
-                if (charaDelta.m_delta.z > 0)
-                {
-                    charaDelta.m_delta.z = Mathf.Min(0, charaDelta.m_delta.z - _brakeDelta);
-                }
-                else if (charaDelta.m_delta.x < 0)
-                {
-                    charaDelta.m_delta.z = Mathf.Max(0, charaDelta.m_delta.z + _brakeDelta);
-                }
-            }
-
-            void ClearDelta(ref CharaDelta charaPos)
-            {
-                charaPos.m_delta.x = 0;
-                charaPos.m_delta.z = 0;
-            }
-
 
             void SetDelta(ref CharaDelta charaDelta, int _delta, EnumMoveMuki _moveMuki)
             {

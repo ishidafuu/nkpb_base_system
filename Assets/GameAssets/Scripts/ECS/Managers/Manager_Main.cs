@@ -76,6 +76,7 @@ namespace NKPB
             simulationSystemGroup.AddSystemToUpdateList(countGroup);
             countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MotionCountSystem>());
             countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CountQueueSystem>());
+            countGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MoveCountSystem>());
             countGroup.SortSystemUpdateList();
         }
 
