@@ -205,6 +205,7 @@ namespace NKPB
             CharacterMotionData res = new CharacterMotionData();
 
             res.motionName = hitbox.clip.name;
+            Debug.Log($"res.motionName: {res.motionName}");
             res.frameData = hitbox.frameData
                 .Select(x => new CharacterMotionFrame()
                 {

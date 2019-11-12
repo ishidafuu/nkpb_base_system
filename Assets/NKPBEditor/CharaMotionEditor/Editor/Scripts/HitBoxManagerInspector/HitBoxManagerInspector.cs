@@ -87,7 +87,7 @@ namespace NKPB
 
             RefreshAnimationOptionLabels();
 
-            // GUIAddNewAnimationButton(m_targetManager, Animations);
+            GUIAddNewAnimationButton(m_targetManager, Animations);
             GUIAddFromAttachedAnimatorButton(Animations);
             // GUIRemoveCurrentAnimationButton(m_targetManager, Animations);
             ResetEditorColors();
@@ -223,7 +223,7 @@ namespace NKPB
         /// アタッチされたアニメーターからアニメーション情報を追加取得
         /// </summary>
         /// <param name="Animations"></param>
-        private void GUIAddFromAttachedAnimatorButton(SerializedProperty Animations)
+        private void GUIAddFromAttachedAnimatorButton(SerializedProperty animations)
         {
             SetEditorColors(Color.yellow, Color.white);
 
@@ -233,75 +233,78 @@ namespace NKPB
                 AnimationClip[] allclips = animator.runtimeAnimatorController.animationClips;
                 List<AnimationClip> allclipslist = new List<AnimationClip>(allclips);
 
-                for (int i = 0; i < Animations.arraySize; i++)
+                for (int i = 0; i < animations.arraySize; i++)
                 {
-                    var currentclip = (AnimationClip)Animations.GetArrayElementAtIndex(i).FindPropertyRelative("clip").objectReferenceValue;
+                    var currentclip = (AnimationClip)animations.GetArrayElementAtIndex(i).FindPropertyRelative("clip").objectReferenceValue;
                     allclipslist.Remove(currentclip);
                 }
 
                 for (int i = 0; i < allclipslist.Count; i++)
                 {
-                    Animations.InsertArrayElementAtIndex(Mathf.Max(0, Animations.arraySize - 1));
+                    animations.InsertArrayElementAtIndex(Mathf.Max(0, animations.arraySize - 1));
 
                     m_targetObject.ApplyModifiedProperties();
 
-                    SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
-                    SerializedProperty clip = HitboxData.FindPropertyRelative("clip");
-                    SerializedProperty framedata = HitboxData.FindPropertyRelative("framedata");
+                    SerializedProperty hitboxData = animations.GetArrayElementAtIndex(animations.arraySize - 1);
+                    SerializedProperty clip = hitboxData.FindPropertyRelative("clip");
+                    SerializedProperty frameData = hitboxData.FindPropertyRelative("frameData");
+
+                    Debug.Log(clip);
+                    Debug.Log($"framedata : {frameData}");
 
                     clip.objectReferenceValue = allclipslist[i];
-                    for (int k = 0, j = m_targetManager.GetNumFrames(Animations.arraySize - 1); k < j; k++)
+                    for (int k = 0, j = m_targetManager.GetNumFrames(animations.arraySize - 1); k < j; k++)
                     {
-                        framedata.InsertArrayElementAtIndex(0);
-                        framedata.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
-                        framedata.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
+                        frameData.InsertArrayElementAtIndex(0);
+                        frameData.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
+                        frameData.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
                     }
                     m_targetObject.ApplyModifiedProperties();
                 }
             }
         }
 
-        // private void GUIAddNewAnimationButton(HitboxManager m_Target, SerializedProperty Animations)
-        // {
-        //     if (GUILayout.Button("Add New Animation"))
-        //     {
-        //         string path = EditorUtility.OpenFilePanel("Select Animation Clip", "", "anim");
+        private void GUIAddNewAnimationButton(HitboxManager m_Target, SerializedProperty Animations)
+        {
+            if (GUILayout.Button("Add New Animation"))
+            {
+                string path = EditorUtility.OpenFilePanel("Select Animation Clip", "", "anim");
 
-        //         if (!string.IsNullOrEmpty(path))
-        //         {
-        //             int indexOf = path.IndexOf("Assets/");
-        //             path = path.Substring(indexOf >= 0 ? indexOf : 0);
-        //             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
+                if (!string.IsNullOrEmpty(path))
+                {
+                    int indexOf = path.IndexOf("Assets/");
+                    path = path.Substring(indexOf >= 0 ? indexOf : 0);
+                    var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
 
-        //             if (loadedClip == null)
-        //             {
-        //                 Debug.LogError("HITBOXMANAGER ERROR: Unable to load animation clip at path \"" + path + "\"\n\r Is this this animation located inside your project's assets folder?");
-        //             }
-        //             else
-        //             {
-        //                 Animations.InsertArrayElementAtIndex(Mathf.Max(0, Animations.arraySize - 1));
+                    if (loadedClip == null)
+                    {
+                        Debug.LogError("HITBOXMANAGER ERROR: Unable to load animation clip at path \"" + path + "\"\n\r Is this this animation located inside your project's assets folder?");
+                    }
+                    else
+                    {
+                        Animations.InsertArrayElementAtIndex(Mathf.Max(0, Animations.arraySize - 1));
 
-        //                 m_targetObject.ApplyModifiedProperties();
+                        m_targetObject.ApplyModifiedProperties();
 
-        //                 SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
-        //                 var clip = HitboxData.FindPropertyRelative("clip");
-        //                 var framedata = HitboxData.FindPropertyRelative("framedata");
+                        SerializedProperty HitboxData = Animations.GetArrayElementAtIndex(Animations.arraySize - 1);
+                        var clip = HitboxData.FindPropertyRelative("clip");
+                        var framedata = HitboxData.FindPropertyRelative("frameData");
 
-        //                 clip.objectReferenceValue = loadedClip;
-        //                 for (int i = 0, j = m_Target.GetNumFrames(Animations.arraySize - 1); i < j; i++)
-        //                 {
-        //                     framedata.InsertArrayElementAtIndex(0);
-        //                     framedata.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
-        //                     framedata.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
-        //                 }
+                        clip.objectReferenceValue = loadedClip;
+                        for (int i = 0, j = m_Target.GetNumFrames(Animations.arraySize - 1); i < j; i++)
+                        {
+                            framedata.InsertArrayElementAtIndex(0);
+                            framedata.GetArrayElementAtIndex(0).FindPropertyRelative("collider").ClearArray();
+                            framedata.GetArrayElementAtIndex(0).FindPropertyRelative("events").ClearArray();
+                        }
 
-        //                 SelectedAnimation = Animations.arraySize - 1;
-        //                 SelectedFrame = 0;
-        //                 m_targetObject.ApplyModifiedProperties();
-        //             }
-        //         }
-        //     }
-        // }
+                        SelectedAnimation = Animations.arraySize - 1;
+                        SelectedFrame = 0;
+                        m_targetObject.ApplyModifiedProperties();
+                    }
+                }
+            }
+        }
 
         private void RefreshAnimationOptionLabels()
         {

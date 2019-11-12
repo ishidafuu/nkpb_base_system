@@ -66,15 +66,72 @@ namespace NKPB
             public NativeArray<EnumShapeType> Shapes;
             public NativeArray<int> Events;
 
+            const int SHIFT_MAP = 11;
+
             public void Execute()
             {
                 for (int i = 0; i < m_charaPoses.Length; i++)
                 {
-                    var charaMap = m_charaPoses[i];
+                    var charaPos = m_charaPoses[i];
+                    var charaQueue = m_charaQueues[i];
+                    var charaFlag = m_charaFlags[i];
 
                     // Debug.Log($"GetShape : {GetShape(charaMap.m_centerPos)}");
+                    // 地面めり込み判定
+                    EnumShapeType shapeType = GetShape(charaPos.m_centerMapX, charaPos.m_mapY, charaPos.m_mapZ);
 
-                    m_charaPoses[i] = charaMap;
+                    bool isHitY = false;
+                    switch (shapeType)
+                    {
+                        case EnumShapeType.Empty:
+
+                            break;
+                        case EnumShapeType.Box:
+                            isHitY = true;
+                            break;
+                        case EnumShapeType.LUpSlope:
+
+                            break;
+                        case EnumShapeType.RUpSlope:
+
+                            break;
+                        case EnumShapeType.LUpSlope2H:
+
+                            break;
+                        case EnumShapeType.LUpSlope2L:
+
+                            break;
+                        case EnumShapeType.RUpSlope2L:
+
+                            break;
+                        case EnumShapeType.RUpSlope2H:
+
+                            break;
+                        case EnumShapeType.SlashWall:
+
+                            break;
+                        case EnumShapeType.BSlashWall:
+
+                            break;
+                        default:
+                            Debug.LogError($"shapeType : {shapeType}");
+                            break;
+                    }
+
+                    if (isHitY)
+                    {
+                        int newY = ((charaPos.m_mapY + 1) << SHIFT_MAP);
+                        charaPos.SetY(newY);
+
+                        if (charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Land))
+                        {
+                            charaQueue.SetQueue(EnumMotionType.Land);
+                        }
+                    }
+
+
+                    m_charaQueues[i] = charaQueue;
+                    m_charaPoses[i] = charaPos;
                 }
             }
 

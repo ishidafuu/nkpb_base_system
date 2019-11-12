@@ -70,7 +70,7 @@ namespace NKPB
                         case EnumMotionType.Fall:
                             break;
                         case EnumMotionType.Land:
-                            UpdateLand(ref charaMotion);
+                            UpdateLand(ref charaMotion, ref charaQueue);
                             break;
                         case EnumMotionType.Damage:
                             UpdateDamage(ref charaMotion);
@@ -96,12 +96,18 @@ namespace NKPB
 
             void UpdateSlip(ref CharaMotion motion, ref CharaQueue charaQueue)
             {
-                charaQueue.SetQueue(EnumMotionType.Idle);
+                if (motion.m_frame >= 1)
+                {
+                    charaQueue.SetQueue(EnumMotionType.Idle);
+                }
             }
 
-            void UpdateLand(ref CharaMotion motion)
+            void UpdateLand(ref CharaMotion motion, ref CharaQueue charaQueue)
             {
-
+                if (motion.m_frame >= 1)
+                {
+                    charaQueue.SetQueue(EnumMotionType.Idle);
+                }
             }
 
             void UpdateDamage(ref CharaMotion motion)

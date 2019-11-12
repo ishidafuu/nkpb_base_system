@@ -9,5 +9,6 @@ namespace NKPB
         public FlagInputCheck m_inputCheckFlag;
         public FlagMove m_moveFlag;
         public FlagMotion m_motionFlag;
+        public FlagMapCheck m_mapFlag;
     }
 }

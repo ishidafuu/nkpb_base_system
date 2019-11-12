@@ -45,11 +45,11 @@ namespace NKPB
                 for (int i = 0; i < m_charaMaps.Length; i++)
                 {
                     var charaMap = m_charaMaps[i];
-                    charaMap.m_lastCenterX = charaMap.m_innerCenterX;
-                    charaMap.m_lastLeftX = charaMap.m_innerLeftX;
-                    charaMap.m_lastRightX = charaMap.m_innerRightX;
-                    charaMap.m_lastY = charaMap.m_innerY;
-                    charaMap.m_lastZ = charaMap.m_innerZ;
+                    charaMap.m_lastCenterMapX = charaMap.m_tipCenterX;
+                    charaMap.m_lastLeftMapX = charaMap.m_tipLeftX;
+                    charaMap.m_lastRightMapX = charaMap.m_tipRightX;
+                    charaMap.m_lastMapY = charaMap.m_tipY;
+                    charaMap.m_lastMapZ = charaMap.m_tipZ;
                     m_charaMaps[i] = charaMap;
                 }
             }

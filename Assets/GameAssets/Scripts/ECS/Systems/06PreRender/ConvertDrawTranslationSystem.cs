@@ -50,12 +50,13 @@ namespace NKPB
             [ReadOnly] public NativeArray<CharaPos> m_charaPoses;
             public void Execute()
             {
+                const int SHIFT_PIXEL = 8;
                 for (int i = 0; i < m_positions.Length; i++)
                 {
                     var position = m_positions[i];
-                    position.Value.x = m_charaPoses[i].m_position.x >> 8;
-                    position.Value.y = (m_charaPoses[i].m_position.y + m_charaPoses[i].m_position.z) >> 8;
-                    position.Value.z = 100 + (m_charaPoses[i].m_position.z >> 10);
+                    position.Value.x = m_charaPoses[i].m_position.x >> SHIFT_PIXEL;
+                    position.Value.y = (m_charaPoses[i].m_position.y + m_charaPoses[i].m_position.z) >> SHIFT_PIXEL;
+                    position.Value.z = 100 + (m_charaPoses[i].m_position.z >> SHIFT_PIXEL) * 0.01f;
                     m_positions[i] = position;
                 }
             }

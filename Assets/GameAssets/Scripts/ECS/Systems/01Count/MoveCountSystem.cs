@@ -18,8 +18,9 @@ namespace NKPB
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaDelta>(),
-                ComponentType.ReadOnly<CharaDash>(),
-                ComponentType.ReadOnly<CharaFlag>());
+                ComponentType.ReadWrite<CharaFlag>(),
+                ComponentType.ReadOnly<CharaDash>()
+                );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
@@ -32,8 +33,8 @@ namespace NKPB
             var job = new MoveJob()
             {
                 m_charaDeltas = charaDeltas,
-                m_charaDashes = charaDashes,
                 m_charaFlags = charaFlags,
+                m_charaDashes = charaDashes,
                 BrakeDelta = Settings.Instance.Move.BrakeDelta,
                 Gravity = Settings.Instance.Move.Gravity,
             };
@@ -42,6 +43,7 @@ namespace NKPB
             inputDeps.Complete();
 
             m_query.CopyFromComponentDataArray(job.m_charaDeltas);
+            m_query.CopyFromComponentDataArray(job.m_charaFlags);
 
             charaDeltas.Dispose();
             charaDashes.Dispose();
@@ -54,8 +56,8 @@ namespace NKPB
         struct MoveJob : IJob
         {
             public NativeArray<CharaDelta> m_charaDeltas;
+            public NativeArray<CharaFlag> m_charaFlags;
             [ReadOnly] public NativeArray<CharaDash> m_charaDashes;
-            [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
             [ReadOnly] public int BrakeDelta;
             [ReadOnly] public int Gravity;
 
@@ -74,7 +76,7 @@ namespace NKPB
 
                     if (charaFlag.m_moveFlag.IsFlag(FlagMove.Air))
                     {
-                        UpdateGravity(ref charaDelta, Gravity);
+                        UpdateGravity(ref charaDelta, ref charaFlag, Gravity);
                     }
 
                     if (charaFlag.m_moveFlag.IsFlag(FlagMove.Stop))
@@ -82,6 +84,7 @@ namespace NKPB
                         ClearDelta(ref charaDelta);
                     }
 
+                    m_charaFlags[i] = charaFlag;
                     m_charaDeltas[i] = charaDelta;
                 }
             }
@@ -107,9 +110,15 @@ namespace NKPB
                 }
             }
 
-            void UpdateGravity(ref CharaDelta charaDelta, int gravity)
+            void UpdateGravity(ref CharaDelta charaDelta, ref CharaFlag charaFlag, int gravity)
             {
                 charaDelta.m_delta.y -= gravity;
+
+                if (!charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Land)
+                    && charaDelta.m_delta.y < 0)
+                {
+                    charaFlag.m_mapFlag.AddFlag(FlagMapCheck.Land);
+                }
             }
 
             void ClearDelta(ref CharaDelta charaPos)

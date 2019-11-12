@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: nkpb_walk
+  m_Name: nkpb_idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,18 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1705515799187237550, guid: 9112c0d99c23cd9429ba36736f0c4c65,
-        type: 3}
-    - time: 0.1
       value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
-    - time: 0.2
-      value: {fileID: 790717641122099657, guid: 9112c0d99c23cd9429ba36736f0c4c65,
-        type: 3}
-    - time: 0.3
-      value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
-        type: 3}
-    - time: 0.38333333
+    - time: 0.083333336
       value: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
     attribute: m_Sprite
@@ -53,9 +44,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1705515799187237550, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
-    - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
-    - {fileID: 790717641122099657, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
     - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
     - {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65, type: 3}
   m_AnimationClipSettings:
@@ -63,7 +51,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,34 +75,13 @@ AnimationClip:
     functionName: UpdateHitbox
     data: AAAAAAAAcEIBAAAA
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
+    floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.1
-    functionName: UpdateHitbox
-    data: AAAAAAAAcEIBAAAA
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 1
-    messageOptions: 0
-  - time: 0.2
-    functionName: UpdateHitbox
-    data: AAAAAAAAcEIBAAAA
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 2
-    messageOptions: 0
-  - time: 0.3
-    functionName: UpdateHitbox
-    data: AAAAAAAAcEIBAAAA
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 3
-    messageOptions: 0
-  - time: 0.38333333
+  - time: 0.083333336
     functionName: UpdateHitbox
     data: AAAAAAAAcEIAAAAA
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
-    intParameter: 4
+    floatParameter: 0
+    intParameter: 1
     messageOptions: 0

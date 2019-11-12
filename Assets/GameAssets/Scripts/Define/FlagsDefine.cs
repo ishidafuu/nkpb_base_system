@@ -29,8 +29,8 @@ namespace NKPB
     {
         //motionFlags.HasFlagはバーストできないので != 0で代用
         public static bool IsFlag(this FlagMotion param, FlagMotion flag) => (param & flag) != 0;
-        public static void AddFlag(this FlagMotion param, FlagMotion flag) => param |= flag;
-        public static void SubFlag(this FlagMotion param, FlagMotion flag) => param &= ~flag;
+        public static void AddFlag(this ref FlagMotion param, FlagMotion flag) => param |= flag;
+        public static void SubFlag(this ref FlagMotion param, FlagMotion flag) => param &= ~flag;
     }
 
     [Flags]
@@ -43,23 +43,12 @@ namespace NKPB
         Slip = 0x0008,
         Idle = 0x0010,
     };
+
     public static partial class FlagInputCheckExtend
     {
-        public static bool IsFlag(this FlagInputCheck param, FlagInputCheck flag)
-        {
-            //motionFlags.HasFlagはバーストできないので != 0で代用
-            return (param & flag) != 0;
-        }
-
-        public static void AddFlag(this FlagInputCheck param, FlagInputCheck flag)
-        {
-            param |= flag;
-        }
-
-        public static void SubFlag(this FlagInputCheck param, FlagInputCheck flag)
-        {
-            param &= ~flag;
-        }
+        public static bool IsFlag(this FlagInputCheck param, FlagInputCheck flag) => (param & flag) != 0;
+        public static void AddFlag(this ref FlagInputCheck param, FlagInputCheck flag) => param |= flag;
+        public static void SubFlag(this ref FlagInputCheck param, FlagInputCheck flag) => param &= ~flag;
     }
 
     [Flags]
@@ -75,20 +64,27 @@ namespace NKPB
 
     public static partial class FlagMoveExtend
     {
-        public static bool IsFlag(this FlagMove param, FlagMove flag)
-        {
-            //motionFlags.HasFlagはバーストできないので != 0で代用
-            return (param & flag) != 0;
-        }
+        public static bool IsFlag(this FlagMove param, FlagMove flag) => (param & flag) != 0;
+        public static void AddFlag(this ref FlagMove param, FlagMove flag) => param |= flag;
+        public static void SubFlag(this ref FlagMove param, FlagMove flag) => param &= ~flag;
+    }
 
-        public static void AddFlag(this FlagMove param, FlagMove flag)
-        {
-            param |= flag;
-        }
 
-        public static void SubFlag(this FlagMove param, FlagMove flag)
-        {
-            param &= ~flag;
-        }
+    [Flags]
+    public enum FlagMapCheck
+    {
+        None = 0x0000,
+        Land = 0x0001,
+        Fall = 0x0002,
+        Stick = 0x0004,
+        // Slip = 0x0008,
+        // Idle = 0x0010,
+    };
+
+    public static partial class FlagMapCheckExtend
+    {
+        public static bool IsFlag(this FlagMapCheck param, FlagMapCheck flag) => (param & flag) != 0;
+        public static void AddFlag(this ref FlagMapCheck param, FlagMapCheck flag) => param |= flag;
+        public static void SubFlag(this ref FlagMapCheck param, FlagMapCheck flag) => param &= ~flag;
     }
 }

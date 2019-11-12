@@ -87,24 +87,27 @@ namespace NKPB
                         switch (charaQueue.m_motionType)
                         {
                             case EnumMotionType.Idle:
-                                UpdateIdleFlags(ref charaFlag);
+                                IdleFlags(ref charaFlag);
                                 break;
                             case EnumMotionType.Walk:
-                                UpdateWalkFlags(ref charaFlag);
+                                WalkFlags(ref charaFlag);
                                 break;
                             case EnumMotionType.Dash:
-                                UpdateDashFlags(ref charaFlag);
-                                UpdateDashState(i, charaQueue.m_muki);
+                                DashFlags(ref charaFlag);
+                                DashState(i, charaQueue.m_muki);
                                 break;
                             case EnumMotionType.Slip:
+                                SlipFlags(ref charaFlag);
                                 break;
                             case EnumMotionType.Jump:
-                                UpdateJumpFlags(ref charaFlag);
-                                UpdateJumpState(ref charaDelta);
+                                JumpFlags(ref charaFlag);
+                                JumpState(ref charaDelta);
                                 break;
                             case EnumMotionType.Fall:
                                 break;
                             case EnumMotionType.Land:
+                                LandFlags(ref charaFlag);
+                                LandState(ref charaDelta);
                                 break;
                             case EnumMotionType.Damage:
                                 break;
@@ -139,48 +142,77 @@ namespace NKPB
                 charaMotion.m_frame = 0;
             }
 
-            void UpdateIdleFlags(ref CharaFlag charaFlag)
+            void IdleFlags(ref CharaFlag charaFlag)
             {
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
                 charaFlag.m_moveFlag = FlagMove.Stop;
                 charaFlag.m_motionFlag = FlagMotion.None;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
                 charaFlag.m_mukiFlag = true;
             }
 
-            void UpdateWalkFlags(ref CharaFlag charaFlag)
+            void WalkFlags(ref CharaFlag charaFlag)
             {
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
                 charaFlag.m_moveFlag = FlagMove.Walk;
                 charaFlag.m_motionFlag = FlagMotion.Move;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
                 charaFlag.m_mukiFlag = true;
             }
 
-            void UpdateDashFlags(ref CharaFlag charaFlag)
+            void DashFlags(ref CharaFlag charaFlag)
             {
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Slip;
                 charaFlag.m_moveFlag = FlagMove.Dash;
                 charaFlag.m_motionFlag = FlagMotion.Dash;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
                 charaFlag.m_mukiFlag = true;
             }
 
-            private void UpdateDashState(int i, EnumMuki muki)
+            void DashState(int i, EnumMuki muki)
             {
                 var charaDashes = m_charaDashes[i];
                 charaDashes.m_dashMuki = muki;
                 m_charaDashes[i] = charaDashes;
             }
 
-            void UpdateJumpFlags(ref CharaFlag charaFlag)
+            void SlipFlags(ref CharaFlag charaFlag)
+            {
+                charaFlag.m_inputCheckFlag = FlagInputCheck.None;
+                charaFlag.m_moveFlag = FlagMove.Friction;
+                charaFlag.m_motionFlag = FlagMotion.Slip;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall;
+                charaFlag.m_mukiFlag = false;
+            }
+
+            void JumpFlags(ref CharaFlag charaFlag)
             {
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Slip;
                 charaFlag.m_moveFlag = FlagMove.Air;
                 charaFlag.m_motionFlag = FlagMotion.Jump;
+                charaFlag.m_mapFlag = FlagMapCheck.Stick;
                 charaFlag.m_mukiFlag = true;
             }
 
-            private void UpdateJumpState(ref CharaDelta charaDelta)
+            void JumpState(ref CharaDelta charaDelta)
             {
                 charaDelta.m_delta.y = JumpSpeed;
+            }
+
+            void LandFlags(ref CharaFlag charaFlag)
+            {
+                charaFlag.m_inputCheckFlag = FlagInputCheck.None;
+                charaFlag.m_moveFlag = FlagMove.None;
+                charaFlag.m_motionFlag = FlagMotion.None;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall;
+                charaFlag.m_mukiFlag = false;
+            }
+
+            void LandState(ref CharaDelta charaDelta)
+            {
+                charaDelta.m_delta.x = 0;
+                charaDelta.m_delta.y = 0;
+                charaDelta.m_delta.z = 0;
             }
 
         }
