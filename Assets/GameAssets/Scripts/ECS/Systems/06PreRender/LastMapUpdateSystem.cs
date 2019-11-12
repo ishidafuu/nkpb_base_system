@@ -15,13 +15,13 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaMap>()
+                ComponentType.ReadWrite<CharaPos>()
                 );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaMap> charaMaps = m_query.ToComponentDataArray<CharaMap>(Allocator.TempJob);
+            NativeArray<CharaPos> charaMaps = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
             var job = new PositionJob()
             {
                 m_charaMaps = charaMaps,
@@ -39,27 +39,17 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaMap> m_charaMaps;
+            public NativeArray<CharaPos> m_charaMaps;
             public void Execute()
             {
                 for (int i = 0; i < m_charaMaps.Length; i++)
                 {
                     var charaMap = m_charaMaps[i];
-                    charaMap.m_lastCenterPos.Set(
-                        charaMap.m_centerPos.x,
-                        charaMap.m_centerPos.y,
-                        charaMap.m_centerPos.z);
-
-                    charaMap.m_lastLeftPos.Set(
-                        charaMap.m_leftPos.x,
-                        charaMap.m_leftPos.y,
-                        charaMap.m_leftPos.z);
-
-                    charaMap.m_lastRightPos.Set(
-                        charaMap.m_rightPos.x,
-                        charaMap.m_rightPos.y,
-                        charaMap.m_rightPos.z);
-
+                    charaMap.m_lastCenterX = charaMap.m_innerCenterX;
+                    charaMap.m_lastLeftX = charaMap.m_innerLeftX;
+                    charaMap.m_lastRightX = charaMap.m_innerRightX;
+                    charaMap.m_lastY = charaMap.m_innerY;
+                    charaMap.m_lastZ = charaMap.m_innerZ;
                     m_charaMaps[i] = charaMap;
                 }
             }

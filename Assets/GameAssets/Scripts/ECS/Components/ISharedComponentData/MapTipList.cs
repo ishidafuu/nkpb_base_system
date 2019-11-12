@@ -30,7 +30,6 @@ namespace NKPB
 
         public void Dispose()
         {
-            Debug.Log($"Dispose");
             foreach (var item in m_MapTipList)
             {
                 item.Dispose();

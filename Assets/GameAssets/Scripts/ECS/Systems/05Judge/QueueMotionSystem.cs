@@ -132,8 +132,6 @@ namespace NKPB
                 }
             }
 
-
-
             void SwitchMotion(ref CharaMotion charaMotion, EnumMotionType motionType)
             {
                 charaMotion.m_motionType = motionType;

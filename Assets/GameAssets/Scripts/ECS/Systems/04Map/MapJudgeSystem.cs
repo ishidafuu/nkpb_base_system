@@ -16,15 +16,16 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaMap>(),
+                ComponentType.ReadWrite<CharaPos>(),
                 ComponentType.ReadWrite<CharaQueue>(),
+                ComponentType.ReadWrite<CharaDelta>(),
                 ComponentType.ReadOnly<CharaFlag>()
                 );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaMap> charaMaps = m_query.ToComponentDataArray<CharaMap>(Allocator.TempJob);
+            NativeArray<CharaPos> charaMaps = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
             NativeArray<CharaQueue> charaQueues = m_query.ToComponentDataArray<CharaQueue>(Allocator.TempJob);
             NativeArray<CharaFlag> charaFlags = m_query.ToComponentDataArray<CharaFlag>(Allocator.TempJob);
 
@@ -56,7 +57,7 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaMap> m_charaMaps;
+            public NativeArray<CharaPos> m_charaMaps;
             public NativeArray<CharaQueue> m_charaQueues;
             [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
             public int MapSizeX;
@@ -71,43 +72,34 @@ namespace NKPB
                 {
                     var charaMap = m_charaMaps[i];
 
-                    Debug.Log($"GetShape : {GetShape(charaMap.m_centerPos)}");
+                    // Debug.Log($"GetShape : {GetShape(charaMap.m_centerPos)}");
 
                     m_charaMaps[i] = charaMap;
                 }
             }
-            int ConvertVector3IntToIndex(Vector3Int pos)
+            int ConvertVector3IntToIndex(int x, int y, int z)
             {
-                int yy = (pos.y * MapSizeX);
-                int zz = (pos.z * MapSizeX * MapSizeY);
-                return pos.x + yy + zz;
+                return x + (y * MapSizeX) + (z * MapSizeX * MapSizeY);
             }
 
-            bool IsSafePos(Vector3Int pos)
+            bool IsSafePos(int x, int y, int z)
             {
-                bool res = (pos.x >= 0) && (pos.y >= 0) && (pos.z >= 0)
-                    && (pos.x < MapSizeX) && (pos.y < MapSizeY) && (pos.z < MapSizeZ);
-                return res;
+                return (x >= 0) && (y >= 0) && (z >= 0)
+                    && (x < MapSizeX) && (y < MapSizeY) && (z < MapSizeZ);
             }
 
-            EnumShapeType GetShape(Vector3Int pos)
+            EnumShapeType GetShape(int x, int y, int z)
             {
-                EnumShapeType res = EnumShapeType.Empty;
-                if (IsSafePos(pos))
-                {
-                    res = Shapes[ConvertVector3IntToIndex(pos)];
-                }
-                return res;
+                return IsSafePos(x, y, z)
+                    ? Shapes[ConvertVector3IntToIndex(x, y, z)]
+                    : EnumShapeType.Box;
             }
 
-            int GetEvent(Vector3Int pos)
+            int GetEvent(int x, int y, int z)
             {
-                int res = 0;
-                if (IsSafePos(pos))
-                {
-                    res = Events[ConvertVector3IntToIndex(pos)];
-                }
-                return res;
+                return IsSafePos(x, y, z)
+                    ? Events[ConvertVector3IntToIndex(x, y, z)]
+                    : 0;
             }
         }
 

@@ -17,19 +17,19 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadOnly<CharaDelta>(),
+                ComponentType.ReadOnly<CharaPos>(),
                 ComponentType.ReadWrite<Translation>()
             );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaDelta> charaMoves = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
+            NativeArray<CharaPos> charaPoses = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
             NativeArray<Translation> positions = m_query.ToComponentDataArray<Translation>(Allocator.TempJob);
 
             var job = new ConvertJob()
             {
-                m_charaMoves = charaMoves,
+                m_charaPoses = charaPoses,
                 m_positions = positions,
             };
             inputDeps = job.Schedule(inputDeps);
@@ -37,7 +37,7 @@ namespace NKPB
 
             m_query.CopyFromComponentDataArray(job.m_positions);
 
-            charaMoves.Dispose();
+            charaPoses.Dispose();
             positions.Dispose();
 
             return inputDeps;
@@ -47,15 +47,15 @@ namespace NKPB
         struct ConvertJob : IJob
         {
             public NativeArray<Translation> m_positions;
-            [ReadOnly] public NativeArray<CharaDelta> m_charaMoves;
+            [ReadOnly] public NativeArray<CharaPos> m_charaPoses;
             public void Execute()
             {
                 for (int i = 0; i < m_positions.Length; i++)
                 {
                     var position = m_positions[i];
-                    position.Value.x = m_charaMoves[i].m_position.x >> 8;
-                    position.Value.y = (m_charaMoves[i].m_position.y + m_charaMoves[i].m_position.z) >> 8;
-                    position.Value.z = 100 + (m_charaMoves[i].m_position.z >> 10);
+                    position.Value.x = m_charaPoses[i].m_position.x >> 8;
+                    position.Value.y = (m_charaPoses[i].m_position.y + m_charaPoses[i].m_position.z) >> 8;
+                    position.Value.z = 100 + (m_charaPoses[i].m_position.z >> 10);
                     m_positions[i] = position;
                 }
             }

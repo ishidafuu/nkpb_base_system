@@ -95,7 +95,7 @@ namespace NKPB
             MoveGroup moveGroup = world.GetOrCreateSystem<MoveGroup>();
             simulationSystemGroup.AddSystemToUpdateList(moveGroup);
             moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<PosMoveSystem>());
-            moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapUpdateSystem>());
+            // moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapUpdateSystem>());
             moveGroup.SortSystemUpdateList();
         }
 

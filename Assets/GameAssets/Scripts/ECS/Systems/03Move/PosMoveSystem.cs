@@ -15,23 +15,27 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaDelta>()
+                ComponentType.ReadWrite<CharaPos>(),
+                ComponentType.ReadOnly<CharaDelta>()
                 );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaDelta> charaMoves = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
+            NativeArray<CharaPos> charaPoses = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
+            NativeArray<CharaDelta> charaDeltas = m_query.ToComponentDataArray<CharaDelta>(Allocator.TempJob);
             var job = new PositionJob()
             {
-                m_charaMoves = charaMoves,
+                m_charaPoses = charaPoses,
+                m_charaDeltas = charaDeltas,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.m_charaMoves);
+            m_query.CopyFromComponentDataArray(job.m_charaPoses);
 
-            charaMoves.Dispose();
+            charaPoses.Dispose();
+            charaDeltas.Dispose();
 
             return inputDeps;
         }
@@ -39,14 +43,16 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaDelta> m_charaMoves;
+            public NativeArray<CharaPos> m_charaPoses;
+            [ReadOnly] public NativeArray<CharaDelta> m_charaDeltas;
             public void Execute()
             {
-                for (int i = 0; i < m_charaMoves.Length; i++)
+                for (int i = 0; i < m_charaPoses.Length; i++)
                 {
-                    CharaDelta charaMove = m_charaMoves[i];
-                    charaMove.m_position += charaMove.m_delta;
-                    m_charaMoves[i] = charaMove;
+                    CharaPos charaPoses = m_charaPoses[i];
+                    CharaDelta charaDelta = m_charaDeltas[i];
+                    charaPoses.SetPosition(charaPoses.m_position + charaDelta.m_delta);
+                    m_charaPoses[i] = charaPoses;
                 }
             }
         }
