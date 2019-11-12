@@ -36,9 +36,11 @@ namespace NKPB
             m_leftX = leftX >> 11;
             m_rightX = rightX >> 11;
 
-            m_innerCenterX = (m_centerX << 3) ^ m_position.x;
-            m_innerLeftX = (m_leftX << 3) ^ leftX;
-            m_innerRightX = (m_rightX << 3) ^ rightX;
+            m_innerCenterX = ((m_position.x >> 8) ^ ((m_position.x >> 11) << 3));
+            m_innerLeftX = ((leftX >> 8) ^ ((leftX >> 11) << 3));
+            m_innerRightX = ((rightX >> 8) ^ ((rightX >> 11) << 3));
+
+            Debug.Log($"m_position : {m_position} m_centerX : {m_centerX} m_innerCenterX : {m_innerCenterX}");
         }
     }
 }

@@ -32,7 +32,7 @@ namespace NKPB
             NativeMapTips mapTips = Shared.m_mapTipList.m_MapTipList[0];
             var job = new PositionJob()
             {
-                m_charaMaps = charaMaps,
+                m_charaPoses = charaMaps,
                 m_charaQueues = charaQueues,
                 m_charaFlags = charaFlags,
                 MapSizeX = mapTips.m_mapSizeX,
@@ -45,7 +45,7 @@ namespace NKPB
             inputDeps.Complete();
 
             m_query.CopyFromComponentDataArray(job.m_charaQueues);
-            m_query.CopyFromComponentDataArray(job.m_charaMaps);
+            m_query.CopyFromComponentDataArray(job.m_charaPoses);
 
             charaFlags.Dispose();
             charaQueues.Dispose();
@@ -57,7 +57,7 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaPos> m_charaMaps;
+            public NativeArray<CharaPos> m_charaPoses;
             public NativeArray<CharaQueue> m_charaQueues;
             [ReadOnly] public NativeArray<CharaFlag> m_charaFlags;
             public int MapSizeX;
@@ -68,15 +68,16 @@ namespace NKPB
 
             public void Execute()
             {
-                for (int i = 0; i < m_charaMaps.Length; i++)
+                for (int i = 0; i < m_charaPoses.Length; i++)
                 {
-                    var charaMap = m_charaMaps[i];
+                    var charaMap = m_charaPoses[i];
 
                     // Debug.Log($"GetShape : {GetShape(charaMap.m_centerPos)}");
 
-                    m_charaMaps[i] = charaMap;
+                    m_charaPoses[i] = charaMap;
                 }
             }
+
             int ConvertVector3IntToIndex(int x, int y, int z)
             {
                 return x + (y * MapSizeX) + (z * MapSizeX * MapSizeY);
