@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 868634615652415032, guid: 23123d37ad087e9438b582bbae39d666,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5818569288119416572, guid: 23123d37ad087e9438b582bbae39d666,
         type: 3}
@@ -733,9 +733,35 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6358383077048945438, guid: 9112c0d99c23cd9429ba36736f0c4c65,
+      objectReference: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 6614773000457659256, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614773000457659256, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_Animations.Array.data[6].frameData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614773000457659256, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_Animations.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 7400000, guid: 657bbce95f76f9b418cc600c45ec2a41, type: 2}
+    - target: {fileID: 6614773000457659256, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_Animations.Array.data[6].frameData.Array.data[1].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614773000457659256, guid: 23123d37ad087e9438b582bbae39d666,
+        type: 3}
+      propertyPath: m_Animations.Array.data[6].frameData.Array.data[3].time
+      value: 0.083333336
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3496483356464400338, guid: 23123d37ad087e9438b582bbae39d666, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 23123d37ad087e9438b582bbae39d666, type: 3}
 --- !u!1 &287312160
 GameObject:

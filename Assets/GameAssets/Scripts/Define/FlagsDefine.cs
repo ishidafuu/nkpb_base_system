@@ -77,6 +77,7 @@ namespace NKPB
         Land = 0x0001,
         Fall = 0x0002,
         Stick = 0x0004,
+        Crash = 0x0008,
         // Slip = 0x0008,
         // Idle = 0x0010,
     };

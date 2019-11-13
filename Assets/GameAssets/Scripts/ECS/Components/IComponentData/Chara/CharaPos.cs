@@ -23,27 +23,28 @@ namespace NKPB
         public int m_lastCenterMapX;
         public int m_lastRightMapX;
 
+        const int RAW_PIX = 8;
+        const int PIX_MAP = 3;
+        const int RAW_MAP = RAW_PIX + PIX_MAP;
 
-        public void SetX(int x)
+        public void SetPixX(int x)
         {
-            SetPosition(new Vector3Int(x, m_position.y, m_position.z));
+            SetPosition(new Vector3Int(x << RAW_PIX, m_position.y, m_position.z));
         }
 
-        public void SetY(int y)
+        public void SetPixY(int y)
         {
-            SetPosition(new Vector3Int(m_position.x, y, m_position.z));
+            SetPosition(new Vector3Int(m_position.x, y << RAW_PIX, m_position.z));
         }
 
-        public void SetZ(int z)
+        public void SetPixZ(int z)
         {
-            SetPosition(new Vector3Int(m_position.x, m_position.y, z));
+            SetPosition(new Vector3Int(m_position.x, m_position.y, z << RAW_PIX));
         }
 
         public void SetPosition(Vector3Int newPosition)
         {
-            const int SHIFT_PIXEL = 8;
-            const int SHIFT_TIP = 3;
-            const int SHIFT_MAP = 11;
+
 
             if (newPosition.z < 0)
             {
@@ -57,18 +58,20 @@ namespace NKPB
 
             m_position = newPosition;
 
-            m_mapY = m_position.y >> SHIFT_MAP;
-            m_mapZ = m_position.z >> SHIFT_MAP;
+            m_mapY = m_position.y >> RAW_MAP;
+            m_mapZ = m_position.z >> RAW_MAP;
 
-            int leftX = (m_position.x - 7);
-            int rightX = (m_position.x + 7);
-            m_centerMapX = m_position.x >> SHIFT_MAP;
-            m_leftMapX = leftX >> SHIFT_MAP;
-            m_rightMapX = rightX >> SHIFT_MAP;
+            int centerPixX = m_position.x >> RAW_PIX;
+            int leftPixX = centerPixX - 7;
+            int rightPixX = centerPixX + 7;
 
-            m_tipCenterX = ((m_position.x >> SHIFT_PIXEL) ^ ((m_position.x >> (SHIFT_PIXEL + SHIFT_TIP)) << SHIFT_TIP));
-            m_tipLeftX = ((leftX >> SHIFT_PIXEL) ^ ((leftX >> (SHIFT_PIXEL + SHIFT_TIP)) << SHIFT_TIP));
-            m_tipRightX = ((rightX >> SHIFT_PIXEL) ^ ((rightX >> (SHIFT_PIXEL + SHIFT_TIP)) << SHIFT_TIP));
+            m_centerMapX = centerPixX >> PIX_MAP;
+            m_leftMapX = leftPixX >> PIX_MAP;
+            m_rightMapX = rightPixX >> PIX_MAP;
+
+            m_tipCenterX = (centerPixX ^ ((centerPixX >> PIX_MAP) << PIX_MAP));
+            m_tipLeftX = (leftPixX ^ ((leftPixX >> PIX_MAP) << PIX_MAP));
+            m_tipRightX = (rightPixX ^ ((rightPixX >> PIX_MAP) << PIX_MAP));
 
             // Debug.Log($"m_position : {m_position} m_centerX : {m_centerMapX} m_innerCenterX : {m_tipCenterX}");
         }

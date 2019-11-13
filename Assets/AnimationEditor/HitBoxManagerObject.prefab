@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2019006205034813561, guid: 9112c0d99c23cd9429ba36736f0c4c65,
+  m_Sprite: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -211,7 +211,17 @@ MonoBehaviour:
       collider: []
       events: []
       time: 0.083333336
+  - clip: {fileID: 7400000, guid: 657bbce95f76f9b418cc600c45ec2a41, type: 2}
+    frameData:
+    - imageName: 
+      collider: []
+      events: []
+      time: 0
+    - imageName: 
+      collider: []
+      events: []
+      time: 0.083333336
   m_MaxHitboxes: 1
-  m_CurrentAnimation: 5
+  m_CurrentAnimation: 6
   m_CurrentFrame: 0
   m_CurrentCollider: 0

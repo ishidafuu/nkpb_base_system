@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: nkpb_idle
+  m_Name: nkpb_slip
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -75,13 +75,13 @@ AnimationClip:
     functionName: UpdateHitbox
     data: AAAAAAAAcEIBAAAA
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 6
     intParameter: 0
     messageOptions: 0
   - time: 0.083333336
     functionName: UpdateHitbox
     data: AAAAAAAAcEIAAAAA
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 6
     intParameter: 1
     messageOptions: 0
