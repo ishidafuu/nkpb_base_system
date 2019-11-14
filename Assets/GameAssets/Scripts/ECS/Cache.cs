@@ -1,6 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine.Tilemaps;
-using UnityEngine.U2D;
+﻿using UnityEngine.U2D;
 namespace NKPB
 {
     public static class Cache

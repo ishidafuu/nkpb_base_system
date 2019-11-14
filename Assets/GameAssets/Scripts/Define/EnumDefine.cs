@@ -99,4 +99,23 @@ namespace NKPB
         SlashWall,
         BSlashWall,
     }
+    public static partial class EnumShapeTypeExtend
+    {
+        public static bool IsSlope(this EnumShapeType value)
+        {
+            bool res = false;
+            switch (value)
+            {
+                case EnumShapeType.LUpSlope:
+                case EnumShapeType.RUpSlope:
+                case EnumShapeType.LUpSlope2L:
+                case EnumShapeType.LUpSlope2H:
+                case EnumShapeType.RUpSlope2L:
+                case EnumShapeType.RUpSlope2H:
+                    res = true;
+                    break;
+            }
+            return res;
+        }
+    }
 }

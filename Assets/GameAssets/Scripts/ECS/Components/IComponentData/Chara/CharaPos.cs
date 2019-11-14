@@ -7,9 +7,9 @@ namespace NKPB
         public Vector3Int m_position { get; private set; }
         public int m_mapY;
         public int m_mapZ;
-        public int m_leftMapX;
-        public int m_centerMapX;
-        public int m_rightMapX;
+        public int m_mapXLeft;
+        public int m_mapXCenter;
+        public int m_mapXRight;
 
         public int m_tipY;
         public int m_tipZ;
@@ -59,9 +59,9 @@ namespace NKPB
             int leftPixX = centerPixX - 7;
             int rightPixX = centerPixX + 7;
 
-            m_centerMapX = centerPixX >> PIX_MAP;
-            m_leftMapX = leftPixX >> PIX_MAP;
-            m_rightMapX = rightPixX >> PIX_MAP;
+            m_mapXCenter = centerPixX >> PIX_MAP;
+            m_mapXLeft = leftPixX >> PIX_MAP;
+            m_mapXRight = rightPixX >> PIX_MAP;
 
             m_tipCenterX = (centerPixX ^ ((centerPixX >> PIX_MAP) << PIX_MAP));
             m_tipLeftX = (leftPixX ^ ((leftPixX >> PIX_MAP) << PIX_MAP));

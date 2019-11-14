@@ -4,10 +4,17 @@ namespace NKPB
 {
     public struct CharaLastPos : IComponentData
     {
-        public int m_lastMapY;
-        public int m_lastMapZ;
-        public int m_lastLeftMapX;
-        public int m_lastCenterMapX;
-        public int m_lastRightMapX;
+        public Vector3Int m_position;
+        public int m_mapY;
+        public int m_mapZ;
+        public int m_mapXLeft;
+        public int m_mapXCenter;
+        public int m_mapXRight;
+
+        public int m_tipY;
+        public int m_tipZ;
+        public int m_tipLeftX;
+        public int m_tipCenterX;
+        public int m_tipRightX;
     }
 }
