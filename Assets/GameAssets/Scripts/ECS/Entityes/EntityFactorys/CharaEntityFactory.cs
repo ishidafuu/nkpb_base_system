@@ -46,6 +46,11 @@ namespace NKPB
             charaPos.SetPosition(new Vector3Int(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0));
             entityManager.SetComponentData(entity, charaPos);
 
+            entityManager.SetComponentData(entity, new CharaLastPos
+            {
+
+            });
+
             entityManager.SetComponentData(entity, new CharaDelta
             {
                 m_delta = Vector3Int.zero

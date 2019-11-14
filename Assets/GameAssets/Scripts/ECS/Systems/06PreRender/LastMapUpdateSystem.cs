@@ -15,23 +15,26 @@ namespace NKPB
         protected override void OnCreateManager()
         {
             m_query = GetEntityQuery(
-                ComponentType.ReadWrite<CharaPos>()
+                ComponentType.ReadWrite<CharaLastPos>(),
+                ComponentType.ReadOnly<CharaPos>()
                 );
         }
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
-            NativeArray<CharaPos> charaMaps = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
+            NativeArray<CharaPos> charaPoses = m_query.ToComponentDataArray<CharaPos>(Allocator.TempJob);
+            NativeArray<CharaLastPos> charaLastPoses = m_query.ToComponentDataArray<CharaLastPos>(Allocator.TempJob);
             var job = new PositionJob()
             {
-                m_charaMaps = charaMaps,
+                m_charaLastPoses = charaLastPoses,
+                m_charaPoses = charaPoses,
             };
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.m_charaMaps);
+            m_query.CopyFromComponentDataArray(job.m_charaPoses);
 
-            charaMaps.Dispose();
+            charaLastPoses.Dispose();
 
             return inputDeps;
         }
@@ -39,18 +42,20 @@ namespace NKPB
         // [BurstCompileAttribute]
         struct PositionJob : IJob
         {
-            public NativeArray<CharaPos> m_charaMaps;
+            public NativeArray<CharaLastPos> m_charaLastPoses;
+            [ReadOnly] public NativeArray<CharaPos> m_charaPoses;
             public void Execute()
             {
-                for (int i = 0; i < m_charaMaps.Length; i++)
+                for (int i = 0; i < m_charaPoses.Length; i++)
                 {
-                    var charaMap = m_charaMaps[i];
-                    charaMap.m_lastCenterMapX = charaMap.m_tipCenterX;
-                    charaMap.m_lastLeftMapX = charaMap.m_tipLeftX;
-                    charaMap.m_lastRightMapX = charaMap.m_tipRightX;
-                    charaMap.m_lastMapY = charaMap.m_tipY;
-                    charaMap.m_lastMapZ = charaMap.m_tipZ;
-                    m_charaMaps[i] = charaMap;
+                    var charaLastPos = m_charaLastPoses[i];
+                    var charaPos = m_charaPoses[i];
+                    charaLastPos.m_lastCenterMapX = charaPos.m_tipCenterX;
+                    charaLastPos.m_lastLeftMapX = charaPos.m_tipLeftX;
+                    charaLastPos.m_lastRightMapX = charaPos.m_tipRightX;
+                    charaLastPos.m_lastMapY = charaPos.m_tipY;
+                    charaLastPos.m_lastMapZ = charaPos.m_tipZ;
+                    m_charaLastPoses[i] = charaLastPos;
                 }
             }
         }

@@ -17,12 +17,6 @@ namespace NKPB
         public int m_tipCenterX;
         public int m_tipRightX;
 
-        public int m_lastMapY;
-        public int m_lastMapZ;
-        public int m_lastLeftMapX;
-        public int m_lastCenterMapX;
-        public int m_lastRightMapX;
-
         const int RAW_PIX = 8;
         const int PIX_MAP = 3;
         const int RAW_MAP = RAW_PIX + PIX_MAP;

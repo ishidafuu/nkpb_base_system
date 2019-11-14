@@ -214,7 +214,6 @@ namespace NKPB
                         break;
                 }
 
-                // TODO: 壁に対するくっつきの仕様次第で、すべりの対応を決める
 
                 if (isHit)
                 {

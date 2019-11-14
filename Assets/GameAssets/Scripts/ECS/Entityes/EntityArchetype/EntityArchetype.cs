@@ -8,6 +8,7 @@ namespace NKPB
             typeof(CharaId),
             typeof(Translation),
             typeof(CharaPos),
+            typeof(CharaLastPos),
             typeof(CharaDelta),
             typeof(CharaMuki),
             typeof(CharaDash),
