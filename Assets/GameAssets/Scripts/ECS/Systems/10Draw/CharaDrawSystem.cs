@@ -4,7 +4,6 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Transforms;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 
 namespace NKPB
 {
@@ -15,7 +14,7 @@ namespace NKPB
         Quaternion m_Quaternion = Quaternion.Euler(new Vector3(-90, 0, 0));
         Quaternion m_QuaternionRev = Quaternion.Euler(new Vector3(-90, 180, 0));
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadOnly<CharaMuki>(),

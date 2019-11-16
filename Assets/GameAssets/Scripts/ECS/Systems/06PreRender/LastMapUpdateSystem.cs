@@ -12,7 +12,7 @@ namespace NKPB
     {
         EntityQuery m_query;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaLastPos>(),
@@ -34,6 +34,7 @@ namespace NKPB
 
             m_query.CopyFromComponentDataArray(job.m_charaPoses);
 
+            charaPoses.Dispose();
             charaLastPoses.Dispose();
 
             return inputDeps;

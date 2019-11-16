@@ -15,7 +15,7 @@ namespace NKPB
     {
         EntityQuery m_query;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaLook>(),

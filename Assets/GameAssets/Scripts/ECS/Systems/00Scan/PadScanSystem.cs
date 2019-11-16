@@ -30,7 +30,7 @@ namespace NKPB
         ReadOnlyCollection<string> HorizontalName;
         ReadOnlyCollection<string> VerticalName;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<PadScan>()

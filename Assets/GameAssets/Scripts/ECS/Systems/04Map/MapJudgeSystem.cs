@@ -8,12 +8,11 @@ using UnityEngine;
 
 namespace NKPB
 {
-    [UpdateAfter(typeof(PosMoveSystem))]
     public class MapJudgeSystem : JobComponentSystem
     {
         EntityQuery m_query;
 
-        protected override void OnCreateManager()
+        protected override void OnCreate()
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaPos>(),
