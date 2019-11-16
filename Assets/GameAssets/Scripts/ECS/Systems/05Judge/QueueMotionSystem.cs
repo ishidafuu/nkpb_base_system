@@ -147,7 +147,7 @@ namespace NKPB
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Walk;
                 charaFlag.m_moveFlag = FlagMove.Stop;
                 charaFlag.m_motionFlag = FlagMotion.None;
-                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick | FlagMapCheck.Slope;
                 charaFlag.m_mukiFlag = true;
             }
 
@@ -156,7 +156,7 @@ namespace NKPB
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Dash | FlagInputCheck.Idle;
                 charaFlag.m_moveFlag = FlagMove.Walk;
                 charaFlag.m_motionFlag = FlagMotion.Move;
-                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick | FlagMapCheck.Slope;
                 charaFlag.m_mukiFlag = true;
             }
 
@@ -165,7 +165,7 @@ namespace NKPB
                 charaFlag.m_inputCheckFlag = FlagInputCheck.Jump | FlagInputCheck.Slip;
                 charaFlag.m_moveFlag = FlagMove.Dash;
                 charaFlag.m_motionFlag = FlagMotion.Dash;
-                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Stick | FlagMapCheck.Slope;
                 charaFlag.m_mukiFlag = true;
             }
 
@@ -181,7 +181,7 @@ namespace NKPB
                 charaFlag.m_inputCheckFlag = FlagInputCheck.None;
                 charaFlag.m_moveFlag = FlagMove.Friction;
                 charaFlag.m_motionFlag = FlagMotion.Slip;
-                charaFlag.m_mapFlag = FlagMapCheck.Fall;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Slope;
                 charaFlag.m_mukiFlag = false;
             }
 
@@ -204,7 +204,7 @@ namespace NKPB
                 charaFlag.m_inputCheckFlag = FlagInputCheck.None;
                 charaFlag.m_moveFlag = FlagMove.None;
                 charaFlag.m_motionFlag = FlagMotion.None;
-                charaFlag.m_mapFlag = FlagMapCheck.Fall;
+                charaFlag.m_mapFlag = FlagMapCheck.Fall | FlagMapCheck.Slope;
                 charaFlag.m_mukiFlag = false;
             }
 
