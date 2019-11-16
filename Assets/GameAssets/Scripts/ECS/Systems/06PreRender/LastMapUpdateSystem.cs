@@ -55,9 +55,9 @@ namespace NKPB
                     charaLastPos.m_mapXCenter = charaPos.m_mapXCenter;
                     charaLastPos.m_mapXLeft = charaPos.m_mapXLeft;
                     charaLastPos.m_mapXRight = charaPos.m_mapXRight;
-                    charaLastPos.m_tipCenterX = charaPos.m_tipCenterX;
-                    charaLastPos.m_tipLeftX = charaPos.m_tipLeftX;
-                    charaLastPos.m_tipRightX = charaPos.m_tipRightX;
+                    charaLastPos.m_tipCenterX = charaPos.m_tipXCenter;
+                    charaLastPos.m_tipLeftX = charaPos.m_tipXLeft;
+                    charaLastPos.m_tipRightX = charaPos.m_tipXRight;
                     charaLastPos.m_mapY = charaPos.m_mapY;
                     charaLastPos.m_mapZ = charaPos.m_mapZ;
                     charaLastPos.m_tipY = charaPos.m_tipY;

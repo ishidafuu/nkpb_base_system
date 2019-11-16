@@ -13,9 +13,9 @@ namespace NKPB
 
         public int m_tipY;
         public int m_tipZ;
-        public int m_tipLeftX;
-        public int m_tipCenterX;
-        public int m_tipRightX;
+        public int m_tipXLeft;
+        public int m_tipXCenter;
+        public int m_tipXRight;
 
         const int RAW_PIX = 8;
         const int PIX_MAP = 3;
@@ -63,9 +63,9 @@ namespace NKPB
             m_mapXLeft = leftPixX >> PIX_MAP;
             m_mapXRight = rightPixX >> PIX_MAP;
 
-            m_tipCenterX = (centerPixX ^ ((centerPixX >> PIX_MAP) << PIX_MAP));
-            m_tipLeftX = (leftPixX ^ ((leftPixX >> PIX_MAP) << PIX_MAP));
-            m_tipRightX = (rightPixX ^ ((rightPixX >> PIX_MAP) << PIX_MAP));
+            m_tipXCenter = (centerPixX ^ ((centerPixX >> PIX_MAP) << PIX_MAP));
+            m_tipXLeft = (leftPixX ^ ((leftPixX >> PIX_MAP) << PIX_MAP));
+            m_tipXRight = (rightPixX ^ ((rightPixX >> PIX_MAP) << PIX_MAP));
 
             // Debug.Log($"m_position : {m_position} m_centerX : {m_centerMapX} m_innerCenterX : {m_tipCenterX}");
         }

@@ -101,6 +101,10 @@ namespace NKPB
     }
     public static partial class EnumShapeTypeExtend
     {
+        public static bool IsEmpty(this EnumShapeType value) => value == EnumShapeType.Empty;
+        public static bool IsBox(this EnumShapeType value) => value == EnumShapeType.Box;
+        public static bool IsSlashWall(this EnumShapeType value) => (value == EnumShapeType.SlashWall) || (value == EnumShapeType.BSlashWall);
+
         public static bool IsSlope(this EnumShapeType value)
         {
             bool res = false;
