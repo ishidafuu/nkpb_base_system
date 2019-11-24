@@ -95,7 +95,6 @@ namespace NKPB
             MoveGroup moveGroup = world.GetOrCreateSystem<MoveGroup>();
             simulationSystemGroup.AddSystemToUpdateList(moveGroup);
             moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<PosMoveSystem>());
-            // moveGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapUpdateSystem>());
             moveGroup.SortSystemUpdateList();
         }
 
@@ -104,7 +103,6 @@ namespace NKPB
             MapGroup mapGroup = world.GetOrCreateSystem<MapGroup>();
             simulationSystemGroup.AddSystemToUpdateList(mapGroup);
             mapGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapJudgeSystem>());
-            // judgeGroup.AddSystemToUpdateList(world.CreateSystem<MapUpdateSystem>());
             mapGroup.SortSystemUpdateList();
         }
 
@@ -112,7 +110,6 @@ namespace NKPB
         {
             JudgeGroup judgeGroup = world.GetOrCreateSystem<JudgeGroup>();
             simulationSystemGroup.AddSystemToUpdateList(judgeGroup);
-            // judgeGroup.AddSystemToUpdateList(world.CreateSystem<MapUpdateSystem>());
             judgeGroup.AddSystemToUpdateList(world.GetOrCreateSystem<QueueMotionSystem>());
             judgeGroup.SortSystemUpdateList();
         }

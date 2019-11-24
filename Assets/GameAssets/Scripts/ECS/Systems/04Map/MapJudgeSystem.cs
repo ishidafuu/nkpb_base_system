@@ -16,6 +16,7 @@ namespace NKPB
         {
             m_query = GetEntityQuery(
                 ComponentType.ReadWrite<CharaPos>(),
+                ComponentType.ReadWrite<CharaLastPos>(),
                 ComponentType.ReadWrite<CharaQueue>(),
                 ComponentType.ReadWrite<CharaDelta>(),
                 ComponentType.ReadOnly<CharaFlag>()

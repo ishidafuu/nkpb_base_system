@@ -46,7 +46,7 @@ namespace NKPB
             return inputDeps;
         }
 
-        [BurstCompileAttribute]
+        // [BurstCompileAttribute]
         struct InputJob : IJob
         {
             public NativeArray<CharaMuki> m_charaMukis;

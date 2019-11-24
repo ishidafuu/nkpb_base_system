@@ -47,7 +47,7 @@ namespace NKPB
             [ReadOnly] public NativeArray<CharaPos> m_charaPoses;
             public void Execute()
             {
-                for (int i = 0; i < m_charaPoses.Length; i++)
+                for (int i = 0; i < m_charaLastPoses.Length; i++)
                 {
                     var charaLastPos = m_charaLastPoses[i];
                     var charaPos = m_charaPoses[i];
