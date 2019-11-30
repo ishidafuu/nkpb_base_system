@@ -212,8 +212,18 @@ namespace NKPB
                         Texture sp = m_mapShapeTexList[(int)shape];
                         Vector2 pos = new Vector2((x * TIP_W), (y + zz) * TIP_H_Harf);
                         Texture2D mainTexture = (Texture2D)sp;
-                        Color[] pixels = mainTexture.GetPixels(); ;
-                        m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H, pixels, 0);
+                        Color[] srcPixels = mainTexture.GetPixels();
+                        Color[] destPixels = m_texture.GetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H);
+
+                        for (int i = 0; i < srcPixels.Length; i++)
+                        {
+                            if (srcPixels[i].a == 0)
+                            {
+                                srcPixels[i] = destPixels[i];
+                            }
+                        }
+
+                        m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H, srcPixels, 0);
                     }
                 }
             }

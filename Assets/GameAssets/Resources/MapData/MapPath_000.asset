@@ -15,8 +15,8 @@ MonoBehaviour:
   nodes:
   - nodeNo: 0
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 0
       mapEnd: 32
@@ -24,8 +24,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 1
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 1
       mapEnd: 64
@@ -33,8 +33,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 2
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 2
       mapEnd: 64
@@ -42,8 +42,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 3
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 3
       mapEnd: 64
@@ -51,8 +51,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 4
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 4
       mapEnd: 64
@@ -60,8 +60,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 5
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 5
       mapEnd: 64
@@ -69,8 +69,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 6
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 6
       mapEnd: 64
@@ -78,8 +78,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 7
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 7
       mapEnd: 64
@@ -87,26 +87,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 8
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 8
       mapEnd: 64
-    walkableNodeNum: 3
-    jumpableNodeNum: 7
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 9
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 0
       stZ: 9
       mapEnd: 128
-    walkableNodeNum: 1
-    jumpableNodeNum: 9
+    walkableNodeNum: 3
+    jumpableNodeNum: 0
   - nodeNo: 10
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 0
       mapEnd: 16
@@ -114,8 +114,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 11
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 1
       mapEnd: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 12
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 2
       mapEnd: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 13
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 3
       mapEnd: 0
@@ -141,8 +141,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 14
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 4
       mapEnd: 0
@@ -150,8 +150,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 15
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 5
       mapEnd: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 16
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 6
       mapEnd: 0
@@ -168,8 +168,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 17
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 7
       mapEnd: 0
@@ -177,26 +177,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 18
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 8
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 19
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 1
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 11
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 20
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 0
       mapEnd: 16
@@ -204,8 +204,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 21
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 1
       mapEnd: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 22
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 2
       mapEnd: 0
@@ -222,8 +222,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 23
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 3
       mapEnd: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 24
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 4
       mapEnd: 0
@@ -240,8 +240,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 25
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 5
       mapEnd: 0
@@ -249,8 +249,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 26
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 6
       mapEnd: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 27
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 7
       mapEnd: 0
@@ -267,26 +267,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 28
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 11
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 29
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 2
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 14
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 30
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 0
       mapEnd: 16
@@ -294,8 +294,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 31
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 1
       mapEnd: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 32
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 2
       mapEnd: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 33
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 3
       mapEnd: 0
@@ -321,8 +321,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 34
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 4
       mapEnd: 0
@@ -330,8 +330,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 35
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 5
       mapEnd: 0
@@ -339,8 +339,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 36
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 6
       mapEnd: 0
@@ -348,8 +348,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 37
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 7
       mapEnd: 0
@@ -357,26 +357,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 38
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 39
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 3
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 40
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 0
       mapEnd: 16
@@ -384,8 +384,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 41
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 1
       mapEnd: 0
@@ -393,8 +393,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 42
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 2
       mapEnd: 0
@@ -402,8 +402,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 43
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 3
       mapEnd: 0
@@ -411,8 +411,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 44
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 4
       mapEnd: 0
@@ -420,8 +420,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 45
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 5
       mapEnd: 0
@@ -429,8 +429,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 46
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 6
       mapEnd: 0
@@ -438,8 +438,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 47
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 7
       mapEnd: 0
@@ -447,26 +447,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 48
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 49
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 4
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 50
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 0
       mapEnd: 16
@@ -474,8 +474,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 51
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 1
       mapEnd: 0
@@ -483,8 +483,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 52
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 2
       mapEnd: 0
@@ -492,8 +492,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 53
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 3
       mapEnd: 0
@@ -501,8 +501,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 54
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 4
       mapEnd: 0
@@ -510,8 +510,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 55
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 5
       mapEnd: 0
@@ -519,8 +519,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 56
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 6
       mapEnd: 0
@@ -528,8 +528,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 57
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 7
       mapEnd: 0
@@ -537,26 +537,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 58
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 59
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 5
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 60
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 0
       mapEnd: 16
@@ -564,8 +564,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 61
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 1
       mapEnd: 0
@@ -573,8 +573,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 62
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 2
       mapEnd: 0
@@ -582,8 +582,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 63
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 3
       mapEnd: 0
@@ -591,8 +591,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 64
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 4
       mapEnd: 0
@@ -600,8 +600,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 65
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 5
       mapEnd: 0
@@ -609,8 +609,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 66
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 6
       mapEnd: 0
@@ -618,8 +618,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 67
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 7
       mapEnd: 0
@@ -627,26 +627,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 68
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 69
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 6
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 70
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 0
       mapEnd: 16
@@ -654,8 +654,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 71
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 1
       mapEnd: 0
@@ -663,8 +663,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 72
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 2
       mapEnd: 0
@@ -672,8 +672,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 73
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 3
       mapEnd: 0
@@ -681,8 +681,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 74
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 4
       mapEnd: 0
@@ -690,8 +690,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 75
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 5
       mapEnd: 0
@@ -699,8 +699,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 76
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 6
       mapEnd: 0
@@ -708,8 +708,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 77
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 7
       mapEnd: 0
@@ -717,26 +717,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 78
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 79
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 7
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 80
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 0
       mapEnd: 16
@@ -744,8 +744,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 81
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 1
       mapEnd: 0
@@ -753,8 +753,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 82
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 2
       mapEnd: 0
@@ -762,8 +762,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 83
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 3
       mapEnd: 0
@@ -771,8 +771,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 84
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 4
       mapEnd: 0
@@ -780,8 +780,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 85
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 5
       mapEnd: 0
@@ -789,8 +789,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 86
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 6
       mapEnd: 0
@@ -798,8 +798,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 87
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 7
       mapEnd: 0
@@ -807,26 +807,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 88
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 89
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 1
       stX: 8
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 90
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 0
       mapEnd: 16
@@ -834,8 +834,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 91
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 1
       mapEnd: 0
@@ -843,8 +843,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 92
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 2
       mapEnd: 0
@@ -852,8 +852,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 93
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 3
       mapEnd: 0
@@ -861,8 +861,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 94
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 4
       mapEnd: 0
@@ -870,26 +870,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 95
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 9
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
   - nodeNo: 96
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 2
       stX: 9
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
   - nodeNo: 97
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 2
       stX: 9
       stZ: 7
       mapEnd: 0
@@ -897,26 +897,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 98
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 2
       stX: 9
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 99
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 6
+      stY: 2
       stX: 9
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 100
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 0
       mapEnd: 16
@@ -924,8 +924,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 101
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 1
       mapEnd: 0
@@ -933,8 +933,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 102
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 2
       mapEnd: 0
@@ -942,8 +942,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 103
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 3
       mapEnd: 0
@@ -951,8 +951,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 104
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 4
       mapEnd: 0
@@ -960,26 +960,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 105
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 10
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 106
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 2
       stX: 10
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 107
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 2
       stX: 10
       stZ: 7
       mapEnd: 0
@@ -987,26 +987,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 108
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 2
       stX: 10
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 109
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 7
+      stY: 2
       stX: 10
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 110
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 0
       mapEnd: 16
@@ -1014,8 +1014,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 111
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 1
       mapEnd: 0
@@ -1023,8 +1023,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 112
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 2
       mapEnd: 0
@@ -1032,8 +1032,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 113
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 3
       mapEnd: 0
@@ -1041,8 +1041,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 114
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 4
       mapEnd: 0
@@ -1050,26 +1050,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 115
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 11
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 116
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 3
       stX: 11
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 117
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 3
       stX: 11
       stZ: 7
       mapEnd: 0
@@ -1077,26 +1077,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 118
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 6
+      stY: 3
       stX: 11
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 119
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 6
+      stY: 3
       stX: 11
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 120
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 0
       mapEnd: 16
@@ -1104,8 +1104,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 121
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 1
       mapEnd: 0
@@ -1113,8 +1113,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 122
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 2
       mapEnd: 0
@@ -1122,8 +1122,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 123
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 3
       mapEnd: 0
@@ -1131,8 +1131,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 124
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 4
       mapEnd: 0
@@ -1140,26 +1140,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 125
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 12
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 126
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 3
       stX: 12
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 127
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 3
       stX: 12
       stZ: 7
       mapEnd: 0
@@ -1167,26 +1167,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 128
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 7
+      stY: 3
       stX: 12
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 129
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 7
+      stY: 3
       stX: 12
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 130
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 0
       mapEnd: 16
@@ -1194,8 +1194,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 131
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 1
       mapEnd: 0
@@ -1203,8 +1203,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 132
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 2
       mapEnd: 0
@@ -1212,8 +1212,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 133
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 3
       mapEnd: 0
@@ -1221,8 +1221,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 134
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 4
       mapEnd: 0
@@ -1230,26 +1230,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 135
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 13
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 136
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 13
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 137
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 13
       stZ: 7
       mapEnd: 0
@@ -1257,26 +1257,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 138
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 13
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 139
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 3
       stX: 13
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 140
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 0
       mapEnd: 16
@@ -1284,8 +1284,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 141
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 1
       mapEnd: 0
@@ -1293,8 +1293,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 142
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 2
       mapEnd: 0
@@ -1302,8 +1302,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 143
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 3
       mapEnd: 0
@@ -1311,8 +1311,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 144
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 4
       mapEnd: 0
@@ -1320,26 +1320,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 145
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 14
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 146
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 14
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 147
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 14
       stZ: 7
       mapEnd: 0
@@ -1347,26 +1347,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 148
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 3
       stX: 14
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 149
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 1
+      stY: 3
       stX: 14
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 150
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 0
       mapEnd: 16
@@ -1374,8 +1374,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 151
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 1
       mapEnd: 0
@@ -1383,8 +1383,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 152
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 2
       mapEnd: 0
@@ -1392,8 +1392,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 153
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 3
       mapEnd: 0
@@ -1401,8 +1401,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 154
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 4
       mapEnd: 0
@@ -1410,26 +1410,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 155
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 15
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 156
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 3
       stX: 15
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 157
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 3
       stX: 15
       stZ: 7
       mapEnd: 0
@@ -1437,26 +1437,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 158
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 3
       stX: 15
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 159
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 4
+      stY: 3
       stX: 15
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 160
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 0
       mapEnd: 16
@@ -1464,8 +1464,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 161
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 1
       mapEnd: 0
@@ -1473,8 +1473,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 162
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 2
       mapEnd: 0
@@ -1482,8 +1482,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 163
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 3
       mapEnd: 0
@@ -1491,8 +1491,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 164
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 4
       mapEnd: 0
@@ -1500,26 +1500,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 165
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 16
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 166
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 3
       stX: 16
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 167
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 3
       stX: 16
       stZ: 7
       mapEnd: 0
@@ -1527,26 +1527,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 168
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 3
       stX: 16
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 12
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 169
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 5
+      stY: 3
       stX: 16
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 15
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 170
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 0
       mapEnd: 16
@@ -1554,8 +1554,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 171
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 1
       mapEnd: 0
@@ -1563,8 +1563,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 172
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 2
       mapEnd: 0
@@ -1572,8 +1572,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 173
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 3
       mapEnd: 0
@@ -1581,8 +1581,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 174
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 4
       mapEnd: 0
@@ -1590,26 +1590,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 175
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 17
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 176
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 2
       stX: 17
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
   - nodeNo: 177
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 2
       stX: 17
       stZ: 7
       mapEnd: 0
@@ -1617,26 +1617,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 178
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 4
+      stY: 2
       stX: 17
       stZ: 8
       mapEnd: 0
-    walkableNodeNum: 5
-    jumpableNodeNum: 11
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
   - nodeNo: 179
     plate:
-      tipType: 1
-      stY: 9
+      shapeType: 4
+      stY: 2
       stX: 17
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 14
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
   - nodeNo: 180
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 0
       mapEnd: 16
@@ -1644,8 +1644,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 181
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 1
       mapEnd: 0
@@ -1653,8 +1653,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 182
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 2
       mapEnd: 0
@@ -1662,8 +1662,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 183
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 3
       mapEnd: 0
@@ -1671,8 +1671,8 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 184
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 4
       mapEnd: 0
@@ -1680,26 +1680,26 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 185
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 1
+      stY: 1
       stX: 18
       stZ: 5
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
   - nodeNo: 186
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 2
       stX: 18
       stZ: 6
       mapEnd: 0
-    walkableNodeNum: 8
-    jumpableNodeNum: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
   - nodeNo: 187
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 2
       stX: 18
       stZ: 7
       mapEnd: 0
@@ -1707,110 +1707,4790 @@ MonoBehaviour:
     jumpableNodeNum: 0
   - nodeNo: 188
     plate:
-      tipType: 1
-      stY: 0
+      shapeType: 5
+      stY: 2
       stX: 18
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 189
+    plate:
+      shapeType: 5
+      stY: 2
+      stX: 18
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 190
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 191
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 192
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 193
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 194
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 195
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 196
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 197
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 198
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 199
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 19
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 200
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 201
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 202
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 203
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 204
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 205
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 206
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 207
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 208
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 209
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 20
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 210
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 211
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 212
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 213
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 214
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 215
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 216
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 217
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 218
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 219
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 21
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 220
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 221
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 222
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 223
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 224
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 225
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 226
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 227
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 228
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 229
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 22
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 230
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 231
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 232
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 233
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 234
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 235
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 236
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 237
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 238
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 239
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 23
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 240
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 241
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 242
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 243
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 244
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 245
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 246
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 247
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 248
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 249
+    plate:
+      shapeType: 6
+      stY: 2
+      stX: 24
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 250
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 251
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 252
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 253
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 254
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 255
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 256
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 257
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 258
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 259
+    plate:
+      shapeType: 7
+      stY: 2
+      stX: 25
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 260
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 261
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 262
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 263
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 264
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 265
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 266
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 267
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 268
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 269
+    plate:
+      shapeType: 6
+      stY: 3
+      stX: 26
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 270
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 271
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 272
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 273
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 274
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 275
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 276
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 277
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 278
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 279
+    plate:
+      shapeType: 7
+      stY: 3
+      stX: 27
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 280
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 281
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 282
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 283
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 284
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 285
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 28
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 286
+    plate:
+      shapeType: 3
+      stY: 4
+      stX: 28
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 287
+    plate:
+      shapeType: 3
+      stY: 4
+      stX: 28
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 288
+    plate:
+      shapeType: 3
+      stY: 4
+      stX: 28
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 289
+    plate:
+      shapeType: 3
+      stY: 4
+      stX: 28
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 290
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 291
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 292
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 293
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 294
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 295
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 29
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 21
+  - nodeNo: 296
+    plate:
+      shapeType: 3
+      stY: 5
+      stX: 29
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 297
+    plate:
+      shapeType: 3
+      stY: 5
+      stX: 29
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 298
+    plate:
+      shapeType: 3
+      stY: 5
+      stX: 29
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 299
+    plate:
+      shapeType: 3
+      stY: 5
+      stX: 29
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 300
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 301
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 302
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 303
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 304
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 305
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 30
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 19
+  - nodeNo: 306
+    plate:
+      shapeType: 3
+      stY: 6
+      stX: 30
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 307
+    plate:
+      shapeType: 3
+      stY: 6
+      stX: 30
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 308
+    plate:
+      shapeType: 3
+      stY: 6
+      stX: 30
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 309
+    plate:
+      shapeType: 3
+      stY: 6
+      stX: 30
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 310
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 311
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 312
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 313
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 314
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 315
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 31
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 15
+  - nodeNo: 316
+    plate:
+      shapeType: 3
+      stY: 7
+      stX: 31
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 317
+    plate:
+      shapeType: 3
+      stY: 7
+      stX: 31
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 318
+    plate:
+      shapeType: 3
+      stY: 7
+      stX: 31
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 319
+    plate:
+      shapeType: 3
+      stY: 7
+      stX: 31
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 320
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 321
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 322
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 323
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 324
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 325
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 32
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 10
+  - nodeNo: 326
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 32
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 327
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 32
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 328
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 32
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 329
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 32
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 330
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 331
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 332
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 16
+  - nodeNo: 333
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 15
+  - nodeNo: 334
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 335
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 33
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 8
+  - nodeNo: 336
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 33
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 337
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 33
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 338
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 33
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 339
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 33
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 340
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 34
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 341
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 34
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 342
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 34
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 16
+  - nodeNo: 343
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 25
+  - nodeNo: 344
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 345
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 346
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 21
+  - nodeNo: 347
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 348
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 349
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 34
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 350
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 35
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 351
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 35
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 352
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 35
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 16
+  - nodeNo: 353
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 25
+  - nodeNo: 354
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 355
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 356
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 21
+  - nodeNo: 357
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 358
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 359
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 35
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 360
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 361
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 362
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 16
+  - nodeNo: 363
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 15
+  - nodeNo: 364
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 365
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 36
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 8
+  - nodeNo: 366
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 36
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 367
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 36
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 368
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 36
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 369
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 36
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 370
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 371
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 372
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 373
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 374
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 375
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 37
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 10
+  - nodeNo: 376
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 37
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 377
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 37
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 378
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 37
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 379
+    plate:
+      shapeType: 1
+      stY: 7
+      stX: 37
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 380
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 381
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 382
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 383
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 384
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 385
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 38
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 15
+  - nodeNo: 386
+    plate:
+      shapeType: 2
+      stY: 7
+      stX: 38
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 387
+    plate:
+      shapeType: 2
+      stY: 7
+      stX: 38
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 388
+    plate:
+      shapeType: 2
+      stY: 7
+      stX: 38
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 389
+    plate:
+      shapeType: 2
+      stY: 7
+      stX: 38
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 390
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 391
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 392
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 393
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 394
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 395
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 39
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 19
+  - nodeNo: 396
+    plate:
+      shapeType: 2
+      stY: 6
+      stX: 39
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 397
+    plate:
+      shapeType: 2
+      stY: 6
+      stX: 39
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 398
+    plate:
+      shapeType: 2
+      stY: 6
+      stX: 39
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 399
+    plate:
+      shapeType: 2
+      stY: 6
+      stX: 39
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 400
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 401
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 402
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 403
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 404
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 405
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 40
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 21
+  - nodeNo: 406
+    plate:
+      shapeType: 2
+      stY: 5
+      stX: 40
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 407
+    plate:
+      shapeType: 2
+      stY: 5
+      stX: 40
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 408
+    plate:
+      shapeType: 2
+      stY: 5
+      stX: 40
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 409
+    plate:
+      shapeType: 2
+      stY: 5
+      stX: 40
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 410
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 411
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 412
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 413
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 414
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 415
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 41
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 416
+    plate:
+      shapeType: 2
+      stY: 4
+      stX: 41
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 22
+  - nodeNo: 417
+    plate:
+      shapeType: 2
+      stY: 4
+      stX: 41
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 418
+    plate:
+      shapeType: 2
+      stY: 4
+      stX: 41
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 419
+    plate:
+      shapeType: 2
+      stY: 4
+      stX: 41
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 420
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 421
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 422
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 423
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 424
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 425
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 426
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 427
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 428
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 429
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 42
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 430
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 431
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 432
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 433
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 434
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 435
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 436
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 437
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 438
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 439
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 43
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 440
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 441
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 442
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 443
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 444
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 445
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 446
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 447
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 448
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 449
+    plate:
+      shapeType: 1
+      stY: 3
+      stX: 44
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 450
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 451
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 452
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 453
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 454
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 455
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 456
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 457
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 458
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 459
+    plate:
+      shapeType: 2
+      stY: 3
+      stX: 45
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 460
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 461
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 462
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 463
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 464
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 465
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 466
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 467
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 468
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 469
+    plate:
+      shapeType: 2
+      stY: 2
+      stX: 46
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 470
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 471
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 472
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 473
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 474
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 475
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 476
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 477
+    plate:
+      shapeType: 2
+      stY: 1
+      stX: 47
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 21
+  - nodeNo: 478
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 47
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 16
+  - nodeNo: 479
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 47
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 480
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 481
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 482
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 483
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 484
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 485
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 486
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 487
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 48
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 488
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 48
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 489
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 48
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 490
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 491
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 492
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 493
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 494
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 495
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 496
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 497
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 49
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 21
+  - nodeNo: 498
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 49
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 499
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 49
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 500
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 501
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 502
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 503
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 504
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 505
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 506
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 507
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 50
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 18
+  - nodeNo: 508
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 50
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 15
+  - nodeNo: 509
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 50
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 510
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 7
+  - nodeNo: 511
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 512
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 513
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 514
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 515
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 516
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 14
+  - nodeNo: 517
+    plate:
+      shapeType: 2
+      stY: 0
+      stX: 51
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 17
+  - nodeNo: 518
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 51
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 13
+  - nodeNo: 519
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 51
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 520
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 52
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 10
+  - nodeNo: 521
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 52
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 522
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 53
       stZ: 8
       mapEnd: 0
     walkableNodeNum: 5
     jumpableNodeNum: 8
-  - nodeNo: 189
+  - nodeNo: 523
     plate:
-      tipType: 1
-      stY: 9
-      stX: 18
+      shapeType: 1
+      stY: 1
+      stX: 53
       stZ: 9
       mapEnd: 1
-    walkableNodeNum: 2
-    jumpableNodeNum: 11
-  - nodeNo: 190
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 524
     plate:
-      tipType: 1
+      shapeType: 1
+      stY: 1
+      stX: 54
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 6
+  - nodeNo: 525
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 54
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 526
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 55
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 527
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 55
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 528
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 56
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 10
+  - nodeNo: 529
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 56
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 530
+    plate:
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 0
-      mapEnd: 8
+      mapEnd: 16
     walkableNodeNum: 3
-    jumpableNodeNum: 0
-  - nodeNo: 191
+    jumpableNodeNum: 7
+  - nodeNo: 531
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 1
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 192
+    jumpableNodeNum: 8
+  - nodeNo: 532
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 2
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 193
+    jumpableNodeNum: 11
+  - nodeNo: 533
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 3
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 194
+    jumpableNodeNum: 12
+  - nodeNo: 534
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 4
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 195
+    jumpableNodeNum: 12
+  - nodeNo: 535
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 5
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 196
+    jumpableNodeNum: 12
+  - nodeNo: 536
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 6
-      mapEnd: 4
+      mapEnd: 0
     walkableNodeNum: 5
-    jumpableNodeNum: 0
-  - nodeNo: 197
+    jumpableNodeNum: 14
+  - nodeNo: 537
     plate:
-      tipType: 1
+      shapeType: 3
       stY: 0
-      stX: 19
+      stX: 57
       stZ: 7
-      mapEnd: 4
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 17
+  - nodeNo: 538
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 57
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 13
+  - nodeNo: 539
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 57
+      stZ: 9
+      mapEnd: 1
     walkableNodeNum: 5
     jumpableNodeNum: 0
-  - nodeNo: 198
+  - nodeNo: 540
     plate:
-      tipType: 1
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 541
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 542
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 543
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 544
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 545
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 546
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 547
+    plate:
+      shapeType: 3
+      stY: 1
+      stX: 58
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 17
+  - nodeNo: 548
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 58
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 14
+  - nodeNo: 549
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 58
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 550
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 551
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 552
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 553
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 554
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 555
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 556
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 557
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 558
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 559
+    plate:
+      shapeType: 3
+      stY: 2
+      stX: 59
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 560
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 561
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 562
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 563
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 564
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 565
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 566
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 567
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 21
+  - nodeNo: 568
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 15
+  - nodeNo: 569
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 60
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 570
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 1
+    jumpableNodeNum: 16
+  - nodeNo: 571
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 20
+  - nodeNo: 572
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 25
+  - nodeNo: 573
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 574
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 575
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 576
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 577
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 61
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 1
+    jumpableNodeNum: 26
+  - nodeNo: 578
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 61
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 16
+  - nodeNo: 579
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 61
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 580
+    plate:
+      shapeType: 1
       stY: 0
-      stX: 19
+      stX: 62
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 581
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 582
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 583
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 584
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 585
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 586
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 587
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 62
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 24
+  - nodeNo: 588
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 62
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 589
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 62
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 590
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 591
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 592
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 593
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 594
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 595
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 596
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 597
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 63
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 598
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 63
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 599
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 63
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 600
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 601
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 602
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 603
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 604
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 605
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 606
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 607
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 64
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 608
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 64
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 609
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 64
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 610
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 611
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 612
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 613
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 614
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 615
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 616
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 617
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 65
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 618
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 65
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 619
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 65
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 620
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 621
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 622
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 623
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 624
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 625
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 626
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 627
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 66
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 628
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 66
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 629
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 66
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 630
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 631
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 632
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 633
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 634
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 635
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 636
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 637
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 67
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 638
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 67
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 639
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 67
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 640
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 641
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 642
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 643
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 644
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 645
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 646
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 647
+    plate:
+      shapeType: 1
+      stY: 0
+      stX: 68
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 24
+  - nodeNo: 648
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 68
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 16
+  - nodeNo: 649
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 68
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 650
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 1
+    jumpableNodeNum: 16
+  - nodeNo: 651
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 20
+  - nodeNo: 652
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 25
+  - nodeNo: 653
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 654
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 655
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 26
+  - nodeNo: 656
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 2
+    jumpableNodeNum: 25
+  - nodeNo: 657
+    plate:
+      shapeType: 1
+      stY: 1
+      stX: 69
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 1
+    jumpableNodeNum: 24
+  - nodeNo: 658
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 69
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 13
+  - nodeNo: 659
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 69
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 660
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 661
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 17
+  - nodeNo: 662
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 22
+  - nodeNo: 663
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 664
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 665
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 23
+  - nodeNo: 666
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 21
+  - nodeNo: 667
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 18
+  - nodeNo: 668
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 13
+  - nodeNo: 669
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 70
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 3
+    jumpableNodeNum: 10
+  - nodeNo: 670
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 671
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 672
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 673
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 674
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 675
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 676
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 677
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 71
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 17
+  - nodeNo: 678
+    plate:
+      shapeType: 1
+      stY: 15
+      stX: 71
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 19
+  - nodeNo: 679
+    plate:
+      shapeType: 1
+      stY: 15
+      stX: 71
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 680
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 681
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 682
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 683
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 684
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 685
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 686
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 687
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 72
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 16
+  - nodeNo: 688
+    plate:
+      shapeType: 1
+      stY: 15
+      stX: 72
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 3
+    jumpableNodeNum: 19
+  - nodeNo: 689
+    plate:
+      shapeType: 1
+      stY: 15
+      stX: 72
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 3
+    jumpableNodeNum: 14
+  - nodeNo: 690
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 691
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 692
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 693
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 694
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 695
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 696
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 8
+    jumpableNodeNum: 0
+  - nodeNo: 697
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 12
+  - nodeNo: 698
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 10
+  - nodeNo: 699
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 73
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 3
+    jumpableNodeNum: 9
+  - nodeNo: 700
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 0
+      mapEnd: 16
+    walkableNodeNum: 3
+    jumpableNodeNum: 7
+  - nodeNo: 701
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 1
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 702
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 2
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 11
+  - nodeNo: 703
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 3
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 704
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 4
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 705
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 5
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 12
+  - nodeNo: 706
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 6
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 13
+  - nodeNo: 707
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 7
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 12
+  - nodeNo: 708
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 7
+    jumpableNodeNum: 8
+  - nodeNo: 709
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 74
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 710
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 75
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 6
+    jumpableNodeNum: 8
+  - nodeNo: 711
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 75
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 712
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 76
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 8
+  - nodeNo: 713
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 76
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 714
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 77
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 5
+  - nodeNo: 715
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 77
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 716
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 78
+      stZ: 8
+      mapEnd: 0
+    walkableNodeNum: 5
+    jumpableNodeNum: 3
+  - nodeNo: 717
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 78
+      stZ: 9
+      mapEnd: 1
+    walkableNodeNum: 5
+    jumpableNodeNum: 0
+  - nodeNo: 718
+    plate:
+      shapeType: 1
+      stY: 2
+      stX: 79
       stZ: 8
       mapEnd: 4
     walkableNodeNum: 3
-    jumpableNodeNum: 7
-  - nodeNo: 199
+    jumpableNodeNum: 3
+  - nodeNo: 719
     plate:
-      tipType: 1
-      stY: 9
-      stX: 19
+      shapeType: 1
+      stY: 2
+      stX: 79
       stZ: 9
       mapEnd: 2
-    walkableNodeNum: 1
-    jumpableNodeNum: 9
+    walkableNodeNum: 3
+    jumpableNodeNum: 0
   mapId: 0
