@@ -39,7 +39,6 @@ namespace NKPB
 
         public string GetImageName(CharaMotion motion)
         {
-            Debug.Log(motion);
             return GetMotionData(motion).imageName;
         }
 

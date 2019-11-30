@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -7426827074360325611, guid: 9112c0d99c23cd9429ba36736f0c4c65,
+  m_Sprite: {fileID: -1705515799187237550, guid: 9112c0d99c23cd9429ba36736f0c4c65,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -179,10 +180,6 @@ MonoBehaviour:
       collider: []
       events: []
       time: 0.3
-    - imageName: 
-      collider: []
-      events: []
-      time: 0.38333333
   - clip: {fileID: 7400000, guid: cf9dd5fe66a132c478711035f2fd85d1, type: 2}
     frameData:
     - imageName: 
@@ -222,6 +219,6 @@ MonoBehaviour:
       events: []
       time: 0.083333336
   m_MaxHitboxes: 1
-  m_CurrentAnimation: 6
+  m_CurrentAnimation: 3
   m_CurrentFrame: 0
   m_CurrentCollider: 0

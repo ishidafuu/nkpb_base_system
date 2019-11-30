@@ -102,7 +102,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.3
     functionName: UpdateHitbox
-    data: AAAAAAAAcEIBAAAA
+    data: AAAAAAAAcEIAAAAA
     objectReferenceParameter: {fileID: 0}
     floatParameter: 3
     intParameter: 3
