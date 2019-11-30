@@ -91,31 +91,31 @@ namespace NKPB
 
             void UpdateFriction(ref CharaDelta charaDelta, int brakeDelta)
             {
-                if (charaDelta.m_delta.x > 0)
+                if (charaDelta.m_deltaX > 0)
                 {
-                    charaDelta.m_delta.x = Mathf.Min(0, charaDelta.m_delta.x - brakeDelta);
+                    charaDelta.m_deltaX = Mathf.Min(0, charaDelta.m_deltaX - brakeDelta);
                 }
-                else if (charaDelta.m_delta.x < 0)
+                else if (charaDelta.m_deltaX < 0)
                 {
-                    charaDelta.m_delta.x = Mathf.Max(0, charaDelta.m_delta.x + brakeDelta);
+                    charaDelta.m_deltaX = Mathf.Max(0, charaDelta.m_deltaX + brakeDelta);
                 }
 
-                if (charaDelta.m_delta.z > 0)
+                if (charaDelta.m_deltaZ > 0)
                 {
-                    charaDelta.m_delta.z = Mathf.Min(0, charaDelta.m_delta.z - brakeDelta);
+                    charaDelta.m_deltaZ = Mathf.Min(0, charaDelta.m_deltaZ - brakeDelta);
                 }
-                else if (charaDelta.m_delta.x < 0)
+                else if (charaDelta.m_deltaX < 0)
                 {
-                    charaDelta.m_delta.z = Mathf.Max(0, charaDelta.m_delta.z + brakeDelta);
+                    charaDelta.m_deltaZ = Mathf.Max(0, charaDelta.m_deltaZ + brakeDelta);
                 }
             }
 
             void UpdateGravity(ref CharaDelta charaDelta, ref CharaFlag charaFlag, int gravity)
             {
-                charaDelta.m_delta.y -= gravity;
+                charaDelta.m_deltaY -= gravity;
 
                 if (!charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Land)
-                    && charaDelta.m_delta.y < 0)
+                    && charaDelta.m_deltaY < 0)
                 {
                     charaFlag.m_mapFlag.AddFlag(FlagMapCheck.Land);
                 }
@@ -123,14 +123,17 @@ namespace NKPB
 
             void ClearDelta(ref CharaDelta charaPos)
             {
-                charaPos.m_delta.x = 0;
-                charaPos.m_delta.z = 0;
+                charaPos.m_deltaX = 0;
+                charaPos.m_deltaZ = 0;
             }
 
 
             void SetDelta(ref CharaDelta charaDelta, int _delta, EnumMoveMuki _moveMuki)
             {
-                charaDelta.m_delta = DeltaToVector3Int(_delta, _moveMuki);
+                var delta = DeltaToVector3Int(_delta, _moveMuki);
+                charaDelta.m_deltaX = delta.x;
+                charaDelta.m_deltaY = delta.y;
+                charaDelta.m_deltaZ = delta.z;
             }
 
             Vector3Int DeltaToVector3Int(int _delta, EnumMoveMuki _moveMuki)

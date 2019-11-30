@@ -90,7 +90,10 @@ namespace NKPB
 
             void SetDelta(ref CharaDelta charaDelta, int _delta, EnumMoveMuki _moveMuki)
             {
-                charaDelta.m_delta = DeltaToVector3Int(_delta, _moveMuki);
+                var delta = DeltaToVector3Int(_delta, _moveMuki);
+                charaDelta.m_deltaX = delta.x;
+                charaDelta.m_deltaY = delta.y;
+                charaDelta.m_deltaZ = delta.z;
             }
 
             Vector3Int DeltaToVector3Int(int _delta, EnumMoveMuki _moveMuki)

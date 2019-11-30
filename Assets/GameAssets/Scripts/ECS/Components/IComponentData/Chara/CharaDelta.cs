@@ -4,6 +4,8 @@ namespace NKPB
 {
     public struct CharaDelta : IComponentData
     {
-        public Vector3Int m_delta;
+        public int m_deltaX;
+        public int m_deltaY;
+        public int m_deltaZ;
     }
 }

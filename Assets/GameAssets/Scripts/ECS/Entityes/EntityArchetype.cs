@@ -18,5 +18,9 @@ namespace NKPB
             typeof(CharaQueue),
             // typeof(PadScan), // 入力（ここでは付けずCharaEntityFactoryで必要なキャラのみつける）
         };
+
+        public static ComponentType[] CameraComponentType = {
+            typeof(CameraPos),
+        };
     }
 }

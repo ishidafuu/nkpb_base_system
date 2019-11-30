@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192078714}
   - component: {fileID: 192078715}
+  - component: {fileID: 192078716}
   m_Layer: 0
   m_Name: Singletons
   m_TagString: Untagged
@@ -168,6 +169,22 @@ MonoBehaviour:
   Move: {fileID: 11400000, guid: fa8e656e7d4dd4242b8ce87907ec00ea, type: 2}
   DrawPos: {fileID: 11400000, guid: 45d5ff70ac9b1ec4285e771325ea46dc, type: 2}
   Debug: {fileID: 11400000, guid: 98018889a92fab74499b219013d66af7, type: 2}
+--- !u!114 &192078716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192078713}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c500bb03747934c9adf04ce30a7c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps_: 60
+  motionFps_: 60
+  vSync_: 1
+  fpsDraw_: 1
 --- !u!1001 &265125357
 PrefabInstance:
   m_ObjectHideFlags: 0

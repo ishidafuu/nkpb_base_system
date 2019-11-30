@@ -196,7 +196,7 @@ namespace NKPB
 
             void JumpState(ref CharaDelta charaDelta)
             {
-                charaDelta.m_delta.y = JumpSpeed;
+                charaDelta.m_deltaY = JumpSpeed;
             }
 
             void LandFlags(ref CharaFlag charaFlag)
@@ -210,9 +210,9 @@ namespace NKPB
 
             void LandState(ref CharaDelta charaDelta)
             {
-                charaDelta.m_delta.x = 0;
-                charaDelta.m_delta.y = 0;
-                charaDelta.m_delta.z = 0;
+                charaDelta.m_deltaX = 0;
+                charaDelta.m_deltaY = 0;
+                charaDelta.m_deltaZ = 0;
             }
 
         }

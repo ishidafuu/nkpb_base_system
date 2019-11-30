@@ -161,10 +161,6 @@ namespace NKPB
         {
             return m_mapTips.GetShape(pos);
         }
-        // public void SetMapShape(Vector3Int pos)
-        // {
-        //     m_mapTips.SetShape(m_selectedShape, pos);
-        // }
 
         public MapTips GetCopyMapTip(Vector3Int pos, Vector3Int size)
         {

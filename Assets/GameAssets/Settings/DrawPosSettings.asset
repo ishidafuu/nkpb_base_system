@@ -12,9 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c6f7498e5abd849b9cfe3300c2aa32, type: 3}
   m_Name: DrawPosSettings
   m_EditorClassIdentifier: 
-  BgScrollWidth: 128
-  BgScrollRangeFactor: 2
-  BgScrollX: 128
-  BgScrollY: 94
-  ToukiMeterX: -120
-  ToukiMeterY: -35
+  ScreenWidth: 256
+  ScreenHeight: 224

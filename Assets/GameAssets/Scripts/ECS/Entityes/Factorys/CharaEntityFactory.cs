@@ -34,16 +34,14 @@ namespace NKPB
                 m_myId = i,
             });
 
-            var posL = 0;
-            var posH = 0;
 
             entityManager.SetComponentData(entity, new Translation
             {
-                Value = new float3(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0)
+
             });
 
             var charaPos = new CharaPos();
-            charaPos.SetPosition(new Vector3Int(UnityEngine.Random.Range(posL, posH), UnityEngine.Random.Range(posL, posH), 0));
+            charaPos.SetPosition(new Vector3Int(32 << 8, 32 << 8, 8 << 8));
             entityManager.SetComponentData(entity, charaPos);
 
             entityManager.SetComponentData(entity, new CharaLastPos
@@ -53,7 +51,7 @@ namespace NKPB
 
             entityManager.SetComponentData(entity, new CharaDelta
             {
-                m_delta = Vector3Int.zero
+
             });
 
             entityManager.SetComponentData(entity, new CharaMotion
@@ -82,11 +80,6 @@ namespace NKPB
             entityManager.SetComponentData(entity, new CharaMuki
             {
                 m_muki = EnumMuki.Right
-            });
-
-            entityManager.SetComponentData(entity, new CharaPos
-            {
-
             });
 
 

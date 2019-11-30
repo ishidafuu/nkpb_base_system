@@ -56,6 +56,7 @@ namespace NKPB
 
             PresentationSystemGroup presentationSystemGroup = world.GetOrCreateSystem<PresentationSystemGroup>();
             presentationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CharaDrawSystem>());
+            presentationSystemGroup.AddSystemToUpdateList(world.GetOrCreateSystem<MapDrawSystem>());
             presentationSystemGroup.SortSystemUpdateList();
 
             ScriptBehaviourUpdateOrder.UpdatePlayerLoop(world);
@@ -121,6 +122,7 @@ namespace NKPB
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LookSystem>());
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<ConvertDrawTranslationSystem>());
             preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<LastMapUpdateSystem>());
+            preRenderGroup.AddSystemToUpdateList(world.GetOrCreateSystem<CameraMoveSystem>());
             preRenderGroup.SortSystemUpdateList();
         }
 
@@ -136,6 +138,7 @@ namespace NKPB
 
         void InitializeEntities(EntityManager manager)
         {
+            CameraEntityFactory.CreateEntity(manager);
             CreateCharaEntity(manager);
         }
 
@@ -143,10 +146,6 @@ namespace NKPB
         {
             for (int i = 0; i < Settings.Instance.Common.CharaCount; i++)
             {
-                // var playerEntity = (i < m_playerEntityList.Count)
-                //     ? m_playerEntityList[i]
-                //     : Entity.Null;
-
                 var entity = CharaEntityFactory.CreateEntity(i, manager);
             }
         }

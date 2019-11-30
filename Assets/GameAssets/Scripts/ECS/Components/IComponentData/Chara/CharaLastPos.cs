@@ -4,7 +4,9 @@ namespace NKPB
 {
     public struct CharaLastPos : IComponentData
     {
-        public Vector3Int m_position;
+        public int m_posX;
+        public int m_posY;
+        public int m_posZ;
         public int m_mapY;
         public int m_mapZ;
         public int m_mapXLeft;

@@ -63,9 +63,6 @@ MonoBehaviour:
     - imageName: nm2body_01_01
       collider: []
       events: []
-    - imageName: nm2body_01_01
-      collider: []
-      events: []
   - motionName: nkpb_punch
     frameData:
     - imageName: nm2body_02_13

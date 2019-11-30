@@ -51,7 +51,9 @@ namespace NKPB
                 {
                     var charaLastPos = m_charaLastPoses[i];
                     var charaPos = m_charaPoses[i];
-                    charaLastPos.m_position = charaPos.m_position;
+                    charaLastPos.m_posX = charaPos.m_posX;
+                    charaLastPos.m_posY = charaPos.m_posY;
+                    charaLastPos.m_posZ = charaPos.m_posZ;
                     charaLastPos.m_mapXCenter = charaPos.m_mapXCenter;
                     charaLastPos.m_mapXLeft = charaPos.m_mapXLeft;
                     charaLastPos.m_mapXRight = charaPos.m_mapXRight;

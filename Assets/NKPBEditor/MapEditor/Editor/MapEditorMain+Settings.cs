@@ -17,7 +17,7 @@ namespace NKPB
         public static readonly string BasePath = "Assets/NKPBEditor/MapEditor";
         public static readonly string MapTipPaletteImagePath = BasePath + "/Image/MapTipPalette";
         public static readonly string MapTipFrontImagePath = BasePath + "/Image/MapTipFront";
-        public static readonly string OutputPath = BasePath + "/Output/output.png";
+        public static readonly string OutputPath = "Assets/GameAssets/Resources/Sprites/Map/map{0}.png";
 
         public static readonly string MapTileName = "MapTile";
         public static readonly string MapImageName = "Sprites/Map/map";

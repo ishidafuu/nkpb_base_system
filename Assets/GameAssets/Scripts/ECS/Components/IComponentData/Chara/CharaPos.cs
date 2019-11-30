@@ -4,7 +4,9 @@ namespace NKPB
 {
     public struct CharaPos : IComponentData
     {
-        public Vector3Int m_position { get; private set; }
+        public int m_posX;
+        public int m_posY;
+        public int m_posZ;
         public int m_mapY;
         public int m_mapZ;
         public int m_mapXLeft;
@@ -23,17 +25,17 @@ namespace NKPB
 
         public void SetPixX(int x)
         {
-            SetPosition(new Vector3Int(x << RAW_PIX, m_position.y, m_position.z));
+            SetPosition(new Vector3Int(x << RAW_PIX, m_posY, m_posZ));
         }
 
         public void SetPixY(int y)
         {
-            SetPosition(new Vector3Int(m_position.x, y << RAW_PIX, m_position.z));
+            SetPosition(new Vector3Int(m_posX, y << RAW_PIX, m_posZ));
         }
 
         public void SetPixZ(int z)
         {
-            SetPosition(new Vector3Int(m_position.x, m_position.y, z << RAW_PIX));
+            SetPosition(new Vector3Int(m_posX, m_posY, z << RAW_PIX));
         }
 
         public void SetPosition(Vector3Int newPosition)
@@ -49,13 +51,15 @@ namespace NKPB
             {
                 newPosition.x = 0;
             }
+            Debug.Log($"last m_posX : {m_posX}");
+            m_posX = newPosition.x;
+            m_posY = newPosition.y;
+            m_posZ = newPosition.z;
 
-            m_position = newPosition;
+            m_mapY = m_posY >> RAW_MAP;
+            m_mapZ = m_posZ >> RAW_MAP;
 
-            m_mapY = m_position.y >> RAW_MAP;
-            m_mapZ = m_position.z >> RAW_MAP;
-
-            int centerPixX = m_position.x >> RAW_PIX;
+            int centerPixX = m_posX >> RAW_PIX;
             int leftPixX = centerPixX - 7;
             int rightPixX = centerPixX + 7;
 
@@ -66,8 +70,6 @@ namespace NKPB
             m_tipXCenter = (centerPixX ^ ((centerPixX >> PIX_MAP) << PIX_MAP));
             m_tipXLeft = (leftPixX ^ ((leftPixX >> PIX_MAP) << PIX_MAP));
             m_tipXRight = (rightPixX ^ ((rightPixX >> PIX_MAP) << PIX_MAP));
-
-            // Debug.Log($"m_position : {m_position} m_centerX : {m_centerMapX} m_innerCenterX : {m_tipCenterX}");
         }
     }
 }

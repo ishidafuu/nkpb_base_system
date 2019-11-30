@@ -122,4 +122,16 @@ namespace NKPB
             return res;
         }
     }
+
+    public enum EnumDrawLayer
+    {
+        OverFrame,
+        Frame,
+        UnderFrame,
+        OverChara,
+        Chara,
+        OverBackGround,
+        BackGround,
+    }
+
 }

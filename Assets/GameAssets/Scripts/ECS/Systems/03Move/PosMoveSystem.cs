@@ -51,7 +51,13 @@ namespace NKPB
                 {
                     CharaPos charaPoses = m_charaPoses[i];
                     CharaDelta charaDelta = m_charaDeltas[i];
-                    charaPoses.SetPosition(charaPoses.m_position + charaDelta.m_delta);
+                    Vector3Int pos = new Vector3Int(
+                        charaPoses.m_posX + charaDelta.m_deltaX,
+                        charaPoses.m_posY + charaDelta.m_deltaY,
+                        charaPoses.m_posZ + charaDelta.m_deltaZ);
+
+                    // Debug.Log($" charaPoses.m_posX: {charaPoses.m_posX}");
+                    charaPoses.SetPosition(pos);
                     m_charaPoses[i] = charaPoses;
                 }
             }

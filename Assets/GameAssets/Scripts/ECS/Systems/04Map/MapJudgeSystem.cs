@@ -91,7 +91,7 @@ namespace NKPB
                     var charaQueue = m_charaQueues[i];
                     var charaFlag = m_charaFlags[i];
 
-                    int startY = charaPos.m_position.y;
+                    int startY = charaPos.m_posY;
 
                     // 坂引き寄せ処理
                     AttractSlope(XPos.Right, ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
@@ -127,7 +127,7 @@ namespace NKPB
             private void CheckFall(ref CharaPos charaPos, ref CharaFlag charaFlag, ref CharaQueue charaQueue, int startY)
             {
                 // 浮きチェック(Y補正をしていたら浮きチェックは不要)
-                bool isMovedY = (startY != charaPos.m_position.y);
+                bool isMovedY = (startY != charaPos.m_posY);
 
                 if (isMovedY)
                     return;
@@ -396,8 +396,8 @@ namespace NKPB
                     return;
 
 
-                int moveX = math.abs(charaPos.m_position.x - charaLastPos.m_position.x);
-                int moveZ = math.abs(charaPos.m_position.z - charaLastPos.m_position.z);
+                int moveX = math.abs(charaPos.m_posX - charaLastPos.m_posX);
+                int moveZ = math.abs(charaPos.m_posZ - charaLastPos.m_posZ);
                 bool isZSlide = (moveX > moveZ);
 
                 if (isZSlide)
@@ -534,7 +534,7 @@ namespace NKPB
             {
                 if (charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Fall))
                 {
-                    charaQueue.SetQueue(EnumMotionType.Fall);
+                    charaQueue.SetQueue(EnumMotionType.Jump);
                 }
             }
 

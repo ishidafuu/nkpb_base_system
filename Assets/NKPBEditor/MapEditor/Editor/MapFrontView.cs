@@ -25,8 +25,6 @@ namespace NKPB
         bool m_isLoadSprite = false;
         bool m_isDrawMap = true;
 
-        Texture2D m_texture;
-
         // サブウィンドウを開く
         public static MapFrontView WillAppear(MapEditorMain _parent)
         {
@@ -45,9 +43,6 @@ namespace NKPB
 
         public void Init()
         {
-            m_texture = new Texture2D(
-                GetMapBmpSprite().texture.width,
-                GetMapBmpSprite().texture.height, TextureFormat.ARGB32, false);
 
         }
 
@@ -62,14 +57,7 @@ namespace NKPB
 
                 if (GUI.Button(new Rect(100, 0, 100, 30), "Output"))
                 {
-                    m_texture = new Texture2D(
-                         GetMapBmpSprite().texture.width,
-                        GetMapBmpSprite().texture.height + DRAW_OFFSET,
-                        TextureFormat.ARGB32, false);
                     CreateOutputTexture();
-                    var png = m_texture.EncodeToPNG();
-                    File.WriteAllBytes(MapEditorMain.OutputPath, png);
-                    AssetDatabase.Refresh();
                 }
 
                 DrawMapTip();
@@ -166,6 +154,11 @@ namespace NKPB
 
         void CreateOutputTexture()
         {
+            Texture2D outputTexture = new Texture2D(
+                (GetMapW() * TIP_W),
+                (GetMapD() + GetMapH()) * TIP_H_Harf,
+                TextureFormat.ARGB32, false);
+
             Texture2D boxTexture = (Texture2D)m_mapShapeTexList[(int)EnumShapeType.Box];
             Color[] groundPixels = boxTexture.GetPixels(0, TIP_H_Harf, TIP_W, TIP_H_Harf);
             Color[] wallPixels = boxTexture.GetPixels(0, 0, TIP_W, TIP_H_Harf);
@@ -184,7 +177,7 @@ namespace NKPB
                 for (int x = 0; x < GetMapW(); x++)
                 {
                     Vector2 pos = new Vector2((x * TIP_W), (y + GetMapD() - 2) * TIP_H_Harf);
-                    m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, wallPixels, 0);
+                    outputTexture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, wallPixels, 0);
                 }
             }
 
@@ -194,7 +187,7 @@ namespace NKPB
                 for (int x = 0; x < GetMapW(); x++)
                 {
                     Vector2 pos = new Vector2((x * TIP_W), (+zz) * TIP_H_Harf);
-                    m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, groundPixels, 0);
+                    outputTexture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, groundPixels, 0);
                 }
             }
 
@@ -213,7 +206,7 @@ namespace NKPB
                         Vector2 pos = new Vector2((x * TIP_W), (y + zz) * TIP_H_Harf);
                         Texture2D mainTexture = (Texture2D)sp;
                         Color[] srcPixels = mainTexture.GetPixels();
-                        Color[] destPixels = m_texture.GetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H);
+                        Color[] destPixels = outputTexture.GetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H);
 
                         for (int i = 0; i < srcPixels.Length; i++)
                         {
@@ -223,10 +216,15 @@ namespace NKPB
                             }
                         }
 
-                        m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H, srcPixels, 0);
+                        outputTexture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H, srcPixels, 0);
                     }
                 }
             }
+
+            var png = outputTexture.EncodeToPNG();
+
+            File.WriteAllBytes(string.Format(MapEditorMain.OutputPath, m_parent.m_mapId.ToString("d3")), png);
+            AssetDatabase.Refresh();
         }
 
         void DrawMap()
