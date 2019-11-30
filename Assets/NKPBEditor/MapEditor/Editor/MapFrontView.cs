@@ -25,6 +25,8 @@ namespace NKPB
         bool m_isLoadSprite = false;
         bool m_isDrawMap = true;
 
+        Texture2D m_texture;
+
         // サブウィンドウを開く
         public static MapFrontView WillAppear(MapEditorMain _parent)
         {
@@ -43,7 +45,10 @@ namespace NKPB
 
         public void Init()
         {
-            // SetRepaint();
+            m_texture = new Texture2D(
+                GetMapBmpSprite().texture.width,
+                GetMapBmpSprite().texture.height, TextureFormat.ARGB32, false);
+
         }
 
         void OnGUI()
@@ -54,6 +59,18 @@ namespace NKPB
                     LoadMapTipSprite();
 
                 m_isDrawMap = GUI.Toggle(new Rect(10, 0, 100, 30), m_isDrawMap, "MapDraw");
+
+                if (GUI.Button(new Rect(100, 0, 100, 30), "Output"))
+                {
+                    m_texture = new Texture2D(
+                         GetMapBmpSprite().texture.width,
+                        GetMapBmpSprite().texture.height + DRAW_OFFSET,
+                        TextureFormat.ARGB32, false);
+                    CreateOutputTexture();
+                    var png = m_texture.EncodeToPNG();
+                    File.WriteAllBytes(MapEditorMain.OutputPath, png);
+                    AssetDatabase.Refresh();
+                }
 
                 DrawMapTip();
 
@@ -141,6 +158,62 @@ namespace NKPB
                         Rect drawRect = new Rect(pos, size);
                         // GUI.DrawTextureWithTexCoords(drawRect, sp, new Rect(0, 0, 1, 1)); //描画
                         GUI.DrawTexture(drawRect, sp, ScaleMode.StretchToFill, true, 1, new Color(colRed, colGreen, colBlue, 1), 0, 0); //描画
+
+                    }
+                }
+            }
+        }
+
+        void CreateOutputTexture()
+        {
+            Texture2D boxTexture = (Texture2D)m_mapShapeTexList[(int)EnumShapeType.Box];
+            Color[] groundPixels = boxTexture.GetPixels(0, TIP_H_Harf, TIP_W, TIP_H_Harf);
+            Color[] wallPixels = boxTexture.GetPixels(0, 0, TIP_W, TIP_H_Harf);
+            for (int i = 0; i < groundPixels.Length; i++)
+            {
+                groundPixels[i] = groundPixels[i] * 0.9f;
+            }
+
+            for (int i = 0; i < wallPixels.Length; i++)
+            {
+                wallPixels[i] = wallPixels[i] * 0.9f;
+            }
+
+            for (int y = 0; y < GetMapH(); y++)
+            {
+                for (int x = 0; x < GetMapW(); x++)
+                {
+                    Vector2 pos = new Vector2((x * TIP_W), (y + GetMapD() - 2) * TIP_H_Harf);
+                    m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, wallPixels, 0);
+                }
+            }
+
+            for (int z = 0; z < GetMapD(); z++)
+            {
+                int zz = (GetMapD() - z - 1);
+                for (int x = 0; x < GetMapW(); x++)
+                {
+                    Vector2 pos = new Vector2((x * TIP_W), (+zz) * TIP_H_Harf);
+                    m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H_Harf, groundPixels, 0);
+                }
+            }
+
+            for (int z = 0; z < GetMapD(); z++)
+            {
+                int zz = (GetMapD() - z - 1);
+                for (int y = 0; y < GetMapH(); y++)
+                {
+                    for (int x = 0; x < GetMapW(); x++)
+                    {
+                        EnumShapeType shape = m_parent.m_mapTips.GetShape(new Vector3Int(x, y, zz));
+                        if (shape == EnumShapeType.Empty)
+                            continue;
+
+                        Texture sp = m_mapShapeTexList[(int)shape];
+                        Vector2 pos = new Vector2((x * TIP_W), (y + zz) * TIP_H_Harf);
+                        Texture2D mainTexture = (Texture2D)sp;
+                        Color[] pixels = mainTexture.GetPixels(); ;
+                        m_texture.SetPixels((int)pos.x, (int)pos.y, TIP_W, TIP_H, pixels, 0);
                     }
                 }
             }
