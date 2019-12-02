@@ -51,7 +51,7 @@ namespace NKPB
             {
                 newPosition.x = 0;
             }
-            Debug.Log($"last m_posX : {m_posX}");
+
             m_posX = newPosition.x;
             m_posY = newPosition.y;
             m_posZ = newPosition.z;

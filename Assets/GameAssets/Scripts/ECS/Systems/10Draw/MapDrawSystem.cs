@@ -30,13 +30,13 @@ namespace NKPB
 
         private void DrawFrame()
         {
-            CameraPos cameraPos = GetSingleton<CameraPos>();
-            var posX = Shared.m_mapMeshMat.m_meshDict["map000"].bounds.size.x / 2;
-            Matrix4x4 frameTopMatrix = Matrix4x4.TRS(new Vector3(posX,
-            0, (int)800), m_Quaternion, Vector3.one);
-            Graphics.DrawMesh(Shared.m_mapMeshMat.m_meshDict["map000"],
+            Matrix4x4 frameTopMatrix = Matrix4x4.TRS(new Vector3(
+                Shared.m_mapMeshMat.m_sizeXHalf,
+                Shared.m_mapMeshMat.m_sizeYHalf,
+                (int)800), m_Quaternion, Vector3.one);
+            Graphics.DrawMesh(Shared.m_mapMeshMat.m_mesh,
                 frameTopMatrix,
-                Shared.m_mapMeshMat.m_materialDict["map000"], 0);
+                Shared.m_mapMeshMat.m_material, 0);
         }
     }
 }

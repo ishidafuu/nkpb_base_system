@@ -32,7 +32,6 @@ namespace NKPB
 
             var cameraPos = camreaPoses[0];
 
-            int mapWidth = (int)Shared.m_mapMeshMat.m_meshDict["map000"].bounds.size.x;
             float allX = 0;
             for (int i = 0; i < translations.Length; i++)
             {
@@ -43,11 +42,12 @@ namespace NKPB
 
             int ScreenWidthHalf = Settings.Instance.DrawPos.ScreenWidth >> 1;
             int minX = ScreenWidthHalf;
-            int maxX = (int)Shared.m_mapMeshMat.m_meshDict["map000"].bounds.size.x - ScreenWidthHalf;
+            int maxX = (int)Shared.m_mapMeshMat.m_sizeX - ScreenWidthHalf;
+            int cameraY = Shared.m_mapMeshMat.m_sizeYHalf;
 
             cameraPos.m_position = math.clamp(allX, minX, maxX);
 
-            Camera.main.transform.position = new Vector3(cameraPos.m_position, 0, 0);
+            Camera.main.transform.position = new Vector3(cameraPos.m_position, cameraY, 0);
             camreaPoses[0] = cameraPos;
             m_queryCamera.CopyFromComponentDataArray(camreaPoses);
             translations.Dispose();

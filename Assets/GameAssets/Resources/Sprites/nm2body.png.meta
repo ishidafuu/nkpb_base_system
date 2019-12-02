@@ -678,7 +678,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
@@ -725,8 +725,8 @@ TextureImporter:
       name: nm2body_01_01
       rect:
         serializedVersion: 2
-        x: 280
-        y: 303
+        x: 44
+        y: 48
         width: 19
         height: 33
       alignment: 9
@@ -736,7 +736,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9bb17be9e5b5f12428157150b509eff9
+      spriteID: 
       internalID: -7426827074360325611
       vertices: []
       indices: 
@@ -746,8 +746,8 @@ TextureImporter:
       name: nm2body_01_02
       rect:
         serializedVersion: 2
-        x: 257
-        y: 302
+        x: 164
+        y: 168
         width: 21
         height: 33
       alignment: 9
@@ -757,7 +757,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1a64698a44f8e742b11c55abf71b750
+      spriteID: 
       internalID: -1705515799187237550
       vertices: []
       indices: 
@@ -767,8 +767,8 @@ TextureImporter:
       name: nm2body_01_03
       rect:
         serializedVersion: 2
-        x: 299
-        y: 338
+        x: 44
+        y: 13
         width: 19
         height: 33
       alignment: 9
@@ -778,7 +778,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 780ee245fbc42f24b8ce35274eda4937
+      spriteID: 
       internalID: 790717641122099657
       vertices: []
       indices: 
@@ -788,8 +788,8 @@ TextureImporter:
       name: nm2body_01_04
       rect:
         serializedVersion: 2
-        x: 276
-        y: 338
+        x: 127
+        y: 166
         width: 21
         height: 33
       alignment: 9
@@ -799,7 +799,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af1d7e2074dc0b441b0395b0790e89da
+      spriteID: 
       internalID: -7473075530401590648
       vertices: []
       indices: 
@@ -809,8 +809,8 @@ TextureImporter:
       name: nm2body_01_05
       rect:
         serializedVersion: 2
-        x: 184
-        y: 154
+        x: 1
+        y: 255
         width: 24
         height: 25
       alignment: 7
@@ -820,7 +820,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9c64d5796d315942b6a185ff4cd5f6f
+      spriteID: 
       internalID: -2019006205034813561
       vertices: []
       indices: 
@@ -830,8 +830,8 @@ TextureImporter:
       name: nm2body_01_06
       rect:
         serializedVersion: 2
-        x: 358
-        y: 142
+        x: 470
+        y: 197
         width: 21
         height: 28
       alignment: 9
@@ -841,7 +841,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70627e033bc28654092c33093c51635c
+      spriteID: 
       internalID: -4387423401934122530
       vertices: []
       indices: 
@@ -851,18 +851,18 @@ TextureImporter:
       name: nm2body_01_07
       rect:
         serializedVersion: 2
-        x: 195
-        y: 441
-        width: 24
-        height: 34
+        x: 424
+        y: 204
+        width: 21
+        height: 31
       alignment: 9
-      pivot: {x: 0.625, y: 0}
+      pivot: {x: 0.5714286, y: -0.06451613}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c810dbc552b4b064c9ffa12925704fec
+      spriteID: 
       internalID: 4503453072437280368
       vertices: []
       indices: 
@@ -872,8 +872,8 @@ TextureImporter:
       name: nm2body_01_08
       rect:
         serializedVersion: 2
-        x: 356
-        y: 341
+        x: 77
+        y: 189
         width: 23
         height: 31
       alignment: 9
@@ -883,7 +883,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0a50d8a63b6fb64e8d4df4fbbdb3b79
+      spriteID: 
       internalID: 3500031918338311456
       vertices: []
       indices: 
@@ -893,8 +893,8 @@ TextureImporter:
       name: nm2body_01_09
       rect:
         serializedVersion: 2
-        x: 184
-        y: 154
+        x: 1
+        y: 255
         width: 24
         height: 25
       alignment: 7
@@ -904,7 +904,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3377128f7c0c31741a9fe7f34a504345
+      spriteID: 
       internalID: 620805640538625343
       vertices: []
       indices: 
@@ -914,8 +914,8 @@ TextureImporter:
       name: nm2body_01_10
       rect:
         serializedVersion: 2
-        x: 293
-        y: 408
+        x: 487
+        y: 366
         width: 24
         height: 33
       alignment: 7
@@ -925,7 +925,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 21569279357931446954b028fcc88ea9
+      spriteID: 
       internalID: -6358383077048945438
       vertices: []
       indices: 
@@ -935,8 +935,8 @@ TextureImporter:
       name: nm2body_01_12
       rect:
         serializedVersion: 2
-        x: 318
-        y: 373
+        x: 386
+        y: 199
         width: 19
         height: 33
       alignment: 9
@@ -946,7 +946,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9ea6fb639d8b9c41a5b4eac7927d774
+      spriteID: 
       internalID: 3390867955562482933
       vertices: []
       indices: 
@@ -956,8 +956,8 @@ TextureImporter:
       name: nm2body_01_13
       rect:
         serializedVersion: 2
-        x: 295
-        y: 373
+        x: 100
+        y: 141
         width: 21
         height: 33
       alignment: 9
@@ -967,7 +967,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 646d9c041db57cb47bd3d4c28136540b
+      spriteID: 
       internalID: 3830425116891239684
       vertices: []
       indices: 
@@ -977,8 +977,8 @@ TextureImporter:
       name: nm2body_01_14
       rect:
         serializedVersion: 2
-        x: 319
-        y: 408
+        x: 407
+        y: 169
         width: 19
         height: 33
       alignment: 9
@@ -988,7 +988,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99646fe6ab4bfbd43a8225846f5933b6
+      spriteID: 
       internalID: 2455558061443172490
       vertices: []
       indices: 
@@ -998,8 +998,8 @@ TextureImporter:
       name: nm2body_01_15
       rect:
         serializedVersion: 2
-        x: 189
-        y: 12
+        x: 75
+        y: 116
         width: 21
         height: 33
       alignment: 9
@@ -1009,7 +1009,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd441deb9171f464d999ad5dd0f2e1af
+      spriteID: 
       internalID: -605984675943568121
       vertices: []
       indices: 
@@ -1019,10 +1019,10 @@ TextureImporter:
       name: nm2body_01_16
       rect:
         serializedVersion: 2
-        x: 310
-        y: 270
+        x: 102
+        y: 176
         width: 23
-        height: 32
+        height: 27
       alignment: 9
       pivot: {x: 0.6086956, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1030,7 +1030,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5698a4cacce162458b57d386a3f7d5f
+      spriteID: 
       internalID: -6956979137594559642
       vertices: []
       indices: 
@@ -1040,10 +1040,10 @@ TextureImporter:
       name: nm2body_02_01
       rect:
         serializedVersion: 2
-        x: 310
-        y: 270
+        x: 102
+        y: 176
         width: 23
-        height: 32
+        height: 27
       alignment: 9
       pivot: {x: 0.6086956, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1051,7 +1051,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8646fa1eea37bc84e9642ee42ef5f1f3
+      spriteID: 
       internalID: 1133707885282271632
       vertices: []
       indices: 
@@ -1061,8 +1061,8 @@ TextureImporter:
       name: nm2body_02_02
       rect:
         serializedVersion: 2
-        x: 105
-        y: 476
+        x: 490
+        y: 439
         width: 21
         height: 35
       alignment: 9
@@ -1072,7 +1072,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b2f3a2108723b74d9a23959b12d9b17
+      spriteID: 
       internalID: -1513613576344414192
       vertices: []
       indices: 
@@ -1082,8 +1082,8 @@ TextureImporter:
       name: nm2body_02_03
       rect:
         serializedVersion: 2
-        x: 105
-        y: 476
+        x: 490
+        y: 439
         width: 21
         height: 35
       alignment: 9
@@ -1093,7 +1093,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0233aa0ca6e1bdc418b4877c12b39f3b
+      spriteID: 
       internalID: -6872226428844357622
       vertices: []
       indices: 
@@ -1103,10 +1103,10 @@ TextureImporter:
       name: nm2body_02_04
       rect:
         serializedVersion: 2
-        x: 310
-        y: 270
+        x: 102
+        y: 176
         width: 23
-        height: 32
+        height: 27
       alignment: 9
       pivot: {x: 0.6086956, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1114,7 +1114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e059d289f660b3439845a68d48303db
+      spriteID: 
       internalID: -7984741858242703032
       vertices: []
       indices: 
@@ -1124,8 +1124,8 @@ TextureImporter:
       name: nm2body_02_05
       rect:
         serializedVersion: 2
-        x: 316
-        y: 443
+        x: 204
+        y: 236
         width: 24
         height: 33
       alignment: 7
@@ -1135,7 +1135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 780af191a51e0b74c9c0b7a1e2d63efc
+      spriteID: 
       internalID: -6634657965073015729
       vertices: []
       indices: 
@@ -1145,18 +1145,18 @@ TextureImporter:
       name: nm2body_02_06
       rect:
         serializedVersion: 2
-        x: 35
-        y: 348
-        width: 30
-        height: 37
+        x: 59
+        y: 305
+        width: 26
+        height: 34
       alignment: 9
-      pivot: {x: 0.53333336, y: 0}
+      pivot: {x: 0.46153846, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d51b8d28ea5876648aa7fb49587d7fec
+      spriteID: 
       internalID: -1373518480281022206
       vertices: []
       indices: 
@@ -1166,18 +1166,18 @@ TextureImporter:
       name: nm2body_02_07
       rect:
         serializedVersion: 2
-        x: 65
-        y: 98
-        width: 32
-        height: 37
+        x: 102
+        y: 351
+        width: 27
+        height: 34
       alignment: 9
-      pivot: {x: 0.59375, y: 0}
+      pivot: {x: 0.5185185, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c97b8a8a3f9615841a6af8c010992339
+      spriteID: 
       internalID: -2054761269636614107
       vertices: []
       indices: 
@@ -1187,8 +1187,8 @@ TextureImporter:
       name: nm2body_02_10
       rect:
         serializedVersion: 2
-        x: 261
-        y: 125
+        x: 215
+        y: 342
         width: 27
         height: 32
       alignment: 9
@@ -1198,7 +1198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e360680dd67e0842b5af25fe3f1c370
+      spriteID: 
       internalID: -4719576202728593100
       vertices: []
       indices: 
@@ -1208,8 +1208,8 @@ TextureImporter:
       name: nm2body_02_12
       rect:
         serializedVersion: 2
-        x: 211
-        y: 84
+        x: 50
+        y: 106
         width: 21
         height: 33
       alignment: 9
@@ -1219,7 +1219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c0a19829cda53b4fb821e5f8ea4273c
+      spriteID: 
       internalID: 3973068097557990196
       vertices: []
       indices: 
@@ -1229,8 +1229,8 @@ TextureImporter:
       name: nm2body_02_13
       rect:
         serializedVersion: 2
-        x: 187
-        y: 82
+        x: 51
+        y: 141
         width: 22
         height: 33
       alignment: 9
@@ -1240,7 +1240,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69c7584fd3128534380edbbef3561d5b
+      spriteID: 
       internalID: -8641054154142429380
       vertices: []
       indices: 
@@ -1250,8 +1250,8 @@ TextureImporter:
       name: nm2body_02_14
       rect:
         serializedVersion: 2
-        x: 193
-        y: 119
+        x: 26
+        y: 118
         width: 22
         height: 33
       alignment: 9
@@ -1261,7 +1261,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6f70b04eeb116c439c0ef36fcd63df8
+      spriteID: 
       internalID: -2192765331939386828
       vertices: []
       indices: 
@@ -1271,8 +1271,8 @@ TextureImporter:
       name: nm2body_02_15
       rect:
         serializedVersion: 2
-        x: 212
-        y: 477
+        x: 397
+        y: 385
         width: 20
         height: 34
       alignment: 7
@@ -1282,7 +1282,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59091e741df01a1448a5567ee6c64a2f
+      spriteID: 
       internalID: 7980065632250365922
       vertices: []
       indices: 
@@ -1292,1688 +1292,8 @@ TextureImporter:
       name: nm2body_02_16
       rect:
         serializedVersion: 2
-        x: 185
-        y: 477
-        width: 25
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1cabaf25b672d241af15bb032e39d3d
-      internalID: -7231167658249966447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_01
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 336
-        width: 26
-        height: 33
-      alignment: 9
-      pivot: {x: 0.46153846, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52b3cd2f45f771847b5599d9984fa211
-      internalID: 4059944989024515815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_02
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 216
-        width: 31
-        height: 33
-      alignment: 9
-      pivot: {x: 0.41935483, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f8a14e0fb7ab634ab6879e472c3d4b2
-      internalID: -8158122556055201569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_03
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 334
-        width: 30
-        height: 33
-      alignment: 9
-      pivot: {x: 0.43333334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a10b390590559db4a8da93f2a635cca2
-      internalID: 3703944075414544408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_04
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 369
-        width: 37
-        height: 33
-      alignment: 9
-      pivot: {x: 0.45945945, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 36cc268d153539f4c86c106b381e1dd2
-      internalID: -7780540591963201126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_05
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 474
-        width: 29
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5862069, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 430d268507199f241be6fb1854f9df09
-      internalID: -212183245398191139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_06
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 16
-        width: 22
-        height: 32
-      alignment: 9
-      pivot: {x: 0.90909094, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ded98dee651d52408d1aa8a3b21da5a
-      internalID: 3467946869835023315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_07
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 82
-        width: 22
-        height: 33
-      alignment: 9
-      pivot: {x: 0.59090906, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd5ecd3e1b067a14ab59512053c60e1e
-      internalID: 5891312274144131421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_08
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 477
-        width: 34
-        height: 34
-      alignment: 9
-      pivot: {x: 0.5294118, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 777b46f447340d343bf4bdb2f47e00a9
-      internalID: -827209332456668845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_09
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 303
-        width: 31
-        height: 40
-      alignment: 9
-      pivot: {x: 0.41935483, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 728fe4cfeb9245b46a1537a4f86d30e2
-      internalID: -8775318304907199842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_10
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 261
-        width: 31
-        height: 40
-      alignment: 9
-      pivot: {x: 0.41935483, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3676fa80f03d0104d93a0f665a977da3
-      internalID: -5787644416027421411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_11
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 267
-        width: 29
-        height: 37
-      alignment: 9
-      pivot: {x: 0.55172414, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f53ff8e194af2ff47adc43f8df0669af
-      internalID: 2599530205334930638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_12
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 91
-        width: 21
-        height: 32
-      alignment: 9
-      pivot: {x: 0.85714287, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e103d49b9e9a51d43b032727e98f375f
-      internalID: -6520217137515054685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_13
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 47
-        width: 23
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5652174, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9035c47944b4eeb48bf2c9e5248b1935
-      internalID: -5134594927802105511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_14
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 478
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19de58c9e2f78754f84a08a275a9f7b6
-      internalID: -3830161035061106200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_15
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 162
-        width: 26
-        height: 32
-      alignment: 9
-      pivot: {x: 0.53846157, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71b8373c566bdc8438a0b8a27cb87797
-      internalID: -176082283164652209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_03_16
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 478
-        width: 35
-        height: 33
-      alignment: 9
-      pivot: {x: 0.4857143, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96d8518b53c437c48b410a83ddf8d93e
-      internalID: -2590930476850142821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_01
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 471
-        width: 37
-        height: 40
-      alignment: 9
-      pivot: {x: 0.45945945, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7cfc6bd4c36619c44bc6ac734c023dfc
-      internalID: 4990221578267203188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_02
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 227
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 109bc9904b620604bb8f5183b78c9110
-      internalID: 4883907704316792429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_03
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 82
-        width: 22
-        height: 33
-      alignment: 9
-      pivot: {x: 0.59090906, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66859c8e5b8fc4f4689b7da9276585b8
-      internalID: 6195863251487741307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_04
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 264
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79f1b1187ecb67547a325aada40d25a4
-      internalID: -5472584783218182869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_05
-      rect:
-        serializedVersion: 2
-        x: 189
-        y: 334
-        width: 30
-        height: 33
-      alignment: 9
-      pivot: {x: 0.43333334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10b6a839611831e449f2a583bc3e2597
-      internalID: 4667037229917323945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_06
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 227
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dddf26c72c28db40a0f7dcc0fe89528
-      internalID: -6328338500966251649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_07
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 227
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66d13c81886bfbd4fa4d10ce237a187f
-      internalID: -1730252971446956124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_08
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 371
-        width: 30
-        height: 33
-      alignment: 9
-      pivot: {x: 0.43333334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb0e2a7c8d8106f4e8de150c3fd898db
-      internalID: 8026434554610562865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_09
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 173
-        width: 33
-        height: 33
-      alignment: 9
-      pivot: {x: 0.3939394, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 630eb7aa2ae1f854785db57d490a0bba
-      internalID: -6518534815874142366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_10
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 301
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.52, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d8637c08bb090a42ae4558a54b24bcb
-      internalID: -1853658997679814370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_11
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 47
-        width: 23
-        height: 33
-      alignment: 9
-      pivot: {x: 0.65217394, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03b413612efdba0409974eaa7f65de00
-      internalID: 8047539706670421641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_12
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 407
-        width: 27
-        height: 33
-      alignment: 9
-      pivot: {x: 0.4814815, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b0bf26a4a6152514bb21d90d9c0c0818
-      internalID: 317737368921518935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_13
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 181
-        width: 31
-        height: 33
-      alignment: 9
-      pivot: {x: 0.41935483, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66aaa36b690c2fe45a891f33d33ea2cb
-      internalID: 7294188790436651655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_14
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 443
-        width: 27
-        height: 33
-      alignment: 9
-      pivot: {x: 0.4814815, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 387b59a1f3e6c7e4c993a4ee8bde6c0d
-      internalID: -6748261092098698729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_15
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 47
-        width: 23
-        height: 33
-      alignment: 9
-      pivot: {x: 0.65217394, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01ae11993b32a964cb94f034f5708e5d
-      internalID: 4526358768227886201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_04_16
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 237
-        width: 30
-        height: 31
-      alignment: 9
-      pivot: {x: 0.53333336, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5d6dc21fdc16384a96df3930b04ff20
-      internalID: 1805354900298139444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_01
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 201
-        width: 33
-        height: 31
-      alignment: 9
-      pivot: {x: 0.4848485, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c37e080ae66419947887cf0ebd77a211
-      internalID: 668889431536121268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_02
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 306
-        width: 28
-        height: 31
-      alignment: 9
-      pivot: {x: 0.5714286, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 593300e8c3a45e5469c9aed42ab13bbc
-      internalID: 3638741023074526512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_03
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 439
-        width: 30
-        height: 35
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 783e10d07273f9e40bfacec9b54bd3f5
-      internalID: 3113927213549915266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_04
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 476
-        width: 32
-        height: 35
-      alignment: 9
-      pivot: {x: 0.5625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88c2cd8a777fe8e46996f10d5120d1e0
-      internalID: -7251467527937486313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_05
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 478
-        width: 27
-        height: 33
-      alignment: 9
-      pivot: {x: 0.4814815, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f7df050ec6d37d48952932198f99c01
-      internalID: 2176741854740033237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_06
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 119
-        width: 21
-        height: 33
-      alignment: 9
-      pivot: {x: 0.61904764, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dcfd4e8a0c1f642499d68eea5de8572c
-      internalID: -8344690710737429995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_07
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 262
-        width: 27
-        height: 33
-      alignment: 9
-      pivot: {x: 0.4814815, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb7ca200a6ee0d849894585f0ed724ca
-      internalID: -6347107506821031693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_08
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 297
-        width: 31
-        height: 33
-      alignment: 9
-      pivot: {x: 0.41935483, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70f04233fa0227b438460269f95f6ec1
-      internalID: -2850663143544261480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_09
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 135
-        width: 30
-        height: 40
-      alignment: 9
-      pivot: {x: 0.6333333, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9098a49a861dcd24fb1dac5bd160b71b
-      internalID: -7762461935543987895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_10
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 429
-        width: 36
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45cb8411b16833c408f1e4364da10ba6
-      internalID: 6317105878663057215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_11
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 372
-        width: 26
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17210e72b2e51f64e975b2c61ed6458b
-      internalID: -7398477673338469640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_12
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 408
-        width: 26
-        height: 33
-      alignment: 9
-      pivot: {x: 0.7307692, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4559d80654dada4abdaf3b65852b6e3
-      internalID: 4555895927838154844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_13
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 243
-        width: 38
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa220652820fc124a97bb2404ebbe41e
-      internalID: -6345001263085017150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_14
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 442
-        width: 36
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5277778, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8541c9e2454c1ce4f86a7ac8d9255a13
-      internalID: -7311489436593441420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_15
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 207
-        width: 39
-        height: 33
-      alignment: 9
-      pivot: {x: 0.51282054, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ddfa62a61764e5459b1d3bb7db9d612
-      internalID: 7200114303974342509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_05_16
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 286
-        width: 38
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5263158, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e96f463cc91e694395442b6b41a0d01
-      internalID: 426209687257111026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_01
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 172
-        width: 34
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5882353, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d93a2fadb19cc74da9e6336be30ab6f
-      internalID: 4766553127059803308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_02
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 406
-        width: 37
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5405405, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ac6d92385ff1a346a8768e228fa17d4
-      internalID: 2930833127644762773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_03
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 439
-        width: 25
-        height: 35
-      alignment: 9
-      pivot: {x: 0.8, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43f895bc7ad777849ad7aadf12657dc9
-      internalID: -5998585308110384609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_04
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 339
-        width: 34
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5588235, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b933918c69485fa43b5d1bbc85678134
-      internalID: 1149650767820192572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_05
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 304
-        width: 39
-        height: 32
-      alignment: 9
-      pivot: {x: 0.4871795, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2574304d7b85c544b75287b30158098
-      internalID: 2394812408803470566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_06
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 299
-        width: 27
-        height: 33
-      alignment: 9
-      pivot: {x: 0.6666667, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 106d4c1cbe1dbd4488771050837df094
-      internalID: 8296634678163631723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_07
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 192
-        width: 22
-        height: 33
-      alignment: 9
-      pivot: {x: 0.8181818, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e0b9d3d1bfccbe4d9b556c2fb4d4355
-      internalID: 9168639929527166328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_08
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 336
-        width: 26
-        height: 33
-      alignment: 9
-      pivot: {x: 0.65384614, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fed9687010db574189cf50a5ea12bc7
-      internalID: 5153730259884934960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_09
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 409
-        width: 33
-        height: 32
-      alignment: 9
-      pivot: {x: 0.54545456, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7e46338dbd901b4c9656be37e27854d
-      internalID: 7016718340083685099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_10
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 152
-        width: 34
-        height: 36
-      alignment: 9
-      pivot: {x: 0.5588235, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b857b9167dc3e74684b0c2c161a31ee
-      internalID: 7895776721821360618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_11
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 13
-        width: 38
-        height: 38
-      alignment: 9
-      pivot: {x: 0.47368422, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22a1d8ef700709b4884b692b4f8d6e94
-      internalID: 5403869479949482141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_12
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 409
-        width: 33
-        height: 32
-      alignment: 9
-      pivot: {x: 0.54545456, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17417ab4519e1124ca5060447e7d7887
-      internalID: 8759199409116153906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_13
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 135
-        width: 22
-        height: 31
-      alignment: 9
-      pivot: {x: 0.90909094, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2fae969ee92f5745b44ec47943d66ea
-      internalID: 1005510245981880158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_14
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 168
-        width: 23
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6086956, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2d57d5a488e60a47bb6ecd01e7d4150
-      internalID: -7299252222814227207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_15
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 403
-        width: 35
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4857143, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a9c66bf92ad4694fb2b7b5919cf8f84
-      internalID: -833702152072059703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_06_16
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 321
-        width: 32
-        height: 34
-      alignment: 9
-      pivot: {x: 0.46875, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 684f314b00cfb4f4da905ae9e30b87a1
-      internalID: 3772655571690235182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_01
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 49
-        width: 21
-        height: 33
-      alignment: 9
-      pivot: {x: 0.3809524, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dde35fe3c7fbaa54e9acda73e77adf05
-      internalID: 952185350160110324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_02
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 219
-        width: 31
-        height: 40
-      alignment: 9
-      pivot: {x: 0.58064514, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b00cb0c2e2caf6244a1f188eb40eb5b7
-      internalID: -3304465441841699221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_03
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 16
-        width: 22
-        height: 32
-      alignment: 9
-      pivot: {x: 0.59090906, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06db171b86df7a6409811b54b99f193d
-      internalID: 5008036665522061520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_04
-      rect:
-        serializedVersion: 2
-        x: 355
-        y: 172
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.42424244, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e385cea236183540867a3abb3da2736
-      internalID: -3964141384697524320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_05
-      rect:
-        serializedVersion: 2
-        x: 365
-        y: 206
-        width: 31
-        height: 30
-      alignment: 9
-      pivot: {x: 0.4516129, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 706c7ce7b13047540b4b771a225a320a
-      internalID: 5855461608567787713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_06
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 403
-        width: 35
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4857143, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef0e68180e7263a46be6b9b1bd30f3fa
-      internalID: -4965734619837269873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_07
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 168
-        width: 23
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6086956, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4de516ac0597374abc7e413f21818d0
-      internalID: 8250994616549713855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_08
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 117
-        width: 32
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b47be294ad15bf4fadf763a8523e382
-      internalID: -1153959009596374692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_09
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 177
-        width: 31
-        height: 40
-      alignment: 9
-      pivot: {x: 0.48387095, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c017ed71d83831e46af85483eb249a29
-      internalID: 1901829069031615121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_10
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 345
-        width: 32
-        height: 40
-      alignment: 9
-      pivot: {x: 0.46875, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96c3e7c172c5ae04a9035eb982d58ddb
-      internalID: -7134647426085604563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_11
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 387
-        width: 34
-        height: 40
-      alignment: 9
-      pivot: {x: 0.44117647, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d2213e475d927c44aeb6eaba8be6cb3
-      internalID: -6170092565169516328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_12
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 332
-        width: 38
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5026cf7d7ccd3c041af8c73738c0af97
-      internalID: 600037964690572126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_13
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 406
-        width: 37
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5405405, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a18db6ae21888f43b027253be7b28b2
-      internalID: -756647096349640261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_14
-      rect:
-        serializedVersion: 2
-        x: 353
-        y: 479
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a48eb5944af4004980a09120ab3e205
-      internalID: -3384825682985126433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_15
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 238
-        width: 20
-        height: 31
-      alignment: 9
-      pivot: {x: 0.25, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0823ba5431aca6f4f830c43495899d74
-      internalID: 8659307298889197766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_07_16
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 82
+        x: 372
+        y: 316
         width: 23
         height: 33
       alignment: 9
@@ -2983,354 +1303,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49987a276c9c35145b7a28067b25b541
-      internalID: 6676400320698644249
+      spriteID: 
+      internalID: -7231167658249966447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_08_01
+      name: nm2body_03_01
       rect:
         serializedVersion: 2
-        x: 185
-        y: 477
-        width: 25
-        height: 34
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d48f6a2ccf021a42a98454a733c7c0b
-      internalID: 5086398625635872621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_02
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 251
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.59375, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69952aea51e0e6542b7c015cf432ffd5
-      internalID: -5065563120071643487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_03
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 208
-        width: 34
-        height: 33
-      alignment: 9
-      pivot: {x: 0.47058824, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f918dab8707fcf42a23e0c83c0a8d77
-      internalID: -4481994276379301607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_04
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 441
+        x: 331
+        y: 281
         width: 26
-        height: 34
-      alignment: 9
-      pivot: {x: 0.5769231, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f1a66ee4108778499d878a445089e41
-      internalID: -4117472498810616204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_05
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 357
-        width: 38
-        height: 35
-      alignment: 9
-      pivot: {x: 0.47368422, y: -0.028571429}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 090bef1545e72304fbf97182795a0f91
-      internalID: 6081900853821677001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_06
-      rect:
-        serializedVersion: 2
-        x: 122
-        y: 1
-        width: 40
-        height: 35
-      alignment: 9
-      pivot: {x: 0.5, y: -0.028571429}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8e3dc6c3b5d9b04697b08dc2d747474
-      internalID: -6071781853664970097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_07
-      rect:
-        serializedVersion: 2
-        x: 355
-        y: 104
-        width: 23
-        height: 29
-      alignment: 9
-      pivot: {x: 0.6086956, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 417cb2f64dbfca540b6f2b3749663d6c
-      internalID: 194440755388930030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_08
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 229
-        width: 22
         height: 33
       alignment: 9
-      pivot: {x: 0.59090906, y: 0}
+      pivot: {x: 0.46153846, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80aa98b8bc2b8be408441822f71a9365
-      internalID: 5294705496259053807
+      spriteID: 
+      internalID: 4059944989024515815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_08_09
+      name: nm2body_03_02
       rect:
         serializedVersion: 2
-        x: 342
-        y: 444
-        width: 33
-        height: 32
-      alignment: 9
-      pivot: {x: 0.3939394, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc933ce1568d9b946abd37631821a08a
-      internalID: 5127517975440027448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_10
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 97
-        width: 30
-        height: 38
-      alignment: 9
-      pivot: {x: 0.43333334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e853e244cc9e173489593d12a1fd40dd
-      internalID: -6212971630448711548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_11
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 390
-        width: 30
-        height: 37
-      alignment: 9
-      pivot: {x: 0.43333334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0606bb5c21b2b4f4289453c6eb482650
-      internalID: -7140696689910513468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_12
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 38
-        width: 27
-        height: 36
-      alignment: 9
-      pivot: {x: 0.7037037, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1fd1f068ce4cc441a0771766206d5f7
-      internalID: 6145851612585653018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_13
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 271
-        width: 29
-        height: 31
-      alignment: 9
-      pivot: {x: 0.44827586, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d365feb8ce269844ba1212428f5e4ee
-      internalID: -1325018371555385130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_14
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 159
-        width: 19
-        height: 33
-      alignment: 9
-      pivot: {x: 0.8947368, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8db282d023075445bbfed4412051ec5
-      internalID: -5066968381759324518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_15
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 337
-        width: 25
-        height: 33
-      alignment: 9
-      pivot: {x: 0.56, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 617eafdb40d32ae4c82f7d1b12422b13
-      internalID: -6687327360367716388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_08_16
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 50
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.40625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 876058daede7a09439c8cfb4bc46114b
-      internalID: -1307902824860433786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_01
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 216
+        x: 201
+        y: 443
         width: 31
         height: 33
       alignment: 9
@@ -3340,312 +1345,102 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 517c8b0c459480248946f0faf173aac0
-      internalID: -4937442682567486079
+      spriteID: 
+      internalID: -8158122556055201569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_09_02
+      name: nm2body_03_03
       rect:
         serializedVersion: 2
-        x: 65
-        y: 268
-        width: 26
-        height: 36
-      alignment: 9
-      pivot: {x: 0.7307692, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b0b683834feb55d4282e06ecadf1921b
-      internalID: -6063289906586187111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_03
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 271
-        width: 29
-        height: 31
-      alignment: 9
-      pivot: {x: 0.44827586, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 282e6928823c5c14ca95581ac1dd7fd0
-      internalID: 7807282108801394732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_04
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 50
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.40625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 133a6606826057d479a26a5b79ce1c0b
-      internalID: 2293973592819614615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_05
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 117
-        width: 23
+        x: 451
+        y: 342
+        width: 30
         height: 33
       alignment: 9
-      pivot: {x: 0.5217391, y: 0}
+      pivot: {x: 0.43333334, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 330b8afcda32a6145a958651bf24c3cd
-      internalID: -4553635077399904336
+      spriteID: 
+      internalID: 3703944075414544408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_09_06
+      name: nm2body_03_04
       rect:
         serializedVersion: 2
-        x: 164
-        y: 12
-        width: 23
-        height: 33
-      alignment: 9
-      pivot: {x: 0.6086956, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 450b00a778e970146a5e27aef97e0bf3
-      internalID: 2354130916219895135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_07
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 230
-        width: 26
-        height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bde463c673848014d9361939f572a7bf
-      internalID: 20782745805325076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_08
-      rect:
-        serializedVersion: 2
-        x: 366
-        y: 273
-        width: 20
-        height: 31
-      alignment: 9
-      pivot: {x: 0.65, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a89a283c9c1e7674c9274a7ebde46dc5
-      internalID: -5141190660761857516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_09
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 336
-        width: 26
-        height: 33
-      alignment: 9
-      pivot: {x: 0.61538464, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cdd759a66bd07e4ca5d8b39c7d7237d
-      internalID: -3133216924927767060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_10
-      rect:
-        serializedVersion: 2
-        x: 327
+        x: 421
         y: 478
-        width: 24
+        width: 33
         height: 33
       alignment: 9
-      pivot: {x: 0.6666667, y: 0}
+      pivot: {x: 0.3939394, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4f6aa2b340de624d9a0b3f02c6d62be
-      internalID: -3714091930829199654
+      spriteID: 
+      internalID: -7780540591963201126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_09_11
+      name: nm2body_03_05
       rect:
         serializedVersion: 2
-        x: 136
-        y: 82
-        width: 24
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07588789663d2df439a0b1c68af93df7
-      internalID: 196517767269546647
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_12
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 404
-        width: 29
+        x: 87
+        y: 282
+        width: 25
         height: 34
       alignment: 9
-      pivot: {x: 0.51724136, y: 0}
+      pivot: {x: 0.52, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd3f8b7fbc6e27041a6c57c3fb460a02
-      internalID: -81519146753339646
+      spriteID: 
+      internalID: -212183245398191139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_09_13
+      name: nm2body_03_06
       rect:
         serializedVersion: 2
-        x: 355
-        y: 104
-        width: 23
-        height: 29
-      alignment: 9
-      pivot: {x: 0.5652174, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9337b492f412ced48bbed40995c7dbe6
-      internalID: -8797394360488278571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_14
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 154
-        width: 24
-        height: 25
-      alignment: 9
-      pivot: {x: 0.5416667, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c957ccd50f3c5d44eb9c2f123880f428
-      internalID: -3113359722635632649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_09_15
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 14
+        x: 469
+        y: 163
         width: 20
-        height: 33
+        height: 32
       alignment: 9
-      pivot: {x: 0.55, y: 0}
+      pivot: {x: 0.9, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c42a4e1a78762742b6211370f16b71b
-      internalID: -5724454121288801215
+      spriteID: 
+      internalID: 3467946869835023315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_09_16
+      name: nm2body_03_07
       rect:
         serializedVersion: 2
-        x: 244
-        y: 266
+        x: 51
+        y: 141
         width: 22
         height: 33
       alignment: 9
@@ -3655,230 +1450,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e197bc1ac9a21cc4fb971a9822a20209
-      internalID: -3794038610756396828
+      spriteID: 
+      internalID: 5891312274144131421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_10_01
+      name: nm2body_03_08
       rect:
         serializedVersion: 2
-        x: 236
-        y: 194
-        width: 20
+        x: 65
+        y: 341
+        width: 27
         height: 33
       alignment: 9
-      pivot: {x: 0.65, y: 0}
+      pivot: {x: 0.4814815, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5bf089b26ebdc7943ad576f7aa9e8a59
-      internalID: 5038827690466622822
+      spriteID: 
+      internalID: -827209332456668845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_10_02
+      name: nm2body_03_09
       rect:
         serializedVersion: 2
-        x: 339
-        y: 374
-        width: 34
-        height: 32
-      alignment: 9
-      pivot: {x: 0.44117647, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b1e87a2d940edb459ac1c8d1cc64e99
-      internalID: -2716698626958630836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_03
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 90
+        x: 160
+        y: 437
         width: 31
-        height: 32
+        height: 33
       alignment: 9
-      pivot: {x: 0.3548387, y: 0}
+      pivot: {x: 0.41935483, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee971159d809c1e42adb576579f3f0bd
-      internalID: 3326411235162548694
+      spriteID: 
+      internalID: -8775318304907199842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_10_04
+      name: nm2body_03_10
       rect:
         serializedVersion: 2
-        x: 331
-        y: 168
-        width: 22
-        height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db6120d7aea829641ad7065e37c7fa2a
-      internalID: 6326823381849448636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_05
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 402
+        x: 419
+        y: 338
         width: 30
-        height: 35
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 33
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6999b8ed2321dad4bb72b70d6452c751
-      internalID: 7475786962124157504
+      spriteID: 
+      internalID: -5787644416027421411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_10_06
+      name: nm2body_03_11
       rect:
         serializedVersion: 2
-        x: 135
-        y: 367
-        width: 32
+        x: 1
+        y: 282
+        width: 26
         height: 34
-      alignment: 9
-      pivot: {x: 0.375, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b8c9aac71781484dac555511695b4ef
-      internalID: 2693738522333776938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_07
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 2
-        width: 35
-        height: 18
-      alignment: 9
-      pivot: {x: 0.51428574, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4eafc81c4bc52d4e90a7d52c7100e87
-      internalID: -4932785265376913804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_08
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 218
-        width: 34
-        height: 21
-      alignment: 9
-      pivot: {x: 0.5294118, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 93af8dabc3789a544ad35eb43186dd9a
-      internalID: -3511127434761239947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_09
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 152
-        width: 36
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5277778, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b27756e5c0c7c81448b718c494541092
-      internalID: -8326075817759889794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_10
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 152
-        width: 36
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5277778, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbc076689e12f3a44af927e128b4feff
-      internalID: -2483394644872067038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_11
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 2
-        width: 38
-        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3886,902 +1534,776 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4644e0837fcf1fd4d948540b20deca06
-      internalID: -4383742713513132034
+      spriteID: 
+      internalID: 2599530205334930638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_10_12
+      name: nm2body_03_12
       rect:
         serializedVersion: 2
-        x: 390
-        y: 183
-        width: 37
-        height: 21
-      alignment: 9
-      pivot: {x: 0.4864865, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5194130808f412847a1feb61666730d7
-      internalID: 1912297309286727471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_13
-      rect:
-        serializedVersion: 2
-        x: 381
-        y: 148
-        width: 39
-        height: 22
-      alignment: 9
-      pivot: {x: 0.4871795, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d29ec0dd12488ce4799c05b54d704536
-      internalID: -7053949933607540372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_14
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 1
-        width: 39
-        height: 16
-      alignment: 9
-      pivot: {x: 0.4871795, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c2017391dbd0ca4aac6a0e5a08c79fe
-      internalID: -6164324203651949801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_15
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 204
-        width: 22
-        height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3822167a12f689843ba1aba24da2be68
-      internalID: 3741657387620525465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_10_16
-      rect:
-        serializedVersion: 2
-        x: 378
-        y: 241
-        width: 23
-        height: 30
-      alignment: 9
-      pivot: {x: 0.47826087, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e12d68330d2c74046a668f32cf8ac0b6
-      internalID: -5224446422094967139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_11_01
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 71
-        width: 24
-        height: 29
-      alignment: 9
-      pivot: {x: 0.45833334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c3f0e9b42e4abf409048ca8bea948f1
-      internalID: -4875124861038539271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_11_02
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 1
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 326a783c3771d2f4da7d0edea007874f
-      internalID: -307669699898582641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_11_03
-      rect:
-        serializedVersion: 2
-        x: 347
-        y: 46
-        width: 24
-        height: 23
-      alignment: 9
-      pivot: {x: 0.5416667, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 007cac642d6465b4ebc31825682d2113
-      internalID: -2889592689138428710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_11_04
-      rect:
-        serializedVersion: 2
-        x: 362
-        y: 79
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ac425f0a977fcf4c9187996e2313a38
-      internalID: 8243167377465725682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_11_05
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 117
-        width: 24
-        height: 23
-      alignment: 9
-      pivot: {x: 0.45833334, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f6a5614033af8a4f9e561512a62cc25
-      internalID: 7329027678512406779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_01
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 128
-        width: 20
-        height: 32
-      alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e6b504f950c9ef49a6a2c69f5c0e3ac
-      internalID: 2092669851155220440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_02
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 198
-        width: 25
-        height: 32
-      alignment: 9
-      pivot: {x: 0.44, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1a9422ebc6616a4ea1623eb4e1a3e9c
-      internalID: -4694129089969690753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_03
-      rect:
-        serializedVersion: 2
-        x: 297
+        x: 401
         y: 234
-        width: 25
-        height: 32
-      alignment: 9
-      pivot: {x: 0.44, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67d5009d6cadc2941a5cef3444493869
-      internalID: 1598559391404385236
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_04
-      rect:
-        serializedVersion: 2
-        x: 282
-        y: 22
-        width: 20
-        height: 32
-      alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f7fe512f0cfcd3d4e8c259ec10452109
-      internalID: 1064089034073211929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_05
-      rect:
-        serializedVersion: 2
-        x: 372
-        y: 308
-        width: 20
-        height: 31
-      alignment: 9
-      pivot: {x: 0.55, y: -0.09677419}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30d5b45dfb8a419429a1e9ff8a967b2b
-      internalID: -8284236193703143917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_06
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 276
         width: 21
-        height: 30
-      alignment: 9
-      pivot: {x: 0.52380955, y: -0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 827ecbaf4aa5c9a4c9b2936b9d14aaac
-      internalID: -2337890908560867930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_07
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 57
-        width: 20
         height: 32
       alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
+      pivot: {x: 0.85714287, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01c75d4afd36f5c4a8e1089484c18e17
-      internalID: 8589244952966512439
+      spriteID: 
+      internalID: -6520217137515054685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_12_08
+      name: nm2body_03_13
       rect:
         serializedVersion: 2
-        x: 304
-        y: 23
-        width: 20
+        x: 27
+        y: 220
+        width: 23
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5134594927802105511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_03_14
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 273
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3830161035061106200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_03_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 308
+        width: 26
         height: 32
       alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
+      pivot: {x: 0.53846157, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56238c46aa5a0ad4aaf9702251a5c63f
-      internalID: -1753199237138434846
+      spriteID: 
+      internalID: -176082283164652209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_12_09
+      name: nm2body_03_16
       rect:
         serializedVersion: 2
-        x: 311
-        y: 94
-        width: 20
-        height: 32
-      alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45ceb4b7695406045b48765b9aa24e83
-      internalID: 6220518931102385249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_10
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 278
-        width: 33
-        height: 34
-      alignment: 9
-      pivot: {x: 0.45454547, y: -0.05882353}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 538f0c32ec376434e9a3d5cb74eb630b
-      internalID: 8819287210371537897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_11
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 314
-        width: 22
-        height: 36
-      alignment: 9
-      pivot: {x: 0.5, y: -0.083333336}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 008d115da8da71c4da6c45403c8dafdd
-      internalID: -5804347310040789866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_12
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 228
-        width: 29
-        height: 37
-      alignment: 9
-      pivot: {x: 0.41379312, y: -0.027027028}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 829d4c29635b47546b478858c11193a2
-      internalID: 5397888169599829647
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_13
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 432
-        width: 30
-        height: 37
-      alignment: 9
-      pivot: {x: 0.46666667, y: -0.054054055}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44592642521291f46be23483ce91b56f
-      internalID: -6676681003855062504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_12_14
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 19
+        x: 120
+        y: 421
         width: 31
-        height: 37
+        height: 33
       alignment: 9
-      pivot: {x: 0.4516129, y: -0.08108108}
+      pivot: {x: 0.41935483, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f24ade183032465419609b3f11771172
-      internalID: -6542592196831415554
+      spriteID: 
+      internalID: -2590930476850142821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_12_15
+      name: nm2body_04_01
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 455
+        width: 33
+        height: 33
+      alignment: 9
+      pivot: {x: 0.3939394, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 4990221578267203188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_02
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 271
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 4883907704316792429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_03
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 141
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6195863251487741307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_04
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 265
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5472584783218182869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_05
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 342
+        width: 30
+        height: 33
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 4667037229917323945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_06
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 271
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6328338500966251649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_07
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 271
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1730252971446956124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_08
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 307
+        width: 30
+        height: 33
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8026434554610562865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_09
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 444
+        width: 33
+        height: 33
+      alignment: 9
+      pivot: {x: 0.3939394, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6518534815874142366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_10
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 247
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.52, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1853658997679814370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_04_11
       rect:
         serializedVersion: 2
         x: 1
-        y: 94
-        width: 30
-        height: 39
+        y: 195
+        width: 23
+        height: 33
       alignment: 9
-      pivot: {x: 0.4, y: 0}
+      pivot: {x: 0.65217394, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed21e0ba1b0684c44ae5b3d502d61c90
-      internalID: 1681041228786416750
+      spriteID: 
+      internalID: 8047539706670421641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_12_16
+      name: nm2body_04_12
       rect:
         serializedVersion: 2
-        x: 57
-        y: 190
-        width: 35
-        height: 36
+        x: 285
+        y: 344
+        width: 27
+        height: 33
       alignment: 9
-      pivot: {x: 0.42857143, y: -0.055555556}
+      pivot: {x: 0.4814815, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8728610aeb1b72449af37fe37fa7b76d
-      internalID: -4656584240679646925
+      spriteID: 
+      internalID: 317737368921518935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_01
+      name: nm2body_04_13
       rect:
         serializedVersion: 2
-        x: 69
-        y: 59
+        x: 76
+        y: 410
         width: 31
-        height: 37
+        height: 33
       alignment: 9
-      pivot: {x: 0.38709676, y: -0.027027028}
+      pivot: {x: 0.41935483, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69e620807bfe65444b62a099d940491c
-      internalID: -3805708881087369702
+      spriteID: 
+      internalID: 7294188790436651655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_02
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 20
-        width: 31
-        height: 37
-      alignment: 9
-      pivot: {x: 0.4516129, y: -0.08108108}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a54854fe5bd850643a2c51a946ab273c
-      internalID: -892756930954891271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_03
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 53
-        width: 30
-        height: 39
-      alignment: 9
-      pivot: {x: 0.4, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e6980bf3f8b63043b3b0736d25b2d32
-      internalID: -5417627784443834931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_04
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 306
-        width: 31
-        height: 37
-      alignment: 9
-      pivot: {x: 0.38709676, y: -0.027027028}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f943dc2c51fa7d49b054cac2e40bab0
-      internalID: 3213107201494266510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_05
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 114
-        width: 33
-        height: 36
-      alignment: 9
-      pivot: {x: 0.42424244, y: -0.055555556}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6156bad015efc5747a4b7cd2911a9edb
-      internalID: -4503677886999750979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_06
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 137
-        width: 37
-        height: 38
-      alignment: 9
-      pivot: {x: 0.5135135, y: -0.05263158}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 240dd28b30176974db756c8d61959632
-      internalID: -371207648706863568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_07
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 352
-        width: 26
-        height: 36
-      alignment: 9
-      pivot: {x: 0.46153846, y: -0.027777778}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb4310d0f58bc004f9142f4ea2a39e50
-      internalID: 1283783088093450806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_08
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 394
-        width: 26
-        height: 36
-      alignment: 9
-      pivot: {x: 0.46153846, y: -0.027777778}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4333a20a1e7f6d2488ad5b44fe063533
-      internalID: -8908367972371450295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_09
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 56
-        width: 22
-        height: 32
-      alignment: 9
-      pivot: {x: 0.6363636, y: -0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08bdb40e7ca4c1d4db134190f87dc467
-      internalID: -7000397182071491522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_13_10
+      name: nm2body_04_14
       rect:
         serializedVersion: 2
         x: 314
-        y: 60
-        width: 20
-        height: 32
+        y: 339
+        width: 27
+        height: 33
       alignment: 9
-      pivot: {x: 0.55, y: -0.09375}
+      pivot: {x: 0.4814815, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ab40facd9155c9478cf45e10da1d312
-      internalID: 8667890334128448223
+      spriteID: 
+      internalID: -6748261092098698729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_11
+      name: nm2body_04_15
       rect:
         serializedVersion: 2
-        x: 34
-        y: 189
-        width: 21
-        height: 37
+        x: 1
+        y: 195
+        width: 23
+        height: 33
       alignment: 9
-      pivot: {x: 0.5714286, y: -0.027027028}
+      pivot: {x: 0.65217394, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ca2b682bdbd7864baf70859a5517136
-      internalID: -8497528444216279123
+      spriteID: 
+      internalID: 4526358768227886201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_12
+      name: nm2body_04_16
       rect:
         serializedVersion: 2
-        x: 333
-        y: 102
-        width: 20
+        x: 330
+        y: 374
+        width: 30
         height: 31
       alignment: 9
-      pivot: {x: 0.55, y: -0.09677419}
+      pivot: {x: 0.53333336, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f882be4893f364f43bf681415789e495
-      internalID: 7359887996748844745
+      spriteID: 
+      internalID: 1805354900298139444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_13
+      name: nm2body_05_01
       rect:
         serializedVersion: 2
-        x: 234
-        y: 84
-        width: 19
+        x: 455
+        y: 445
+        width: 33
+        height: 31
+      alignment: 9
+      pivot: {x: 0.4848485, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 668889431536121268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_02
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 376
+        width: 28
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3638741023074526512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_03
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 403
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5862069, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3113927213549915266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 386
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5483871, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7251467527937486313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_05
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 316
+        width: 27
         height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.4814815, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c846dbaa3abe22b48a231c7a4c3f217c
-      internalID: -8547345997520083159
+      spriteID: 
+      internalID: 2176741854740033237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_14
+      name: nm2body_05_06
       rect:
         serializedVersion: 2
-        x: 268
-        y: 373
-        width: 25
+        x: 25
+        y: 83
+        width: 21
         height: 33
       alignment: 9
-      pivot: {x: 0.44, y: 0}
+      pivot: {x: 0.61904764, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e0c5994c4609404287804ffd32cec3c
-      internalID: 8757609792245541
+      spriteID: 
+      internalID: -8344690710737429995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_15
+      name: nm2body_05_07
       rect:
         serializedVersion: 2
-        x: 102
-        y: 76
-        width: 32
+        x: 419
+        y: 303
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6347107506821031693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_08
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 387
+        width: 31
+        height: 33
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2850663143544261480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_09
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6296296, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7762461935543987895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 405
+        width: 29
         height: 36
       alignment: 9
-      pivot: {x: 0.4375, y: 0}
+      pivot: {x: 0.5862069, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c963dfd58be7c7498e55c7c766b966e
-      internalID: 1574933611337064536
+      spriteID: 
+      internalID: 6317105878663057215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_13_16
+      name: nm2body_05_11
       rect:
         serializedVersion: 2
-        x: 234
-        y: 84
-        width: 19
+        x: 359
+        y: 281
+        width: 26
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7398477673338469640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_12
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 280
+        width: 26
         height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.7307692, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67556568f3d60054a92a2783ff6c62d6
-      internalID: -2678894507143578200
+      spriteID: 
+      internalID: 4555895927838154844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_01
+      name: nm2body_05_13
       rect:
         serializedVersion: 2
-        x: 326
-        y: 26
-        width: 19
-        height: 32
+        x: 456
+        y: 478
+        width: 33
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57575756, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6345001263085017150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_14
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 456
+        width: 36
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5277778, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7311489436593441420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_15
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 422
+        width: 35
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7200114303974342509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_05_16
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 478
+        width: 38
+        height: 33
       alignment: 9
       pivot: {x: 0.5263158, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4789,125 +2311,419 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e0e79fc4e7a125409ad21f21d72c2a9
-      internalID: 4499490691779808471
+      spriteID: 
+      internalID: 426209687257111026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_02
+      name: nm2body_06_01
       rect:
         serializedVersion: 2
-        x: 336
-        y: 135
-        width: 20
-        height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e67ced704c7bbb4d8f74df1dfe2cd49
-      internalID: -5999289448225064409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: nm2body_14_03
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 124
-        width: 19
+        x: 241
+        y: 478
+        width: 34
         height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.5882353, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 448c29b686abd834eb0426ce2576b2b0
-      internalID: 6162342476208658085
+      spriteID: 
+      internalID: 4766553127059803308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_04
+      name: nm2body_06_02
       rect:
         serializedVersion: 2
-        x: 257
-        y: 159
-        width: 19
+        x: 202
+        y: 478
+        width: 37
         height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.5405405, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fc6455c8d573274d859a3589b4ba768
-      internalID: 9162360865939534302
+      spriteID: 
+      internalID: 2930833127644762773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_05
+      name: nm2body_06_03
       rect:
         serializedVersion: 2
-        x: 258
-        y: 196
-        width: 19
+        x: 254
+        y: 275
+        width: 25
         height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.8, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 168a52c2ca6bb694a813596bdb37df7b
-      internalID: -2706901694770290605
+      spriteID: 
+      internalID: -5998585308110384609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_06
+      name: nm2body_06_04
       rect:
         serializedVersion: 2
-        x: 288
-        y: 443
+        x: 349
+        y: 479
+        width: 34
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1149650767820192572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_05
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 411
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.59375, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 2394812408803470566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_06
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 262
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8296634678163631723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 94
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.8181818, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 9168639929527166328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_08
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 281
         width: 26
         height: 33
       alignment: 9
-      pivot: {x: 0.3846154, y: 0}
+      pivot: {x: 0.65384614, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39dd2ba787a8e9a488662196c0237d35
-      internalID: 1672784581938318051
+      spriteID: 
+      internalID: 5153730259884934960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_07
+      name: nm2body_06_09
       rect:
         serializedVersion: 2
-        x: 91
-        y: 314
+        x: 420
+        y: 444
+        width: 33
+        height: 32
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7016718340083685099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 421
+        width: 33
+        height: 32
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7895776721821360618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_11
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 444
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: 0.58064514, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5403869479949482141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_12
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 444
+        width: 33
+        height: 32
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8759199409116153906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_13
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 135
+        width: 20
+        height: 31
+      alignment: 9
+      pivot: {x: 0.9, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1005510245981880158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_14
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 176
+        width: 23
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6086956, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7299252222814227207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 29
+        height: 31
+      alignment: 9
+      pivot: {x: 0.51724136, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -833702152072059703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_06_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 445
+        width: 31
+        height: 31
+      alignment: 9
+      pivot: {x: 0.4516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3772655571690235182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 59
+        width: 21
+        height: 33
+      alignment: 9
+      pivot: {x: 0.3809524, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 952185350160110324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_02
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 373
+        width: 29
+        height: 30
+      alignment: 9
+      pivot: {x: 0.62068963, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3304465441841699221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_03
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 246
         width: 22
-        height: 36
+        height: 32
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5008036665522061520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_04
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 371
+        width: 28
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4915,18 +2731,711 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18dccd06b6b2c344aacb39b66f9a52b9
-      internalID: 4680156961692648397
+      spriteID: 
+      internalID: -3964141384697524320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_08
+      name: nm2body_07_05
       rect:
         serializedVersion: 2
-        x: 186
-        y: 47
+        x: 300
+        y: 413
+        width: 31
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4516129, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5855461608567787713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 29
+        height: 31
+      alignment: 9
+      pivot: {x: 0.51724136, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4965734619837269873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_07
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 176
+        width: 23
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6086956, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8250994616549713855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_08
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 268
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1153959009596374692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_09
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 342
+        width: 27
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1901829069031615121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 379
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7134647426085604563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_11
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 410
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.46875, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6170092565169516328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 460
+        width: 38
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 600037964690572126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_13
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 478
+        width: 37
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5405405, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -756647096349640261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_14
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 411
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3384825682985126433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_15
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 133
+        width: 20
+        height: 31
+      alignment: 9
+      pivot: {x: 0.25, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8659307298889197766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_07_16
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 246
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6676400320698644249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_01
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 316
+        width: 23
+        height: 33
+      alignment: 9
+      pivot: {x: 0.65217394, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5086398625635872621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 318
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5925926, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5065563120071643487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_03
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 237
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4481994276379301607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_04
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 282
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5769231, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4117472498810616204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_05
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 445
+        width: 36
+        height: 32
+      alignment: 9
+      pivot: {x: 0.44444445, y: -0.03125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6081900853821677001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_06
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 479
+        width: 38
+        height: 32
+      alignment: 9
+      pivot: {x: 0.47368422, y: -0.03125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6071781853664970097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 129
+        width: 23
+        height: 29
+      alignment: 9
+      pivot: {x: 0.6086956, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 194440755388930030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_08
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 235
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5294705496259053807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_09
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 444
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5127517975440027448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_10
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 409
+        width: 30
+        height: 33
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6212971630448711548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 409
+        width: 30
+        height: 33
+      alignment: 9
+      pivot: {x: 0.43333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7140696689910513468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_12
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 270
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.68, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6145851612585653018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 376
+        width: 29
+        height: 31
+      alignment: 9
+      pivot: {x: 0.44827586, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1325018371555385130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 135
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.8947368, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5066968381759324518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_15
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 271
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.56, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6687327360367716388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_08_16
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 377
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.40625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1307902824860433786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_01
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 443
+        width: 31
+        height: 33
+      alignment: 9
+      pivot: {x: 0.41935483, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4937442682567486079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_02
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 203
+        width: 24
+        height: 33
+      alignment: 9
+      pivot: {x: 0.7083333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6063289906586187111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_03
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 376
+        width: 29
+        height: 31
+      alignment: 9
+      pivot: {x: 0.44827586, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7807282108801394732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_04
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 377
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.40625, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 2293973592819614615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_05
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 209
+        width: 23
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4553635077399904336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_06
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 185
         width: 23
         height: 33
       alignment: 9
@@ -4936,60 +3445,186 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c2d78f6653086f498a6a4a1df60c438
-      internalID: -6440339782257580127
+      spriteID: 
+      internalID: 2354130916219895135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_09
+      name: nm2body_09_07
       rect:
         serializedVersion: 2
-        x: 128
-        y: 476
-        width: 19
-        height: 35
+        x: 177
+        y: 238
+        width: 25
+        height: 33
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.52, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7029112e39c206a4383fe020372c49d4
-      internalID: -545257800955729158
+      spriteID: 
+      internalID: 20782745805325076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_10
+      name: nm2body_09_08
       rect:
         serializedVersion: 2
-        x: 93
-        y: 242
-        width: 19
-        height: 34
+        x: 98
+        y: 108
+        width: 20
+        height: 31
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c31838efc671d0744a0a2f0ab0dd58d8
-      internalID: 6071351284393917505
+      spriteID: 
+      internalID: -5141190660761857516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nm2body_14_11
+      name: nm2body_09_09
       rect:
         serializedVersion: 2
-        x: 255
-        y: 231
+        x: 331
+        y: 281
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3133216924927767060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 201
+        width: 24
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3714091930829199654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 206
+        width: 24
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 196517767269546647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 318
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -81519146753339646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 129
+        width: 23
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8797394360488278571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_14
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 255
+        width: 24
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3113359722635632649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_15
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 350
         width: 20
         height: 33
       alignment: 9
@@ -4999,7 +3634,1372 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 917e89cf4fccdd346b893444629bcb5a
+      spriteID: 
+      internalID: -5724454121288801215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_09_16
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 246
+        width: 22
+        height: 33
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3794038610756396828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_01
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 315
+        width: 20
+        height: 33
+      alignment: 9
+      pivot: {x: 0.65, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5038827690466622822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 306
+        width: 26
+        height: 31
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2716698626958630836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_03
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 318
+        width: 27
+        height: 31
+      alignment: 9
+      pivot: {x: 0.37037036, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3326411235162548694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_04
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 173
+        width: 22
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6326823381849448636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_05
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 331
+        width: 28
+        height: 33
+      alignment: 9
+      pivot: {x: 0.53571427, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7475786962124157504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_06
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 351
+        width: 30
+        height: 31
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 2693738522333776938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 420
+        width: 35
+        height: 18
+      alignment: 9
+      pivot: {x: 0.51428574, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4932785265376913804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_08
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 490
+        width: 34
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3511127434761239947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_09
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 457
+        width: 36
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5277778, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8326075817759889794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 440
+        width: 36
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5277778, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2483394644872067038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 495
+        width: 38
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4383742713513132034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_12
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 472
+        width: 37
+        height: 21
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1912297309286727471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 491
+        width: 38
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7053949933607540372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 495
+        width: 39
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4871795, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6164324203651949801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 172
+        width: 22
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3741657387620525465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_10_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 153
+        width: 23
+        height: 30
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5224446422094967139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_11_01
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 205
+        width: 24
+        height: 29
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4875124861038539271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_11_02
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 244
+        width: 24
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -307669699898582641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_11_03
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 222
+        width: 24
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2889592689138428710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_11_04
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 205
+        width: 24
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8243167377465725682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_11_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 230
+        width: 24
+        height: 23
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7329027678512406779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_01
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 158
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 2092669851155220440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_02
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 241
+        width: 25
+        height: 32
+      alignment: 9
+      pivot: {x: 0.44, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4694129089969690753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_03
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 239
+        width: 25
+        height: 32
+      alignment: 9
+      pivot: {x: 0.44, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1598559391404385236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_04
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 212
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1064089034073211929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_05
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 83
+        width: 20
+        height: 31
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09677419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8284236193703143917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_06
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 205
+        width: 21
+        height: 30
+      alignment: 9
+      pivot: {x: 0.52380955, y: -0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2337890908560867930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_07
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 201
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8589244952966512439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_08
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 171
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -1753199237138434846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_09
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 139
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6220518931102385249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_10
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 310
+        width: 27
+        height: 32
+      alignment: 9
+      pivot: {x: 0.4074074, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8819287210371537897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_11
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 401
+        width: 22
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: -0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5804347310040789866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_12
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 297
+        width: 28
+        height: 32
+      alignment: 9
+      pivot: {x: 0.39285713, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 5397888169599829647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_13
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 300
+        width: 25
+        height: 35
+      alignment: 9
+      pivot: {x: 0.44, y: -0.08571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6676681003855062504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_14
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 305
+        width: 27
+        height: 32
+      alignment: 9
+      pivot: {x: 0.4074074, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6542592196831415554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 387
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.37931034, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1681041228786416750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_12_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 376
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.37931034, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4656584240679646925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_01
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 407
+        width: 30
+        height: 35
+      alignment: 9
+      pivot: {x: 0.36666667, y: -0.08571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -3805708881087369702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_02
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 339
+        width: 27
+        height: 32
+      alignment: 9
+      pivot: {x: 0.4074074, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -892756930954891271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_03
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 353
+        width: 29
+        height: 32
+      alignment: 9
+      pivot: {x: 0.37931034, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5417627784443834931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_04
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 384
+        width: 30
+        height: 35
+      alignment: 9
+      pivot: {x: 0.36666667, y: -0.08571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 3213107201494266510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_05
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 373
+        width: 30
+        height: 35
+      alignment: 9
+      pivot: {x: 0.36666667, y: -0.08571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -4503677886999750979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_06
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 337
+        width: 27
+        height: 32
+      alignment: 9
+      pivot: {x: 0.4074074, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -371207648706863568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_07
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 269
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.44, y: -0.0882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1283783088093450806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_08
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 306
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.44, y: -0.0882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8908367972371450295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_09
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 205
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6363636, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -7000397182071491522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_10
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 138
+        width: 20
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8667890334128448223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_11
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 476
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.55, y: -0.08571429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8497528444216279123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_12
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 213
+        width: 20
+        height: 31
+      alignment: 9
+      pivot: {x: 0.55, y: -0.09677419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 7359887996748844745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_13
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 128
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -8547345997520083159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_14
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 236
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 8757609792245541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 230
+        width: 25
+        height: 33
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1574933611337064536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_13_16
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 128
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2678894507143578200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_01
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 165
+        width: 19
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5263158, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 4499490691779808471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_02
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 213
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -5999289448225064409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_03
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 123
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6162342476208658085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_04
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 178
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 9162360865939534302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_05
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 178
+        width: 19
+        height: 33
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -2706901694770290605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_06
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 227
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.3846154, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 1672784581938318051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_07
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 151
+        width: 22
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 4680156961692648397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_08
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 160
+        width: 23
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6086956, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -6440339782257580127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_09
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 273
+        width: 19
+        height: 35
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: -545257800955729158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 23
+        width: 19
+        height: 34
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
+      internalID: 6071351284393917505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nm2body_14_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 24
+        width: 20
+        height: 33
+      alignment: 9
+      pivot: {x: 0.55, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 
       internalID: -7819101899552908255
       vertices: []
       indices: 
@@ -5009,8 +5009,8 @@ TextureImporter:
       name: nm2body_14_12
       rect:
         serializedVersion: 2
-        x: 277
-        y: 232
+        x: 493
+        y: 192
         width: 18
         height: 33
       alignment: 9
@@ -5020,7 +5020,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: baf1c431d2a947c4098a5e1d900aa560
+      spriteID: 
       internalID: -7226962814841188548
       vertices: []
       indices: 
@@ -5030,8 +5030,8 @@ TextureImporter:
       name: nm2body_14_13
       rect:
         serializedVersion: 2
-        x: 268
-        y: 267
+        x: 447
+        y: 170
         width: 20
         height: 33
       alignment: 7
@@ -5041,7 +5041,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dba089cb8fe5dea4597dd541a8439706
+      spriteID: 
       internalID: -7997339888191053530
       vertices: []
       indices: 
@@ -5051,8 +5051,8 @@ TextureImporter:
       name: nm2body_14_14
       rect:
         serializedVersion: 2
-        x: 277
-        y: 232
+        x: 493
+        y: 192
         width: 18
         height: 33
       alignment: 9
@@ -5062,7 +5062,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8002ca8cbe6286545864e0a6523e5140
+      spriteID: 
       internalID: -5777913651260952625
       vertices: []
       indices: 
@@ -5072,8 +5072,8 @@ TextureImporter:
       name: nm2body_14_15
       rect:
         serializedVersion: 2
-        x: 290
-        y: 268
+        x: 449
+        y: 135
         width: 18
         height: 33
       alignment: 9
@@ -5083,7 +5083,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2ff8b987a95dc846b0e093011135e0d
+      spriteID: 
       internalID: -510424660474352245
       vertices: []
       indices: 
@@ -5093,8 +5093,8 @@ TextureImporter:
       name: nm2body_14_16
       rect:
         serializedVersion: 2
-        x: 277
-        y: 232
+        x: 493
+        y: 192
         width: 18
         height: 33
       alignment: 9
@@ -5104,7 +5104,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebf374a57da6e494b83dbb5cce950a18
+      spriteID: 
       internalID: -4859779677728435903
       vertices: []
       indices: 
@@ -5114,10 +5114,10 @@ TextureImporter:
       name: nm2body_15_01
       rect:
         serializedVersion: 2
-        x: 33
-        y: 58
+        x: 277
+        y: 478
         width: 34
-        height: 37
+        height: 33
       alignment: 9
       pivot: {x: 0.5294118, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5125,7 +5125,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf36b5ebfb9b3f243af477894308867a
+      spriteID: 
       internalID: 2725527209568357041
       vertices: []
       indices: 
@@ -5135,18 +5135,18 @@ TextureImporter:
       name: nm2body_15_02
       rect:
         serializedVersion: 2
-        x: 130
-        y: 440
-        width: 35
-        height: 34
+        x: 313
+        y: 478
+        width: 34
+        height: 33
       alignment: 9
-      pivot: {x: 0.45714286, y: 0}
+      pivot: {x: 0.44117647, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2e42a64eefc5e344ae5da7ef638fcfe
+      spriteID: 
       internalID: 3136982097986681170
       vertices: []
       indices: 
@@ -5156,18 +5156,18 @@ TextureImporter:
       name: nm2body_15_03
       rect:
         serializedVersion: 2
-        x: 282
-        y: 1
-        width: 19
+        x: 1
+        y: 2
+        width: 18
         height: 19
       alignment: 9
-      pivot: {x: 0.57894737, y: 0}
+      pivot: {x: 0.5555556, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 419470bea9f5162438407cedd390ddf6
+      spriteID: 
       internalID: 1546252407857453554
       vertices: []
       indices: 

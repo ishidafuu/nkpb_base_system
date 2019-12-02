@@ -41,7 +41,7 @@ namespace NKPB
             });
 
             var charaPos = new CharaPos();
-            charaPos.SetPosition(new Vector3Int(32 << 8, 32 << 8, 8 << 8));
+            charaPos.SetPosition(new Vector3Int(16 << 8, 16 << 8, 8 << 8));
             entityManager.SetComponentData(entity, charaPos);
 
             entityManager.SetComponentData(entity, new CharaLastPos
