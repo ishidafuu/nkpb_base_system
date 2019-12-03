@@ -23,7 +23,7 @@ namespace NKPB
         List<Texture> m_mapShapeTexList;
         List<Sprite> m_mapPaletteSprites;
         bool m_isLoadSprite = false;
-        bool m_isDrawMap = true;
+        bool m_isDrawMap = false;
 
         // サブウィンドウを開く
         public static MapFrontView WillAppear(MapEditorMain _parent)
@@ -152,7 +152,7 @@ namespace NKPB
             }
         }
 
-        void CreateOutputTexture()
+        public void CreateOutputTexture()
         {
             Texture2D outputTexture = new Texture2D(
                 (GetMapW() * TIP_W),

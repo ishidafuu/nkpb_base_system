@@ -66,6 +66,7 @@ namespace NKPB
 
                 //オブジェクト作成
                 GUIDrawButtonCreateObject();
+                GUIDrawButtonCreateMapImage();
 
                 GUIDrawShapeTips();
                 GUIDrawSelectedShape();
@@ -508,6 +509,15 @@ namespace NKPB
             EditorGUILayout.EndHorizontal();
         }
 
+        void GUIDrawButtonCreateMapImage()
+        {
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("CreateMapImage"))
+                CreateMapImage();
+
+            EditorGUILayout.EndHorizontal();
+        }
+
         //入出力系///////////////////////////////
         string GetFilePath()
         {
@@ -559,6 +569,16 @@ namespace NKPB
             EditorUtility.DisplayDialog("CreateObject", "マップオブジェクトを生成しました。", "ok");
 
         }
+
+        void CreateMapImage()
+        {
+            m_frontWindow.CreateOutputTexture();
+
+            // 完了ポップアップ
+            EditorUtility.DisplayDialog("CreateOutputTexture", "マップイメージを生成しました。", "ok");
+
+        }
+
         public void RepaintFrontView()
         {
             m_frontWindow.Repaint();

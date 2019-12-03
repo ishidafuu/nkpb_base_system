@@ -32,7 +32,7 @@ namespace NKPB
             inputDeps = job.Schedule(inputDeps);
             inputDeps.Complete();
 
-            m_query.CopyFromComponentDataArray(job.m_charaPoses);
+            m_query.CopyFromComponentDataArray(job.m_charaLastPoses);
 
             charaPoses.Dispose();
             charaLastPoses.Dispose();

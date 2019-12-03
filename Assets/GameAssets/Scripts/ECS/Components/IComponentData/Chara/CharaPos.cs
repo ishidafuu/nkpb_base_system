@@ -25,16 +25,19 @@ namespace NKPB
 
         public void SetPixX(int x)
         {
+            Debug.Log($"SetPixX : {x}");
             SetPosition(new Vector3Int(x << RAW_PIX, m_posY, m_posZ));
         }
 
         public void SetPixY(int y)
         {
+            Debug.Log($"SetPixY : {y}");
             SetPosition(new Vector3Int(m_posX, y << RAW_PIX, m_posZ));
         }
 
         public void SetPixZ(int z)
         {
+            Debug.Log($"SetPixZ : {z}");
             SetPosition(new Vector3Int(m_posX, m_posY, z << RAW_PIX));
         }
 

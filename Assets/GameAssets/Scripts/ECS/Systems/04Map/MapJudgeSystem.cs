@@ -91,10 +91,11 @@ namespace NKPB
                     var charaQueue = m_charaQueues[i];
                     var charaFlag = m_charaFlags[i];
 
+
                     int startY = charaPos.m_posY;
 
                     // 坂引き寄せ処理
-                    AttractSlope(XPos.Right, ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
+                    AttractSlope(ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
 
                     // Y壁・斜め壁チェック
                     CheckYWall(XPos.Left, ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
@@ -110,7 +111,7 @@ namespace NKPB
                     CheckXBox(XPos.Right, ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
 
                     // Y坂チェック
-                    CheckYSlope(XPos.Right, ref charaPos, ref charaFlag, ref charaQueue);
+                    CheckYSlope(ref charaPos, ref charaFlag, ref charaQueue);
 
                     // XZ斜め壁チェック
                     CheckXZSlashWall(XPos.Right, ref charaPos, ref charaLastPos, ref charaFlag, ref charaQueue);
@@ -133,7 +134,7 @@ namespace NKPB
                     return;
 
                 // 落下可能
-                bool isFallable = (charaFlag.m_mapFlag != FlagMapCheck.Fall);
+                bool isFallable = charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Fall);
 
                 if (!isFallable)
                     return;
@@ -157,18 +158,28 @@ namespace NKPB
                     return;
 
                 int mapX = 0;
+                int sideMapX = 0;
                 switch (xPos)
                 {
                     case XPos.Left:
                         mapX = charaPos.m_mapXLeft;
+                        sideMapX = mapX + 1;
                         break;
                     case XPos.Center:
                         mapX = charaPos.m_mapXCenter;
+                        sideMapX = mapX;
                         break;
                     case XPos.Right:
                         mapX = charaPos.m_mapXRight;
+                        sideMapX = mapX - 1;
                         break;
                 }
+
+                EnumShapeType sideShape = GetShape(sideMapX, charaPos.m_mapY, charaPos.m_mapZ);
+
+                // 横が坂の場合は判定しない
+                if (sideShape.IsSlope())
+                    return;
 
                 EnumShapeType topShape = GetShape(mapX, charaPos.m_mapY + 1, charaPos.m_mapZ);
                 EnumShapeType shape = GetShape(mapX, charaPos.m_mapY, charaPos.m_mapZ);
@@ -214,7 +225,7 @@ namespace NKPB
                         mapX = charaPos.m_mapXLeft;
                         lastMapX = charaLastPos.m_mapXLeft;
                         sideMapX = mapX + 1;
-                        offsetX = +1 + SIDE_OFFSET;
+                        offsetX = TIP_SIZE + SIDE_OFFSET;
                         break;
                     case XPos.Center:
                         mapX = charaPos.m_mapXCenter;
@@ -256,7 +267,7 @@ namespace NKPB
             {
 
                 // MapZ移動が無いときはZチェックしない
-                if (charaPos.m_mapZ != charaLastPos.m_mapZ)
+                if (charaPos.m_mapZ == charaLastPos.m_mapZ)
                     return;
 
                 int mapX = 0;
@@ -285,12 +296,14 @@ namespace NKPB
                 if (!shape.IsBox())
                     return;
 
+
                 int newRZ = (charaPos.m_mapZ << PIX_MAP) - 1;
+                Debug.Log($"charaPos.m_mapZ : {charaPos.m_mapZ} charaLastPos.m_mapZ {charaLastPos.m_mapZ}");
                 charaPos.SetPixZ(newRZ);
             }
 
 
-            private void CheckYSlope(XPos xPos, ref CharaPos charaPos, ref CharaFlag charaFlag, ref CharaQueue charaQueue)
+            private void CheckYSlope(ref CharaPos charaPos, ref CharaFlag charaFlag, ref CharaQueue charaQueue)
             {
                 EnumShapeType shape = GetShape(charaPos.m_mapXCenter, charaPos.m_mapY, charaPos.m_mapZ);
 
@@ -302,7 +315,8 @@ namespace NKPB
 
                 if (charaPos.m_tipY <= borderY)
                 {
-                    charaPos.SetPixY(borderY + 1);
+                    int newY = (charaPos.m_mapY << PIX_MAP) + borderY + 1;
+                    charaPos.SetPixY(newY);
                     QueueLand(ref charaFlag, ref charaQueue);
                 }
             }
@@ -336,15 +350,17 @@ namespace NKPB
             }
 
 
-            private void AttractSlope(XPos xPos, ref CharaPos charaPos, ref CharaLastPos charaLastPos,
+            private void AttractSlope(ref CharaPos charaPos, ref CharaLastPos charaLastPos,
                 ref CharaFlag charaFlag, ref CharaQueue charaQueue)
             {
                 // 浮いている場合は補正しない
-                if (charaFlag.m_mapFlag == FlagMapCheck.Slope)
+                if (!charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Slope))
                     return;
 
                 EnumShapeType shape = GetShape(charaPos.m_mapXCenter, charaPos.m_mapY, charaPos.m_mapZ);
                 EnumShapeType bottomShape = GetShape(charaPos.m_mapXCenter, charaPos.m_mapY - 1, charaPos.m_mapZ);
+
+                // 
 
                 int newY = 0;
                 if (shape.IsSlope())
@@ -354,6 +370,7 @@ namespace NKPB
                 }
                 else if (shape.IsEmpty() && bottomShape.IsSlope())
                 {
+
                     // もしくは、現チップが空で、下のチップが坂
                     newY = ((charaPos.m_mapY - 1) << PIX_MAP) + GetSlopeBorder(bottomShape, charaPos.m_tipXCenter) + 1;
                 }
@@ -498,22 +515,6 @@ namespace NKPB
                 return isFloat;
             }
 
-
-            // private bool CheckSlope(ref CharaPos charaPos, ref CharaFlag charaFlag, ref CharaQueue charaQueue)
-            // {
-
-            //     EnumShapeType shape = GetShape(charaPos.m_mapXCenter, charaPos.m_mapY, charaPos.m_mapZ);
-
-            //     if (!shape.IsSlope())
-            //         return true;
-
-            //     int borderY = GetSlopeBorder(shape, charaPos.m_tipXCenter);
-            //     if (charaPos.m_tipY + 1 <= borderY)
-            //     {
-
-            //     }
-            // }
-
             private static void QueueLand(ref CharaFlag charaFlag, ref CharaQueue charaQueue)
             {
                 if (charaFlag.m_mapFlag.IsFlag(FlagMapCheck.Land))
@@ -553,7 +554,7 @@ namespace NKPB
             {
                 return IsSafePos(x, y, z)
                     ? Shapes[ConvertVector3IntToIndex(x, y, z)]
-                    : EnumShapeType.Empty;
+                    : EnumShapeType.Box;
             }
 
             int GetEvent(int x, int y, int z)
